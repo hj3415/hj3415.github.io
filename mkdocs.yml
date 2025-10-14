@@ -1,0 +1,15 @@
+site_name: Docs for hj3415
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - gdquest:
+    - 용어정의:
+      - 9-slice scaling: gdquest/glossary/9-slice scaling/9-slice scaling.md
+      - AI (Game AI): gdquest/glossary/AI (Game AI)/AI (Game AI).md
+plugins:
+  - obsidian-support
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
