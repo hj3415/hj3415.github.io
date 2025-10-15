@@ -1,0 +1,4 @@
+mkdocs
+mkdocs-material
+watchdog
+mkdocs-obsidian-support-plugin
