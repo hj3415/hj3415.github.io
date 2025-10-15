@@ -3,10 +3,13 @@ theme:
   name: material
 nav:
   - Home: index.md
-  - gdquest:
+  - GDQUEST:
+    - 2D:
+      - M9 Top Down Movement:
+        - L1 Top Down Movement - Module Overview: GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/L1_Top_Down_Movement_Module_Overview.md
     - 용어정의:
-      - 9-slice scaling: gdquest/glossary/9-slice scaling/9-slice scaling.md
-      - AI (Game AI): gdquest/glossary/AI (Game AI)/AI (Game AI).md
+      - 9-slice scaling: GDQUEST/Glossary/9-slice_scaling/9-slice_scaling.md
+      - AI (Game AI): GDQUEST/Glossary/AI_(Game_AI)/AI_(Game_AI).md
 plugins:
   - obsidian-support
 markdown_extensions:
