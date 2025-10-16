@@ -1,6 +1,10 @@
 site_name: Docs for hj3415
 theme:
   name: material
+  features:
+    - navigation.sections     # 섹션 전체 펼치기
+    - navigation.expand       # 현재 위치 기반 자동 확장
+    - navigation.indexes      # 폴더도 문서처럼 다루기
 nav:
   - Home: index.md
   - GDQUEST:
@@ -10,6 +14,7 @@ nav:
     - 용어정의:
       - 9-slice scaling: GDQUEST/Glossary/9-slice_scaling/9-slice_scaling.md
       - AI (Game AI): GDQUEST/Glossary/AI_(Game_AI)/AI_(Game_AI).md
+      - Game Jam: GDQUEST/Glossary/Game_Jam/Game_Jam.md
 plugins:
   - obsidian-support
 markdown_extensions:
