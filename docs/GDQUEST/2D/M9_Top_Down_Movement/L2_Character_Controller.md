@@ -4,7 +4,7 @@ M4 강의인 _To Space and Beyond_ 에서는 8방향으로 움직일 수 있고 
 하지만 이 우주선은 어떤 것에도 부딪힐 필요가 없었지요. 이렇게 작동하는 게임은 거의 없습니다!
 
 <video controls width="800" preload="metadata" playsinline>
-  <source src="/GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/videos/050_ship_with_steering 3.mp4" type="video/mp4">
+  <source src="/GDQUEST/2D/M9_Top_Down_Movement/videos/050_ship_with_steering 3.mp4" type="video/mp4">
   동영상을 보려면 브라우저가 video 태그를 지원해야 합니다.
 </video>
 
@@ -14,7 +14,7 @@ M4 강의인 _To Space and Beyond_ 에서는 8방향으로 움직일 수 있고 
 우리 캐릭터는 M4에서 만든 우주선처럼 움직이지만, 몇 강의 뒤에 벽과 장애물을 추가하게 되면 그 차이가 분명히 드러날 것입니다.
 
 <video controls width="800" preload="metadata" playsinline>
-  <source src="/GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/videos/020_character_010_runner.mp4" type="video/mp4">
+  <source src="/GDQUEST/2D/M9_Top_Down_Movement/videos/020_character_010_runner.mp4" type="video/mp4">
   동영상을 보려면 브라우저가 video 태그를 지원해야 합니다.
 </video>
 
@@ -111,13 +111,18 @@ _Celeste_ , _Dead Cells_ 같은 게임에서 볼 수 있는 캐릭터나 몬스�
     
 - 캐릭터의 모습을 그리기 위해 Sprite2D 노드를 CharacterBody2D의 자식으로 추가합니다.
 
-새로운 씬을 생성하고 루트 노드를 CharacterBody2D로 설정한 후, 씬의 이름을 **Runner** 로 지정해 주세요. 그러면 노드 옆에 경고 아이콘이 표시되는 것을 볼 수 있습니다. 경고 메시지는 다음과 같습니다: “이 노드에는 모양(shape)이 없기 때문에 다른 객체와 충돌하거나 상호작용할 수 없습니다. 자식 노드로 CollisionShape2D 또는 CollisionPolygon2D를 추가하는 것을 고려해보세요.”
+새로운 씬을 생성하고 루트 노드를 CharacterBody2D로 설정한 후, 씬의 이름을 **Runner** 로 지정해 주세요. 그러면 노드 옆에 경고 아이콘이 표시되는
+것을 볼 수 있습니다. 경고 메시지는 다음과 같습니다: “이 노드에는 모양(shape)이 없기 때문에 다른 객체와 충돌하거나 상호작용할 수 없습니다.
+자식 노드로 CollisionShape2D 또는 CollisionPolygon2D를 추가하는 것을 고려해보세요.”
 
 ![020_050_character_controller_no_shape.webp](images/020_050_character_controller_no_shape.webp)
 
-M4, M5, M6에서 만들었던 Area 노드들과 마찬가지로, **모든 물리 노드**는 게임의 물리 엔진과 상호작용하기 위해 **충돌 모양(Collision Shape)** 이 필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 [[Composition]] 방식을 사용하기 때문에, 충돌 모양은 전용 노드인 CollisionShape2D를 통해 설정됩니다.
+M4, M5, M6에서 만들었던 Area 노드들과 마찬가지로, **모든 물리 노드**는 게임의 물리 엔진과 상호작용하기 위해 **충돌 모양(Collision Shape)** 이
+필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 [Collisions](../../Glossary/Collisions.md) 방식을 사용하기 
+때문에, 충돌 모양은 전용 노드인 CollisionShape2D를 통해 설정됩니다.
 
-CharacterBody2D의 자식으로 CollisionShape2D 노드를 추가하세요. 그런 다음 **인스펙터(Inspector)** 에서 **Shape** 속성에 CircleShape2D를 할당해 주세요. 씬의 가운데로 줌인해보면, 아주 작은 파란색 원이 보일 것입니다. 곧 이 원을 더 크게 조정하게 될 것입니다.
+CharacterBody2D의 자식으로 CollisionShape2D 노드를 추가하세요. 그런 다음 **인스펙터(Inspector)** 에서 **Shape** 속성에 CircleShape2D를
+할당해 주세요. 씬의 가운데로 줌인해보면, 아주 작은 파란색 원이 보일 것입니다. 곧 이 원을 더 크게 조정하게 될 것입니다.
 
 ![020_050_character_controller_with_shape.webp](images/020_050_character_controller_with_shape.webp)
 

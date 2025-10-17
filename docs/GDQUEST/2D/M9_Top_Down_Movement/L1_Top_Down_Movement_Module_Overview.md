@@ -14,7 +14,7 @@ Godot에는 이러한 역할을 위한 전용 노드가 있습니다.
 레이싱 게임을 만드는 것입니다.
 
 <video controls width="800" preload="metadata" playsinline>
-  <source src="/GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/videos/010_overview_result.mp4" type="video/mp4">
+  <source src="/GDQUEST/2D/M9_Top_Down_Movement/videos/010_overview_result.mp4" type="video/mp4">
   동영상을 보려면 브라우저가 video 태그를 지원해야 합니다.
 </video>
 
