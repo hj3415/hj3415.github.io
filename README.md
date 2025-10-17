@@ -20,7 +20,8 @@ main 브랜치 커밋은 꼭 안해도되지만 하는걸 추천
 
 markdown 구성은
 ```markdown
-# Practice 제목
-## 내부 중제목
-### 내부 소제목
+# Lecture 제목
+## Practice
+### 내부 중제목
+#### 내부 소제목
 ```

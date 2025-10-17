@@ -21,7 +21,7 @@
 > 예를 들어, 컴퓨터가 제어하는 적이 매우 효율적이고 플레이어의 모든 움직임을 예측한다면, 그것을 코딩하는 것은 상대적으로 쉽지만,
 > 사실상 이길 수 없고 불공정하게 느껴져 플레이하는 사람이 좌절하게 만들 수 있습니다.
 
-## Common AI techniques used in games
+### Common AI techniques used in games
 
 게임 개발자들은 매력적이고 상호작용적인 게임 경험을 만들기 위해 다양한 AI 기법을 활용합니다.
 가장 흔히 사용되는 기법에는 다음이 포함됩니다:
@@ -32,7 +32,7 @@
     
 - **유한 상태 머신(finite state machines), 행동 트리(behavior trees), 목표 지향적 행동 계획(goal-oriented action planning)**과 같은 구조적 프로그래밍 패턴
 
-### If statements
+#### If statements
 
 **if 문**은 프로그래밍에서 가장 단순한 형태의 의사결정 로직입니다. 조건을 확인하고,
 그 조건이 참인지 거짓인지에 따라 다른 코드를 실행할 수 있습니다. 게임 AI에서는 if 문이 자주 사용되며,
@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 ```
 
-### Pathfinding
+#### Pathfinding
 
 A* (에이-스타라고 읽습니다)와 같은 경로 탐색 알고리즘이나 내비게이션 메시(navmesh)는 캐릭터가 게임 환경을 탐색할 때
 가장 빠른 경로를 결정하는 데 사용됩니다. 이러한 알고리즘은 AI가 게임 레벨을 탐색할 때 막히거나 어리석게 보이지 않도록
@@ -78,7 +78,7 @@ Godot은 경로 탐색을 위해 크게 두 가지 상호 보완적인 옵션을
 
 참고로, 이러한 시스템은 AI 전용이 아닙니다. 예를 들어, 플레이어가 클릭한 위치로 캐릭터가 이동하는 시스템을 만드는 데에도 활용할 수 있습니다.
 
-### Structural programming patterns
+#### Structural programming patterns
 
 게임 AI가 점점 더 복잡해지고, 게임 안에서 다양한 AI가 필요해질수록, 코드를 체계적으로 정리하기 위해 더 정교한 구조를 사용하는 것이
 합리적일 수 있습니다. 특히, 프로그래밍을 모르는 팀원들이 AI 제작을 돕는 상황이라면 더욱 그렇습니다.
