@@ -736,6 +736,23 @@
 <p>이제 코딩을 시작할 시간입니다! 아직 열지 않으셨다면, 이번 프로젝트의 워크북인 <strong>M09. Top Down Movement (Workbook)</strong> 을 열어주시고 함께 시작해봅시다.</p>
 <hr />
 <h2 id="p3-building-the-runner-scene">P3 Building the runner scene</h2>
+<p>우선, 플레이어 캐릭터를 위한 씬을 설정하겠습니다. 여러분은 다음과 같은 작업을 하게 됩니다:</p>
+<ul>
+<li>
+<p>캐릭터를 움직이기 위해 CharacterBody2D를 루트 노드로 하는 씬을 생성합니다.</p>
+</li>
+<li>
+<p>CharacterBody2D의 자식으로 CollisionShape2D 노드를 추가합니다.</p>
+</li>
+<li>
+<p>캐릭터의 모습을 그리기 위해 Sprite2D 노드를 CharacterBody2D의 자식으로 추가합니다.</p>
+</li>
+</ul>
+<p>새로운 씬을 생성하고 루트 노드를 CharacterBody2D로 설정한 후, 씬의 이름을 <strong>Runner</strong> 로 지정해 주세요. 그러면 노드 옆에 경고 아이콘이 표시되는 것을 볼 수 있습니다. 경고 메시지는 다음과 같습니다: “이 노드에는 모양(shape)이 없기 때문에 다른 객체와 충돌하거나 상호작용할 수 없습니다. 자식 노드로 CollisionShape2D 또는 CollisionPolygon2D를 추가하는 것을 고려해보세요.”</p>
+<p><img alt="020_050_character_controller_no_shape.webp" src="../images/020_050_character_controller_no_shape.webp" /></p>
+<p>M4, M5, M6에서 만들었던 Area 노드들과 마찬가지로, <strong>모든 물리 노드</strong>는 게임의 물리 엔진과 상호작용하기 위해 <strong>충돌 모양(Collision Shape)</strong> 이 필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 [[Composition]] 방식을 사용하기 때문에, 충돌 모양은 전용 노드인 CollisionShape2D를 통해 설정됩니다.</p>
+<p>CharacterBody2D의 자식으로 CollisionShape2D 노드를 추가하세요. 그런 다음 <strong>인스펙터(Inspector)</strong> 에서 <strong>Shape</strong> 속성에 CircleShape2D를 할당해 주세요. 씬의 가운데로 줌인해보면, 아주 작은 파란색 원이 보일 것입니다. 곧 이 원을 더 크게 조정하게 될 것입니다.</p>
+<p><img alt="020_050_character_controller_with_shape.webp" src="../images/020_050_character_controller_with_shape.webp" /></p>
 
 
 
