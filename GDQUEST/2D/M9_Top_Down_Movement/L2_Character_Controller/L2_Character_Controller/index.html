@@ -411,6 +411,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#p3-building-the-runner-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3 Building the runner scene
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -614,6 +623,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#p3-building-the-runner-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3 Building the runner scene
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -672,7 +690,7 @@
 이 연산은 렌더링 전에 한 프레임 안에 처리되므로, 플레이어는 이를 시각적으로 인식하지 못합니다. 예를 들어, 플레이어가 벽에 부딪히면
 캐릭터가 벽에서 멈춘 것처럼 보이게 됩니다.</p>
 <p>개발자인 우리는, <strong>게임의 물리 레이어와 시각적 레이어가 잘 맞아떨어지는 듯한 착각을 줄 수 있는 도형들</strong> 을 찾아내는 역할을 하게 됩니다.</p>
-<details class="info">
+<details class="info" open="open">
 <summary>컴퓨터는 왜 충돌을 감지할 때 기하학적 도형을 사용할까요?</summary>
 <p>컴퓨터가 충돌을 감지할 때 기하학적 도형을 사용하는 이유는 <strong>성능 때문</strong> 입니다.</p>
 <p>가장 간단한 도형인 <strong>원(circle)</strong> 을 예로 들어보겠습니다. 두 원이 겹쳐지는지를 알아내기 위해서는 각 원의 중심 좌표와 반지름만 알면 됩니다. 두 중심 사이의 거리가 반지름의 합보다 작다면, 두 원은 겹친 것입니다.</p>
@@ -690,22 +708,34 @@
 부딪힐 때도 부드럽게 움직일 수 있습니다.</p>
 <p>CharacterBody2D는 2D 게임에서 플레이어 캐릭터를 구현할 때 아마도 가장 일반적으로 사용되는 노드입니다. 이 노드를 사용하면 <em>The Binding of Isaac</em> ,
 <em>Celeste</em> , <em>Dead Cells</em> 같은 게임에서 볼 수 있는 캐릭터나 몬스터도 구현할 수 있습니다.</p>
-<details class="info">
+<details class="info" open="open">
 <summary>다른 종류의 물리 노드는 무엇이 있을까요?</summary>
-<p>대부분의 게임 엔진과 마찬가지로, Godot에는 네 가지 주요 물리 노드가 있습니다:
-- <strong>Area2D 노드</strong> 는 다른 물리 노드와의 겹침(overlap)을 감지하지만 충돌은 처리하지 않습니다. 특정 영역에 진입했는지 감지하거나, 상호작용을 유발하거나, 아이템을 습득하거나, 총알을 발사할 때 등에 사용됩니다.
-- <strong>CharacterBody2D 노드</strong>는 충돌을 감지하고, 울퉁불퉁한 지형에서도 캐릭터를 부드럽게 움직일 수 있게 해줍니다. 특수한 함수를 통해 움직임을 정밀하게 제어할 수 있어, 캐릭터 컨트롤러를 만드는 데 매우 적합합니다. 캐릭터, 차량, 적, 그 외 이동이 필요한 오브젝트에 잘 어울립니다.
-- <strong>RigidBody2D 노드</strong>는 현실 세계의 물리 현상을 시뮬레이션하는 오브젝트입니다. 충돌하고, 튕기고, 떨어지고 등 다양한 물리 반응을 보여줍니다. 힘(force), 충격(impulse) 등을 설정해야 하므로 다른 노드보다 다루기 까다롭습니다. 공, 나무 상자, 파편처럼 현실적인 반응이 필요한 오브젝트에 적합하며, <em>Angry Birds</em> 같은 게임의 새나 차량에도 사용됩니다.
-- <strong>StaticBody2D 노드</strong>는 CharacterBody2D나 RigidBody2D 노드의 <strong>정적인 장애물</strong> 역할을 합니다. 움직이지 않는 벽이나 바닥 등에 사용할 수 있습니다. 움직이는 발판이나 장애물처럼 플레이어나 적을 막아야 하는 움직이는 오브젝트를 만들고 싶다면, 이 노드의 변형인 AnimatableBody2D 노드를 사용하시면 됩니다.</p>
+<p>대부분의 게임 엔진과 마찬가지로, Godot에는 네 가지 주요 물리 노드가 있습니다:</p>
+<ul>
+<li>
+<p><strong>Area2D 노드</strong> 는 다른 물리 노드와의 겹침(overlap)을 감지하지만 충돌은 처리하지 않습니다. 특정 영역에 진입했는지 감지하거나, 상호작용을 유발하거나, 아이템을 습득하거나, 총알을 발사할 때 등에 사용됩니다.</p>
+</li>
+<li>
+<p><strong>CharacterBody2D 노드</strong>는 충돌을 감지하고, 울퉁불퉁한 지형에서도 캐릭터를 부드럽게 움직일 수 있게 해줍니다. 특수한 함수를 통해 움직임을 정밀하게 제어할 수 있어, 캐릭터 컨트롤러를 만드는 데 매우 적합합니다. 캐릭터, 차량, 적, 그 외 이동이 필요한 오브젝트에 잘 어울립니다.</p>
+</li>
+<li>
+<p><strong>RigidBody2D 노드</strong>는 현실 세계의 물리 현상을 시뮬레이션하는 오브젝트입니다. 충돌하고, 튕기고, 떨어지고 등 다양한 물리 반응을 보여줍니다. 힘(force), 충격(impulse) 등을 설정해야 하므로 다른 노드보다 다루기 까다롭습니다. 공, 나무 상자, 파편처럼 현실적인 반응이 필요한 오브젝트에 적합하며, <em>Angry Birds</em> 같은 게임의 새나 차량에도 사용됩니다.</p>
+</li>
+<li>
+<p><strong>StaticBody2D 노드</strong>는 CharacterBody2D나 RigidBody2D 노드의 <strong>정적인 장애물</strong> 역할을 합니다. 움직이지 않는 벽이나 바닥 등에 사용할 수 있습니다. 움직이는 발판이나 장애물처럼 플레이어나 적을 막아야 하는 움직이는 오브젝트를 만들고 싶다면, 이 노드의 변형인 AnimatableBody2D 노드를 사용하시면 됩니다.</p>
+</li>
+</ul>
 <p>이번 모듈에서는 CharacterBody2D를 사용해 캐릭터 컨트롤러를 만들고, StaticBody2D를 사용해 벽을 구현할 예정입니다.</p>
 </details>
-<details class="info">
+<details class="info" open="open">
 <summary>그렇다면 캐릭터에는 보통 CharacterBody2D 노드를 사용하는데, 왜 이전에는 Area2D 노드를 사용했을까요?</summary>
 <p>아하! 그건 모두 하나의 <strong>복선</strong>이었습니다!</p>
 <p>초반에 Area2D 노드를 사용했던 이유는, 엔티티 간의 간단한 물리 상호작용을 소개하기 위함이었습니다. M4에서 우주선을 Area2D 노드로 만든 것은 이후 두 모듈에서 소개된 수집 아이템과 보물 상자를 준비하기 위한 과정이었습니다. 또한, 캐릭터 컨트롤러나 충돌 설정과 같은 약간의 복잡함 없이도 <strong>물리 상호작용과 속도 개념</strong>을 소개할 수 있는 좋은 방법이기도 했습니다.</p>
 <p>이러한 흐름 덕분에 이제 CharacterBody2D 노드를 배우는 것이 더 쉬워질 것이며, 캐릭터 애니메이션과 보는 방향을 다루는 방법도 자연스럽게 배울 수 있게 됩니다. 그리고 실제로 여러분은 종종 움직이는 영역(Area)을 만들거나, 플레이어 캐릭터에 Area를 붙여 함께 움직이게 해야 할 때가 많기 때문에, 지금까지 배운 내용은 여전히 유용합니다!</p>
 </details>
 <p>이제 코딩을 시작할 시간입니다! 아직 열지 않으셨다면, 이번 프로젝트의 워크북인 <strong>M09. Top Down Movement (Workbook)</strong> 을 열어주시고 함께 시작해봅시다.</p>
+<hr />
+<h2 id="p3-building-the-runner-scene">P3 Building the runner scene</h2>
 
 
 
