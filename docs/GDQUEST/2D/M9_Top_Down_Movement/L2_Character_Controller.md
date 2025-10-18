@@ -112,7 +112,7 @@ _Celeste_ , _Dead Cells_ 같은 게임에서 볼 수 있는 캐릭터나 몬스�
 ![020_050_character_controller_no_shape.webp](images/020_050_character_controller_no_shape.webp)
 
 M4, M5, M6에서 만들었던 Area 노드들과 마찬가지로, **모든 물리 노드**는 게임의 물리 엔진과 상호작용하기 위해 **충돌 모양(Collision Shape)** 이
-필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 [Collisions](../../Glossary/Collisions.md) 방식을 사용하기 
+필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 [Composition](../../Glossary/Composition.md) 방식을 사용하기 
 때문에, 충돌 모양은 전용 노드인 CollisionShape2D를 통해 설정됩니다.
 
 CharacterBody2D의 자식으로 CollisionShape2D 노드를 추가하세요. 그런 다음 **인스펙터(Inspector)** 에서 **Shape** 속성에 CircleShape2D를
