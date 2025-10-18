@@ -771,7 +771,7 @@
 이 연산은 렌더링 전에 한 프레임 안에 처리되므로, 플레이어는 이를 시각적으로 인식하지 못합니다. 예를 들어, 플레이어가 벽에 부딪히면
 캐릭터가 벽에서 멈춘 것처럼 보이게 됩니다.</p>
 <p>개발자인 우리는, <strong>게임의 물리 레이어와 시각적 레이어가 잘 맞아떨어지는 듯한 착각을 줄 수 있는 도형들</strong> 을 찾아내는 역할을 하게 됩니다.</p>
-<details class="info" open="open">
+<details class="info">
 <summary>컴퓨터는 왜 충돌을 감지할 때 기하학적 도형을 사용할까요?</summary>
 <p>컴퓨터가 충돌을 감지할 때 기하학적 도형을 사용하는 이유는 <strong>성능 때문</strong> 입니다.</p>
 <p>가장 간단한 도형인 <strong>원(circle)</strong> 을 예로 들어보겠습니다. 두 원이 겹쳐지는지를 알아내기 위해서는 각 원의 중심 좌표와 반지름만 알면 됩니다. 두 중심 사이의 거리가 반지름의 합보다 작다면, 두 원은 겹친 것입니다.</p>
@@ -789,7 +789,7 @@
 부딪힐 때도 부드럽게 움직일 수 있습니다.</p>
 <p>CharacterBody2D는 2D 게임에서 플레이어 캐릭터를 구현할 때 아마도 가장 일반적으로 사용되는 노드입니다. 이 노드를 사용하면 <em>The Binding of Isaac</em> ,
 <em>Celeste</em> , <em>Dead Cells</em> 같은 게임에서 볼 수 있는 캐릭터나 몬스터도 구현할 수 있습니다.</p>
-<details class="info" open="open">
+<details class="info">
 <summary>다른 종류의 물리 노드는 무엇이 있을까요?</summary>
 <p>대부분의 게임 엔진과 마찬가지로, Godot에는 네 가지 주요 물리 노드가 있습니다:</p>
 <ul>
@@ -834,11 +834,38 @@
 자식 노드로 CollisionShape2D 또는 CollisionPolygon2D를 추가하는 것을 고려해보세요.”</p>
 <p><img alt="020_050_character_controller_no_shape.webp" src="../images/020_050_character_controller_no_shape.webp" /></p>
 <p>M4, M5, M6에서 만들었던 Area 노드들과 마찬가지로, <strong>모든 물리 노드</strong>는 게임의 물리 엔진과 상호작용하기 위해 <strong>충돌 모양(Collision Shape)</strong> 이
-필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 <a href="../../../Glossary/Composition/">Composition</a> 방식을 사용하기 
+필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 <a href="../../../Glossary/Collisions/">Collisions</a> 방식을 사용하기 
 때문에, 충돌 모양은 전용 노드인 CollisionShape2D를 통해 설정됩니다.</p>
 <p>CharacterBody2D의 자식으로 CollisionShape2D 노드를 추가하세요. 그런 다음 <strong>인스펙터(Inspector)</strong> 에서 <strong>Shape</strong> 속성에 CircleShape2D를
 할당해 주세요. 씬의 가운데로 줌인해보면, 아주 작은 파란색 원이 보일 것입니다. 곧 이 원을 더 크게 조정하게 될 것입니다.</p>
 <p><img alt="020_050_character_controller_with_shape.webp" src="../images/020_050_character_controller_with_shape.webp" /></p>
+<p>Godot에서는 물리 노드와 충돌 모양만 있으면 상호작용을 만들 수 있습니다. 하지만 플레이어를 위해서는 시각적인 요소가 필요합니다.
+CharacterBody2D의 자식 노드로 Sprite2D 노드를 추가해주시고, 해당 Sprite2D의 이름을 Skin으로 변경해주십시오.</p>
+<p>그 다음, res://assets 디렉터리에 있는 runner_down.png 텍스처를 Skin 노드의 Texture 속성으로 끌어다 놓아주시기 바랍니다.
+나중에는 코드를 통해 이 이미지를 변경하겠지만, 지금은 충돌 모양의 크기를 올바르게 조정하기 위해 시각적인 참조가 필요합니다.</p>
+<p><img alt="020_060_character_controller_structure.webp" src="../images/020_060_character_controller_structure.webp" /></p>
+<p><strong>참고:</strong> 지금처럼 하나의 이미지만으로 게임을 프로토타입하는 경우가 자주 있습니다. 우리는 현재 게임잼 상황을 가정하고 있으므로,
+임시 아트를 사용하고 있는 것입니다. 이 모듈의 뒷부분에서는, 아직 캐릭터 애니메이션을 완성 중인 아티스트로부터 완전한 애니메이션 캐릭터를 받게 될 예정입니다.</p>
+<p>이제 충돌 모양을 스프라이트에 맞게 크기 조절할 수 있습니다… 잠깐만요! 스프라이트 뒤에 숨어 있네요!</p>
+<p>노드들은 씬 트리에서 위에서 아래 순서로 그려집니다. 충돌 원이 스프라이트 앞에 보이도록 하려면, Scene 독에서 Sprite2D 노드가 CollisionShape2D 
+노드보다 위에 있어야 합니다. Skin 노드를 CollisionShape2D 노드 위로 끌어올려 주십시오. 그러면 스프라이트 위에 충돌 원이 그려지는 것이 보이실 겁니다.</p>
+<p><img alt="020_063_character_controller_structure_collision_front.webp" src="../images/020_063_character_controller_structure_collision_front.webp" /></p>
+<p>탑다운 게임에서는 충돌 모양이 캐릭터의 발 주위에 위치할 때 충돌이 훨씬 자연스럽게 느껴집니다. 그렇지 않으면 캐릭터가 벽에서 멀리 떨어진 곳에서 멈추는 것처럼
+보일 수 있습니다.</p>
+<p>CollisionShape2D 노드를 아래쪽으로 조금 이동시켜서 캐릭터의 다리 부분에 오도록 해주십시오. Select 또는 Move 도구를 선택한 상태에서 Shift
+키를 누른 채 클릭하고 드래그하시면 한 축으로만 이동할 수 있습니다. 또한 키보드의 ↓ 키를 눌러 선택한 노드를 조금씩 이동할 수도 있습니다.</p>
+<p>그런 다음 Inspector에서 CircleShape2D 리소스를 확장하고, 반지름(Radius)을 늘려서 발을 대략적으로 덮을 수 있도록 조정해주십시오. 
+저는 23픽셀로 설정했습니다. 또한 씬 뷰 안의 주황색 원을 클릭하고 드래그해서 시각적으로 크기를 조정하실 수도 있습니다.</p>
+<p><img alt="020_065_character_controller_collision_resized.webp" src="../images/020_065_character_controller_collision_resized.webp" /></p>
+<details class="info">
+<summary>충돌 모양의 적절한 크기는 얼마인가요?</summary>
+<p>상황에 따라 다릅니다! 충돌 모양이 작을수록 캐릭터가 무언가에 부딪힐 가능성이 줄어듭니다. 적절한 크기는 보통 시행착오를 통해 찾게 됩니다. 보기에도 괜찮아 보이는 크기를 먼저 설정한 뒤, 플레이 테스트를 하면서 조금씩 조정해보시기 바랍니다.</p>
+</details>
+<p>최종적으로 완성된 씬은 다음과 같은 모습이어야 합니다:</p>
+<p><img alt="020_060_character_controller_structure_completed.webp" src="../images/020_060_character_controller_structure_completed.webp" /></p>
+<p>이제 캐릭터 설정이 완료되었습니다!  씬을 res://lessons 폴더에 runner.tscn이라는 이름으로 저장해주시기 바랍니다. 
+이제 캐릭터를 움직이게 만들어보겠습니다.</p>
+<hr />
 
 
 
