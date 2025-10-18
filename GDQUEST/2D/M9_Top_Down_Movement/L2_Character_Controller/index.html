@@ -859,7 +859,7 @@
 자식 노드로 CollisionShape2D 또는 CollisionPolygon2D를 추가하는 것을 고려해보세요.”</p>
 <p><img alt="020_050_character_controller_no_shape.webp" src="../images/020_050_character_controller_no_shape.webp" /></p>
 <p>M4, M5, M6에서 만들었던 Area 노드들과 마찬가지로, <strong>모든 물리 노드</strong>는 게임의 물리 엔진과 상호작용하기 위해 <strong>충돌 모양(Collision Shape)</strong> 이
-필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 <a href="../../../Glossary/Collisions/">Collisions</a> 방식을 사용하기 
+필요합니다. 물리 엔진은 이 모양을 기준으로 충돌을 감지합니다. Godot는 하나의 객체에 여러 모양을 사용할 수 있도록 <a href="../../../Glossary/Composition/">Composition</a> 방식을 사용하기 
 때문에, 충돌 모양은 전용 노드인 CollisionShape2D를 통해 설정됩니다.</p>
 <p>CharacterBody2D의 자식으로 CollisionShape2D 노드를 추가하세요. 그런 다음 <strong>인스펙터(Inspector)</strong> 에서 <strong>Shape</strong> 속성에 CircleShape2D를
 할당해 주세요. 씬의 가운데로 줌인해보면, 아주 작은 파란색 원이 보일 것입니다. 곧 이 원을 더 크게 조정하게 될 것입니다.</p>
