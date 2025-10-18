@@ -512,6 +512,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#p5-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      P5 Recap
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1020,6 +1029,34 @@ _physics_process()에서 처리해야 합니다. 그 이유는 무엇일까요?<
 <p><strong>기술:</strong> 입력 방향 계산, 캐릭터 바디 이동, 충돌 처리</p>
 </div>
 <p>충돌할 장애물을 추가하기에 앞서, 캐릭터가 움직이는 방향을 바라보도록 표시되는 텍스처를 동적으로 변경해보겠습니다.</p>
+<hr />
+<h2 id="p5-recap">P5 Recap</h2>
+<p>이번 레슨에서는 다음과 같은 내용을 배우셨습니다:</p>
+<ul>
+<li>
+<p>CharacterBody2D 노드를 설정하는 방법</p>
+</li>
+<li>
+<p>고정된 간격으로 실행되어야 하는 물리 관련 코드를 처리하기 위해 _physics_process()를 사용하는 방법</p>
+</li>
+<li>
+<p>move_and_slide()가 무엇이며, 그것을 어떻게 사용하는지</p>
+</li>
+</ul>
+<p><br></p>
+<p>이미 꽤 많은 내용을 다루셨습니다! 이제 캐릭터는 모든 방향으로 움직일 수 있게 되었지만, 항상 아래쪽만 바라보며 움직이고 있어요.
+보기에는 그다지 자연스럽지 않죠. 다음 레슨에서는 캐릭터가 움직이는 방향을 바라보도록 만드는 방법을 배우시게 됩니다.</p>
+<p><strong>코드 참조</strong></p>
+<p>다음은 이번 레슨 마지막에 완성된 runner.gd 스크립트의 전체 코드입니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody2D</span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">max_speed</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mf">600.0</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span><span class="s2">&quot;move_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_right&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_up&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_down&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">max_speed</span>
+<span class="w">    </span><span class="n">move_and_slide</span><span class="p">()</span>
+</code></pre></div>
 
 
 
