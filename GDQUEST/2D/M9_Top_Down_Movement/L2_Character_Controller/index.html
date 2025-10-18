@@ -488,6 +488,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#p4-moving-the-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      P4 Moving the character
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P4 Moving the character">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#move_and_slide" class="md-nav__link">
+    <span class="md-ellipsis">
+      move_and_slide() 함수
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -808,7 +832,7 @@
 </ul>
 <p>이번 모듈에서는 CharacterBody2D를 사용해 캐릭터 컨트롤러를 만들고, StaticBody2D를 사용해 벽을 구현할 예정입니다.</p>
 </details>
-<details class="info" open="open">
+<details class="info">
 <summary>그렇다면 캐릭터에는 보통 CharacterBody2D 노드를 사용하는데, 왜 이전에는 Area2D 노드를 사용했을까요?</summary>
 <p>아하! 그건 모두 하나의 <strong>복선</strong>이었습니다!</p>
 <p>초반에 Area2D 노드를 사용했던 이유는, 엔티티 간의 간단한 물리 상호작용을 소개하기 위함이었습니다. M4에서 우주선을 Area2D 노드로 만든 것은 이후 두 모듈에서 소개된 수집 아이템과 보물 상자를 준비하기 위한 과정이었습니다. 또한, 캐릭터 컨트롤러나 충돌 설정과 같은 약간의 복잡함 없이도 <strong>물리 상호작용과 속도 개념</strong>을 소개할 수 있는 좋은 방법이기도 했습니다.</p>
@@ -866,6 +890,148 @@ CharacterBody2D의 자식 노드로 Sprite2D 노드를 추가해주시고, 해�
 <p>이제 캐릭터 설정이 완료되었습니다!  씬을 res://lessons 폴더에 runner.tscn이라는 이름으로 저장해주시기 바랍니다. 
 이제 캐릭터를 움직이게 만들어보겠습니다.</p>
 <hr />
+<h2 id="p4-moving-the-character">P4 Moving the character</h2>
+<p>이 프로젝트에는 제가 미리 입력 액션(Input Action)을 설정해 두었으니, 바로 코딩으로 들어가실 수 있습니다! 해당 입력 액션은
+<strong>Project &gt; Project Settings… &gt; Input Map</strong> 메뉴에서 확인하실 수 있습니다.</p>
+<p>Runner 노드에 스크립트를 연결해 주십시오. 기본적으로 에디터는 CharacterBody2D 노드에 맞춘 템플릿을 사용할 것입니다. 
+기본 옵션을 그대로 수락하고 저장하시면 됩니다.</p>
+<p>Godot이 기본 템플릿에서 자동으로 채운 코드를 살펴보실 수 있습니다. 이 기본 스크립트는 많은 플랫폼 게임에서 유용한 출발점이 되는 코드입니다.
+해당 스크립트는 캐릭터에 중력을 적용하고, 좌우 방향키로 움직이며, 스페이스 바를 누르면 점프할 수 있게 해 줍니다. 하지만 지금 바로 실행해 보면
+캐릭터가 아래로 떨어지기만 할 것입니다. 왜냐하면 아직 바닥이 없기 때문입니다.</p>
+<video controls width="800" preload="metadata" playsinline>
+  <source src="/GDQUEST/2D/M9_Top_Down_Movement/videos/020_character_015_runner_template.mp4" type="video/mp4">
+  동영상을 보려면 브라우저가 video 태그를 지원해야 합니다.
+</video>
+
+<details class="info">
+<summary>내 캐릭터는 게임 창의 왼쪽 위에서 떨어지는데, 왜 선생님의 화면과 다른가요?</summary>
+<p>강의를 작성할 때에는 여러분이 내용을 더 쉽게 이해하실 수 있도록, 노드의 위치를 옮기거나 임시로 Camera2D를 추가하여 이미지나 영상 클립을 만듭니다. 영상과 동일한 장면을 재현하고 싶다면, Runner 노드를 <strong>일시적으로 게임 창 중앙으로 이동</strong>시키면 됩니다. 단, 나중에 원래 위치로 다시 돌려놓는 것을 잊지 마세요.</p>
+</details>
+<p>하지만 우리는 플랫폼 게임을 만드는 것이 아닙니다! 이것은 탑다운(top-down) 방식의 게임 캐릭터입니다.
+그러므로 원하신다면 코드를 읽어보셔도 되지만, <strong>첫 번째 줄인 extends CharacterBody2D를 제외하고는 모두 삭제하셔도 괜찮습니다.</strong></p>
+<details class="info">
+<summary>템플릿의 점프 메커니즘을 테스트해보고 싶다면 어떻게 하나요?</summary>
+<p>플랫포머 캐릭터 템플릿을 완전히 시험해보고 싶으시다면, 다음과 같이 하실 수 있습니다:</p>
+<ul>
+<li>새 씬을 생성합니다.</li>
+<li>새 씬에 러너 씬을 인스턴스화합니다.</li>
+<li>씬에 StaticBody2D 노드를 추가하고, 그 자식으로 CollisionShape2D 노드와 RectangleShape2D 리소스를 추가하여 게임 창 하단을 덮는 바닥 역할을 하도록 합니다.</li>
+</ul>
+<p>씬은 다음과 같은 모습이 되어야 합니다:</p>
+<p><img alt="020_016_runner_template_floor.webp" src="../images/020_016_runner_template_floor.webp" /></p>
+<p>그런 다음, 메뉴 항목에서 <strong>Debug &gt; Visible Collision Shapes</strong> 체크박스를 켜주시기 바랍니다. 이 옵션을 활성화하면 실행 중인 게임에서 콜리전 쉐이프가 보이게 됩니다. 이 옵션을 켜지 않으면, 방금 만든 바닥이 보이지 않게 됩니다.</p>
+<p>마지막으로, 씬을 실행하시면 캐릭터를 움직이고 점프해보며 재미있게 테스트하실 수 있습니다!</p>
+<p><img alt="020_character_017_runner_template_floor.mp4" src="../videos/020_character_017_runner_template_floor.mp4" /></p>
+<p>작업을 마치신 후에는, 이 임시 씬과 코드를 꼭 삭제하시고 러너 씬으로 돌아가시기 바랍니다.</p>
+</details>
+<p>템플릿 코드를 삭제하신 후에는 max_speed 변수를 추가해보겠습니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">max_speed</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mf">600.0</span>
+</code></pre></div>
+<p><strong>참고:</strong> 이 변수 이름은 max_speed이지만, 아직 속도 변화는 없습니다. 나중에 속도 변화 기능을 추가하실 예정입니다. 현재로서는 캐릭터의
+이동 속도를 의미합니다.</p>
+<p>마지막으로, 캐릭터의 움직임을 코드로 구현해보겠습니다. 먼저 코드를 읽어보신 후, 곧바로 설명을 드리겠습니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span><span class="s2">&quot;move_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_right&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_up&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_down&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">max_speed</span>
+<span class="w">    </span><span class="n">move_and_slide</span><span class="p">()</span>
+</code></pre></div>
+<p>좋습니다, 이제 하나씩 설명드리겠습니다:</p>
+<ol>
+<li>
+<p>우선, process() 대신 Godot의 _physics_process() 함수를 사용합니다. 충돌, 물리, 움직임과 관련된 모든 동작은 이 [[Physics Process Function]] 안에서 이루어져야 합니다. 이에 대해서는 아래에서 더 자세히 설명드리겠습니다.</p>
+</li>
+<li>
+<p>다음으로, 플레이어가 움직이려는 방향을 계산하기 위해 Godot의 편리한 Input.get_vector() 함수를 사용합니다. 이 함수는 이미 정규화된 방향 벡터를 반환해 줍니다. 이 함수는 네 개의 인자를 받는데, 각각 왼쪽, 오른쪽, 위쪽, 아래쪽 이동을 위한 입력 액션의 이름입니다. 이는 M4에서 사용했던 방향 계산 코드를 간단하게 만들어 주는 단축 방법입니다.</p>
+</li>
+<li>
+<p>속도 벡터는 방향 벡터에 max_speed 변수를 곱해서 계산합니다. CharacterBody2D 노드에는 velocity라는 내장 속성이 있어서, 캐릭터가 얼마나 빠르게 움직일지를 정의할 수 있습니다.</p>
+</li>
+<li>
+<p>마지막으로, move_and_slide() 함수를 호출합니다. 이 함수는 CharacterBody2D 노드에 기본적으로 포함된 함수로, 설정된 속도 벡터에 따라 캐릭터를 이동시키고 환경과의 충돌도 처리해 줍니다. 이 함수의 효과는 L4에서 장애물을 추가했을 때 확인하실 수 있습니다.</p>
+</li>
+</ol>
+<details class="info">
+<summary>왜 이번 강의 초반에는 Input.get_vector()를 사용하지 않았을까요?</summary>
+<p>이전 프로젝트에서는 Input.get_axis()를 사용했는데, 그 이유는 더 범용적이기 때문입니다. Input.get_axis()는 사이드 스크롤 게임이나 다양한 조작 방식이 있는 게임에서도 사용할 수 있습니다. 반면에 Input.get_vector()는 주로 탑다운 방식의 게임에 특화되어 있습니다.</p>
+<p>또한 Input.get_axis()를 사용함으로써 입력 방향을 계산하는 방법을 설명할 기회가 되었습니다. 이 과정에서 벡터를 정규화하는 개념을 배우실 수 있었고, 이는 게임 개발에서 매우 중요한 기초 개념입니다. 정규화는 입력 방향 계산뿐만 아니라, 예를 들어 충돌한 표면의 각도를 감지하거나, 오브젝트의 방향을 계산하거나, 3D 모델에 빛과 그림자를 적용할 때 등 다양한 상황에서 사용됩니다.</p>
+</details>
+<p>이번 레슨에서 새롭게 등장한 함수가 _physics_process()입니다. 앞서 언급한 것처럼, 물리와 관련된 코드는 _process() 대신 
+_physics_process()에서 처리해야 합니다. 그 이유는 무엇일까요?</p>
+<p>그 이유는 CharacterBody2D 노드가 게임 세계의 다른 물리 오브젝트들과 동기화되어야 하기 때문입니다.
+또한, 물리 엔진은 버그를 방지하기 위해 물리 시뮬레이션을 일정한 시간 간격으로 실행해야 합니다.</p>
+<p>_process() 함수는 프레임마다 Godot이 계산하는 데 걸리는 시간에 따라 계속 변하는 delta 값을 받습니다. 
+만약 게임이 일시적으로 멈추거나 느려지면 delta 값이 매우 커질 수 있습니다. 그 결과, _process()에서 움직이는 게임 오브젝트들이 벽이나 바닥을
+뚫고 지나가는 현상이 발생할 수 있습니다. 반면에 _physics_process() 함수는 기본적으로 1/60초의 고정된 delta 값으로 실행되므로,
+이런 종류의 버그를 예방할 수 있습니다.</p>
+<p>따라서 _physics_process() 함수는 물리 엔진과의 동기화를 가능하게 해줄 뿐만 아니라, 변동하는 delta 값으로 인해 생길 수 있는 버그도 방지해줍니다.
+앞으로는 Area2D 노드의 이동을 포함하여, 물리와 관련된 모든 코드는 이 함수 안에서 처리하셔야 합니다.</p>
+<details class="info">
+<summary>하지만 이전 모듈들에서는 Area에 대해 _physics_process()를 사용하지 않았는데도 잘 작동했잖아요. 정말 꼭 사용해야 하나요?</summary>
+<p>좋은 지적이십니다! 실제로 많은 경우, _process() 함수에서 물리 오브젝트를 움직이더라도 겉보기에는 잘 작동하는 것처럼 보일 수 있습니다. 그러나 컴퓨터의 다른 프로그램 때문에 게임이 일시적으로 멈출 수 있기 때문에, 오브젝트가 게임 세계 밖으로 벗어나는 것을 방지하려면 항상 _physics_process()를 사용하는 것이 좋습니다.</p>
+<p>또한, 물리 오브젝트에 대해 _process()를 사용할 경우 발생하는 문제는 보다 미묘할 수 있습니다. _process()를 사용하면 물리 오브젝트의 위치 변화가 물리 엔진과 동기화되지 않을 수 있으며, 이로 인해 작은 오차나 약간의 입력 지연이 생길 수 있습니다. 이러한 문제는 눈치채기 어려운 경우가 많지만, 실제로는 캐릭터가 입력에 비해 한 프레임 늦게 움직이거나 충돌을 처리하는 경우가 생기기도 합니다.</p>
+</details>
+<h3 id="move_and_slide">move_and_slide() 함수</h3>
+<p>캐릭터를 이동시키기 위해 우리는 move_and_slide() 함수를 사용하고 있습니다. 이 함수는 CharacterBody2D 노드의 강력한 기능 중 하나입니다.
+캐릭터를 이동시키고 delta 값을 자동으로 처리해줄 뿐만 아니라, 충돌까지 함께 처리해줍니다. 캐릭터가 장애물에 부딪히면, 물리 엔진은 캐릭터의 위치를
+자동으로 조정하여 장애물을 따라 미끄러지듯 이동하게 합니다.</p>
+<p>다음은 캐릭터가 기울어진 벽을 향해 움직이는 상황을 나타낸 그림입니다. 초록색 원은 캐릭터를 나타내며, 분홍색 화살표는 이번 프레임에서 캐릭터가
+이동하려는 방향을 나타냅니다. 이 예시에서는 캐릭터가 벽과 충돌하게 됩니다.</p>
+<p><img alt="020_070_move_and_slide_illustration_01.webp" src="020_070_move_and_slide_illustration_01.webp" /></p>
+<p>move_and_slide()를 사용하면 캐릭터의 벡터가 가상으로 두 부분으로 나뉘게 됩니다. 엔진은 먼저 캐릭터를 벽에 닿도록 이동시키고,
+그 다음 벽을 따라 미끄러지듯 이동시킵니다. 캐릭터의 속도에 따라, 최종 위치는 벽을 따라 이동한 어느 지점이 될 것입니다. 이 모든 동작은
+한 프레임 안에 일어나게 됩니다.</p>
+<p><img alt="020_070_move_and_slide_illustration_02.webp" src="020_070_move_and_slide_illustration_02.webp" /></p>
+<details class="info">
+<summary>캐릭터가 벽에 부딪혔을 때 미끄러지지 않고 멈추게 하려면 어떻게 하나요?</summary>
+<p>보통은 벽을 따라 미끄러지는 동작이 필요한 경우가 많기 때문에, 처음에는 move_and_slide()를 사용하는 것이 일반적입니다. 캐릭터가 충돌 시 갑자기 멈추는 것을 원하는 게임은 드물지만, 만약 충돌 시 멈추게 하고 싶다면 move_and_collide() 메서드를 사용할 수 있습니다. 이 메서드는 충돌이 발생했을 때의 동작을 훨씬 더 세밀하게 제어할 수 있게 해줍니다.</p>
+<p>다음은 어떤 오브젝트에든 충돌하면 캐릭터를 멈추게 하는 코드 예시입니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">collision</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">move_and_collide</span><span class="p">(</span><span class="n">velocity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="n">collision</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">:</span>
+<span class="w">    </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">ZERO</span>
+</code></pre></div>
+<p>move_and_collide() 함수는 충돌이 발생하면 KinematicCollision2D 객체를 반환합니다. 이 객체는 캐릭터가 무엇과 충돌했는지, 충돌 지점은 어디인지 등의 정보를 담고 있습니다. 반환값이 null이 아니라면 충돌이 발생한 것이므로, velocity를 Vector2.ZERO로 설정하여 캐릭터를 멈출 수 있습니다.</p>
+<p>아래 코드 조각은 move_and_slide()가 내부적으로 어떻게 동작하여 캐릭터를 벽을 따라 미끄러지게 하는지를 보여줍니다. 단순화된 예시이지만, 어떤 방식으로 동작하는지 이해하는 데 도움이 됩니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">collision</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">move_and_collide</span><span class="p">(</span><span class="n">velocity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="n">collision</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">:</span>
+<span class="w">    </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">slide</span><span class="p">(</span><span class="n">collision</span><span class="o">.</span><span class="n">get_normal</span><span class="p">())</span>
+</code></pre></div>
+</details>
+<p>이제 캐릭터를 직접 움직여보실 수 있습니다! 씬을 실행하고 방향키 또는 W, A, S, D 키로 캐릭터를 이동시켜 보세요. 장애물이 없어서 재미는 덜하지만,
+캐릭터가 움직이는 모습을 확인하실 수 있습니다.</p>
+<p><img alt="020_character_020_runner_movement.mp4" src="020_character_020_runner_movement.mp4" /></p>
+<p><strong>한 가지 마지막으로 해야 할 일이 남았습니다:</strong> 캐릭터의 <strong>Motion Mode</strong>를 설정하는 것입니다. CharacterBody2D 노드에는 캐릭터의 이동
+방식을 정의하는 <strong>Motion Mode</strong>라는 속성이 있습니다. 이 속성은 Grounded 또는 Floating 중 하나로 설정할 수 있으며, 기본값은 Grounded입니다.
+이 모드는 캐릭터가 지면에 있다는 전제를 가지고 있어, 특정 각도에서는 미끄러지듯 움직이게 하고, 다른 각도에서는 멈추도록 속도를 조정합니다. 이러한 설정은
+플랫포머 게임에 적합합니다. 하지만 저희가 만드는 게임에서는 이로 인해 이상한 동작이 발생할 수 있습니다. 예를 들어, 캐릭터가 경사진 곳에 닿으면 미끄러지지
+않고 멈춰버리는 등의 문제가 생길 수 있습니다.</p>
+<p><img alt="020_080_character_controller_motion_mode.webp" src="020_080_character_controller_motion_mode.webp" /></p>
+<p>이 문제를 해결하려면, <strong>Motion Mode</strong> 속성을 <strong>Floating</strong>으로 설정해주시기 바랍니다.</p>
+<p><img alt="020_085_character_controller_motion_mode_floating.webp" src="020_085_character_controller_motion_mode_floating.webp" /></p>
+<p>이제 기반 작업이 모두 완료되었습니다! CharacterBody2D 노드를 설정하고, 콜리전 쉐이프를 추가하고, 캐릭터가 움직이도록 만들었습니다. 잠시 시간을
+내어 이번에 작성한 코드와 M4에서 작성했던 우주선 코드와 비교해보겠습니다.</p>
+<p>M4에서 우주선을 위해 작성했던 코드가 기억나시나요? 방금 작성한 러너 코드와 비교해 보겠습니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="n">direction</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">&quot;move_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_right&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">direction</span><span class="o">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">&quot;move_up&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_down&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">direction</span><span class="o">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1.0</span><span class="p">:</span>
+<span class="w">        </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+
+<span class="w">    </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">max_speed</span>
+<span class="w">    </span><span class="n">position</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">velocity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span>
+</code></pre></div>
+<p>세부적인 코드는 다르지만, 개념적으로는 매우 유사합니다. 플레이어의 입력 방향을 계산하고, 속도를 계산한 다음, 그에 따라 우주선을 이동시켰습니다.</p>
+<p>2~6번째 줄은 러너 코드에서 Input.get_vector()를 사용하는 것과 동일한 역할을 합니다. 즉, 이 새로운 입력 함수는 몇 줄의 코드를 줄여주는
+효과가 있습니다! 8번째 줄에서는 속도를 계산하고, 마지막 9번째 줄에서는 위치를 직접 변경하여 우주선을 이동시켰습니다.</p>
+<div class="admonition example">
+<p class="admonition-title">연습이 완벽을 만듭니다.</p>
+<p>이제 새롭게 익힌 기술을 잘 활용해볼 시간입니다. Godot에서 워크북 프로젝트를 열어 따라해 보세요.
+<br>
+<strong>미션: 우주선을 운석 지대 사이로 조종하세요</strong></p>
+<p><strong>L2.P1</strong></p>
+<p><strong>기술:</strong> 입력 방향 계산, 캐릭터 바디 이동, 충돌 처리</p>
+</div>
+<p>충돌할 장애물을 추가하기에 앞서, 캐릭터가 움직이는 방향을 바라보도록 표시되는 텍스처를 동적으로 변경해보겠습니다.</p>
 
 
 
