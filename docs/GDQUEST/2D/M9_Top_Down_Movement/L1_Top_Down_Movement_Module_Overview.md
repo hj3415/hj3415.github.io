@@ -13,10 +13,7 @@ Godot에는 이러한 역할을 위한 전용 노드가 있습니다.
 이 게임잼의 주제는 “경주(Race)“입니다. 우리의 목표는 작은 달리기 선수를 조종하여 결승선을 통과하게 만드는 간단한 탑다운(top-down) 
 레이싱 게임을 만드는 것입니다.
 
-<video controls width="800" preload="metadata" playsinline>
-  <source src="/GDQUEST/2D/M9_Top_Down_Movement/videos/010_overview_result.mp4" type="video/mp4">
-  동영상을 보려면 브라우저가 video 태그를 지원해야 합니다.
-</video>
+![010_overview_result.mp4](videos/010_overview_result.mp4)
 
 ---
 
