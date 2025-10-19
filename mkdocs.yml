@@ -11,7 +11,7 @@ theme:
     - search.highlight    # 검색어가 본문에 하이라이트
     - content.code.copy      # 코드 블록에 복사 버튼 자동 추가
     - header.autohide       # 스크롤 시 상단 헤더 자동 숨김
-    - toc.integrate         # 페이지 좌측이 아닌 콘텐츠 상단에 소목차 표시
+    #- toc.integrate         # 페이지 좌측이 아닌 콘텐츠 상단에 소목차 표시
     - content.action.edit
     - content.action.view
 
