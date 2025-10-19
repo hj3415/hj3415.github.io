@@ -940,16 +940,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#typescript" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      자동 설치되는 패키지 예시 (TypeScript 기준)
+      자동 설치되는 패키지 예시
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       자동 생성되는 주요 설정 예시
     </span>
@@ -1055,16 +1055,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#typescript" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      자동 설치되는 패키지 예시 (TypeScript 기준)
+      자동 설치되는 패키지 예시
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       자동 생성되는 주요 설정 예시
     </span>
@@ -1124,97 +1124,107 @@
 <tbody>
 <tr>
 <td><strong>Vue Router</strong></td>
-<td>✅ vue-router@4 자동 설치<br/>✅ src/router/index.ts 생성<br/>✅ App.vue에 <router-view />와 <router-link> 기본 포함<br/>✅ main.ts에 app.use(router) 자동 추가</td>
+<td>✅ vue-router@4 자동 설치<br/>✅ src/router/index.js 생성<br/>✅ App.vue에 <router-view />와 <router-link> 기본 포함<br/>✅ main.js에 app.use(router) 자동 추가</td>
 </tr>
 <tr>
 <td><strong>Pinia</strong></td>
-<td>✅ pinia 자동 설치<br/>✅ src/stores/counter.ts 생성<br/>✅ main.ts에 app.use(createPinia()) 자동 추가</td>
+<td>✅ pinia 자동 설치<br/>✅ src/stores/counter.js 생성<br/>✅ main.js에 app.use(createPinia()) 자동 추가</td>
 </tr>
 <tr>
 <td><strong>ESLint</strong></td>
-<td>✅ eslint, eslint-plugin-vue, @vue/eslint-config-* 자동 설치<br/>✅ .eslintrc.cjs 자동 생성 (JS/TS 여부에 따라 다르게)<br/>✅ package.json에 "lint" 스크립트 추가</td>
+<td>✅ eslint, eslint-plugin-vue, @vue/eslint-config-* 자동 설치<br/>✅ eslint.config.js 자동 생성 (JS/TS 여부에 따라 다르게)<br/>✅ package.json에 "lint" 스크립트 추가</td>
 </tr>
 <tr>
 <td><strong>Prettier</strong></td>
-<td>✅ prettier, @vue/eslint-config-prettier 자동 설치<br/>✅ .prettierrc.cjs 또는 prettier.config.cjs 생성<br/>✅ ESLint와 충돌 안 나게 규칙 자동 조정</td>
+<td>✅ prettier, @vue/eslint-config-prettier 자동 설치<br/>✅ .prettierrc.json<br/>✅ ESLint와 충돌 안 나게 규칙 자동 조정</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h4 id="_2">실제로 자동 생성되는 주요 파일 구조</h4>
-<p>예를 들어 <strong>Vue 3 + TS + Router + Pinia + ESLint + Prettier</strong>로 만들면</p>
+<p>예를 들어 <strong>Vue 3 + JS + Router + Pinia + ESLint + Prettier</strong>로 만들면</p>
 <div class="highlight"><pre><span></span><code>src/
  ├ assets/
  ├ components/
  │  └ HelloWorld.vue
  ├ router/
- │  └ index.ts
+ │  └ index.js
  ├ stores/
- │  └ counter.ts
+ │  └ counter.js
  ├ views/
  │  ├ HomeView.vue
  │  └ AboutView.vue
  ├ App.vue
- └ main.ts
-.eslintrc.cjs
-.prettierrc.cjs
+ └ main.js
+eslint.config.js
+.prettierrc.json
 tsconfig.json
-vite.config.ts
+vite.config.js
 package.json
 </code></pre></div>
 <hr />
-<h4 id="typescript">자동 설치되는 패키지 예시 (TypeScript 기준)</h4>
-<div class="highlight"><pre><span></span><code><span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;@typescript-eslint/eslint-plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^7.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;@typescript-eslint/parser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^7.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;@vue/eslint-config-prettier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^10.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;@vue/eslint-config-typescript&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^13.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;eslint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^9.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;eslint-plugin-vue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^9.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;prettier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;typescript&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^5.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;vite&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^5.x&quot;</span>
-<span class="p">},</span>
-<span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;vue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;vue-router&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^4.x&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;pinia&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^2.x&quot;</span>
-<span class="p">}</span>
+<h4 id="_3">자동 설치되는 패키지 예시</h4>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;pinia&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.0.3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;vue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.5.22&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;vue-router&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^4.5.1&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@eslint/js&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^9.33.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;@vitejs/plugin-vue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^6.0.1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;@vue/eslint-config-prettier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^10.2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;eslint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^9.33.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;eslint-plugin-vue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~10.4.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;globals&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^16.3.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;prettier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.6.2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;vite&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^7.1.7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;vite-plugin-vue-devtools&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^8.0.2&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h4 id="_3">자동 생성되는 주요 설정 예시</h4>
-<p>**.eslintrc.cjs</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* eslint-env node */</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">root</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s1">&#39;eslint:recommended&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="s1">&#39;plugin:vue/vue3-recommended&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="s1">&#39;plugin:@typescript-eslint/recommended&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="s1">&#39;@vue/eslint-config-typescript&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="s1">&#39;@vue/eslint-config-prettier&#39;</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nx">rules</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s1">&#39;vue/multi-word-component-names&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;off&#39;</span>
-<span class="w">  </span><span class="p">}</span>
+<h4 id="_4">자동 생성되는 주요 설정 예시</h4>
+<p><strong>eslint.config.js</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">([</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;app/files-to-lint&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">files</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;**/*.{js,mjs,jsx,vue}&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nx">globalIgnores</span><span class="p">([</span><span class="s1">&#39;**/dist/**&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;**/dist-ssr/**&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;**/coverage/**&#39;</span><span class="p">]),</span>
+
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">languageOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">globals</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...</span><span class="nx">globals</span><span class="p">.</span><span class="nx">browser</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nx">js</span><span class="p">.</span><span class="nx">configs</span><span class="p">.</span><span class="nx">recommended</span><span class="p">,</span>
+<span class="w">  </span><span class="p">...</span><span class="nx">pluginVue</span><span class="p">.</span><span class="nx">configs</span><span class="p">[</span><span class="s1">&#39;flat/essential&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">skipFormatting</span><span class="p">,</span>
+<span class="p">])</span>
+</code></pre></div>
+<p><strong>.prettierrc.json</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json.schemastore.org/prettierrc&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;semi&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;singleQuote&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;printWidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>prettier.config.cjs</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">semi</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">singleQuote</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">trailingComma</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;none&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><strong>main.ts</strong></p>
+<p><strong>main.js</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createApp</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vue&#39;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createPinia</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;pinia&#39;</span>
+
 <span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./App.vue&#39;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./router&#39;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">createPinia</span><span class="p">())</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">router</span><span class="p">)</span>
+
 <span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
@@ -1235,7 +1245,7 @@ package.json
 </tr>
 <tr>
 <td>설정 파일</td>
-<td>직접 .eslintrc.cjs, .prettierrc.cjs 작성</td>
+<td>직접 eslint.config.js, .prettierrc.json 작성</td>
 <td>자동 생성</td>
 </tr>
 <tr>
