@@ -1224,7 +1224,7 @@
 <p><strong>Node.js 18+</strong> (설치 후 node -v, npm -v 확인)</p>
 </li>
 <li>
-<p><strong>PyCharm Professional</strong> (Settings에 JavaScript/Vue/Node 설정이 보여야 함)</p>
+<p><strong>PyCharm Professional</strong> (설정에 JavaScript/Vue/Node 설정이 보여야 함)</p>
 </li>
 <li>
 <p>(선택) Django 백엔드와 함께 돌릴 계획이면 Python venv 준비</p>
@@ -1255,36 +1255,35 @@ npm run dev
 <hr />
 <h4 id="2-pycharm-professional">2. PyCharm Professional 설정</h4>
 <p><strong>2-1. Node 인터프리터 연결</strong></p>
-<p>Settings ⟶ Languages &amp; Frameworks ⟶ Node.js and NPM</p>
+<p>설정 ⟶ 언어 및 프레임워크 ⟶ Node.js</p>
 <ul>
 <li><strong>Node interpreter</strong>: (System Node) 선택 </li>
 <li><strong>Package manager</strong>: npm (또는 pnpm/yarn 사용 시 변경)</li>
 </ul>
 <p><strong>2-2. Vue/TS/ESLint/Prettier 인식</strong></p>
 <ul>
-<li>Settings ⟶ Plugins 에서 <strong>Vue.js</strong>, <strong>JavaScript and TypeScript</strong> 활성화(보통 기본 포함)</li>
-<li>Settings ⟶ Languages &amp; Frameworks ⟶ JavaScript : Language Level = ECMAScript 2022 이상</li>
-<li>Settings ⟶ Languages &amp; Frameworks ⟶ TypeScript :<ul>
-<li><strong>TypeScript Language Service 활성화</strong> (tsconfig 자동 감지)</li>
+<li>설정 ⟶ Plugins 에서 <strong>Vue.js</strong>, <strong>JavaScript and TypeScript</strong> 활성화(보통 기본 포함)</li>
+<li>설정 ⟶ 언어 및 프레임워크 ⟶ JavaScript : Language Level = ECMAScript 2022 이상</li>
+<li>설정 ⟶ 언어 및 프레임워크 ⟶ TypeScript :<ul>
+<li><strong>TypeScript 언어 서비스 체크</strong> (tsconfig 자동 감지)</li>
 </ul>
 </li>
-<li>Settings ⟶ Languages &amp; Frameworks ⟶ Code Quality Tools ⟶ ESLint :<ul>
-<li><strong>Automatic ESLint configuration</strong> or <strong>Automatic ESLint from node_modules</strong> 선택 </li>
-<li>“Run for files”에 <em>.vue, </em>.ts, *.js 포함되어 있는지 확인</li>
+<li>설정 ⟶ 언어 및 프레임워크 ⟶ Javascript ⟶ 코드 품질 도구 ⟶ ESLint :<ul>
+<li><strong>자동 ESLint 구성(A)</strong> 선택 </li>
+<li>“다음 파일에 대해 실행”에 <em>.vue, </em>.ts, *.js 포함되어 있는지 확인</li>
 </ul>
 </li>
-<li>Settings ⟶ Tools ⟶ Actions on Save:<ul>
-<li><strong>Run eslint –fix</strong> 체크 (가능하면)</li>
-<li><strong>Reformat code</strong> + <strong>Optimize imports</strong> 켜두면 편함</li>
+<li>설정 ⟶ 도구 ⟶ 저장 시 액션:<ul>
+<li><strong>eslint –fix 실행</strong> 체크 (가능하면)</li>
+<li><strong>코드 서식 다시 지정</strong> + <strong>import 문 최적화</strong> 켜두면 편함</li>
 </ul>
 </li>
 <li>Prettier 사용 시:<ul>
-<li>Settings ⟶ Languages &amp; Frameworks ⟶ Code Quality Tools ⟶ Prettier<ul>
-<li>Prettier package: frontend/node_modules/prettier</li>
-<li>On ‘Reformat with Prettier’ for: *<em>/</em>.{vue,ts,js,json,css,scss,md} 등</li>
+<li>설정 ⟶ 언어 및 프레임워크 ⟶ Javascript ⟶ Prettier<ul>
+<li><strong>자동 Prettier 구성(A)</strong> 선택 </li>
 </ul>
 </li>
-<li>또는 Actions on Save에서 <strong>Prettier on save</strong> 체크</li>
+<li>또는 저장 시 액션에서 <strong>Prettier 실행</strong> 체크</li>
 </ul>
 </li>
 </ul>
@@ -1420,7 +1419,7 @@ npm<span class="w"> </span>run<span class="w"> </span>build
 <li>
 <p><strong>ESLint 오류 자동 고치기</strong></p>
 <ul>
-<li>Settings ⟶ Tools ⟶ Actions on Save ⟶ ESLint: Run eslint --fix 체크</li>
+<li>설정 ⟶ Tools ⟶ Actions on Save ⟶ ESLint: Run eslint --fix 체크</li>
 </ul>
 </li>
 <li>
