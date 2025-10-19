@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/">
+        <link rel="prev" href="../L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/">
       
       
-        <link rel="next" href="../L2_CORS_vs_CSRF/">
+        <link rel="next" href="../L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>L1 CORS 설정법 - Docs for hj3415</title>
+        <title>L2 CORS vs CSRF - Docs for hj3415</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              L1 CORS 설정법
+              L2 CORS vs CSRF
             
           </span>
         </div>
@@ -1004,6 +1004,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L1 CORS 설정법
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1019,7 +1042,7 @@
   
   
   <span class="md-ellipsis">
-    L1 CORS 설정법
+    L2 CORS vs CSRF
     
   </span>
   
@@ -1032,7 +1055,7 @@
   
   
   <span class="md-ellipsis">
-    L1 CORS 설정법
+    L2 CORS vs CSRF
     
   </span>
   
@@ -1055,9 +1078,102 @@
         <li class="md-nav__item">
   <a href="#cors" class="md-nav__link">
     <span class="md-ellipsis">
-      CORS가 뭐였는지 다시 정리
+      CORS는 “요청할 수 있나?”의 문제
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSRF는 “내 세션을 훔치려는 공격”의 문제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-vs-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      CORS vs CSRF 정리 비교표
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vueaxios-django-csrf-postputdelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vue(axios) + Django 조합에서 CSRF 토큰을 자동으로 포함해 안전하게 POST/PUT/DELETE 요청하는 “실전 최소 세트”
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vue(axios) + Django 조합에서 CSRF 토큰을 자동으로 포함해 안전하게 POST/PUT/DELETE 요청하는 “실전 최소 세트”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Django 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vue-axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 프런트(Vue) – axios 설정
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 프런트(Vue) – axios 설정">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-axios-xsrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      A안) axios의 내장 XSRF 기능 활용 (가장 간단, 추천)**
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      B안) 직접 쿠키 읽어 수동으로 헤더 설정 (참고용)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vite-cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Vite 개발 프록시(선택 – CORS 편의)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 체크리스트 (자주 막히는 포인트)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1065,29 +1181,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../L2_CORS_vs_CSRF/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    L2 CORS vs CSRF
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1166,9 +1259,102 @@
         <li class="md-nav__item">
   <a href="#cors" class="md-nav__link">
     <span class="md-ellipsis">
-      CORS가 뭐였는지 다시 정리
+      CORS는 “요청할 수 있나?”의 문제
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSRF는 “내 세션을 훔치려는 공격”의 문제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-vs-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      CORS vs CSRF 정리 비교표
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vueaxios-django-csrf-postputdelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vue(axios) + Django 조합에서 CSRF 토큰을 자동으로 포함해 안전하게 POST/PUT/DELETE 요청하는 “실전 최소 세트”
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vue(axios) + Django 조합에서 CSRF 토큰을 자동으로 포함해 안전하게 POST/PUT/DELETE 요청하는 “실전 최소 세트”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Django 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vue-axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 프런트(Vue) – axios 설정
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 프런트(Vue) – axios 설정">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-axios-xsrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      A안) axios의 내장 XSRF 기능 활용 (가장 간단, 추천)**
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      B안) 직접 쿠키 읽어 수동으로 헤더 설정 (참고용)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vite-cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Vite 개발 프록시(선택 – CORS 편의)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 체크리스트 (자주 막히는 포인트)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1188,7 +1374,7 @@
 
 
   
-    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/풀스택개발/Frontend/4주차/L1_CORS_설정법.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/풀스택개발/Frontend/4주차/L2_CORS_vs_CSRF.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1197,131 +1383,309 @@
     
       
     
-    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/풀스택개발/Frontend/4주차/L1_CORS_설정법.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/풀스택개발/Frontend/4주차/L2_CORS_vs_CSRF.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>L1 CORS 설정법</h1>
+  <h1>L2 CORS vs CSRF</h1>
 
-<blockquote>
-<p><strong>“CORS 방지 설정은 원칙적으로 백엔드에서 하는 게 정답”</strong>이에요. 하지만 <strong>“개발 중(local 환경)”에는 프론트엔드(Vite 등)에서 임시로 proxy 설정을 써도 괜찮습니다.</strong></p>
-</blockquote>
-<p>즉,</p>
-<ul>
-<li><strong>운영 서버(배포 후)</strong> → 백엔드에서 CORS 설정 필수   </li>
-<li><strong>로컬 개발 환경</strong> → 프록시(proxy)로 임시 회피 가능</li>
-</ul>
+<p>이제 CORS랑 CSRF의 차이를 확실히 이해해두면 웹 보안의 큰 그림이 완성돼요.</p>
+<p>두 개 이름이 비슷해서 헷갈리지만, <strong>완전히 다른 개념</strong>이에요.</p>
 <hr />
-<h4 id="cors">CORS가 뭐였는지 다시 정리</h4>
-<p><strong>CORS(Cross-Origin Resource Sharing)</strong> = “서로 다른 출처(origin)” 간의 요청을 <strong>브라우저가 차단</strong>하는 보안 정책이에요.</p>
-<p>예를 들어</p>
+<p><strong>한 줄 요약부터</strong></p>
 <table>
 <thead>
 <tr>
-<th><strong>프론트엔드</strong></th>
-<th><strong>백엔드</strong></th>
-<th><strong>결과</strong></th>
+<th><strong>구분</strong></th>
+<th><strong>CORS</strong></th>
+<th><strong>CSRF</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>http://localhost:5173</td>
-<td>http://localhost:8000</td>
-<td>❌ 차단됨 (포트 다름 = 다른 origin)</td>
+<td>풀네임</td>
+<td>Cross-Origin Resource Sharing</td>
+<td>Cross-Site Request Forgery</td>
+</tr>
+<tr>
+<td>초점</td>
+<td><strong>“다른 도메인에서 접근해도 되나?”</strong></td>
+<td><strong>“내 세션을 도용하려는 공격”</strong></td>
+</tr>
+<tr>
+<td>주체</td>
+<td><strong>브라우저 정책</strong></td>
+<td><strong>공격자가 위조 요청을 보내는 문제</strong></td>
+</tr>
+<tr>
+<td>해결 위치</td>
+<td>백엔드(서버 응답 헤더)</td>
+<td>백엔드(토큰 검증 등)</td>
+</tr>
+<tr>
+<td>언제 문제됨</td>
+<td>프론트가 다른 오리진(API 서버)에 요청할 때</td>
+<td>로그인/세션 기반 사이트에서 POST 요청할 때</td>
 </tr>
 </tbody>
 </table>
-<p>→ 브라우저는 이렇게 말함:</p>
-<blockquote>
-<p>“둘의 origin이 다르니까, 백엔드가 허락한 요청만 보낼 수 있어!”</p>
-</blockquote>
 <hr />
-<p><strong>그래서 정식 방법은 백엔드에서 허용하는 것</strong></p>
-<p>백엔드에서 아래처럼 설정해줘야 해요.</p>
-<p><strong>Django 예시</strong></p>
-<p>패키지 설치</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>django-cors-headers
+<h4 id="cors">CORS는 “요청할 수 있나?”의 문제</h4>
+<p>CORS는 “이 <strong>사이트(origin)</strong> 가 이 <strong>서버(origin)</strong> 에 요청을 보내도 되냐?”를 <strong>브라우저가 판단해서 막거나 허락하는 기능</strong>이에요.</p>
+<p>즉,</p>
+<blockquote>
+<p>“보내는 게 아니라 <strong>브라우저가 받을 수 있느냐</strong>”의 문제.</p>
+</blockquote>
+<p>예시 </p>
+<p>http://localhost:5173 (Vue 앱)</p>
+<p>→ http://localhost:8000 (Django API) 로 요청하면,</p>
+<p>브라우저가 오리진이 다르니까 기본적으로 막음 ❌</p>
+<p>서버가 이렇게 응답해야 허용됨 ✅</p>
+<div class="highlight"><pre><span></span><code>Access-Control-Allow-Origin: http://localhost:5173
 </code></pre></div>
+<p>CORS는 단순히 <strong>“다른 오리진 간 통신 허용 여부”</strong>를 정하는 보안장치입니다.</p>
+<p>즉, <strong>요청은 막지 않지만 응답을 차단</strong>하는 거예요.</p>
+<hr />
+<h4 id="csrf">CSRF는 “내 세션을 훔치려는 공격”의 문제</h4>
+<p>CSRF는 <strong>“Cross-Site Request Forgery (사이트 간 요청 위조)”</strong></p>
+<p>즉, 사용자의 <strong>인증 세션을 도용해 몰래 요청을 보내는 공격</strong>이에요.</p>
+<p><strong>예시로 보면</strong></p>
+<ol>
+<li>
+<p>사용자가 bank.com에 로그인했어요. </p>
+<p>→ 브라우저에 sessionid=123abc 쿠키가 저장됨. 
+2. 공격자가 evil.com이라는 사이트를 만들어서 그 안에 이런 코드를 숨겨놓아요</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://bank.com/transfer&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;to&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;attacker_account&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;amount&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1000000&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Click me!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol>
+<li>사용자가 로그인 상태로 evil.com에 접속해서 버튼을 클릭하면</li>
+</ol>
+<p>→ 브라우저는 자동으로 bank.com 쿠키(sessionid=123abc)를 같이 보냄</p>
+<p>→ 즉, <strong>사용자 대신 송금 요청이 들어감!</strong></p>
+<hr />
+<p><strong>CSRF의 핵심: “세션 자동 전송이 문제”</strong></p>
+<p>브라우저는 동일 도메인의 쿠키를 자동으로 첨부하니까 공격자가 위조 요청을 만들어도 “진짜 로그인된 사용자”처럼 보입니다.</p>
+<hr />
+<p><strong>그래서 CSRF 방어는 이렇게 함</strong></p>
+<p>서버(Django 등)가 요청마다 “CSRF 토큰”이라는 일회용 키를 요구해요.</p>
+<ol>
+<li>Django는 템플릿 안에 자동으로 CSRF 토큰을 삽입합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">csrf_token</span> <span class="cp">%}</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol>
+<li>프론트(Vue 등)에서 직접 POST 요청을 보낼 때도,</li>
+</ol>
+<p>CSRF 토큰을 헤더에 같이 포함시켜야 해요.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/api/data/&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;X-CSRFToken&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">getCookie</span><span class="p">(</span><span class="s1">&#39;csrftoken&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+<ol>
+<li>서버는 이 토큰이 맞는지 검사하고, 맞지 않으면 요청을 거부합니다.</li>
+</ol>
+<hr />
+<h4 id="cors-vs-csrf">CORS vs CSRF 정리 비교표</h4>
+<table>
+<thead>
+<tr>
+<th><strong>항목</strong></th>
+<th><strong>CORS</strong></th>
+<th><strong>CSRF</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>뜻</td>
+<td>Cross-Origin Resource Sharing</td>
+<td>Cross-Site Request Forgery</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>브라우저 보안 정책</td>
+<td>공격 기법</td>
+</tr>
+<tr>
+<td>언제 발생</td>
+<td>다른 오리진 요청 시</td>
+<td>세션 쿠키 자동 첨부 시</td>
+</tr>
+<tr>
+<td>누가 막음</td>
+<td>브라우저</td>
+<td>서버 (Django 등)</td>
+</tr>
+<tr>
+<td>해결 방법</td>
+<td>서버에서 Access-Control-Allow-Origin 헤더 설정</td>
+<td>CSRF 토큰 검증 ({% csrf_token %} or X-CSRFToken)</td>
+</tr>
+<tr>
+<td>프론트에서 필요?</td>
+<td>개발 시 프록시로 우회 가능</td>
+<td>JS 요청 시 토큰을 헤더로 보내야 함</td>
+</tr>
+</tbody>
+</table>
+<p><strong>한 줄 요약</strong></p>
+<ul>
+<li>
+<p><strong>CORS</strong>: “이 도메인끼리 통신해도 돼?” (접근 허용 문제) -&gt; 브라우저가 막음</p>
+</li>
+<li>
+<p><strong>CSRF</strong>: “로그인된 사용자의 세션을 도용하려고 하지?” (요청 위조 문제) -&gt; 백엔드가 검증해서 막음</p>
+</li>
+</ul>
+<hr />
+<h3 id="vueaxios-django-csrf-postputdelete"><strong>Vue(axios) + Django</strong> 조합에서 <strong>CSRF 토큰을 자동으로 포함</strong>해 안전하게 POST/PUT/DELETE 요청하는 “실전 최소 세트”</h3>
+<p><strong>전체 흐름 (요약)</strong></p>
+<ol>
+<li><strong>Django</strong>가 브라우저에 csrftoken 쿠키를 내려줌 </li>
+<li><strong>axios</strong>가 그 쿠키를 자동으로 읽어 <strong>X-CSRFToken</strong> <strong>헤더</strong>로 붙여서 전송</li>
+<li><strong>Django CSRF 미들웨어</strong>가 헤더를 검증해 통과</li>
+</ol>
+<h4 id="1-django">1. Django 설정</h4>
+<p><strong>(1) 기본 미들웨어 확인</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># settings.py</span>
-
-<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="c1"># ...</span>
-    <span class="s2">&quot;corsheaders&quot;</span><span class="p">,</span>   <span class="c1"># ★ 반드시 추가</span>
-    <span class="c1"># ...</span>
-<span class="p">]</span>
-
 <span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;corsheaders.middleware.CorsMiddleware&quot;</span><span class="p">,</span>  <span class="c1"># ★ 가능한 위쪽(보통 SecurityMiddleware 바로 아래)</span>
-    <span class="c1"># ...</span>
+    <span class="s2">&quot;django.middleware.security.SecurityMiddleware&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;django.contrib.sessions.middleware.SessionMiddleware&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;django.middleware.common.CommonMiddleware&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;django.middleware.csrf.CsrfViewMiddleware&quot;</span><span class="p">,</span>  <span class="c1"># ★ 반드시 포함</span>
+    <span class="o">...</span>
 <span class="p">]</span>
+</code></pre></div>
+<p><strong>(2) 개발 환경에서 프론트 오리진 허용 (다른 포트/도메인일 때)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">]</span>
 
-<span class="c1"># 프론트 개발 서버(5173) 허용</span>
-<span class="n">CORS_ALLOWED_ORIGINS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1"># 프론트 개발 서버를 신뢰 대상으로</span>
+<span class="n">CSRF_TRUSTED_ORIGINS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;http://localhost:5173&quot;</span><span class="p">,</span>
     <span class="s2">&quot;http://127.0.0.1:5173&quot;</span><span class="p">,</span>
 <span class="p">]</span>
-
-<span class="c1"># 쿠키/세션을 써야 한다면(선택)</span>
-<span class="c1"># CORS_ALLOW_CREDENTIALS = True</span>
 </code></pre></div>
-<p>→ 이렇게 하면 브라우저가 “아, 이 서버는 localhost:5173에서 오는 요청을 허락했구나” 하고 CORS 에러를 멈춥니다</p>
-<p>즉, <strong>실제 해결 주체는 백엔드입니다.</strong></p>
+<blockquote>
+<p>배포 시에는 https://frontend.example.com 같은 <strong>실제 프론트 도메인</strong>을 넣어주세요.</p>
+</blockquote>
+<p><strong>(3) CSRF 쿠키를 내려줄 엔드포인트(1회 호출용)</strong></p>
+<p>SPA는 장고 템플릿을 안 쓰니, <strong>최초에 쿠키를 심어줄 뷰</strong>가 하나 있으면 편합니다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># views.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.views.decorators.csrf</span><span class="w"> </span><span class="kn">import</span> <span class="n">ensure_csrf_cookie</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">HttpResponse</span>
+
+<span class="nd">@ensure_csrf_cookie</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">csrf</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">204</span><span class="p">)</span>  <span class="c1"># 내용 없는 응답이지만 csrftoken 쿠키를 심음</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># urls.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">csrf</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;api/csrf/&quot;</span><span class="p">,</span> <span class="n">csrf</span><span class="p">),</span>  <span class="c1"># GET /api/csrf/ 호출 시 csrftoken 쿠키 세팅</span>
+<span class="p">]</span>
+</code></pre></div>
+<blockquote>
+<p>이 엔드포인트를 프론트에서 <strong>앱 시작 시 한 번</strong> 호출하면 브라우저에 csrftoken 쿠키가 준비됩니다.</p>
+</blockquote>
+<p><strong>(4) (선택) 보안 옵션들 (배포 전환 시)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 기본은 JS 접근 가능 쿠키( HttpOnly=False )라 axios가 읽을 수 있습니다.</span>
+<span class="n">CSRF_COOKIE_SECURE</span> <span class="o">=</span> <span class="kc">True</span>          <span class="c1"># HTTPS에서만 전송</span>
+<span class="n">SESSION_COOKIE_SECURE</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="c1"># 서로 다른 도메인에서 쿠키 전송 필요하면:</span>
+<span class="c1"># CSRF_COOKIE_SAMESITE = &quot;None&quot;    # Secure=True 반드시 함께!</span>
+</code></pre></div>
 <hr />
-<p><strong>하지만 개발 중에는 프론트에서 “우회” 가능</strong></p>
-<p>Vite(또는 Webpack dev server)는 개발할 때만 쓸 수 있는 <strong>proxy(프록시) 기능</strong>을 제공합니다.</p>
+<h4 id="2-vue-axios">2. 프런트(Vue) – axios 설정</h4>
+<h5 id="a-axios-xsrf">A안) axios의 내장 XSRF 기능 활용 (가장 간단, 추천)**</h5>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/api/client.js</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;axios&#39;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">baseURL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/api&#39;</span><span class="p">,</span><span class="w">                  </span><span class="c1">// Vite proxy를 쓰는 경우</span>
+<span class="w">  </span><span class="nx">withCredentials</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">            </span><span class="c1">// 다른 오리진이면 쿠키 전송을 허용</span>
+<span class="w">  </span><span class="nx">xsrfCookieName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;csrftoken&#39;</span><span class="p">,</span><span class="w">      </span><span class="c1">// Django 기본 쿠키 이름</span>
+<span class="w">  </span><span class="nx">xsrfHeaderName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;X-CSRFToken&#39;</span><span class="p">,</span><span class="w">    </span><span class="c1">// Django가 읽는 헤더 이름</span>
+<span class="p">})</span>
+</code></pre></div>
+<blockquote>
+<p>이렇게만 해두면 axios가 자동으로 csrftoken 쿠키를 읽어 요청마다 X-CSRFToken 헤더를 <strong>자동</strong>으로 붙여줍니다.</p>
+</blockquote>
+<p><strong>앱 시작 시 CSRF 쿠키 한번 받아오기</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// e.g. src/main.js</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@/api/client&#39;</span>
+
+<span class="c1">// 앱 부팅 시 한번 호출 (csrftoken 쿠키 세팅)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/csrf/&#39;</span><span class="p">).</span><span class="k">catch</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{})</span><span class="w">   </span><span class="c1">// 204라 에러 아님, 그냥 준비용</span>
+</code></pre></div>
+<p><strong>사용 예시</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// POST 예시</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/items/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="w"> </span><span class="p">})</span><span class="w">  </span><span class="c1">// CSRF 자동 포함</span>
+</code></pre></div>
+<h5 id="b">B안) 직접 쿠키 읽어 수동으로 헤더 설정 (참고용)</h5>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">getCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;; &#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">row</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">row</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;=&#39;</span><span class="p">))</span>
+<span class="w">    </span><span class="o">?</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mf">1</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;axios&#39;</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="w"> </span><span class="nx">baseURL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/api&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">withCredentials</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">})</span>
+
+<span class="nx">api</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">use</span><span class="p">((</span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getCookie</span><span class="p">(</span><span class="s1">&#39;csrftoken&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;X-CSRFToken&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">token</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">config</span>
+<span class="p">})</span>
+</code></pre></div>
+<hr />
+<h4 id="3-vite-cors">3. Vite 개발 프록시(선택 – CORS 편의)</h4>
+<p>개발 중 프론트: :5173, 장고: :8000이면 CORS 이슈를 줄이려고 프록시를 쓰면 편합니다.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// vite.config.js</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vite&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">vue</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vitejs/plugin-vue&#39;</span>
+
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">vue</span><span class="p">()],</span>
 <span class="w">  </span><span class="nx">server</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// 프록시: 프론트가 /api 로 요청하면 Vite가 백엔드(8000)로 전달</span>
 <span class="w">    </span><span class="nx">proxy</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="s1">&#39;/api&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://127.0.0.1:8000&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">changeOrigin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">secure</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="c1">// 필요시 프리픽스 제거</span>
-<span class="w">        </span><span class="c1">// rewrite: (path) =&gt; path.replace(/^\/api/, &#39;&#39;),</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="p">})</span>
 </code></pre></div>
-<p>이걸 쓰면 구조가 이렇게 바뀝니다</p>
-<div class="highlight"><pre><span></span><code>브라우저 (http://localhost:5173)
-  ↓
-Vite dev server (같은 origin)
-  ↓
-백엔드 (http://localhost:8000)
-</code></pre></div>
-<p>즉,</p>
-<p>브라우저 입장에서는 <strong>같은 origin</strong>(5173 → 5173) 으로 요청을 보낸 것처럼 보이고, 
-Vite가 대신 8000번 서버로 요청을 전달해줘요.</p>
-<p>→ 결과: <strong>CORS 에러가 사라짐 (하지만 실제 해결은 아님)</strong></p>
 <hr />
-<p><strong>정리: “진짜 해결” vs “임시 우회”</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>환경</strong></th>
-<th><strong>방법</strong></th>
-<th><strong>설명</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>개발용 (로컬)</strong></td>
-<td>Vite server.proxy</td>
-<td>빠르고 편한 임시 우회</td>
-</tr>
-<tr>
-<td><strong>운영 배포 환경</strong></td>
-<td>백엔드 CORS 설정</td>
-<td>근본적 해결 (필수)</td>
-</tr>
-</tbody>
-</table>
+<h4 id="4">4. 체크리스트 (자주 막히는 포인트)</h4>
+<ul>
+<li><strong>CsrfViewMiddleware</strong> 가 MIDDLEWARE에 있는가 </li>
+<li>프론트 도메인이 <strong>CSRF_TRUSTED_ORIGINS</strong> 에 있는가</li>
+<li>첫 페이지에서 <strong>/api/csrf/</strong> 를 한 번 호출했는가 (쿠키 세팅)</li>
+<li>axios가 <strong>withCredentials: true</strong> 로 쿠키를 보내는가 (오리진 다를 때)</li>
+<li>헤더 이름이 <strong>X-CSRFToken</strong> 인가 (Django 기본)</li>
+<li>배포 환경이면 <strong>HTTPS + Secure 쿠키 + SameSite 설정</strong>을 맞췄는가</li>
+</ul>
+<hr />
+<p><strong>한 줄 요약</strong></p>
+<blockquote>
+<p>Django가 csrftoken 쿠키를 심고, axios가 그것을 자동으로 X-CSRFToken 헤더로 전송하게 설정하면, Vue + Django 환경에서 <strong>추가 작업 없이 안전한 CSRF 검증</strong>이 동작합니다.</p>
+</blockquote>
 
 
 
