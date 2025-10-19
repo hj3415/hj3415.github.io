@@ -927,6 +927,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#npm-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      npm create 의미
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="npm create 의미">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      내부 명령 실제 구조
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      실제 확인해보기
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1033,6 +1066,39 @@
   <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       각 구성 요소별 설명 + Python 대응
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npm-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      npm create 의미
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="npm create 의미">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      내부 명령 실제 구조
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      실제 확인해보기
     </span>
   </a>
   
@@ -1317,6 +1383,138 @@ npm<span class="w"> </span>install<span class="w"> </span>vite
 <td>Vite 실행 명령</td>
 <td>manage.py runserver / collectstatic</td>
 <td>개발 / 배포 모드 전환</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="npm-create">npm create 의미</h3>
+<p><strong>Node.js 설치 시 포함되는 것</strong></p>
+<p>Node.js를 설치하면 자동으로 포함되는 건 <strong>딱 두 가지</strong>뿐입니다.</p>
+<table>
+<thead>
+<tr>
+<th><strong>포함 항목</strong></th>
+<th><strong>역할</strong></th>
+<th><strong>Python 비유</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node</td>
+<td>자바스크립트 런타임 (실행기)</td>
+<td>python3</td>
+</tr>
+<tr>
+<td>npm</td>
+<td>패키지 관리자</td>
+<td>pip</td>
+</tr>
+</tbody>
+</table>
+<p>=&gt; vite는 여기에 포함되지 않습니다.</p>
+<p>(즉, npm install vite 또는 npm create vite@latest 명령으로 따로 가져와야 함)</p>
+<hr />
+<p><strong>그렇다면 "npm create vite@latest"는 어떻게 동작할까?</strong></p>
+<p>이 명령은 <strong>npm이 제공하는 “패키지 임시 실행 기능”</strong>을 이용합니다.</p>
+<p>실제 내부에서 일어나는 일은 다음과 같습니다</p>
+<ol>
+<li>npm이 vite@latest 패키지를 <strong>레지스트리(NPM 저장소)</strong>에서 다운로드 </li>
+<li>그 패키지 안의 <strong>create 스크립트</strong>를 실행 </li>
+<li>Vite 프로젝트 템플릿을 로컬에 복사 </li>
+<li>작업이 끝나면 임시로 받은 vite 패키지를 삭제 </li>
+</ol>
+<p>즉, <strong>시스템에 Vite를 전역 설치하지 않고</strong></p>
+<p>“한 번만 임시로 실행해서 프로젝트를 만들어주는” 방식입니다.</p>
+<hr />
+<h4 id="_1">내부 명령 실제 구조</h4>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vite@latest<span class="w"> </span>myapp
+</code></pre></div>
+<p>은 사실상 다음과 같습니다</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>create-vite@latest<span class="w"> </span>myapp
+</code></pre></div>
+<p>여기서 <strong>npx</strong>는 “npm 패키지를 즉시 실행(run without install)” 하는 도구입니다.</p>
+<p>(npx도 Node.js 설치 시 함께 들어있어요.)</p>
+<hr />
+<p><strong>Python으로 비유하면 이렇게 이해하면 됩니다</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>JavaScript / Node</strong></th>
+<th><strong>Python 비유</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>npm install vite</td>
+<td>pip install django</td>
+</tr>
+<tr>
+<td>npm create vite@latest myapp</td>
+<td>django-admin startproject myapp</td>
+</tr>
+<tr>
+<td>npx vite</td>
+<td>python -m django</td>
+</tr>
+</tbody>
+</table>
+<p>즉</p>
+<ul>
+<li>Node 설치 시 npm은 자동 포함 (→ pip과 같음) </li>
+<li>vite는 별도 패키지 (→ Django와 같음)</li>
+<li>npm create vite@latest는 “vite 프로젝트를 한 번만 생성하고 끝나는” 명령 (→ django-admin startproject와 동일)</li>
+</ul>
+<hr />
+<h4 id="_2">실제 확인해보기</h4>
+<p>Node 설치 후 vite가 있는지 확인해보면:</p>
+<div class="highlight"><pre><span></span><code>vite<span class="w"> </span>-v
+</code></pre></div>
+<p>→ ❌ 대부분 “command not found” 가 뜹니다.</p>
+<p>즉, 아직 설치 안 된 상태예요.</p>
+<p>하지만 다음을 실행하면:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vite@latest
+</code></pre></div>
+<p>→ Vite 템플릿 생성 완료 ✅</p>
+<p>(이건 시스템 전체에 설치된 게 아니라, <strong>임시 실행</strong>)</p>
+<hr />
+<p><strong>전역(global) 설치도 가능</strong></p>
+<p>만약 매번 npm create vite@latest 치는 게 귀찮다면,</p>
+<p>전역으로 설치할 수도 있습니다 👇</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>create-vite
+</code></pre></div>
+<p>그럼 이제 이렇게 단축해서 쓸 수 있습니다 👇</p>
+<div class="highlight"><pre><span></span><code>create-vite myapp
+</code></pre></div>
+<p>(= django-admin startproject myapp 과 비슷)</p>
+<hr />
+<p><strong>정리 요약</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>질문</strong></th>
+<th><strong>답변</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node.js 설치 시 Vite도 따라오나요?</td>
+<td>❌ 아닙니다. Node에는 npm만 포함</td>
+</tr>
+<tr>
+<td>npm create vite@latest는 어디서 온 건가요?</td>
+<td>npm이 임시로 Vite 패키지를 다운로드해서 실행</td>
+</tr>
+<tr>
+<td>vite 명령어가 항상 있는 건가요?</td>
+<td>❌ 기본 없음. 직접 설치하거나 npx로 실행</td>
+</tr>
+<tr>
+<td>전역 설치할 수 있나요?</td>
+<td>가능 (npm install -g create-vite)</td>
+</tr>
+<tr>
+<td>Python 비유로 보면?</td>
+<td>Node.js = python3 / npm = pip / Vite = Django</td>
 </tr>
 </tbody>
 </table>
