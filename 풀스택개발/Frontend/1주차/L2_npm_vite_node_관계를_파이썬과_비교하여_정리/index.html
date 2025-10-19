@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-nodejs" class="md-skip">
+        <a href="#npm-vite-webpack-node" class="md-skip">
           Skip to content
         </a>
       
@@ -868,6 +868,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#npm-vite-webpack-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      npm, vite, webpack, node 한 줄 정의 요약
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-nodejs" class="md-nav__link">
     <span class="md-ellipsis">
       1. Node.js 설치
@@ -900,6 +909,21 @@
       Node.js 구조: node / npm / vite / vue 관계도 (Python 대응표 포함)
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Node.js 구조: node / npm / vite / vue 관계도 (Python 대응표 포함)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      각 구성 요소별 설명 + Python 대응
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -960,6 +984,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#npm-vite-webpack-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      npm, vite, webpack, node 한 줄 정의 요약
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-nodejs" class="md-nav__link">
     <span class="md-ellipsis">
       1. Node.js 설치
@@ -992,6 +1025,21 @@
       Node.js 구조: node / npm / vite / vue 관계도 (Python 대응표 포함)
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Node.js 구조: node / npm / vite / vue 관계도 (Python 대응표 포함)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      각 구성 요소별 설명 + Python 대응
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1033,7 +1081,7 @@
 왜냐면 npm, vite, webpack, node 이런 이름들이 다 섞여 나오거든요.</p>
 <p>그래서 정리하자면 이렇게 이해하시면 됩니다</p>
 <hr />
-<p><strong>한 줄 정의 요약</strong></p>
+<h4 id="npm-vite-webpack-node">npm, vite, webpack, node 한 줄 정의 요약</h4>
 <table>
 <thead>
 <tr>
@@ -1137,10 +1185,17 @@ npm<span class="w"> </span>install<span class="w"> </span>vite
 </tr>
 </tbody>
 </table>
-<p>즉,</p>
 <blockquote>
 <p><strong>npm은 패키지를 관리하고, Vite는 개발 서버를 돌리고 빌드를 담당하는 도구</strong> 입니다.</p>
 </blockquote>
+<p><strong>개발 서버 실행</strong></p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>→ Vite가 실행되어 Vue 프로젝트 구동</p>
+<p><strong>배포용 빌드</strong></p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<p>→ 정적 파일 생성 (Django staticfiles와 유사)</p>
 <hr />
 <p><strong>예시: Vue + Vite 프로젝트 구조</strong></p>
 <div class="highlight"><pre><span></span><code>myapp/
@@ -1160,44 +1215,6 @@ npm<span class="w"> </span>install<span class="w"> </span>vite
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<hr />
-<p><strong>Python식으로 완전 비유하면</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>기능</strong></th>
-<th><strong>Python/Django 방식</strong></th>
-<th><strong>Vue/Vite 방식</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>런타임</td>
-<td>python3</td>
-<td>node</td>
-</tr>
-<tr>
-<td>패키지 관리자</td>
-<td>pip install requests</td>
-<td>npm install axios</td>
-</tr>
-<tr>
-<td>개발 서버</td>
-<td>python manage.py runserver</td>
-<td>npm run dev</td>
-</tr>
-<tr>
-<td>배포용 빌드</td>
-<td>collectstatic</td>
-<td>npm run build</td>
-</tr>
-<tr>
-<td>의존성 기록</td>
-<td>requirements.txt</td>
-<td>package.json</td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h3 id="nodejs-node-npm-vite-vue-python">Node.js 구조: node / npm / vite / vue 관계도 (Python 대응표 포함)</h3>
 <p>아래는 Django/Python 개발자 기준으로 정리한
@@ -1242,7 +1259,7 @@ npm<span class="w"> </span>install<span class="w"> </span>vite
      └───────────────────────┘
 </code></pre></div>
 <hr />
-<p><strong>각 구성 요소별 설명 + Python 대응</strong></p>
+<h4 id="python">각 구성 요소별 설명 + Python 대응</h4>
 <table>
 <thead>
 <tr>
@@ -1303,15 +1320,6 @@ npm<span class="w"> </span>install<span class="w"> </span>vite
 </tr>
 </tbody>
 </table>
-<hr />
-<p><strong>개발 서버 실행</strong></p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
-</code></pre></div>
-<p>→ Vite가 실행되어 Vue 프로젝트 구동</p>
-<p><strong>배포용 빌드</strong></p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
-</code></pre></div>
-<p>→ 정적 파일 생성 (Django staticfiles와 유사)</p>
 
 
 
