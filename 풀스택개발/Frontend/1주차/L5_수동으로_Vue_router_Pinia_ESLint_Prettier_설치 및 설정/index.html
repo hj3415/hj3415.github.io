@@ -1221,25 +1221,25 @@
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>eslint<span class="w"> </span>eslint-plugin-vue<span class="w"> </span>@typescript-eslint/parser<span class="w"> </span>@typescript-eslint/eslint-plugin<span class="w"> </span>@vue/eslint-config-typescript<span class="w"> </span>@vue/eslint-config-prettier
 </code></pre></div>
 <p><strong>설정 파일</strong> </p>
-<p>.eslintrc.cjs</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* eslint-env node */</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">root</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s1">&#39;eslint:recommended&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="s1">&#39;plugin:vue/vue3-recommended&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="c1">// TS 프로젝트라면 아래 두 줄 추가</span>
-<span class="w">    </span><span class="c1">// &#39;plugin:@typescript-eslint/recommended&#39;,</span>
-<span class="w">    </span><span class="c1">// &#39;@vue/eslint-config-typescript&#39;,</span>
-<span class="w">    </span><span class="s1">&#39;@vue/eslint-config-prettier&#39;</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nx">rules</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;vue/multi-word-component-names&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;off&#39;</span><span class="w"> </span><span class="p">}</span>
-<span class="p">}</span>
+<p>eslint.config.js(수동으로 만들어야 함)</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">js</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@eslint/js&quot;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">pluginVue</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;eslint-plugin-vue&quot;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">skipFormatting</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vue/eslint-config-prettier/skip-formatting&quot;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nx">js</span><span class="p">.</span><span class="nx">configs</span><span class="p">.</span><span class="nx">recommended</span><span class="p">,</span>
+<span class="w">  </span><span class="p">...</span><span class="nx">pluginVue</span><span class="p">.</span><span class="nx">configs</span><span class="p">[</span><span class="s2">&quot;flat/essential&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">skipFormatting</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>실행</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>eslint<span class="w"> </span>.
 </code></pre></div>
 <p><strong>스크립트</strong> </p>
-<p>package.json</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;lint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eslint . --ext .vue,.js,.ts --fix&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<p>package.json에 다음을 추가</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;lint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eslint . --fix&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
+<p>npm run lint 실행가능</p>
 <p><strong>주의</strong></p>
 <ul>
 <li>에디터에서 “저장 시 자동 고치기”를 켜두면 체감이 가장 좋습니다.</li>
@@ -1248,20 +1248,22 @@
 <hr />
 <h4 id="4-prettier">4. Prettier 추가</h4>
 <p><strong>설치</strong></p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>prettier
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>prettier<span class="w"> </span>@vue/eslint-config-prettier
 </code></pre></div>
 <p><strong>설정 파일</strong> </p>
-<p>prettier.config.cjs (예시 규칙)</p>
-<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">semi</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">singleQuote</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">trailingComma</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">printWidth</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span>
+<p>.prettierrc.json(수동으로 생성해야함. 예시 기본 규칙)</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json.schemastore.org/prettierrc&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;semi&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;singleQuote&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;printWidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>스크립트</strong></p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prettier --write .&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<p>package.json에 다음을 추가</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prettier --write src/&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
+<p>npm run prettier 실행가능</p>
 <p><strong>주의</strong></p>
 <ul>
 <li><strong>ESLint와 충돌 방지</strong>를 위해 위에서 넣은 @vue/eslint-config-prettier가 필수.</li>

@@ -1216,7 +1216,7 @@
 
 <p><strong>Vite 기반 Vue 3 프로젝트를 만들고, PyCharm Professional(프로)에서 “편하게 개발 + 린트/포맷 + 디버깅 + Django와 연동”</strong> 까지 
 한 번에 세팅하는 방법을 단계별로 정리해드릴게요.</p>
-<p>(전제: PyCharm <strong>Professional</strong>에는 WebStorm 기능이 들어있어 Vue/TypeScript/ESLint/Prettier/Node 실행이 가능합니다.)</p>
+<p>(전제: PyCharm <strong>Professional</strong>에는 WebStorm 기능이 들어있어 Vue/JavaScript/ESLint/Prettier/Node 실행이 가능합니다.)</p>
 <hr />
 <h4 id="0">0. 준비물 체크</h4>
 <ul>
@@ -1240,7 +1240,7 @@ mkdir frontend &amp;&amp; cd frontend
 npm create vue@latest
 
 # 3) 프롬프트 권장 선택
-# - TypeScript: Yes - 초보는 No(권장)
+# - TypeScript: 초보는 No(권장)
 # - Vue Router: Yes (SPA 필수)
 # - Pinia: Yes (상태관리)
 # - ESLint + Prettier: Yes (강력 추천)
@@ -1249,7 +1249,7 @@ npm create vue@latest
 npm install
 npm run dev
 </code></pre></div>
-<p>TypeScript로 만든 프로젝트를 “JS로 되돌리려면” 새로 만드는 게 훨씬 낫습니다.</p>
+<p>TypeScript로 이미 만든 프로젝트를 “JS로 되돌리려면” 새로 만드는 게 훨씬 낫습니다.</p>
 <p>다른 것들(Vue Router, Pinia, ESLint, Prettier)은 추후에 추가하는 것도 가능합니다.</p>
 <p>브라우저에서 http://localhost:5173 가 보이면 성공.</p>
 <hr />
@@ -1308,19 +1308,19 @@ npm run dev
 <h4 id="4-django">4. Django와 연동(개발 단계)</h4>
 <p><strong>4-1. CORS/프록시(권장)</strong></p>
 <p>Vite dev 서버(5173) → Django API(8000) 로 프록시하면 CORS 신경 덜 씁니다.</p>
-<p>vite.config.ts 예시:</p>
+<p>vite.config.js 예시:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vite&#39;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">vue</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vitejs/plugin-vue&#39;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
 <span class="w">  </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">vue</span><span class="p">()],</span>
 <span class="w">  </span><span class="nx">server</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="kt">5173</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">open</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">5173</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">open</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">proxy</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="s1">&#39;/api&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://127.0.0.1:8000&#39;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">changeOrigin</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span>
+<span class="w">        </span><span class="nx">changeOrigin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -1358,12 +1358,12 @@ npm run dev
       frontend/   ← 여기에 빌드 산출물 투하
   frontend/ (Vite+Vue)
 </code></pre></div>
-<p>vite.config.ts:</p>
+<p>vite.config.js:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
 <span class="w">  </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">vue</span><span class="p">()],</span>
 <span class="w">  </span><span class="nx">build</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">outDir</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;../backend/static/frontend&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">emptyOutDir</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span>
+<span class="w">    </span><span class="nx">emptyOutDir</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">})</span>
 </code></pre></div>
@@ -1410,15 +1410,7 @@ npm<span class="w"> </span>run<span class="w"> </span>build
 <ul>
 <li><strong>Path alias</strong> (@/…)</li>
 </ul>
-<p>tsconfig.json</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;compilerOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;@/*&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;src/*&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>vite.config.ts</p>
+<p>vite.config.js</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;path&#39;</span>
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
 <span class="w">  </span><span class="nx">resolve</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">alias</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;@&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;./src&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
