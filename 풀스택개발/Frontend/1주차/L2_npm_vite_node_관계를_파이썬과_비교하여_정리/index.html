@@ -894,6 +894,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#nodejs-node-npm-vite-vue-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node.js 구조: node / npm / vite / vue 관계도 (Python 대응표 포함)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -972,6 +981,15 @@
   <a href="#3-vite" class="md-nav__link">
     <span class="md-ellipsis">
       3. Vite가 하는 일
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs-node-npm-vite-vue-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node.js 구조: node / npm / vite / vue 관계도 (Python 대응표 포함)
     </span>
   </a>
   
@@ -1080,8 +1098,17 @@ npm<span class="w"> </span>-v
 <hr />
 <h4 id="2-vue">2. Vue 프로젝트 생성</h4>
 <p>Vite는 npm으로 설치/실행합니다.</p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vue@latest<span class="w"> </span>myapp
+<p>npm으로 프로젝트 초기화</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>init<span class="w"> </span>-y
 </code></pre></div>
+<p>Vue + Vite 설치</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>vue
+npm<span class="w"> </span>install<span class="w"> </span>vite
+</code></pre></div>
+<p><strong>또는 한 번에 생성</strong></p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>create<span class="w"> </span>vite@latest<span class="w"> </span>myapp
+</code></pre></div>
+<p>→ 내부적으로 위 과정 전부 자동 처리</p>
 <p>이 명령은 사실상 이렇게 해석됩니다 </p>
 <blockquote>
 <p>“npm을 통해 Vite 템플릿을 이용해 Vue 프로젝트를 만든다”</p>
@@ -1172,6 +1199,119 @@ npm<span class="w"> </span>-v
 </tbody>
 </table>
 <hr />
+<h3 id="nodejs-node-npm-vite-vue-python">Node.js 구조: node / npm / vite / vue 관계도 (Python 대응표 포함)</h3>
+<p>아래는 Django/Python 개발자 기준으로 정리한
+<strong>「Node.js 구조: node / npm / vite / vue 관계도」 + Python 대응표</strong> 입니다.</p>
+<hr />
+<p><strong>Node.js 생태계 전체 구조도</strong></p>
+<div class="highlight"><pre><span></span><code>┌────────────────────────────┐
+│        Node.js             │
+│     자바스크립트 실행 엔진       │
+│    (Python 인터프리터 역할)    │
+└─────────────┬──────────────┘
+              │
+              ▼
+     ┌────────────────┐
+     │      npm       │
+     │   패키지 관리자   │
+     │   (pip 역할)    │
+     └──────┬─────────┘
+            │
+     ┌──────┴────────────────────────────────────────────────┐
+     │                                                       │
+     ▼                                                       ▼
+┌───────────────────┐                                   ┌──────────────────┐
+│  프로젝트용 npm      │                                   │   전역 npm        │
+│ (package.json)    │                                   │   (-g 설치)       │
+│  └─ node_modules/ │                                   │ ex) vite, eslint │
+└───────────────────┘                                   └──────────────────┘
+            │
+            ▼
+   ┌─────────────────────┐
+   │        Vite         │
+   │  프론트엔드 개발 서버    │
+   │  + 번들러(빌드 도구)    │
+   │  (runserver + build)│
+   └──────────┬──────────┘
+              │
+              ▼
+     ┌───────────────────────┐
+     │      Vue 3            │
+     │  프론트엔드 프레임워크      │
+     │ (템플릿 + 컴포넌트 + 상태) │
+     └───────────────────────┘
+</code></pre></div>
+<hr />
+<p><strong>각 구성 요소별 설명 + Python 대응</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>구성 요소</strong></th>
+<th><strong>역할</strong></th>
+<th><strong>Python 비유</strong></th>
+<th><strong>설명</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Node.js</strong></td>
+<td>자바스크립트를 브라우저 밖에서 실행시키는 엔진</td>
+<td>python 인터프리터</td>
+<td>JS 실행, 서버 가능</td>
+</tr>
+<tr>
+<td><strong>npm</strong></td>
+<td>Node 패키지 관리자</td>
+<td>pip</td>
+<td>라이브러리 설치/관리</td>
+</tr>
+<tr>
+<td><strong>package.json</strong></td>
+<td>프로젝트 설정 및 의존성 목록</td>
+<td>requirements.txt + settings.py</td>
+<td>버전/스크립트 정의</td>
+</tr>
+<tr>
+<td><strong>node_modules/</strong></td>
+<td>설치된 라이브러리 폴더</td>
+<td>venv/lib/site-packages/</td>
+<td>프로젝트별 패키지 저장</td>
+</tr>
+<tr>
+<td><strong>Vite</strong></td>
+<td>빌드 도구 + 개발 서버</td>
+<td>manage.py runserver + collectstatic</td>
+<td>빠른 HMR·압축 빌드</td>
+</tr>
+<tr>
+<td><strong>Vue 3</strong></td>
+<td>프론트엔드 프레임워크</td>
+<td>Django의 templates + forms + views 통합체</td>
+<td>HTML + JS + 반응형</td>
+</tr>
+<tr>
+<td><strong>npx / npm create</strong></td>
+<td>npm 패키지를 즉시 실행</td>
+<td>python -m</td>
+<td>설치 없이 실행 가능</td>
+</tr>
+<tr>
+<td><strong>npm run dev / build</strong></td>
+<td>Vite 실행 명령</td>
+<td>manage.py runserver / collectstatic</td>
+<td>개발 / 배포 모드 전환</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>개발 서버 실행</strong></p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>→ Vite가 실행되어 Vue 프로젝트 구동</p>
+<p><strong>배포용 빌드</strong></p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<p>→ 정적 파일 생성 (Django staticfiles와 유사)</p>
 
 
 
