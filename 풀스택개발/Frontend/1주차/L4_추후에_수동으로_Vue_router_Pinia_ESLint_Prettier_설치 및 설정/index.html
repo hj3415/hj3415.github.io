@@ -1166,13 +1166,15 @@
 <p><strong>설치</strong></p>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>vue-router@4
 </code></pre></div>
-<p><strong>파일 추가</strong> src/router/index.[jt]s</p>
+<p><strong>파일 추가</strong> </p>
+<p>src/router/index.[jt]s</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createRouter</span><span class="p">,</span><span class="w"> </span><span class="nx">createWebHistory</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vue-router&#39;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">Home</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@/views/Home.vue&#39;</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">routes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;home&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">Home</span><span class="w"> </span><span class="p">}]</span>
 <span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createRouter</span><span class="p">({</span><span class="w"> </span><span class="nx">history</span><span class="o">:</span><span class="w"> </span><span class="kt">createWebHistory</span><span class="p">(),</span><span class="w"> </span><span class="nx">routes</span><span class="w"> </span><span class="p">})</span>
 </code></pre></div>
-<p><strong>main에 연결</strong> src/main.[jt]s</p>
+<p><strong>main에 연결</strong> </p>
+<p>src/main.[jt]s</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./router&#39;</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">router</span><span class="p">)</span>
 </code></pre></div>
@@ -1197,7 +1199,8 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">pinia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createPinia</span><span class="p">()</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">pinia</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>스토어 예시</strong> src/stores/counter.[jt]s</p>
+<p><strong>스토어 예시</strong> </p>
+<p>src/stores/counter.[jt]s</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineStore</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;pinia&#39;</span>
 <span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">useCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;counter&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="p">}),</span>
@@ -1217,7 +1220,8 @@
 <p><strong>설치 (TS 프로젝트)</strong></p>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>eslint<span class="w"> </span>eslint-plugin-vue<span class="w"> </span>@typescript-eslint/parser<span class="w"> </span>@typescript-eslint/eslint-plugin<span class="w"> </span>@vue/eslint-config-typescript<span class="w"> </span>@vue/eslint-config-prettier
 </code></pre></div>
-<p><strong>설정 파일</strong> .eslintrc.cjs</p>
+<p><strong>설정 파일</strong> </p>
+<p>.eslintrc.cjs</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/* eslint-env node */</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">root</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
@@ -1232,7 +1236,8 @@
 <span class="w">  </span><span class="nx">rules</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;vue/multi-word-component-names&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;off&#39;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>스크립트</strong> package.json</p>
+<p><strong>스크립트</strong> </p>
+<p>package.json</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;lint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eslint . --ext .vue,.js,.ts --fix&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p><strong>주의</strong></p>
@@ -1245,7 +1250,8 @@
 <p><strong>설치</strong></p>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>prettier
 </code></pre></div>
-<p><strong>설정 파일</strong> prettier.config.cjs (예시 규칙)</p>
+<p><strong>설정 파일</strong> </p>
+<p>prettier.config.cjs (예시 규칙)</p>
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">semi</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">singleQuote</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
