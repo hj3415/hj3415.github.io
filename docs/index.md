@@ -6,7 +6,7 @@
 
 - GDQUEST
     - 2D
-        - [M9_Top_Down_Movement](GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview.md)
+        - [M9 Top Down Movement](GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview.md)
 - Godot4 개발
     - [2D](Godot4_%EA%B0%9C%EB%B0%9C/2D/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
 - Full Stack 개발
