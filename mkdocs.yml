@@ -5,7 +5,7 @@ theme:
     - navigation.sections     # 섹션을 시각적으로 구분(들여쓰기 스타일)
     #- navigation.expand       # 모든 섹션 기본 펼침
     - navigation.indexes      # 폴더도 문서처럼 다루기
-    - navigation.top          # 스크롤 시 상단 이동 버튼
+    #- navigation.top          # 스크롤 시 상단 이동 버튼
     - navigation.instant     # 페이지 새로고침 없이 SPA처럼 빠르게 이동
     - search.suggest          # 검색 자동완성
     - search.highlight    # 검색어가 본문에 하이라이트
