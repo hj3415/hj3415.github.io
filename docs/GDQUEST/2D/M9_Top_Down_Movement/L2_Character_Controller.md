@@ -10,7 +10,7 @@ M4 강의인 _To Space and Beyond_ 에서는 8방향으로 움직일 수 있고 
 이번 강의에서는 CharacterBody2D 노드를 사용하여 캐릭터를 위한 탑다운 방식의 컨트롤러를 직접 코딩해보시게 됩니다. 
 우리 캐릭터는 M4에서 만든 우주선처럼 움직이지만, 몇 강의 뒤에 벽과 장애물을 추가하게 되면 그 차이가 분명히 드러날 것입니다.
 
-[020_character_010_runner.mp4](videos/020_character_010_runner.mp4)
+![020_character_010_runner.mp4](videos/020_character_010_runner.mp4)
 
 이번 강의에서는 다음과 같은 내용을 배우시게 됩니다:
 
