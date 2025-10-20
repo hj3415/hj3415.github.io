@@ -1501,52 +1501,44 @@
 <ol>
 <li>
 <p><strong>플레이어 조작</strong></p>
-</li>
-<li>
-<p>CharacterBody2D로 이동/점프 구현</p>
-</li>
+<ul>
+<li>CharacterBody2D로 이동/점프 구현</li>
 <li>중력, 마찰, 속도 제어</li>
 <li>애니메이션(AnimatedSprite2D or AnimationPlayer) 제어</li>
-<li>
-<p>카메라 추적 (Camera2D)</p>
+<li>카메라 추적 (Camera2D)</li>
+</ul>
 </li>
 <li>
 <p><strong>충돌 시스템</strong></p>
-</li>
-<li>
-<p>CollisionShape2D, Area2D 사용법</p>
-</li>
+<ul>
+<li>CollisionShape2D, Area2D 사용법</li>
 <li>충돌 신호(body_entered, area_entered)</li>
-<li>
-<p>데미지 처리 및 무적 프레임 구현</p>
+<li>데미지 처리 및 무적 프레임 구현</li>
+</ul>
 </li>
 <li>
 <p><strong>적 AI (간단)</strong></p>
-</li>
-<li>
-<p>Patrol AI (좌우 이동)</p>
-</li>
+<ul>
+<li>Patrol AI (좌우 이동)</li>
 <li>플레이어 추적 (RayCast2D 또는 distance 체크)</li>
-<li>
-<p>피격 반응 / 사망 애니메이션</p>
+<li>피격 반응 / 사망 애니메이션</li>
+</ul>
 </li>
 <li>
 <p><strong>UI / HUD</strong></p>
-</li>
-<li>
-<p>점수, 체력바, 시간 표시</p>
-</li>
+<ul>
+<li>점수, 체력바, 시간 표시</li>
 <li>CanvasLayer / Control</li>
-<li>
-<p>Pause 메뉴, 게임 오버 씬</p>
+<li>Pause 메뉴, 게임 오버 씬</li>
+</ul>
 </li>
 <li>
 <p><strong>데이터 관리</strong></p>
-</li>
-<li>
-<p>전역 스크립트(autoload)로 점수, 체력 관리</p>
-</li>
+<ul>
+<li>전역 스크립트(autoload)로 점수, 체력 관리</li>
 <li>save/load (JSON 파일로 저장)</li>
+</ul>
+</li>
 </ol>
 <p><strong>실습 프로젝트</strong></p>
 <div class="highlight"><pre><span></span><code>**“점프 액션 게임”**
@@ -1563,43 +1555,37 @@
 <ol>
 <li>
 <p><strong>프로젝트 구조화</strong></p>
-</li>
-<li>
-<p>씬 기반 모듈화 (player.tscn, enemy.tscn, level1.tscn)</p>
-</li>
+<ul>
+<li>씬 기반 모듈화 (player.tscn, enemy.tscn, level1.tscn)</li>
 <li>공통 스크립트 및 유틸 관리 (utils/, globals/ 디렉토리)</li>
-<li>
-<p>신호를 통한 느슨한 연결 (decoupling)</p>
+<li>신호를 통한 느슨한 연결 (decoupling)</li>
+</ul>
 </li>
 <li>
 <p><strong>자주 쓰는 시스템 만들기</strong></p>
-</li>
-<li>
-<p>게임 매니저 (씬 전환, 점수/목숨 관리) </p>
-</li>
+<ul>
+<li>게임 매니저 (씬 전환, 점수/목숨 관리) </li>
 <li>오브젝트 풀링 (Object Pool)</li>
 <li>파티클 효과, 히트 스톱 구현</li>
-<li>
-<p>사운드 매니저 (BGM, SFX)</p>
+<li>사운드 매니저 (BGM, SFX)</li>
+</ul>
 </li>
 <li>
 <p><strong>간단한 메뉴 및 세이브 시스템</strong></p>
-</li>
-<li>
-<p>Title → Stage Select → Game → Result 흐름</p>
-</li>
+<ul>
+<li>Title → Stage Select → Game → Result 흐름</li>
 <li>Settings UI (볼륨, 해상도)</li>
-<li>
-<p>데이터 저장 (ConfigFile, JSON)</p>
+<li>데이터 저장 (ConfigFile, JSON)</li>
+</ul>
 </li>
 <li>
 <p><strong>배포 &amp; 최적화</strong></p>
-</li>
-<li>
-<p>Windows / macOS / HTML5 빌드</p>
-</li>
+<ul>
+<li>Windows / macOS / HTML5 빌드</li>
 <li>타일맵 최적화, StaticBody2D로 충돌 단순화</li>
 <li>Signal vs Polling 성능 비교</li>
+</ul>
+</li>
 </ol>
 <p><strong>실전 프로젝트</strong></p>
 <div class="highlight"><pre><span></span><code>**“Top-down 슈팅 게임”**
