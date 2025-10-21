@@ -1064,6 +1064,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#p2-matching-the-direction-with-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2 Matching the direction with... match!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p3-removing-superfluous-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3 Removing superfluous frames
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1097,6 +1115,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1230,6 +1252,29 @@
   
   <span class="md-ellipsis">
     API Application Programming Interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Boolean_Expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boolean Expressions
     
   </span>
   
@@ -1615,6 +1660,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Glossary/Refactoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Refactoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Glossary/Static_Function/" class="md-nav__link">
         
   
@@ -1823,6 +1891,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#p2-matching-the-direction-with-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2 Matching the direction with... match!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p3-removing-superfluous-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3 Removing superfluous frames
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1951,6 +2037,260 @@ onready 변수로 자동 삽입됩니다.</p>
 다만 아쉬운 점이 있다면, 조건문의 순서를 주의해서 작성해야 한다는 것입니다. 그래도 잘 작동하고, 코드도 이해하기 쉬운 구조입니다.</p>
 <p><img alt="030_character_010_runner_directions 1.mp4" src="../videos/030_character_010_runner_directions%201.mp4" /></p>
 <p>좋은 수업이었습니다. 뭐라구요, 너무 짧았다고요? 더 원하시나요? 알겠습니다, 그럼 좀 더 흥미롭게 만들어 보도록 하죠.</p>
+<hr />
+<h2 id="p2-matching-the-direction-with-match">P2 Matching the direction with... match!</h2>
+<p>이번에는 GDScript에서 제공하는 또 다른 도구인 match 키워드를 사용하여 이 코드를 <a href="../../../Glossary/Refactoring/">Refactoring</a> 해보겠습니다.
+이는 여러 개의 if와 elif 문을 더 읽기 쉽게 대체할 수 있습니다.</p>
+<p>다음은 match가 어떻게 동작하는지를 보여주는 예시입니다. 아래 코드는 item 변수의 값을 확인하고, 그 값에 따라 메시지를 출력합니다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">item</span><span class="p">:</span>
+<span class="w">        </span><span class="s2">&quot;apple&quot;</span><span class="p">:</span>
+<span class="w">            </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s an apple!&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="s2">&quot;banana&quot;</span><span class="p">:</span>
+<span class="w">            </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s a banana!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">다음 질문에 답해보세요</p>
+<p>이 코드는 어떤 내용을 출력할 것 같으신가요?
+- “It’s an apple!”
+- “It’s a banana!” 
+- 이 코드는 아무 것도 출력하지 않습니다.</p>
+<details class="example">
+<summary>정답</summary>
+<p>item 변수에 "apple"이 설정되어 있으므로, 첫 번째 조건이 일치하게 되어 "It's an apple!"이 출력됩니다.</p>
+</details>
+</div>
+<p>위의 코드는 아래의 if와 elif 문으로 작성한 것과 동일한 의미를 가집니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s an apple!&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s a banana!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>match 문은 여러 개의 if와 elif 문을 사용하는 것보다 조금 더 읽기 쉽고 간결합니다. 특히 하나의 값을 여러 가능한 경우와 비교해야 할 때 유용합니다… 
+예를 들면 캐릭터가 여덟 방향을 바라보게 할 때처럼요!</p>
+<p>우선, 방금 _physics_process() 함수에 작성하신 코드를 삭제해 주세요. 다시 처음부터 시작하는 겁니다!</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="c1"># if direction.x &gt; 0.0 and direction.y &gt; 0.0:</span>
+<span class="w">    </span><span class="c1">#   _skin.texture = RUNNER_DOWN_RIGHT</span>
+<span class="w">    </span><span class="c1"># elif direction.x &lt; 0.0 and direction.y &gt; 0.0:</span>
+<span class="w">    </span><span class="c1">#   _skin.texture = RUNNER_DOWN_LEFT</span>
+<span class="w">    </span><span class="c1"># elif direction.x &gt; 0.0 and direction.y &lt; 0.0:</span>
+<span class="w">    </span><span class="c1">#   _skin.texture = RUNNER_UP_RIGHT</span>
+<span class="w">    </span><span class="c1"># elif direction.x &lt; 0.0 and direction.y &lt; 0.0:</span>
+<span class="w">    </span><span class="c1">#   _skin.texture = RUNNER_UP_LEFT</span>
+<span class="w">    </span><span class="c1"># elif direction.x &gt; 0.0:</span>
+<span class="w">    </span><span class="c1">#   _skin.texture = RUNNER_RIGHT</span>
+<span class="w">    </span><span class="c1"># elif direction.x &lt; 0.0:</span>
+<span class="w">    </span><span class="c1">#   _skin.texture = RUNNER_LEFT</span>
+<span class="w">    </span><span class="c1"># elif direction.y &gt; 0.0:</span>
+<span class="w">    </span><span class="c1">#   _skin.texture = RUNNER_DOWN</span>
+<span class="w">    </span><span class="c1"># elif direction.y &lt; 0.0:</span>
+<span class="w">    </span><span class="c1">#   _skin.texture = RUNNER_UP</span>
+</code></pre></div>
+<p>match 문의 어려운 점은 이 구문이 “패턴” 또는 명확히 구분되는 값들을 기준으로 작동한다는 것입니다. 
+즉, 서로 분리되고 구별되는 값들(예: 1, 2, 3과 같은 각각의 정수)을 비교하는 데 사용된다는 뜻입니다.</p>
+<p>하지만 조이스틱을 사용할 경우, 입력 방향 벡터는 사실상 무한한 범위의 소수값을 가질 수 있습니다.
+따라서 캐릭터가 움직이는 방향을 match에 사용할 수 있는 신뢰할 수 있는 값으로 변환해 주어야 합니다.</p>
+<p>예를 들어, 플레이어가 왼쪽으로 이동할 때 조이스틱 입력은 Vector2(-0.98, 0.0), Vector2(-0.74, 0.0) 또는 이와 유사한 다양한 값이 될 수 있습니다.
+이러한 값들을 다음의 아홉 가지 중 하나로 변환해 줄 필요가 있습니다: 위, 아래, 왼쪽, 오른쪽, 왼쪽 위, 오른쪽 위, 왼쪽 아래, 오른쪽 아래, 그리고 정지 상태입니다.</p>
+<p>Vector2(-0.98, 0.0), Vector2(-0.74, 0.0) 등과 같은 다양한 값을 Vector2(-1.0, 0.0)으로 변환해 줄 수 있는 함수가 필요합니다.
+이렇게 변환된 값을 사용하여, 캐릭터가 왼쪽을 바라보는 텍스처를 선택할 수 있게 됩니다.</p>
+<p>벡터에 익숙하지 않으시다면 입력 방향을 이해하는 것이 다소 복잡하게 느껴질 수 있으니, 간단히 정리해 드리겠습니다:</p>
+<ul>
+<li>방향 벡터의 <strong>y 값</strong>은 위쪽이 -1.0, 아래쪽이 1.0입니다.</li>
+<li>방향 벡터의 <strong>x 값</strong>은 왼쪽이 -1.0, 오른쪽이 1.0입니다.</li>
+</ul>
+<p>이 이미지는 캐릭터가 바라볼 수 있는 여덟 가지 방향에 대해 우리가 매칭하고자 하는 벡터들과, 캐릭터가 정지 상태일 때를 나타내는 (0, 0) 벡터의 사용을 보여줍니다.</p>
+<p><img alt="020_080_directions.png" src="../images/020_080_directions.png" /></p>
+<details class="info">
+<summary>대각선 벡터들이 정규화(normalized)되지 않았다는 뜻 아닌가요? 그게 문제가 되지는 않나요?</summary>
+<p>네, 맞습니다. 하지만 여기서는 이동 방향을 계산하려는 것이 아니라, 스프라이트가 바라보는 방향을 정하기 위한 것입니다. match 키워드를 사용해서 코드의 가독성을 높이려는 목적이기 때문에, 가능한 모든 방향 벡터를 한정된 몇 가지 값으로 좁혀 줄 필요가 있습니다.</p>
+<p>플레이어는 아날로그 조이스틱을 사용할 수 있기 때문에 direction 변수에는 다양한 소수값들이 들어올 수 있습니다. 하지만 스프라이트가 바라볼 수 있는 방향은 여덟 가지뿐입니다. 따라서 위 이미지에서 보여준 것처럼, 입력으로 들어오는 광범위한 방향 벡터를 아홉 가지 값(정지 상태 포함)으로 변환해 줄 필요가 있습니다.</p>
+<p>이렇게 얻은 아홉 가지 값 중 하나를 가진 새 벡터는 캐릭터를 실제로 이동시키는 데에는 사용하지 않을 것입니다. 단지 스프라이트가 이동 방향에 맞춰 바라보도록 바꿔주는 용도로만 사용할 예정입니다. 물론 원하신다면, 이 벡터를 활용해 조이스틱을 사용하더라도 플레이어의 이동을 여덟 방향으로 제한할 수도 있습니다.</p>
+</details>
+<p>Godot에는 코드의 가독성을 높이기 위해 사용할 수 있는 미리 정의된 Vector2 상수들이 있습니다.
+예를 들어, 상수 Vector2.DOWN은 Vector2(0, 1)과 동일한 값을 가집니다. 이러한 상수들은 match 문과 함께 다음과 같이 사용할 수 있습니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">direction_discrete</span><span class="p">:</span>
+<span class="w">        </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+<span class="w">            </span><span class="c1"># 아래 방향 텍스처로 스프라이트 변경</span>
+<span class="w">        </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+<span class="w">            </span><span class="c1"># 오른쪽 방향 텍스처로 스프라이트 변경</span>
+<span class="w">        </span><span class="c1"># ...</span>
+</code></pre></div>
+<p>하지만 대각선 방향에 대해서는 미리 정의된 상수가 존재하지 않으므로, 직접 상수를 만들어야 합니다.
+대각선 방향을 나타내기 위해 두 개의 방향 상수를 더한 새로운 상수를 만들 수 있습니다.
+예를 들어, Vector2.DOWN + Vector2.RIGHT을 통해 오른쪽 아래 방향을 나타낼 수 있습니다. 이 연산은 Vector2(1, 1)과 동일한 값을 생성합니다.</p>
+<p>스크립트 상단에 다음 네 가지 상수를 추가해 주세요:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">UP_LEFT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">UP</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">LEFT</span>
+<span class="k">const</span><span class="w"> </span><span class="n">UP_RIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">UP</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">RIGHT</span>
+<span class="k">const</span><span class="w"> </span><span class="n">DOWN_LEFT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">DOWN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">LEFT</span>
+<span class="k">const</span><span class="w"> </span><span class="n">DOWN_RIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">DOWN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">RIGHT</span>
+</code></pre></div>
+<details class="info">
+<summary>Vector2는 x와 y 구성 요소에 소수 값을 사용하잖아요. 그렇다면 Vector2 값을 비교할 때 정밀도 오류가 발생할 수도 있지 않나요?</summary>
+<p>컴퓨터에서 소수는 한정된 정밀도로 표현됩니다. 작은 숫자의 경우 약 소수점 아래 15자리까지 정확하게 표현할 수 있지만, 숫자가 커질수록 정밀도는 떨어집니다.</p>
+<p>이 때문에 일반적으로 두 소수 값을 정확히 같은지 비교하는 것은 안전하지 않습니다. 하지만 1.0이나 -1.0처럼 작고 정수인 소수 값의 경우에는 비교해도 괜찮습니다. 컴퓨터가 이러한 값들은 정확하게 표현할 수 있기 때문입니다. 따라서 이 경우에는 정밀도 오류에 대해 걱정하지 않으셔도 됩니다.</p>
+</details>
+<p>방향 벡터를 한정된 값의 집합으로 변환하기 위해 Vector2.sign() 메서드를 사용할 수 있습니다. _physics_process() 함수 안에 다음 변수를 추가해 주세요:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">direction_discrete</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="o">.</span><span class="n">sign</span><span class="p">()</span>
+</code></pre></div>
+<p>Vector2.sign()을 호출하면, x와 y 구성 요소가 -1.0, 0.0, 또는 1.0 중 하나로 설정된 Vector2 값을 반환합니다.
+이를 통해 벡터는 총 9가지 가능한 값으로 제한됩니다.</p>
+<p><br></p>
+<p>Vector2.sign() 메서드는 다음과 같이 작동합니다:</p>
+<ul>
+<li>
+<p>입력 값이 음수이면 -1.0을 반환합니다.</p>
+</li>
+<li>
+<p>입력 값이 0이면 0.0을 반환합니다.</p>
+</li>
+<li>
+<p>입력 값이 양수이면 1.0을 반환합니다.</p>
+</li>
+</ul>
+<p><br></p>
+<p>이 규칙은 벡터의 x와 y 구성 요소 모두에 적용되며, 그 결과로 방향은 동일하지만 각 구성 요소가 -1.0, 0.0, 또는 1.0 중 하나인 새로운 벡터가 만들어집니다.
+이를 통해 우리가 match에 사용할 수 있는 아홉 가지 가능한 값이 만들어집니다:</p>
+<p><img alt="020_080_directions 1.png" src="../images/020_080_directions%201.png" /></p>
+<p>그 다음에는 이 벡터를 사용하여 match 문을 통해 방향에 해당하는 텍스처와 매칭하게 됩니다. 아래는 처음 두 가지 경우입니다.
+다음 코드를 _physics_process() 함수에 추가해 주세요:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">direction_discrete</span><span class="p">:</span>
+<span class="w">        </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+<span class="w">            </span><span class="n">_skin</span><span class="o">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUNNER_LEFT</span>
+<span class="w">        </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+<span class="w">            </span><span class="n">_skin</span><span class="o">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUNNER_RIGHT</span>
+</code></pre></div>
+<p>이 코드로 캐릭터가 왼쪽과 오른쪽을 바라볼 수 있게 됩니다! 직접 시험해 보세요!</p>
+<p><img alt="030_character_020_match_looking_left_and_right.mp4" src="../videos/030_character_020_match_looking_left_and_right.mp4" /></p>
+<div class="admonition note">
+<p class="admonition-title">직접 시도해 보세요</p>
+<p>좋아요, 이제 당신 차례입니다! 나머지 여섯 가지 경우를 _physics_process() 함수에 추가해 보시기 바랍니다. 이번에는 match 문을 사용하므로, 각 경우의 순서는 중요하지 않습니다. 이것이 if와 elif 문에 비해 match 문이 가지는 장점 중 하나입니다.</p>
+<p>완료하시면 캐릭터가 여덟 방향 모두를 바라볼 수 있게 될 것입니다. 직접 시도해 보시고, 아래에 있는 정답도 확인해 보세요.</p>
+</div>
+<p>다음은 나머지 여섯 가지 방향에 대한 코드입니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">        </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+<span class="w">            </span><span class="n">_skin</span><span class="o">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUNNER_UP</span>
+<span class="w">        </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+<span class="w">            </span><span class="n">_skin</span><span class="o">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUNNER_DOWN</span>
+<span class="w">        </span><span class="n">UP_LEFT</span><span class="p">:</span>
+<span class="w">            </span><span class="n">_skin</span><span class="o">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUNNER_UP_LEFT</span>
+<span class="w">        </span><span class="n">UP_RIGHT</span><span class="p">:</span>
+<span class="w">            </span><span class="n">_skin</span><span class="o">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUNNER_UP_RIGHT</span>
+<span class="w">        </span><span class="n">DOWN_LEFT</span><span class="p">:</span>
+<span class="w">            </span><span class="n">_skin</span><span class="o">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUNNER_DOWN_LEFT</span>
+<span class="w">        </span><span class="n">DOWN_RIGHT</span><span class="p">:</span>
+<span class="w">            </span><span class="n">_skin</span><span class="o">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUNNER_DOWN_RIGHT</span>
+</code></pre></div>
+<p>입력 방향이 없는 경우, direction_key는 Vector2(0, 0)이 됩니다. 이는 플레이어가 멈췄다는 뜻이며,
+이때는 러너가 새로운 방향을 바라보지 않고 그냥 멈춰 있어야 합니다. 따라서 Vector2(0, 0)에 대한 match 항목은 따로 두지 않습니다.</p>
+<p>게임을 테스트해 보세요. 캐릭터가 이동할 때마다 방향에 따라 러너가 바라보는 방향이 바뀌는 것을 확인하실 수 있을 것입니다. 점점 그럴듯하게 보이기 시작하네요!</p>
+<p><img alt="020_character_085_runner_directions.mp4" src="../videos/020_character_085_runner_directions.mp4" /></p>
+<p>다 끝났습니다! …라고 말했지만, 사실 아직 완전히 끝난 건 아닙니다. 코드를 좀 더 간단하고 짧게 만들 수 있습니다.</p>
+<hr />
+<h2 id="p3-removing-superfluous-frames">P3 Removing superfluous frames</h2>
+<p>왼왼쪽이나 오른쪽, 또는 대각선 왼쪽과 오른쪽을 바라보는 캐릭터의 텍스처가 동일한 이미지지만 좌우로 뒤집힌 것이라는 점을 눈치채셨나요?
+그렇다면 이러한 텍스처들은 더 이상 필요하지 않습니다. 코드에서 이미지를 좌우 반전시키면 되기 때문입니다. 이제 이를 정리해보겠습니다.
+불필요한 텍스처 로딩 부분과 match 구문에서 해당되는 부분을 제거해 주세요. 아래는 왼쪽, 왼쪽 위, 왼쪽 아래 방향에 해당하는 코드입니다:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># const RUNNER_DOWN_LEFT = preload(&quot;res://assets/runner_down_left.png&quot;)</span>
+<span class="c1"># const RUNNER_LEFT = preload(&quot;res://assets/runner_left.png&quot;)</span>
+<span class="c1"># const RUNNER_UP_LEFT = preload(&quot;res://assets/runner_up_left.png&quot;)</span>
+
+<span class="c1"># ...</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="c1">#   Vector2.LEFT:</span>
+<span class="w">    </span><span class="c1">#       _skin.texture = RUNNER_LEFT</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="c1">#   UP_LEFT:</span>
+<span class="w">    </span><span class="c1">#       _skin.texture = RUNNER_UP_LEFT</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="c1">#   DOWN_LEFT:</span>
+<span class="w">    </span><span class="c1">#       _skin.texture = RUNNER_DOWN_LEFT</span>
+</code></pre></div>
+<details class="info">
+<summary>왜 캐릭터가 왼쪽을 바라보는 텍스처는 제거하고, 오른쪽을 바라보는 텍스처는 남겨두는 건가요?</summary>
+<p>Godot을 비롯한 많은 게임 엔진에서는 기본적인 정면 방향이 ‘오른쪽’입니다. 특별한 이유가 있어서라기보다는, 그냥 하나의 관례일 뿐입니다.</p>
+<p>이 경우, 왼쪽을 바라보는 이미지나 오른쪽을 바라보는 이미지 중 어느 쪽을 남겨도 상관은 없습니다. 하지만 일반적인 관례를 따르기 위해 오른쪽 이미지를 유지하고 왼쪽 이미지는 제거하는 것입니다.</p>
+</details>
+<p>이제 방향에 따라 스프라이트를 뒤집어야 합니다. 몇 가지 수정을 해주어야 하겠지만, 그 전에 먼저 씬으로 돌아가 Skin 노드를 선택한 다음,
+인스펙터(Inspector)에서 Offset -&gt; Flip H와 Offset -&gt; Flip V 속성을 찾아보세요.</p>
+<p>이 두 속성은 각각 스프라이트를 수평(H)과 수직(V)으로 뒤집어 줍니다.
+직접 시험해 보세요! 대칭이 아닌 이미지(예: runner_right.png)를 Texture 속성에 지정한 후, 수평 및 수직으로 뒤집어 보시기 바랍니다.</p>
+<p><img alt="020_090_flip_h_v.webp" src="../images/020_090_flip_h_v.webp" /></p>
+<p>이제 이러한 속성들이 어떻게 작동하는지 이해하셨으니, 이를 스크립트에서 사용해 보겠습니다. _physics_process() 함수의 끝부분에 다음 코드를 추가해 주세요:</p>
+<div class="highlight"><pre><span></span><code>func _physics_process(_delta: float) -&gt; void:
+    # ...
+    if direction_discrete.length() &gt; 0:
+        _skin.flip_h = direction.x &lt; 0.0
+</code></pre></div>
+<p>이 코드에서는 캐릭터가 왼쪽으로 이동할 때 스프라이트를 수평으로 뒤집습니다. 이를 위해 _skin.flip_h 속성을 사용합니다.
+direction.x &lt; 0.0이라는 <a href="../../../Glossary/Boolean_Expressions/">Boolean_Expressions</a>의 결과를 그대로 대입할 수 있습니다.
+이 표현식은 캐릭터가 왼쪽으로 이동 중일 경우 true를 반환하고, 그렇지 않으면 false를 반환합니다.</p>
+<p>이 표현식 앞에 if 조건문을 둔 이유는, 캐릭터가 정지해 있을 때 스프라이트가 뒤집히는 것을 방지하기 위함입니다.
+우리는 오직 입력이 들어왔을 때만 스프라이트를 뒤집고자 합니다. 그렇지 않으면 키를 떼는 순간, 캐릭터가 원래 방향으로 갑자기 되돌아가 버리게 됩니다.</p>
+<div class="admonition example">
+<p class="admonition-title">다음 질문에 답해보세요</p>
+<p>입력을 해제하면 왜 스프라이트가 뒤집히는 걸까요?
+- direction.x가 0.0이 되기 때문입니다.
+- direction.x가 -1.0이 되기 때문입니다.
+- 러너가 피곤해지기 때문입니다.
+- direction.x가 1.0이 되기 때문입니다.</p>
+<details class="example">
+<summary>정답</summary>
+<p>캐릭터가 정지해 있을 때 direction.x는 0.0이 됩니다. 따라서 direction.x &lt; 0.0은 0.0 &lt; 0.0과 같고, 이 조건은 거짓입니다. 그래서 스프라이트는 원래 방향으로 되돌아가게 됩니다.</p>
+</details>
+</div>
+<p>캐릭터가 왼쪽 위, 왼쪽, 또는 왼쪽 아래로 움직일 때 어떤 일이 일어날 것 같으신가요? 스프라이트가 수평으로 뒤집힐까요? 지금 직접 해보시면,
+거의 맞게 작동하는 것을 확인하실 수 있을 것입니다.</p>
+<p><img alt="030_character_030_flip_h_only.mp4" src="../videos/030_character_030_flip_h_only.mp4" /></p>
+<p>캐릭터가 왼쪽으로 이동할 때 스프라이트는 수평으로 뒤집히지만, 항상 올바른 텍스처로 업데이트되지는 않습니다.</p>
+<div class="admonition example">
+<p class="admonition-title">다음 질문에 답해보세요</p>
+<p>왜 스프라이트가 항상 올바른 텍스처로 업데이트되지 않는다고 생각하시나요? 최선을 다해 추측해 보세요.
+- 텍스처를 뒤집는 것이, 대각선으로 이동할 때 스프라이트가 제대로 업데이트되지 않도록 만들고 있다.
+- 왼쪽 방향에 대한 match 항목이 더 이상 없기 때문에, 왼쪽으로 이동할 때 텍스처가 업데이트되지 않는다.</p>
+<details class="example">
+<summary>정답</summary>
+<p>캐릭터가 왼쪽으로 이동할 때 스프라이트는 수평으로 뒤집히긴 하지만, 왼쪽 방향에 대한 match 항목을 제거했기 때문에 텍스처 자체는 업데이트되지 않습니다. 올바르게 텍스처를 업데이트하려면 왼쪽 방향에 대한 항목을 다시 추가해 주어야 합니다.</p>
+</details>
+</div>
+<p>캐릭터가 왼쪽으로 이동할 때 텍스처를 업데이트하도록 누락된 코드를 추가해 보겠습니다. 정확히 말하면, 왼쪽 방향에 대한 match 항목을 다시 도입해야 합니다.</p>
+<p>동일한 경우에 여러 패턴이나 값을 매칭시키고 싶을 때는 쉼표(,)를 사용하면 됩니다. 현재 코드에서는 오른쪽 방향과 왼쪽 방향이 서로 대칭이므로,
+오른쪽 방향에 대한 세 가지 경우에 왼쪽 방향을 함께 추가해 줄 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">direction_discrete</span><span class="p">:</span>
+<span class="w">        </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+<span class="w">            </span><span class="c1"># 오른쪽 또는 왼쪽 텍스처 설정</span>
+<span class="w">        </span><span class="n">UP_RIGHT</span><span class="p">,</span><span class="w"> </span><span class="n">UP_LEFT</span><span class="p">:</span>
+<span class="w">            </span><span class="c1"># 오른쪽 위 또는 왼쪽 위 텍스처 설정</span>
+<span class="w">        </span><span class="n">DOWN_RIGHT</span><span class="p">,</span><span class="w"> </span><span class="n">DOWN_LEFT</span><span class="p">:</span>
+<span class="w">            </span><span class="c1"># 오른쪽 아래 또는 왼쪽 아래 텍스처 설정</span>
+<span class="w">    </span><span class="c1"># ...</span>
+</code></pre></div>
+<p>이제 이 작업을 마치면, 캐릭터는 이전처럼 여덟 방향으로 움직일 수 있어야 합니다. 직접 테스트해 보세요!</p>
+<p><img alt="030_character_010_runner_directions 2.mp4" src="../videos/030_character_010_runner_directions%202.mp4" /></p>
+<p>훌륭합니다! 이제 코드가 이전보다 좀 더 읽기 쉬워졌다는 것을 확인하실 수 있을 겁니다. 또한 아티스트가 제작해야 할 텍스처의 수가 줄어들기 때문에,
+작업 시간을 조금이나마 절약할 수 있습니다.</p>
+<details class="info">
+<summary>왜 러너가 가끔 키를 놓는 순간 다른 방향으로 갑자기 돌아서는 건가요?</summary>
+<p>캐릭터가 대각선으로 이동 중일 때 키를 놓으면, 대부분의 경우 두 키 중 하나를 다른 하나보다 한 프레임 정도 먼저 놓게 됩니다. 그 결과, 러너는 마지막으로 놓은 키의 방향을 바라보게 됩니다.</p>
+<p>러너가 바라보던 방향을 유지하도록 만들려면, 키가 놓였을 때 잠시 기다리는 버퍼 시간을 두어 다른 키도 함께 놓이기를 기다려야 합니다. 이렇게 하면 약간의 시각적 지연이 발생합니다. 캐릭터의 실제 움직임은 즉시 바뀌지만, 시각적으로는 몇 프레임 동안 이전 방향의 스프라이트가 유지됩니다. 이런 방식을 적용하고자 한다면, 아날로그 조이스틱이 아니라 방향키(DPAD)나 키보드 입력에만 적용되도록 주의해야 합니다.</p>
+</details>
 
 
 
