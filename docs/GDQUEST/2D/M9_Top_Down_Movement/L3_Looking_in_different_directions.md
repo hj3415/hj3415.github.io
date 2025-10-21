@@ -446,3 +446,65 @@ func _physics_process(_delta: float) -> void:
 >캐릭터가 대각선으로 이동 중일 때 키를 놓으면, 대부분의 경우 두 키 중 하나를 다른 하나보다 한 프레임 정도 먼저 놓게 됩니다. 그 결과, 러너는 마지막으로 놓은 키의 방향을 바라보게 됩니다.
 >
 >러너가 바라보던 방향을 유지하도록 만들려면, 키가 놓였을 때 잠시 기다리는 버퍼 시간을 두어 다른 키도 함께 놓이기를 기다려야 합니다. 이렇게 하면 약간의 시각적 지연이 발생합니다. 캐릭터의 실제 움직임은 즉시 바뀌지만, 시각적으로는 몇 프레임 동안 이전 방향의 스프라이트가 유지됩니다. 이런 방식을 적용하고자 한다면, 아날로그 조이스틱이 아니라 방향키(DPAD)나 키보드 입력에만 적용되도록 주의해야 합니다.
+
+---
+
+## P4 Recap
+
+이번 레슨에서는 다음과 같은 내용을 배우셨습니다:
+
+- 변수 이름 앞에 밑줄(\_)을 붙여서 해당 변수가 일종의 비공개 변수임을 나타내는 방법
+    
+- 캐릭터의 움직이는 방향에 따라 스프라이트 텍스처를 변경하는 방법
+    
+- match 키워드를 사용하여 값을 여러 경우와 비교하고, if나 elif 블록보다 더 읽기 쉽게 만드는 방법
+    
+- Sprite2D.flip_h를 사용하여 스프라이트를 수평으로 뒤집고, 텍스처 제작을 줄이는 방법
+    
+
+꽤 많은 내용을 다루셨습니다! 잠시 쉬시면서 지금까지의 진도를 즐기셔도 좋습니다. 다음 레슨에서는 장애물을 추가하고, 캐릭터가 그것들과 부딪히게 만들어 보겠습니다.
+
+**코드 참고**
+
+다음은 이번 강의의 마지막에 해당하는 runner.gd 스크립트의 전체 코드입니다:
+
+```gdscript
+extends CharacterBody2D
+
+const RUNNER_DOWN = preload("res://assets/runner_down.png")
+const RUNNER_DOWN_RIGHT = preload("res://assets/runner_down_right.png")
+const RUNNER_RIGHT = preload("res://assets/runner_right.png")
+const RUNNER_UP = preload("res://assets/runner_up.png")
+const RUNNER_UP_RIGHT = preload("res://assets/runner_up_right.png")
+
+const UP_RIGHT = Vector2.UP + Vector2.RIGHT
+const UP_LEFT = Vector2.UP + Vector2.LEFT
+const DOWN_RIGHT = Vector2.DOWN + Vector2.RIGHT
+const DOWN_LEFT = Vector2.DOWN + Vector2.LEFT
+
+var max_speed := 600.0
+
+@onready var _skin: Sprite2D = %Skin
+
+
+func _physics_process(_delta: float) -> void:
+	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = direction * max_speed
+	move_and_slide()
+
+	var direction_discrete := direction.sign()
+	match direction_discrete:
+		Vector2.RIGHT, Vector2.LEFT:
+			_skin.texture = RUNNER_RIGHT
+		Vector2.UP:
+			_skin.texture = RUNNER_UP
+		Vector2.DOWN:
+			_skin.texture = RUNNER_DOWN
+		UP_RIGHT, UP_LEFT:
+			_skin.texture = RUNNER_UP_RIGHT
+		DOWN_RIGHT, DOWN_LEFT:
+			_skin.texture = RUNNER_DOWN_RIGHT
+
+	if direction_discrete.length() > 0:
+		_skin.flip_h = direction.x < 0.0
+```
