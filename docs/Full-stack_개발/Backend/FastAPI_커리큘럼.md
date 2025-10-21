@@ -1,10 +1,9 @@
-좋아요! “FastAPI + MongoDB + Vue 3”를 전제로, **개념→실습→프로젝트** 흐름으로 차근차근 올라가는 커리큘럼을 제안드립니다. (파이썬·장고 경험자 기준, 4–6주 로드맵)
+좋아요! “FastAPI + MongoDB + Vue 3”를 전제로, **개념→실습→프로젝트** 흐름으로 차근차근 올라가는 커리큘럼을 제안드립니다.
+(파이썬·장고 경험자 기준, 4–6주 로드맵)
 
 ---
 
-# **0주차(준비) — 개발 환경/기본기**
-
-  
+### 0주차(준비) — 개발 환경/기본기
 
 **목표:** 비동기 기초, 도구 세팅, 프로젝트 뼈대 만들기
 
@@ -20,11 +19,9 @@
         
     - 테스트: pytest, pytest-asyncio, 클라이언트: httpx.AsyncClient
         
-    - 서버: uvicorn[standard]
-        
-    
+    - 서버: uvicorn\[standard\]
+
 - 리포 구조(권장):
-    
 
 ```
 app/
@@ -40,22 +37,15 @@ app/
 tests/
 ```
 
-  
-
-  
-
 **미니 실습 A**
 
 - “헬스 체크” 엔드포인트 /health (DB 연결 상태 포함)
     
 - CORS 설정(Vue3 개발 서버 도메인 허용)
-    
 
 ---
 
-# **1주차 — FastAPI 기본기 & 라우팅/검증**
-
-  
+### 1주차 — FastAPI 기본기 & 라우팅/검증
 
 **개념**
 
@@ -68,20 +58,14 @@ tests/
 - 예외 처리: HTTPException, 전역 핸들러, 커스텀 에러 모델
     
 - 미들웨어/라이프사이클: lifespan에서 DB 연결/종료
-    
-
-  
 
 **미니 실습 B**
 
 - “메모” CRUD (메모: title, content, tags, created_at) — 아직은 인메모리/목 DB로
-    
 
 ---
 
-# **2주차 — MongoDB 연동 (두 가지 트랙 중 택1)**
-
-  
+### 2주차 — MongoDB 연동 (두 가지 트랙 중 택1)
 
 **트랙 2A: Driver 직결 (Motor)**
 
@@ -92,9 +76,6 @@ tests/
 - 리포지토리 계층으로 쿼리 캡슐화
     
 - 트랜잭션(복제셋 환경), 부분 업데이트, $set, $push, $lookup(집계)
-    
-
-  
 
 **트랙 2B: ODM (Beanie 권장)**
 
@@ -103,9 +84,6 @@ tests/
 - find, find_one, insert, update_many, Aggregation
     
 - ODM 장점: 타입 안정성/간결성, 단점: 고급 쿼리 제약·추상화 학습 필요
-    
-
-  
 
 **미니 실습 C**
 
@@ -114,13 +92,10 @@ tests/
 - 페이지네이션(커서 기반 or skip/limit), 정렬, 간단 텍스트 검색(인덱스 포함)
     
 - 컬렉션 인덱스 실제 생성/확인
-    
 
 ---
 
-# **3주차 — 인증/인가 & 보안**
-
-  
+### 3주차 — 인증/인가 & 보안
 
 **개념**
 
@@ -131,27 +106,20 @@ tests/
     - **권장**: Access 토큰은 메모리/HTTP 헤더, Refresh 토큰은 **HttpOnly+Secure 쿠키** (도메인 분리시 CORS+CSRF 고려)
         
     - 대안(학습용): 로컬스토리지(보안 리스크 주지)
-        
-    
+
 - 패스워드 해시(passlib[bcrypt]), 레이트 리밋(SlowAPI), CORS/CSRF 개념
     
 - 권한(roles/permissions)과 의존성으로 가드
-    
-
-  
 
 **미니 실습 D**
 
 - POST /auth/login, POST /auth/refresh, POST /auth/logout
     
 - GET /me 보호 라우트, 역할 기반 접근 제어
-    
 
 ---
 
-# **4주차 — 실전 기능 묶음**
-
-  
+### 4주차 — 실전 기능 묶음
 
 **파일 업로드/다운로드**
 
@@ -168,20 +136,14 @@ tests/
     **캐싱/성능**
     
 - Redis 캐싱, ETag/Last-Modified, 응답 압축, Pydantic model_dump(exclude_none=...)
-    
-
-  
 
 **미니 실습 E**
 
 - 썸네일 생성(백그라운드) + 업로드 상태 폴링(or WebSocket 알림)
-    
 
 ---
 
-# **5주차 — 테스트/품질/관측성**
-
-  
+### 5주차 — 테스트/품질/관측성
 
 **테스트**
 
@@ -198,20 +160,14 @@ tests/
     **문서화**
     
 - 자동 문서 /docs//redoc 커스터마이즈, 버전 전략(v1/v2)
-    
-
-  
 
 **미니 실습 F**
 
 - 인증 흐름/CRUD 통합 테스트 세트 구축(CI에서 실행)
-    
 
 ---
 
-# **6주차 — 배포/운영**
-
-  
+### 6주차 — 배포/운영
 
 **배포**
 
@@ -228,20 +184,16 @@ tests/
     **모니터링**
     
 - OpenTelemetry(추적), 프로메테우스 지표, 에러 수집(Sentry)
-    
-
-  
 
 **미니 실습 G**
 
 - docker-compose로 “백엔드+Mongo+Redis” 로컬 프로덕션 흉내
     
 - Nginx로 Vue 정적 호스팅 + API 리버스 프록시
-    
 
 ---
 
-## **Vue 3 연동 핵심(동시에 진행)**
+### Vue 3 연동 핵심(동시에 진행)
 
 - CORS: allow_origins=['http://localhost:5173'], allow_credentials=True
     
@@ -250,24 +202,18 @@ tests/
     - 401 시 refresh API 자동 호출→재시도
         
     - 쿠키 기반일 경우 withCredentials: true
-        
-    
+  
 - 상태관리(Pinia): authStore(토큰/프로필), uiStore(스피너/알림)
     
 - 에러 처리: 에러 포맷 통일(백엔드에서 에러 모델 고정)
-    
 
 ---
 
-## **코드 스니펫(핵심 부분만)**
+### 코드 스니펫(핵심 부분만)
 
-  
+**1) app/main.py**
 
-### **1)** 
-
-### **app/main.py**
-
-```
+```python
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -299,13 +245,11 @@ async def health():
     return {"status": "ok", "mongo": ok.get("ok", 0) == 1}
 ```
 
-### **2)** 
+**2) app/db/mongo.py**
 
-### **app/db/mongo.py**
+**(Motor 트랙)**
 
-###  **(Motor 트랙)**
-
-```
+```python
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic_settings import BaseSettings
 
@@ -328,9 +272,9 @@ async def close_mongo():
     client and client.close()
 ```
 
-### **3) Pydantic 스키마 & 리포지토리 예시**
+**3) Pydantic 스키마 & 리포지토리 예시**
 
-```
+```python
 # app/schemas/note.py
 from pydantic import BaseModel, Field
 from datetime import datetime
@@ -367,9 +311,9 @@ class NoteRepo:
         return [_id_str(d) async for d in cursor]
 ```
 
-### **4) 라우트**
+**4) 라우트**
 
-```
+```python
 # app/api/routes/notes.py
 from fastapi import APIRouter, Query
 from app.schemas.note import NoteIn, NoteOut
@@ -386,9 +330,9 @@ async def list_notes(skip: int = Query(0, ge=0), limit: int = Query(20, le=100))
     return await NoteRepo.list(skip, limit)
 ```
 
-### **5) 인증(요약)**
+**5) 인증(요약)**
 
-```
+```python
 # app/core/security.py
 from datetime import datetime, timedelta
 import jwt
@@ -404,11 +348,9 @@ def create_access_token(sub: str, ttl_minutes=15):
 
 > 실무에서는 **Refresh 토큰은 HttpOnly 쿠키**, Access 토큰은 헤더(Authorization: Bearer)로 운용을 권장합니다. 프론트는 axios withCredentials, 백엔드는 CORS allow_credentials=True, 도메인/스킴/포트 정합 체크, CSRF 방어(더블 서브밋 토큰 등)를 병행하세요.
 
-  
+**6) 테스트(통합)**
 
-### **6) 테스트(통합)**
-
-```
+```python
 # tests/test_notes.py
 import pytest
 from httpx import AsyncClient
@@ -426,9 +368,7 @@ async def test_notes_flow():
 
 ---
 
-## **캡스톤 제안(치과 도메인 맞춤)**
-
-  
+### 캡스톤 제안(치과 도메인 맞춤)
 
 **“치과 예약/차트 경량 백엔드”**
 
@@ -443,7 +383,7 @@ async def test_notes_flow():
 
 ---
 
-## **주차별 체크리스트(요약)**
+### 주차별 체크리스트(요약)
 
 - **0주차**: 비동기·도구·뼈대 OK
     
@@ -458,12 +398,3 @@ async def test_notes_flow():
 - **5주차**: 테스트·문서·로그·에러수집 OK
     
 - **6주차**: Docker/Nginx/TLS·프로파일·모니터링 OK
-    
-
----
-
-## **다음 단계**
-
-  
-
-원하시면 이 커리큘럼대로 **스타터 레포 구조와 더 자세한 예제(Beanie 트랙 포함 / JWT 쿠키 운용 / axios 인터셉터 샘플 / Dockerfile & compose)**를 바로 만들어드릴게요. 어떤 트랙(Driver vs ODM)을 선호하시는지만 알려주시면 그에 맞춰 템플릿을 드리겠습니다.
