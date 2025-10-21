@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#appschemasnotepy" class="md-skip">
+        <a href="#0" class="md-skip">
           Skip to content
         </a>
       
@@ -2023,19 +2023,39 @@
   
 
 
-<p>좋아요! “FastAPI + MongoDB + Vue 3”를 전제로, 개념→실습→프로젝트 흐름으로 차근차근 올라가는 커리큘럼을 제안드립니다. (파이썬·장고 경험자 기준, 4–6주 로드맵)</p>
-<p>⸻</p>
-<p>0주차(준비) — 개발 환경/기본기</p>
-<p>목표: 비동기 기초, 도구 세팅, 프로젝트 뼈대 만들기
-    •   파이썬 비동기 기초: async/await, 이벤트 루프, I/O 바운드 vs CPU 바운드, asyncio.gather
-    •   FastAPI/Starlette 개념 지도: ASGI, 라우팅, 의존성 주입(DI), 미들웨어, lifespan
-    •   Pydantic v2 핵심: BaseModel, field_validator, model_validate, pydantic-settings로 환경변수 관리
-    •   도구:
-    •   포매터/린터: Ruff+Black, 타입체크: MyPy
-    •   테스트: pytest, pytest-asyncio, 클라이언트: httpx.AsyncClient
-    •   서버: uvicorn[standard]
-    •   리포 구조(권장):</p>
-<p>app/
+<p>좋아요! “FastAPI + MongoDB + Vue 3”를 전제로, <strong>개념→실습→프로젝트</strong> 흐름으로 차근차근 올라가는 커리큘럼을 제안드립니다. (파이썬·장고 경험자 기준, 4–6주 로드맵)</p>
+<hr />
+<h1 id="0"><strong>0주차(준비) — 개발 환경/기본기</strong></h1>
+<p><strong>목표:</strong> 비동기 기초, 도구 세팅, 프로젝트 뼈대 만들기</p>
+<ul>
+<li>
+<p>파이썬 비동기 기초: async/await, 이벤트 루프, I/O 바운드 vs CPU 바운드, asyncio.gather</p>
+</li>
+<li>
+<p>FastAPI/Starlette 개념 지도: ASGI, 라우팅, 의존성 주입(DI), 미들웨어, lifespan</p>
+</li>
+<li>
+<p>Pydantic v2 핵심: BaseModel, field_validator, model_validate, pydantic-settings로 환경변수 관리</p>
+</li>
+<li>
+<p>도구:</p>
+<ul>
+<li>
+<p>포매터/린터: Ruff+Black, 타입체크: MyPy</p>
+</li>
+<li>
+<p>테스트: pytest, pytest-asyncio, 클라이언트: httpx.AsyncClient</p>
+</li>
+<li>
+<p>서버: uvicorn[standard]</p>
+</li>
+</ul>
+</li>
+<li>
+<p>리포 구조(권장):</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>app/
   main.py
   core/        # config, security, logging
   api/         # routes, deps
@@ -2045,220 +2065,406 @@
   schemas/     # Pydantic 모델 (입출력)
   services/    # 비즈 로직
   repositories/# DB 접근 계층(Driver 직접 쓸 때)
-tests/</p>
-<p>미니 실습 A
-    •   “헬스 체크” 엔드포인트 /health (DB 연결 상태 포함)
-    •   CORS 설정(Vue3 개발 서버 도메인 허용)</p>
-<p>⸻</p>
-<p>1주차 — FastAPI 기본기 &amp; 라우팅/검증</p>
-<p>개념
-    •   경로/쿼리/바디/헤더/쿠키 파라미터
-    •   요청/응답 모델(검증, 직렬화), response_model, status_code
-    •   의존성 주입(DI) 패턴: 공통 파라미터, DB 세션 주입, 보안 의존성
-    •   예외 처리: HTTPException, 전역 핸들러, 커스텀 에러 모델
-    •   미들웨어/라이프사이클: lifespan에서 DB 연결/종료</p>
-<p>미니 실습 B
-    •   “메모” CRUD (메모: title, content, tags, created_at) — 아직은 인메모리/목 DB로</p>
-<p>⸻</p>
-<p>2주차 — MongoDB 연동 (두 가지 트랙 중 택1)</p>
-<p>트랙 2A: Driver 직결 (Motor)
-    •   motor.motor_asyncio.AsyncIOMotorClient
-    •   컬렉션 핸들, 인덱스 설계, ObjectId ↔ 문자열 변환, Pydantic 스키마 매핑
-    •   리포지토리 계층으로 쿼리 캡슐화
-    •   트랜잭션(복제셋 환경), 부분 업데이트, $set, $push, $lookup(집계)</p>
-<p>트랙 2B: ODM (Beanie 권장)
-    •   beanie.Document로 모델 정의, init_beanie, 인덱스/밸리데이션
-    •   find, find_one, insert, update_many, Aggregation
-    •   ODM 장점: 타입 안정성/간결성, 단점: 고급 쿼리 제약·추상화 학습 필요</p>
-<p>미니 실습 C
-    •   1주차 “메모”를 실제 MongoDB로 이관
-    •   페이지네이션(커서 기반 or skip/limit), 정렬, 간단 텍스트 검색(인덱스 포함)
-    •   컬렉션 인덱스 실제 생성/확인</p>
-<p>⸻</p>
-<p>3주차 — 인증/인가 &amp; 보안</p>
-<p>개념
-    •   OAuth2 Password Flow + JWT(Access/Refresh)
-    •   토큰 저장 전략
-    •   권장: Access 토큰은 메모리/HTTP 헤더, Refresh 토큰은 HttpOnly+Secure 쿠키 (도메인 분리시 CORS+CSRF 고려)
-    •   대안(학습용): 로컬스토리지(보안 리스크 주지)
-    •   패스워드 해시(passlib[bcrypt]), 레이트 리밋(SlowAPI), CORS/CSRF 개념
-    •   권한(roles/permissions)과 의존성으로 가드</p>
-<p>미니 실습 D
-    •   POST /auth/login, POST /auth/refresh, POST /auth/logout
-    •   GET /me 보호 라우트, 역할 기반 접근 제어</p>
-<p>⸻</p>
-<p>4주차 — 실전 기능 묶음</p>
-<p>파일 업로드/다운로드
-    •   이미지 업로드, S3나 로컬 스토리지 어댑터 패턴
-백그라운드 작업
-    •   BackgroundTasks, 큐(ARQ or RQ/Celery) 비교
-실시간/알림
-    •   WebSocket(채팅/알림), 서버 sent events(간단)
-캐싱/성능
-    •   Redis 캐싱, ETag/Last-Modified, 응답 압축, Pydantic model_dump(exclude_none=...)</p>
-<p>미니 실습 E
-    •   썸네일 생성(백그라운드) + 업로드 상태 폴링(or WebSocket 알림)</p>
-<p>⸻</p>
-<p>5주차 — 테스트/품질/관측성</p>
-<p>테스트
-    •   단위/통합 테스트, pytest-asyncio + httpx.AsyncClient
-    •   Mongo 테스트: 임시 DB 또는 Testcontainers
-품질/로그
-    •   구조화 로그(JSON), 요청/응답 로그 마스킹
-    •   OpenAPI 스키마 커스터마이즈, 예제(example) 제공
-문서화
-    •   자동 문서 /docs//redoc 커스터마이즈, 버전 전략(v1/v2)</p>
-<p>미니 실습 F
-    •   인증 흐름/CRUD 통합 테스트 세트 구축(CI에서 실행)</p>
-<p>⸻</p>
-<p>6주차 — 배포/운영</p>
-<p>배포
-    •   Dockerfile (멀티스테이지) + docker-compose(Mongo/Redis 포함)
-    •   Uvicorn 단독 vs Gunicorn+UvicornWorker
-    •   역프록시(Nginx) + TLS, 헬스체크, Readiness/Liveness
-설정/비밀관리
-    •   pydantic-settings, .env, 프로파일별 설정(dev/stage/prod)
-모니터링
-    •   OpenTelemetry(추적), 프로메테우스 지표, 에러 수집(Sentry)</p>
-<p>미니 실습 G
-    •   docker-compose로 “백엔드+Mongo+Redis” 로컬 프로덕션 흉내
-    •   Nginx로 Vue 정적 호스팅 + API 리버스 프록시</p>
-<p>⸻</p>
-<p>Vue 3 연동 핵심(동시에 진행)
-    •   CORS: allow_origins=['http://localhost:5173'], allow_credentials=True
-    •   인증 인터셉터(axios):
-    •   401 시 refresh API 자동 호출→재시도
-    •   쿠키 기반일 경우 withCredentials: true
-    •   상태관리(Pinia): authStore(토큰/프로필), uiStore(스피너/알림)
-    •   에러 처리: 에러 포맷 통일(백엔드에서 에러 모델 고정)</p>
-<p>⸻</p>
-<p>코드 스니펫(핵심 부분만)</p>
-<p>1) app/main.py</p>
-<p>from contextlib import asynccontextmanager
+tests/
+</code></pre></div>
+<p><strong>미니 실습 A</strong></p>
+<ul>
+<li>
+<p>“헬스 체크” 엔드포인트 /health (DB 연결 상태 포함)</p>
+</li>
+<li>
+<p>CORS 설정(Vue3 개발 서버 도메인 허용)</p>
+</li>
+</ul>
+<hr />
+<h1 id="1-fastapi"><strong>1주차 — FastAPI 기본기 &amp; 라우팅/검증</strong></h1>
+<p><strong>개념</strong></p>
+<ul>
+<li>
+<p>경로/쿼리/바디/헤더/쿠키 파라미터</p>
+</li>
+<li>
+<p>요청/응답 모델(검증, 직렬화), response_model, status_code</p>
+</li>
+<li>
+<p>의존성 주입(DI) 패턴: 공통 파라미터, DB 세션 주입, 보안 의존성</p>
+</li>
+<li>
+<p>예외 처리: HTTPException, 전역 핸들러, 커스텀 에러 모델</p>
+</li>
+<li>
+<p>미들웨어/라이프사이클: lifespan에서 DB 연결/종료</p>
+</li>
+</ul>
+<p><strong>미니 실습 B</strong></p>
+<ul>
+<li>“메모” CRUD (메모: title, content, tags, created_at) — 아직은 인메모리/목 DB로</li>
+</ul>
+<hr />
+<h1 id="2-mongodb-1"><strong>2주차 — MongoDB 연동 (두 가지 트랙 중 택1)</strong></h1>
+<p><strong>트랙 2A: Driver 직결 (Motor)</strong></p>
+<ul>
+<li>
+<p>motor.motor_asyncio.AsyncIOMotorClient</p>
+</li>
+<li>
+<p>컬렉션 핸들, 인덱스 설계, ObjectId ↔ 문자열 변환, Pydantic 스키마 매핑</p>
+</li>
+<li>
+<p>리포지토리 계층으로 쿼리 캡슐화</p>
+</li>
+<li>
+<p>트랜잭션(복제셋 환경), 부분 업데이트, $set, $push, $lookup(집계)</p>
+</li>
+</ul>
+<p><strong>트랙 2B: ODM (Beanie 권장)</strong></p>
+<ul>
+<li>
+<p>beanie.Document로 모델 정의, init_beanie, 인덱스/밸리데이션</p>
+</li>
+<li>
+<p>find, find_one, insert, update_many, Aggregation</p>
+</li>
+<li>
+<p>ODM 장점: 타입 안정성/간결성, 단점: 고급 쿼리 제약·추상화 학습 필요</p>
+</li>
+</ul>
+<p><strong>미니 실습 C</strong></p>
+<ul>
+<li>
+<p>1주차 “메모”를 실제 MongoDB로 이관</p>
+</li>
+<li>
+<p>페이지네이션(커서 기반 or skip/limit), 정렬, 간단 텍스트 검색(인덱스 포함)</p>
+</li>
+<li>
+<p>컬렉션 인덱스 실제 생성/확인</p>
+</li>
+</ul>
+<hr />
+<h1 id="3"><strong>3주차 — 인증/인가 &amp; 보안</strong></h1>
+<p><strong>개념</strong></p>
+<ul>
+<li>
+<p>OAuth2 Password Flow + JWT(Access/Refresh)</p>
+</li>
+<li>
+<p>토큰 저장 전략</p>
+<ul>
+<li>
+<p><strong>권장</strong>: Access 토큰은 메모리/HTTP 헤더, Refresh 토큰은 <strong>HttpOnly+Secure 쿠키</strong> (도메인 분리시 CORS+CSRF 고려)</p>
+</li>
+<li>
+<p>대안(학습용): 로컬스토리지(보안 리스크 주지)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>패스워드 해시(passlib[bcrypt]), 레이트 리밋(SlowAPI), CORS/CSRF 개념</p>
+</li>
+<li>
+<p>권한(roles/permissions)과 의존성으로 가드</p>
+</li>
+</ul>
+<p><strong>미니 실습 D</strong></p>
+<ul>
+<li>
+<p>POST /auth/login, POST /auth/refresh, POST /auth/logout</p>
+</li>
+<li>
+<p>GET /me 보호 라우트, 역할 기반 접근 제어</p>
+</li>
+</ul>
+<hr />
+<h1 id="4"><strong>4주차 — 실전 기능 묶음</strong></h1>
+<p><strong>파일 업로드/다운로드</strong></p>
+<ul>
+<li>
+<p>이미지 업로드, S3나 로컬 스토리지 어댑터 패턴</p>
+<p><strong>백그라운드 작업</strong></p>
+</li>
+<li>
+<p>BackgroundTasks, 큐(ARQ or RQ/Celery) 비교</p>
+<p><strong>실시간/알림</strong></p>
+</li>
+<li>
+<p>WebSocket(채팅/알림), 서버 sent events(간단)</p>
+<p><strong>캐싱/성능</strong></p>
+</li>
+<li>
+<p>Redis 캐싱, ETag/Last-Modified, 응답 압축, Pydantic model_dump(exclude_none=...)</p>
+</li>
+</ul>
+<p><strong>미니 실습 E</strong></p>
+<ul>
+<li>썸네일 생성(백그라운드) + 업로드 상태 폴링(or WebSocket 알림)</li>
+</ul>
+<hr />
+<h1 id="5"><strong>5주차 — 테스트/품질/관측성</strong></h1>
+<p><strong>테스트</strong></p>
+<ul>
+<li>
+<p>단위/통합 테스트, pytest-asyncio + httpx.AsyncClient</p>
+</li>
+<li>
+<p>Mongo 테스트: 임시 DB 또는 Testcontainers</p>
+<p><strong>품질/로그</strong></p>
+</li>
+<li>
+<p>구조화 로그(JSON), 요청/응답 로그 마스킹</p>
+</li>
+<li>
+<p>OpenAPI 스키마 커스터마이즈, 예제(example) 제공</p>
+<p><strong>문서화</strong></p>
+</li>
+<li>
+<p>자동 문서 /docs//redoc 커스터마이즈, 버전 전략(v1/v2)</p>
+</li>
+</ul>
+<p><strong>미니 실습 F</strong></p>
+<ul>
+<li>인증 흐름/CRUD 통합 테스트 세트 구축(CI에서 실행)</li>
+</ul>
+<hr />
+<h1 id="6"><strong>6주차 — 배포/운영</strong></h1>
+<p><strong>배포</strong></p>
+<ul>
+<li>
+<p>Dockerfile (멀티스테이지) + docker-compose(Mongo/Redis 포함)</p>
+</li>
+<li>
+<p>Uvicorn 단독 vs Gunicorn+UvicornWorker</p>
+</li>
+<li>
+<p>역프록시(Nginx) + TLS, 헬스체크, Readiness/Liveness</p>
+<p><strong>설정/비밀관리</strong></p>
+</li>
+<li>
+<p>pydantic-settings, .env, 프로파일별 설정(dev/stage/prod)</p>
+<p><strong>모니터링</strong></p>
+</li>
+<li>
+<p>OpenTelemetry(추적), 프로메테우스 지표, 에러 수집(Sentry)</p>
+</li>
+</ul>
+<p><strong>미니 실습 G</strong></p>
+<ul>
+<li>
+<p>docker-compose로 “백엔드+Mongo+Redis” 로컬 프로덕션 흉내</p>
+</li>
+<li>
+<p>Nginx로 Vue 정적 호스팅 + API 리버스 프록시</p>
+</li>
+</ul>
+<hr />
+<h2 id="vue-3"><strong>Vue 3 연동 핵심(동시에 진행)</strong></h2>
+<ul>
+<li>
+<p>CORS: allow_origins=['http://localhost:5173'], allow_credentials=True</p>
+</li>
+<li>
+<p>인증 인터셉터(axios):</p>
+<ul>
+<li>
+<p>401 시 refresh API 자동 호출→재시도</p>
+</li>
+<li>
+<p>쿠키 기반일 경우 withCredentials: true</p>
+</li>
+</ul>
+</li>
+<li>
+<p>상태관리(Pinia): authStore(토큰/프로필), uiStore(스피너/알림)</p>
+</li>
+<li>
+<p>에러 처리: 에러 포맷 통일(백엔드에서 에러 모델 고정)</p>
+</li>
+</ul>
+<hr />
+<h2 id="_1"><strong>코드 스니펫(핵심 부분만)</strong></h2>
+<h3 id="1"><strong>1)</strong></h3>
+<h3 id="appmainpy"><strong>app/main.py</strong></h3>
+<div class="highlight"><pre><span></span><code>from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.db.mongo import connect_to_mongo, close_mongo
-from app.api.routes import router as api_router</p>
-<p>@asynccontextmanager
+from app.api.routes import router as api_router
+
+@asynccontextmanager
 async def lifespan(app: FastAPI):
     await connect_to_mongo()
     yield
-    await close_mongo()</p>
-<p>app = FastAPI(title="FastAPI+Mongo Starter", lifespan=lifespan)</p>
-<p>app.add_middleware(
+    await close_mongo()
+
+app = FastAPI(title=&quot;FastAPI+Mongo Starter&quot;, lifespan=lifespan)
+
+app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[&quot;http://localhost:5173&quot;],
     allow_credentials=True,
-    allow_methods=["<em>"],
-    allow_headers=["</em>"],
-)</p>
-<p>app.include_router(api_router, prefix="/api")</p>
-<p>@app.get("/health")
+    allow_methods=[&quot;*&quot;],
+    allow_headers=[&quot;*&quot;],
+)
+
+app.include_router(api_router, prefix=&quot;/api&quot;)
+
+@app.get(&quot;/health&quot;)
 async def health():
     from app.db.mongo import db
-    ok = await db.command("ping")
-    return {"status": "ok", "mongo": ok.get("ok", 0) == 1}</p>
-<p>2) app/db/mongo.py (Motor 트랙)</p>
-<p>from motor.motor_asyncio import AsyncIOMotorClient
-from pydantic_settings import BaseSettings</p>
-<p>class Settings(BaseSettings):
-    MONGO_URL: str = "mongodb://localhost:27017"
-    MONGO_DB: str = "myapp"
-settings = Settings()</p>
-<p>client: AsyncIOMotorClient | None = None
-db = None</p>
-<p>async def connect_to_mongo():
+    ok = await db.command(&quot;ping&quot;)
+    return {&quot;status&quot;: &quot;ok&quot;, &quot;mongo&quot;: ok.get(&quot;ok&quot;, 0) == 1}
+</code></pre></div>
+<h3 id="2"><strong>2)</strong></h3>
+<h3 id="appdbmongopy"><strong>app/db/mongo.py</strong></h3>
+<h3 id="motor"><strong>(Motor 트랙)</strong></h3>
+<div class="highlight"><pre><span></span><code>from motor.motor_asyncio import AsyncIOMotorClient
+from pydantic_settings import BaseSettings
+
+class Settings(BaseSettings):
+    MONGO_URL: str = &quot;mongodb://localhost:27017&quot;
+    MONGO_DB: str = &quot;myapp&quot;
+settings = Settings()
+
+client: AsyncIOMotorClient | None = None
+db = None
+
+async def connect_to_mongo():
     global client, db
     client = AsyncIOMotorClient(settings.MONGO_URL)
     db = client[settings.MONGO_DB]
     # 예: 인덱스 보장
-    await db["notes"].create_index([("created_at", 1)])</p>
-<p>async def close_mongo():
-    client and client.close()</p>
-<p>3) Pydantic 스키마 &amp; 리포지토리 예시</p>
-<h1 id="appschemasnotepy">app/schemas/note.py</h1>
-<p>from pydantic import BaseModel, Field
-from datetime import datetime</p>
-<p>class NoteIn(BaseModel):
+    await db[&quot;notes&quot;].create_index([(&quot;created_at&quot;, 1)])
+
+async def close_mongo():
+    client and client.close()
+</code></pre></div>
+<h3 id="3-pydantic"><strong>3) Pydantic 스키마 &amp; 리포지토리 예시</strong></h3>
+<div class="highlight"><pre><span></span><code># app/schemas/note.py
+from pydantic import BaseModel, Field
+from datetime import datetime
+
+class NoteIn(BaseModel):
     title: str = Field(min_length=1, max_length=100)
     content: str
-    tags: list[str] = []</p>
-<p>class NoteOut(NoteIn):
+    tags: list[str] = []
+
+class NoteOut(NoteIn):
     id: str
-    created_at: datetime</p>
-<h1 id="apprepositoriesnote_repopy">app/repositories/note_repo.py</h1>
-<p>from app.db.mongo import db
+    created_at: datetime
+
+# app/repositories/note_repo.py
+from app.db.mongo import db
 from bson import ObjectId
-from datetime import datetime</p>
-<p>def _id_str(d): 
-    d["id"] = str(d.pop("_id"))
-    return d</p>
-<p>class NoteRepo:
+from datetime import datetime
+
+def _id_str(d): 
+    d[&quot;id&quot;] = str(d.pop(&quot;_id&quot;))
+    return d
+
+class NoteRepo:
     @staticmethod
     async def create(data: dict) -&gt; dict:
-        data["created_at"] = datetime.utcnow()
-        res = await db["notes"].insert_one(data)
-        doc = await db["notes"].find_one({"_id": res.inserted_id})
-        return _id_str(doc)</p>
-<div class="highlight"><pre><span></span><code>@staticmethod
-async def list(skip=0, limit=20) -&gt; list[dict]:
-    cursor = db[&quot;notes&quot;].find().sort(&quot;created_at&quot;, -1).skip(skip).limit(limit)
-    return [_id_str(d) async for d in cursor]
+        data[&quot;created_at&quot;] = datetime.utcnow()
+        res = await db[&quot;notes&quot;].insert_one(data)
+        doc = await db[&quot;notes&quot;].find_one({&quot;_id&quot;: res.inserted_id})
+        return _id_str(doc)
+
+    @staticmethod
+    async def list(skip=0, limit=20) -&gt; list[dict]:
+        cursor = db[&quot;notes&quot;].find().sort(&quot;created_at&quot;, -1).skip(skip).limit(limit)
+        return [_id_str(d) async for d in cursor]
 </code></pre></div>
-<p>4) 라우트</p>
-<h1 id="appapiroutesnotespy">app/api/routes/notes.py</h1>
-<p>from fastapi import APIRouter, Query
+<h3 id="4_1"><strong>4) 라우트</strong></h3>
+<div class="highlight"><pre><span></span><code># app/api/routes/notes.py
+from fastapi import APIRouter, Query
 from app.schemas.note import NoteIn, NoteOut
-from app.repositories.note_repo import NoteRepo</p>
-<p>router = APIRouter(prefix="/notes", tags=["notes"])</p>
-<p>@router.post("", response_model=NoteOut, status_code=201)
+from app.repositories.note_repo import NoteRepo
+
+router = APIRouter(prefix=&quot;/notes&quot;, tags=[&quot;notes&quot;])
+
+@router.post(&quot;&quot;, response_model=NoteOut, status_code=201)
 async def create_note(payload: NoteIn):
-    return await NoteRepo.create(payload.model_dump())</p>
-<p>@router.get("", response_model=list[NoteOut])
+    return await NoteRepo.create(payload.model_dump())
+
+@router.get(&quot;&quot;, response_model=list[NoteOut])
 async def list_notes(skip: int = Query(0, ge=0), limit: int = Query(20, le=100)):
-    return await NoteRepo.list(skip, limit)</p>
-<p>5) 인증(요약)</p>
-<h1 id="appcoresecuritypy">app/core/security.py</h1>
-<p>from datetime import datetime, timedelta
-import jwt</p>
-<p>SECRET = "change-me"
-ALG = "HS256"</p>
-<p>def create_access_token(sub: str, ttl_minutes=15):
+    return await NoteRepo.list(skip, limit)
+</code></pre></div>
+<h3 id="5_1"><strong>5) 인증(요약)</strong></h3>
+<div class="highlight"><pre><span></span><code># app/core/security.py
+from datetime import datetime, timedelta
+import jwt
+
+SECRET = &quot;change-me&quot;
+ALG = &quot;HS256&quot;
+
+def create_access_token(sub: str, ttl_minutes=15):
     now = datetime.utcnow()
-    payload = {"sub": sub, "iat": now, "exp": now + timedelta(minutes=ttl_minutes)}
-    return jwt.encode(payload, SECRET, algorithm=ALG)</p>
-<p>실무에서는 Refresh 토큰은 HttpOnly 쿠키, Access 토큰은 헤더(Authorization: Bearer)로 운용을 권장합니다. 프론트는 axios withCredentials, 백엔드는 CORS allow_credentials=True, 도메인/스킴/포트 정합 체크, CSRF 방어(더블 서브밋 토큰 등)를 병행하세요.</p>
-<p>6) 테스트(통합)</p>
-<h1 id="teststest_notespy">tests/test_notes.py</h1>
-<p>import pytest
+    payload = {&quot;sub&quot;: sub, &quot;iat&quot;: now, &quot;exp&quot;: now + timedelta(minutes=ttl_minutes)}
+    return jwt.encode(payload, SECRET, algorithm=ALG)
+</code></pre></div>
+<blockquote>
+<p>실무에서는 <strong>Refresh 토큰은 HttpOnly 쿠키</strong>, Access 토큰은 헤더(Authorization: Bearer)로 운용을 권장합니다. 프론트는 axios withCredentials, 백엔드는 CORS allow_credentials=True, 도메인/스킴/포트 정합 체크, CSRF 방어(더블 서브밋 토큰 등)를 병행하세요.</p>
+</blockquote>
+<h3 id="6_1"><strong>6) 테스트(통합)</strong></h3>
+<div class="highlight"><pre><span></span><code># tests/test_notes.py
+import pytest
 from httpx import AsyncClient
-from app.main import app</p>
-<p>@pytest.mark.asyncio
+from app.main import app
+
+@pytest.mark.asyncio
 async def test_notes_flow():
-    async with AsyncClient(app=app, base_url="http://test") as ac:
-        r = await ac.post("/api/notes", json={"title":"t","content":"c","tags":[]})
+    async with AsyncClient(app=app, base_url=&quot;http://test&quot;) as ac:
+        r = await ac.post(&quot;/api/notes&quot;, json={&quot;title&quot;:&quot;t&quot;,&quot;content&quot;:&quot;c&quot;,&quot;tags&quot;:[]})
         assert r.status_code == 201
-        nid = r.json()["id"]
-        r = await ac.get("/api/notes")
-        assert any(n["id"] == nid for n in r.json())</p>
-<p>⸻</p>
-<p>캡스톤 제안(치과 도메인 맞춤)</p>
-<p>“치과 예약/차트 경량 백엔드”
-    •   엔티티: Patient, Appointment, Procedure, Invoice/Payment
-    •   기능: 환자 검색(이름/전화), 일정 캘린더, 시술 코드/수가, 결제 내역, 알림(WebSocket)
-    •   보안: 직원 역할(Role), 민감정보 마스킹 로그
-    •   프론트(Vue3 + Pinia + Vuetify/Tailwind): 대시보드·달력·환자 카드·청구서 화면</p>
-<p>⸻</p>
-<p>주차별 체크리스트(요약)
-    •   0주차: 비동기·도구·뼈대 OK
-    •   1주차: 라우팅/검증/예외/DI OK
-    •   2주차: Mongo 연결·인덱스·CRUD·페이지네이션 OK
-    •   3주차: 로그인/갱신/권한/레이트리밋 OK
-    •   4주차: 업로드·백그라운드·웹소켓·캐싱 OK
-    •   5주차: 테스트·문서·로그·에러수집 OK
-    •   6주차: Docker/Nginx/TLS·프로파일·모니터링 OK</p>
-<p>⸻</p>
-<p>다음 단계</p>
+        nid = r.json()[&quot;id&quot;]
+        r = await ac.get(&quot;/api/notes&quot;)
+        assert any(n[&quot;id&quot;] == nid for n in r.json())
+</code></pre></div>
+<hr />
+<h2 id="_2"><strong>캡스톤 제안(치과 도메인 맞춤)</strong></h2>
+<p><strong>“치과 예약/차트 경량 백엔드”</strong></p>
+<ul>
+<li>
+<p>엔티티: Patient, Appointment, Procedure, Invoice/Payment</p>
+</li>
+<li>
+<p>기능: 환자 검색(이름/전화), 일정 캘린더, 시술 코드/수가, 결제 내역, 알림(WebSocket)</p>
+</li>
+<li>
+<p>보안: 직원 역할(Role), 민감정보 마스킹 로그</p>
+</li>
+<li>
+<p>프론트(Vue3 + Pinia + Vuetify/Tailwind): 대시보드·달력·환자 카드·청구서 화면</p>
+</li>
+</ul>
+<hr />
+<h2 id="_3"><strong>주차별 체크리스트(요약)</strong></h2>
+<ul>
+<li>
+<p><strong>0주차</strong>: 비동기·도구·뼈대 OK</p>
+</li>
+<li>
+<p><strong>1주차</strong>: 라우팅/검증/예외/DI OK</p>
+</li>
+<li>
+<p><strong>2주차</strong>: Mongo 연결·인덱스·CRUD·페이지네이션 OK</p>
+</li>
+<li>
+<p><strong>3주차</strong>: 로그인/갱신/권한/레이트리밋 OK</p>
+</li>
+<li>
+<p><strong>4주차</strong>: 업로드·백그라운드·웹소켓·캐싱 OK</p>
+</li>
+<li>
+<p><strong>5주차</strong>: 테스트·문서·로그·에러수집 OK</p>
+</li>
+<li>
+<p><strong>6주차</strong>: Docker/Nginx/TLS·프로파일·모니터링 OK</p>
+</li>
+</ul>
+<hr />
+<h2 id="_4"><strong>다음 단계</strong></h2>
 <p>원하시면 이 커리큘럼대로 <strong>스타터 레포 구조와 더 자세한 예제(Beanie 트랙 포함 / JWT 쿠키 운용 / axios 인터셉터 샘플 / Dockerfile &amp; compose)</strong>를 바로 만들어드릴게요. 어떤 트랙(Driver vs ODM)을 선호하시는지만 알려주시면 그에 맞춰 템플릿을 드리겠습니다.</p>
 
 

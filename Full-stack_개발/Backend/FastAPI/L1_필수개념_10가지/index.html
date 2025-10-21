@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#appmainpy" class="md-skip">
+        <a href="#fastapi" class="md-skip">
           Skip to content
         </a>
       
@@ -2025,138 +2025,243 @@
   
 
 
-<p>좋습니다. FastAPI를 처음부터 개념만 쭉 잡을 수 있게, “왜/무엇/어떻게” 순서로 핵심만 정리해드릴게요. (MongoDB·Vue3를 쓸 예정이라는 점도 곁들여 설명합니다.)</p>
-<p>⸻</p>
-<p>한눈에 보는 FastAPI 개념 지도
-    •   ASGI 프레임워크: FastAPI는 Starlette 위에서 동작하는 비동기(ASGI) 웹 프레임워크입니다.
-    •   타입 힌트 기반: 함수 시그니처의 Python 타입 힌트로 요청 검증, 직렬화, 문서를 자동 생성합니다.
-    •   Pydantic(v2): 요청/응답 스키마 정의와 검증을 담당합니다.
-    •   의존성 주입(Depends): 라우트 함수에 공통 로직(예: 인증, DB 커넥션)을 깔끔히 주입합니다.
-    •   자동 문서화: OpenAPI/Swagger UI (/docs), Redoc (/redoc)이 자동으로 생성됩니다.
-    •   비동기 I/O 최적화: async def로 DB·외부 API 호출 같은 I/O 작업에 강합니다.</p>
-<p>⸻</p>
-<p>필수 개념 10가지 (+짧은 예시)</p>
-<p>1) 앱과 경로(라우팅)</p>
-<p>from fastapi import FastAPI
-app = FastAPI()</p>
-<p>@app.get("/hello")
-def hello(name: str = "world"):
-    return {"msg": f"hello {name}"}</p>
-<div class="highlight"><pre><span></span><code>•   함수 이름이 아니라 HTTP 메서드와 경로가 곧 API입니다.
-•   쿼리스트링 ?name=...은 파라미터로 자동 매핑됩니다.
+<p>FastAPI를 <strong>처음부터 개념만</strong> 쭉 잡을 수 있게, “왜/무엇/어떻게” 순서로 핵심만 정리해드릴게요. (MongoDB·Vue3를 쓸 예정이라는 점도 곁들여 설명합니다.)</p>
+<hr />
+<h1 id="fastapi"><strong>한눈에 보는 FastAPI 개념 지도</strong></h1>
+<ul>
+<li>
+<p><strong>ASGI 프레임워크</strong>: FastAPI는 Starlette 위에서 동작하는 <strong>비동기(ASGI)</strong> 웹 프레임워크입니다.</p>
+</li>
+<li>
+<p><strong>타입 힌트 기반</strong>: 함수 시그니처의 <strong>Python 타입 힌트</strong>로 요청 검증, 직렬화, 문서를 자동 생성합니다.</p>
+</li>
+<li>
+<p><strong>Pydantic(v2)</strong>: 요청/응답 <strong>스키마 정의와 검증</strong>을 담당합니다.</p>
+</li>
+<li>
+<p><strong>의존성 주입(Depends)</strong>: 라우트 함수에 공통 로직(예: 인증, DB 커넥션)을 깔끔히 주입합니다.</p>
+</li>
+<li>
+<p><strong>자동 문서화</strong>: OpenAPI/Swagger UI (/docs), Redoc (/redoc)이 자동으로 생성됩니다.</p>
+</li>
+<li>
+<p><strong>비동기 I/O 최적화</strong>: async def로 DB·외부 API 호출 같은 I/O 작업에 강합니다.</p>
+</li>
+</ul>
+<hr />
+<h1 id="10"><strong>필수 개념 10가지 (+짧은 예시)</strong></h1>
+<h2 id="1"><strong>1) 앱과 경로(라우팅)</strong></h2>
+<div class="highlight"><pre><span></span><code>from fastapi import FastAPI
+app = FastAPI()
+
+@app.get(&quot;/hello&quot;)
+def hello(name: str = &quot;world&quot;):
+    return {&quot;msg&quot;: f&quot;hello {name}&quot;}
 </code></pre></div>
-<p>2) 요청 바디와 Pydantic 모델</p>
-<p>from pydantic import BaseModel</p>
-<p>class NoteIn(BaseModel):
+<ul>
+<li>
+<p>함수 이름이 아니라 <strong>HTTP 메서드와 경로</strong>가 곧 API입니다.</p>
+</li>
+<li>
+<p>쿼리스트링 ?name=...은 파라미터로 자동 매핑됩니다.</p>
+</li>
+</ul>
+<h2 id="2-pydantic"><strong>2) 요청 바디와 Pydantic 모델</strong></h2>
+<div class="highlight"><pre><span></span><code>from pydantic import BaseModel
+
+class NoteIn(BaseModel):
     title: str
-    content: str</p>
-<p>@app.post("/notes")
+    content: str
+
+@app.post(&quot;/notes&quot;)
 def create_note(payload: NoteIn):
     # payload.title, payload.content 사용
-    return payload</p>
-<div class="highlight"><pre><span></span><code>•   스키마 모델은 검증과 문서의 기준입니다. (유효성·기본값·예제까지 포함 가능)
+    return payload
 </code></pre></div>
-<p>3) 응답 모델과 직렬화</p>
-<p>class NoteOut(NoteIn):
-    id: str</p>
-<p>@app.get("/notes/{note_id}", response_model=NoteOut)
+<ul>
+<li><strong>스키마 모델</strong>은 검증과 문서의 기준입니다. (유효성·기본값·예제까지 포함 가능)</li>
+</ul>
+<h2 id="3"><strong>3) 응답 모델과 직렬화</strong></h2>
+<div class="highlight"><pre><span></span><code>class NoteOut(NoteIn):
+    id: str
+
+@app.get(&quot;/notes/{note_id}&quot;, response_model=NoteOut)
 def get_note(note_id: str):
-    return {"id": note_id, "title": "t", "content": "c"}</p>
-<div class="highlight"><pre><span></span><code>•   response_model로 클라이언트에 무엇을 보내는지를 명시합니다. (보안/일관성↑)
+    return {&quot;id&quot;: note_id, &quot;title&quot;: &quot;t&quot;, &quot;content&quot;: &quot;c&quot;}
 </code></pre></div>
-<p>4) 상태코드와 예외 처리</p>
-<p>from fastapi import HTTPException, status</p>
-<p>@app.get("/boom")
+<ul>
+<li>response_model로 <strong>클라이언트에 무엇을 보내는지</strong>를 명시합니다. (보안/일관성↑)</li>
+</ul>
+<h2 id="4"><strong>4) 상태코드와 예외 처리</strong></h2>
+<div class="highlight"><pre><span></span><code>from fastapi import HTTPException, status
+
+@app.get(&quot;/boom&quot;)
 def boom():
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="not found")</p>
-<div class="highlight"><pre><span></span><code>•   예외는 일관된 JSON 에러로 변환됩니다. 필요하면 전역 핸들러로 커스터마이즈 가능합니다.
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=&quot;not found&quot;)
 </code></pre></div>
-<p>5) 의존성 주입(Depends)</p>
-<p>from fastapi import Depends</p>
-<p>def common_params(limit: int = 20):
-    return {"limit": min(limit, 100)}</p>
-<p>@app.get("/items")
+<ul>
+<li>예외는 <strong>일관된 JSON 에러</strong>로 변환됩니다. 필요하면 전역 핸들러로 커스터마이즈 가능합니다.</li>
+</ul>
+<h2 id="5-depends"><strong>5) 의존성 주입(Depends)</strong></h2>
+<div class="highlight"><pre><span></span><code>from fastapi import Depends
+
+def common_params(limit: int = 20):
+    return {&quot;limit&quot;: min(limit, 100)}
+
+@app.get(&quot;/items&quot;)
 def list_items(p=Depends(common_params)):
-    return {"limit_used": p["limit"]}</p>
-<div class="highlight"><pre><span></span><code>•   인증, DB 연결, 공통 파라미터, 권한 체크 등 공통 로직을 재사용합니다.
+    return {&quot;limit_used&quot;: p[&quot;limit&quot;]}
 </code></pre></div>
-<p>6) 미들웨어와 수명주기(lifespan)</p>
-<p>from contextlib import asynccontextmanager
-from fastapi import FastAPI</p>
-<p>@asynccontextmanager
+<ul>
+<li>인증, DB 연결, 공통 파라미터, 권한 체크 등 <strong>공통 로직을 재사용</strong>합니다.</li>
+</ul>
+<h2 id="6-lifespan"><strong>6) 미들웨어와 수명주기(lifespan)</strong></h2>
+<div class="highlight"><pre><span></span><code>from contextlib import asynccontextmanager
+from fastapi import FastAPI
+
+@asynccontextmanager
 async def lifespan(app: FastAPI):
     # 앱 시작 시 (예: Mongo 연결)
     yield
-    # 앱 종료 시 (예: 연결 종료)</p>
-<p>app = FastAPI(lifespan=lifespan)</p>
-<div class="highlight"><pre><span></span><code>•   서버 시작/종료 타이밍에 리소스 연결/정리를 수행합니다.
+    # 앱 종료 시 (예: 연결 종료)
+
+app = FastAPI(lifespan=lifespan)
 </code></pre></div>
-<p>7) 비동기 함수(성능 핵심)
-    •   async def 엔드포인트 안에서는 <strong>블로킹 작업(예: 순수 CPU 연산, requests 동기 호출)</strong>을 피해야 합니다.
-    •   MongoDB는 motor(비동기 드라이버)나 beanie(ODM)를 사용하면 자연스럽게 async 흐름에 맞춰집니다.</p>
-<p>8) 보안(인증/인가) 개념
-    •   OAuth2 + JWT가 대표적인 패턴입니다.
-    •   Depends로 인증 가드를 주입하고, 성공 시 current_user를 라우트에서 바로 사용합니다.
-    •   쿠키/헤더, CORS/CSRF 설정은 <strong>프론트(Vue)</strong>와 맞물려 설계합니다.</p>
-<p>9) 문서/스키마(OpenAPI)
-    •   타입 힌트와 Pydantic 모델만으로 /docs에 인터랙티브 문서가 자동 생성됩니다.
-    •   프론트 개발자와의 계약(Contract) 을 자동으로 공유하기 좋아 협업 비용이 낮습니다.</p>
-<p>10) 구성요소의 분리
-    •   <strong>FastAPI는 “웹 레이어”</strong>입니다. ORM/ODM, 스케줄러, 메시지 큐는 선택입니다.
-    •   권장 구조 예시</p>
-<p>app/
+<ul>
+<li>서버 시작/종료 타이밍에 <strong>리소스 연결/정리</strong>를 수행합니다.</li>
+</ul>
+<h2 id="7"><strong>7) 비동기 함수(성능 핵심)</strong></h2>
+<ul>
+<li>
+<p>async def 엔드포인트 안에서는 <strong>블로킹 작업(예: 순수 CPU 연산, requests 동기 호출)</strong>을 피해야 합니다.</p>
+</li>
+<li>
+<p>MongoDB는 motor(비동기 드라이버)나 beanie(ODM)를 사용하면 자연스럽게 async 흐름에 맞춰집니다.</p>
+</li>
+</ul>
+<h2 id="8"><strong>8) 보안(인증/인가) 개념</strong></h2>
+<ul>
+<li>
+<p><strong>OAuth2 + JWT</strong>가 대표적인 패턴입니다.</p>
+</li>
+<li>
+<p>Depends로 <strong>인증 가드</strong>를 주입하고, 성공 시 current_user를 라우트에서 바로 사용합니다.</p>
+</li>
+<li>
+<p>쿠키/헤더, CORS/CSRF 설정은 <strong>프론트(Vue)</strong>와 맞물려 설계합니다.</p>
+</li>
+</ul>
+<h2 id="9-openapi"><strong>9) 문서/스키마(OpenAPI)</strong></h2>
+<ul>
+<li>
+<p>타입 힌트와 Pydantic 모델만으로 <strong>/docs</strong>에 인터랙티브 문서가 자동 생성됩니다.</p>
+</li>
+<li>
+<p>프론트 개발자와의 <strong>계약(Contract)</strong> 을 자동으로 공유하기 좋아 협업 비용이 낮습니다.</p>
+</li>
+</ul>
+<h2 id="10_1"><strong>10) 구성요소의 분리</strong></h2>
+<ul>
+<li>
+<p><strong>FastAPI는 “웹 레이어”</strong>입니다. ORM/ODM, 스케줄러, 메시지 큐는 선택입니다.</p>
+</li>
+<li>
+<p>권장 구조 예시</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>app/
   api/         # 라우팅/컨트롤러
   schemas/     # 요청/응답 모델(Pydantic)
   services/    # 비즈니스 로직
   repositories/# DB 접근 (motor/beanie/odmantic 등)
   db/          # 연결/초기화
-  core/        # 설정/보안/로그</p>
-<p>⸻</p>
-<p>FastAPI vs Django(REST) — 사고방식 차이
-    •   장고: “배터리 포함(ORM·템플릿·관리자 등)” 풀스택 프레임워크
-    •   FastAPI: “얇고 빠른 웹 레이어” + 필요한 것들을 명시적으로 조립
-    •   MongoDB를 쓰신다면: Django ORM 보다는 motor/beanie가 자연스럽습니다.</p>
-<p>⸻</p>
-<p>MongoDB·Vue3와 맞붙일 때 최소 설정 포인트
-    •   CORS: 개발 중 allow_origins=['http://localhost:5173'], allow_credentials=True
-    •   인증 전략:
-    •   Access 토큰: 헤더(Authorization: Bearer)
-    •   Refresh 토큰: HttpOnly 쿠키(+CSRF 토큰) 권장
-    •   스키마 고정: 모든 에러/응답에 일관된 모델을 사용해 프론트 처리 단순화</p>
-<p>⸻</p>
-<p>아주 작은 예시(헬스체크 + CORS)</p>
-<h1 id="appmainpy">app/main.py</h1>
-<p>from contextlib import asynccontextmanager
+  core/        # 설정/보안/로그
+</code></pre></div>
+<hr />
+<h1 id="fastapi-vs-djangorest"><strong>FastAPI vs Django(REST) — 사고방식 차이</strong></h1>
+<ul>
+<li>
+<p><strong>장고</strong>: “배터리 포함(ORM·템플릿·관리자 등)” 풀스택 프레임워크</p>
+</li>
+<li>
+<p><strong>FastAPI</strong>: “얇고 빠른 웹 레이어” + 필요한 것들을 <strong>명시적으로 조립</strong></p>
+</li>
+<li>
+<p>MongoDB를 쓰신다면: Django ORM 보다는 <strong>motor/beanie</strong>가 자연스럽습니다.</p>
+</li>
+</ul>
+<hr />
+<h1 id="mongodbvue3"><strong>MongoDB·Vue3와 맞붙일 때 최소 설정 포인트</strong></h1>
+<ul>
+<li>
+<p><strong>CORS</strong>: 개발 중 allow_origins=['http://localhost:5173'], allow_credentials=True</p>
+</li>
+<li>
+<p><strong>인증 전략</strong>:</p>
+<ul>
+<li>
+<p>Access 토큰: 헤더(Authorization: Bearer)</p>
+</li>
+<li>
+<p>Refresh 토큰: HttpOnly 쿠키(+CSRF 토큰) 권장</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>스키마 고정</strong>: 모든 에러/응답에 <strong>일관된 모델</strong>을 사용해 프론트 처리 단순화</p>
+</li>
+</ul>
+<hr />
+<h1 id="cors"><strong>아주 작은 예시(헬스체크 + CORS)</strong></h1>
+<div class="highlight"><pre><span></span><code># app/main.py
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient</p>
-<p>client = None
-db = None</p>
-<p>@asynccontextmanager
+from motor.motor_asyncio import AsyncIOMotorClient
+
+client = None
+db = None
+
+@asynccontextmanager
 async def lifespan(app: FastAPI):
     global client, db
-    client = AsyncIOMotorClient("mongodb://localhost:27017")
-    db = client["myapp"]
+    client = AsyncIOMotorClient(&quot;mongodb://localhost:27017&quot;)
+    db = client[&quot;myapp&quot;]
     yield
-    client.close()</p>
-<p>app = FastAPI(title="FastAPI Basics", lifespan=lifespan)
+    client.close()
+
+app = FastAPI(title=&quot;FastAPI Basics&quot;, lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_credentials=True, allow_methods=["<em>"], allow_headers=["</em>"],
-)</p>
-<p>@app.get("/health")
+    allow_origins=[&quot;http://localhost:5173&quot;],
+    allow_credentials=True, allow_methods=[&quot;*&quot;], allow_headers=[&quot;*&quot;],
+)
+
+@app.get(&quot;/health&quot;)
 async def health():
-    pong = await db.command("ping")
-    return {"ok": pong.get("ok") == 1}</p>
-<p>⸻</p>
-<p>다음에 보실 주제(추천 학습 순서)
-    1.  라우팅/파라미터/검증 깊게 → response_model, 바디/쿼리/경로 구분
-    2.  Depends로 공통 파이프라인(인증·DB 세션·페이지네이션 파서) 만들기
-    3.  Mongo 연동: motor 또는 beanie 중 택1 (ODM이면 빠르게 생산성↑)
-    4.  JWT 인증 흐름(로그인/리프레시/권한)
-    5.  테스트(httpx + pytest-asyncio), 문서 커스터마이즈, 배포(Docker+Uvicorn/Nginx)</p>
-<p>원하시면 위 순서대로 짧은 실습 세트(CRUD→Mongo 이관→JWT→테스트)까지 바로 만들어 드리겠습니다. 어느 부분부터 손에 익히고 싶으신지 말씀만 해 주세요!</p>
+    pong = await db.command(&quot;ping&quot;)
+    return {&quot;ok&quot;: pong.get(&quot;ok&quot;) == 1}
+</code></pre></div>
+<hr />
+<h1 id="_1"><strong>다음에 보실 주제(추천 학습 순서)</strong></h1>
+<ol>
+<li>
+<p><strong>라우팅/파라미터/검증</strong> 깊게 → response_model, 바디/쿼리/경로 구분</p>
+</li>
+<li>
+<p><strong>Depends</strong>로 공통 파이프라인(인증·DB 세션·페이지네이션 파서) 만들기</p>
+</li>
+<li>
+<p><strong>Mongo 연동</strong>: motor 또는 <strong>beanie</strong> 중 택1 (ODM이면 빠르게 생산성↑)</p>
+</li>
+<li>
+<p><strong>JWT 인증 흐름</strong>(로그인/리프레시/권한)</p>
+</li>
+<li>
+<p><strong>테스트(httpx + pytest-asyncio)</strong>, <strong>문서 커스터마이즈</strong>, <strong>배포(Docker+Uvicorn/Nginx)</strong></p>
+</li>
+</ol>
+<p>원하시면 위 순서대로 <strong>짧은 실습 세트</strong>(CRUD→Mongo 이관→JWT→테스트)까지 바로 만들어 드리겠습니다. 어느 부분부터 손에 익히고 싶으신지 말씀만 해 주세요!</p>
 
 
 
