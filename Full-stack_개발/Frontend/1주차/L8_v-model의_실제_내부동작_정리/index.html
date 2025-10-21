@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../Collisions/">
+        <link rel="prev" href="../L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/">
       
       
-        <link rel="next" href="../Constant/">
+        <link rel="next" href="../L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Composition - Docs for hj3415</title>
+        <title>L8 v model의 실제 내부동작 정리 - Docs for hj3415</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-v-model-syntax-sugar" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -73,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Composition
+              L8 v model의 실제 내부동작 정리
             
           </span>
         </div>
@@ -185,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -215,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -234,8 +239,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -252,11 +259,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -272,7 +279,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Full stack 개발
@@ -330,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/django_DRF_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../../Backend/django_DRF_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -358,8 +365,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -375,11 +384,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -395,7 +404,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Frontend
@@ -409,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -429,8 +438,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -458,11 +469,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
@@ -478,7 +489,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_2">
             <span class="md-nav__icon md-icon"></span>
             1주차
@@ -492,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
+      <a href="../L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
         
   
   
@@ -515,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -538,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -561,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
+      <a href="../L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
         
   
   
@@ -584,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -607,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+      <a href="../L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
         
   
   
@@ -630,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
+      <a href="../L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
         
   
   
@@ -650,10 +661,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    L8 v model의 실제 내부동작 정리
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -664,6 +695,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-v-model-syntax-sugar" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. v-model은 문법적 “축약형(syntax sugar)”
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 한 줄씩 해부해보기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 정리하면 내부 동작 흐름은 이렇게 됩니다
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 동작 순서 실제 예시
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Vue가 자동으로 관리하는 반응형 연결
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 타입별 내부 처리 차이 (Vue가 알아서 해줌)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-modifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 수식어 (Modifiers)의 실제 내부 동작도 단순한 추가 코드
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 한눈에 요약
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -676,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
+      <a href="../L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
         
   
   
@@ -757,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
+      <a href="../../4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
         
   
   
@@ -780,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
+      <a href="../../4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
         
   
   
@@ -803,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
+      <a href="../../4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
         
   
   
@@ -826,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
+      <a href="../../4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
         
   
   
@@ -869,10 +990,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -889,11 +1008,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -909,7 +1028,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             GDQUEST
@@ -1015,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
         
   
   
@@ -1038,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
         
   
   
@@ -1061,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
         
   
   
@@ -1097,10 +1216,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1154,11 +1271,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -1174,7 +1291,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Glossary
@@ -1188,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../9-slice_scaling/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/9-slice_scaling/" class="md-nav__link">
         
   
   
@@ -1211,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AI_%28Game_AI%29/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/AI_%28Game_AI%29/" class="md-nav__link">
         
   
   
@@ -1234,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../API_Application_Programming_Interface/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/API_Application_Programming_Interface/" class="md-nav__link">
         
   
   
@@ -1257,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Boolean_Expressions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Boolean_Expressions/" class="md-nav__link">
         
   
   
@@ -1280,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Class/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Class/" class="md-nav__link">
         
   
   
@@ -1303,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Collisions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Collisions/" class="md-nav__link">
         
   
   
@@ -1323,17 +1440,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../GDQUEST/Glossary/Composition/" class="md-nav__link">
         
   
   
@@ -1344,7 +1454,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1357,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Constant/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Constant/" class="md-nav__link">
         
   
   
@@ -1380,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Duck_Typing/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Duck_Typing/" class="md-nav__link">
         
   
   
@@ -1403,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Encapsulation/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Encapsulation/" class="md-nav__link">
         
   
   
@@ -1426,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Function_Signature/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Function_Signature/" class="md-nav__link">
         
   
   
@@ -1449,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Game_Jam/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Game_Jam/" class="md-nav__link">
         
   
   
@@ -1472,7 +1581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Inheritance/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Inheritance/" class="md-nav__link">
         
   
   
@@ -1495,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Interface/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Interface/" class="md-nav__link">
         
   
   
@@ -1518,7 +1627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Method_member_function/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Method_member_function/" class="md-nav__link">
         
   
   
@@ -1541,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Node/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Node/" class="md-nav__link">
         
   
   
@@ -1564,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Object/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Object/" class="md-nav__link">
         
   
   
@@ -1587,7 +1696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Object_Oriented_Programming/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Object_Oriented_Programming/" class="md-nav__link">
         
   
   
@@ -1610,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Private_Public_Properties/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Private_Public_Properties/" class="md-nav__link">
         
   
   
@@ -1633,7 +1742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Property_member_variable/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Property_member_variable/" class="md-nav__link">
         
   
   
@@ -1656,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Refactoring/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Refactoring/" class="md-nav__link">
         
   
   
@@ -1679,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Static_Function/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Static_Function/" class="md-nav__link">
         
   
   
@@ -1808,7 +1917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -1857,6 +1966,86 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-v-model-syntax-sugar" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. v-model은 문법적 “축약형(syntax sugar)”
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 한 줄씩 해부해보기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 정리하면 내부 동작 흐름은 이렇게 됩니다
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 동작 순서 실제 예시
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Vue가 자동으로 관리하는 반응형 연결
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 타입별 내부 처리 차이 (Vue가 알아서 해줌)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-modifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 수식어 (Modifiers)의 실제 내부 동작도 단순한 추가 코드
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 한눈에 요약
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1871,7 +2060,7 @@
 
 
   
-    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/GDQUEST/Glossary/Composition.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/Full-stack_개발/Frontend/1주차/L8_v-model의_실제_내부동작_정리.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1880,43 +2069,254 @@
     
       
     
-    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/GDQUEST/Glossary/Composition.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/Full-stack_개발/Frontend/1주차/L8_v-model의_실제_내부동작_정리.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Composition</h1>
+  <h1>L8 v model의 실제 내부동작 정리</h1>
 
-<p>프로그래밍에서 컴포지션(composition)이란, 복잡한 것을 더 작고 단순한 것들로 조합해 만드는 것을 의미합니다. </p>
-<p>레고 블록으로 성을 짓는다고 상상해보세요. 각각의 블록은 단순하지만, 그것들을 다양한 방식으로 조립함으로써 집, 다리 등 여러 구조물을 만들 수 있습니다. </p>
-<p>이와 비슷하게 게임에서도 장비, 능력, 함정 같은 더 작은 구성 요소들을 조합해 흥미로운 캐릭터나 레벨을 만들 수 있습니다. </p>
-<p>내부적으로, 우리가 코드에서 조합하는 구성 요소들은 객체, 클래스, 혹은 함수일 수 있습니다.</p>
+<p>이건 Vue의 반응형 시스템을 이해하는 “가장 핵심 포인트”예요.</p>
+<p>v-model이 실제 내부에서 <strong>무엇을 어떻게 하는지</strong> 단계별로 아주 정확히 정리해드릴게요</p>
 <hr />
-<p><strong>Godot에서의 컴포지션</strong></p>
-<p>Godot은 컴포지션을 기반으로 만들어졌으며, 이를 적극적으로 활용하도록 설계되어 있습니다. 씬(scene), 스크립트(script), 노드(node) 모두 게임을 만들기
-위해 자유롭게 조합할 수 있는 빌딩 블록입니다. 하나의 씬을 다른 씬에 인스턴스로 추가할 때마다 우리는 컴포지션을 실행하고 있는 셈입니다.</p>
-<p>노드도 마찬가지입니다.</p>
-<p>예를 들어, 플레이어 캐릭터를 만들기 위해 다음과 같은 노드를 조합할 수 있습니다:</p>
+<h3 id="1-v-model-syntax-sugar">1. v-model은 문법적 “축약형(syntax sugar)”</h3>
+<p><strong>v-model="data"</strong></p>
+<p>내부적으로 Vue가 다음 두 줄로 풀어서 처리합니다:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span>
+  <span class="p">:</span><span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="nx">data</span><span class="s">&quot;</span>                       <span class="err">&lt;!</span><span class="na">--</span> <span class="na">데이터</span> <span class="err">→</span> <span class="na">화면</span> <span class="na">--</span><span class="p">&gt;</span>
+  @input=&quot;data = $event.target.value&quot; <span class="cm">&lt;!-- 화면 → 데이터 --&gt;</span>
+/&gt;
+</code></pre></div>
+<p>즉,</p>
 <ul>
 <li>
-<p>CharacterBody2D: 이동을 처리하고 충돌을 감지합니다.</p>
+<p>:value → 데이터(data)를 input의 value에 넣는다.</p>
 </li>
 <li>
-<p>Sprite2D: 캐릭터의 텍스처를 표시합니다.</p>
-</li>
-<li>
-<p>CollisionShape2D: 캐릭터의 충돌 상자를 정의합니다.</p>
-</li>
-<li>
-<p>AnimationPlayer: 애니메이션을 재생합니다.</p>
+<p>@input → 사용자가 입력할 때마다, 그 값을 다시 data로 돌려준다.</p>
 </li>
 </ul>
-<p>이러한 각 노드는 대부분 독립적으로 작동하며 특정 기능에 집중합니다.</p>
-<p>흥미로운 점은, 이러한 노드들을 다양한 상황에서 재사용할 수 있다는 것입니다.
-예를 들어, 보물상자, 새, 몬스터는 모두 Sprite2D와 CollisionShape2D 노드를 사용하여 서로 다른 이미지와 동작을 표현할 수 있습니다.</p>
-<p>즉, Godot처럼 컴포지션을 기반으로 한 시스템은 매우 유연하고 확장성이 뛰어납니다.</p>
+<p>결국, <strong>데이터 ↔ 화면이 서로 연결</strong>된 거예요</p>
+<hr />
+<h3 id="2">2. 한 줄씩 해부해보기</h3>
+<p>**(1) :value="data"</p>
+<ul>
+<li>
+<p>:는 <strong>v-bind의 축약형</strong> → “속성에 JS 표현식을 바인딩”</p>
+</li>
+<li>
+<p>즉, input의 value 속성을 항상 data 값과 동일하게 유지합니다.</p>
+</li>
+</ul>
+<p>예를 들어</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="p">:</span><span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="nx">data</span><span class="s">&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p>이면,  data가 'Hello'라면 실제 DOM은 \&lt;input value="Hello" \/&gt; 로 표시됩니다.</p>
+<p><strong>데이터 → 화면 방향</strong></p>
+<hr />
+<p>**(2) @input="data = $event.target.value"</p>
+<ul>
+<li>
+<p>@input은 <strong>input 이벤트 리스너</strong>를 등록하는 문법입니다.</p>
+</li>
+<li>
+<p>사용자가 타이핑하면 input 이벤트가 발생하고,</p>
+</li>
+<li>
+<p>$event는 그 이벤트 객체를 뜻합니다.</p>
+</li>
+<li>
+<p>$event.target은 실제 \&lt;input&gt; 요소,</p>
+</li>
+<li>
+<p>$event.target.value는 입력한 실제 문자열입니다.</p>
+</li>
+</ul>
+<p>따라서 👇</p>
+<div class="highlight"><pre><span></span><code>@input=&quot;data = $event.target.value&quot;
+</code></pre></div>
+<p>는</p>
+<blockquote>
+<p>“입력창의 값이 바뀌면, 그 값을 data 변수에 대입하라.”</p>
+</blockquote>
+<p><strong>화면 → 데이터 방향</strong></p>
+<hr />
+<h3 id="3">3. 정리하면 내부 동작 흐름은 이렇게 됩니다</h3>
+<div class="highlight"><pre><span></span><code>          (1) :value
+     data → input.value
+          (2) @input
+     input.value → data
+</code></pre></div>
+<p>즉, Vue는 data와 \&lt;input&gt;의 value 속성을 <strong>양방향으로 동기화</strong>하는 거예요.</p>
+<hr />
+<h3 id="4">4. 동작 순서 실제 예시</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span><span class="p">&gt;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ref</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vue&#39;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;홍길동&#39;</span><span class="p">)</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;</span><span class="nx">name</span><span class="s">&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>1. 초기 렌더링</strong></p>
+<ul>
+<li>
+<p>name.value = '홍길동'</p>
+</li>
+<li>
+<p>Vue가 :value="name" 으로 input.value = '홍길동' 설정</p>
+<p>→ 화면에 “홍길동” 표시</p>
+</li>
+</ul>
+<p><strong>2. 사용자 입력</strong></p>
+<ul>
+<li>
+<p>사용자가 “이영희” 입력</p>
+</li>
+<li>
+<p>input 이벤트 발생</p>
+</li>
+<li>
+<p>@input="name = $event.target.value" 실행</p>
+<p>→ name.value = '이영희'</p>
+</li>
+</ul>
+<p><strong>3. 반응형 시스템 동작</strong></p>
+<ul>
+<li>
+<p>name이 바뀜 → Vue의 reactivity 시스템이 감지</p>
+</li>
+<li>
+<p>관련된 모든 바인딩({{ name }} 등)이 자동 재렌더링됨</p>
+<p>→ <p> 내용이 즉시 “이영희”로 바뀜</p>
+</li>
+</ul>
+<hr />
+<h3 id="5-vue">5. Vue가 자동으로 관리하는 반응형 연결</h3>
+<p>Vue는 내부적으로 다음과 같은 “감시 체계”를 둡니다</p>
+<div class="highlight"><pre><span></span><code>┌────────────┐        :value         ┌────────────┐
+│  data(ref) │ ───────────────────▶ │  input UI  │
+└────────────┘                       └────────────┘
+       ▲                                      │
+       │              @input                  │
+       └─────────────◀────────────────────────┘
+</code></pre></div>
+<ul>
+<li>
+<p>데이터(ref)가 바뀌면 → 화면(UI)이 자동 갱신</p>
+</li>
+<li>
+<p>화면에서 입력이 바뀌면 → 데이터(ref)가 자동 갱신</p>
+</li>
+</ul>
+<p>이 양쪽 흐름을 Vue가 자동으로 관리하는 게 바로 <strong>v-model</strong>이에요.</p>
+<hr />
+<h3 id="6-vue">6. 타입별 내부 처리 차이 (Vue가 알아서 해줌)</h3>
+<table>
+<thead>
+<tr>
+<th><strong>요소</strong></th>
+<th><strong>실제 내부적으로 하는 일</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\&lt;input type="text"&gt;</td>
+<td>:value + @input</td>
+</tr>
+<tr>
+<td>\&lt;input type="checkbox"&gt;</td>
+<td>:checked + @change</td>
+</tr>
+<tr>
+<td>\&lt;input type="radio"&gt;</td>
+<td>:checked + @change</td>
+</tr>
+<tr>
+<td>\&lt;select&gt;</td>
+<td>:value + @change</td>
+</tr>
+<tr>
+<td>\&lt;textarea&gt;</td>
+<td>:value + @input</td>
+</tr>
+</tbody>
+</table>
+<p>즉, v-model은 단순히 text input뿐 아니라,</p>
+<p>checkbox, radio, select 등에도 각각 알맞은 방식으로 작동하도록 Vue가 내부에서 자동 분기 처리합니다.</p>
+<hr />
+<h3 id="7-modifiers">7. 수식어 (Modifiers)의 실제 내부 동작도 단순한 추가 코드</h3>
+<table>
+<thead>
+<tr>
+<th><strong>수식어</strong></th>
+<th><strong>내부적으로 바뀌는 코드</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.trim</td>
+<td>$event.target.value.trim()</td>
+</tr>
+<tr>
+<td>.number</td>
+<td>Number($event.target.value)</td>
+</tr>
+<tr>
+<td>.lazy</td>
+<td>@change 이벤트로 변경 (입력 완료 후 반영)</td>
+</tr>
+</tbody>
+</table>
+<p>예시</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="p">.</span><span class="na">trim</span><span class="o">=</span><span class="s">&quot;</span><span class="nx">msg</span><span class="s">&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p>내부적으로는</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span>
+  <span class="p">:</span><span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="nx">msg</span><span class="s">&quot;</span>
+  <span class="p">@</span><span class="na">input</span><span class="o">=</span><span class="s">&quot;</span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span><span class="s">&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<hr />
+<h3 id="8">8. 한눈에 요약</h3>
+<table>
+<thead>
+<tr>
+<th><strong>항목</strong></th>
+<th><strong>내용</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>v-model의 정체</strong></td>
+<td>:value + @input 의 축약형</td>
+</tr>
+<tr>
+<td><strong>데이터 흐름</strong></td>
+<td>데이터 → 화면, 화면 → 데이터</td>
+</tr>
+<tr>
+<td><strong>이벤트 객체</strong></td>
+<td>$event.target.value 로 입력값을 가져옴</td>
+</tr>
+<tr>
+<td><strong>자동 감지 시스템</strong></td>
+<td>Vue의 반응형(Reactivity)으로 자동 렌더링</td>
+</tr>
+<tr>
+<td><strong>타입별 자동 처리</strong></td>
+<td>input/checkbox/radio/select 모두 지원</td>
+</tr>
+<tr>
+<td><strong>수식어</strong></td>
+<td>.trim, .number, .lazy 등은 단순히 추가 전처리 코드</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1965,10 +2365,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
