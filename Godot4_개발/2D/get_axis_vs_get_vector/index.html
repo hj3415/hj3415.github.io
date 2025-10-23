@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#7" class="md-skip">
+        <a href="#get_vector-get_axis-get_vector" class="md-skip">
           Skip to content
         </a>
       
@@ -2082,52 +2082,73 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ 7️⃣ 요약 표
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="✅ 7️⃣ 요약 표">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#get_vector-get_axis-get_vector" class="md-nav__link">
     <span class="md-ellipsis">
       “get_vector()가 내부적으로 get_axis() 두 개를 쓰는 거라면, 그냥 get_vector() 하나만 쓰면 되는 거 아닌가?”
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="“get_vector()가 내부적으로 get_axis() 두 개를 쓰는 거라면, 그냥 get_vector() 하나만 쓰면 되는 거 아닌가?”">
+      <ul class="md-nav__list">
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#1-get_vector-get_axis-2-normalize" class="md-nav__link">
     <span class="md-ellipsis">
-      1️⃣ 사실관계:get_vector() =get_axis() × 2 + normalize()
+      1. 사실관계:get_vector() =get_axis() × 2 + normalize()
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2-get_vector-2d" class="md-nav__link">
     <span class="md-ellipsis">
-      2️⃣ 하지만 get_vector()는 2D 이동 전제 라서 주의점이 있습니다**
+      2. 하지만 get_vector()는 2D 이동 전제 라서 주의점이 있습니다
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2️⃣ 하지만 get_vector()는 2D 이동 전제 라서 주의점이 있습니다**">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-1d" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. “왜 굳이 1D 축이 필요할까?”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2d-get_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 반대로 “탑다운 2D”에서는 get_vector() 가 완전한 상위호환
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-get_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 정리: “언제 get_vector만 써도 되는가?”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-get_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. “get_vector 하나로 통합하고 싶을 때” 팁
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      예시: 플랫폼(좌우+점프) 게임
+      결론 요약
     </span>
   </a>
   
@@ -2135,81 +2156,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-1d" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 3️⃣ “왜 굳이 1D 축이 필요할까?”
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧠 3️⃣ “왜 굳이 1D 축이 필요할까?”">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2d" class="md-nav__link">
-    <span class="md-ellipsis">
-      예시 (2D 플랫폼)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-2d-get_vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ 반대로 “탑다운 2D”에서는 get_vector() 가 완전한 상위호환
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4️⃣ 반대로 “탑다운 2D”에서는 get_vector() 가 완전한 상위호환">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rpg" class="md-nav__link">
-    <span class="md-ellipsis">
-      예시 (RPG, 쯔꾸르, 젤다 스타일)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-get_vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ 5️⃣ 정리: “언제 get_vector만 써도 되는가?”
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-get_vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 6️⃣ “get_vector 하나로 통합하고 싶을 때” 팁
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ 결론 요약
-    </span>
-  </a>
   
 </li>
       
@@ -2285,52 +2231,73 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ 7️⃣ 요약 표
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="✅ 7️⃣ 요약 표">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#get_vector-get_axis-get_vector" class="md-nav__link">
     <span class="md-ellipsis">
       “get_vector()가 내부적으로 get_axis() 두 개를 쓰는 거라면, 그냥 get_vector() 하나만 쓰면 되는 거 아닌가?”
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="“get_vector()가 내부적으로 get_axis() 두 개를 쓰는 거라면, 그냥 get_vector() 하나만 쓰면 되는 거 아닌가?”">
+      <ul class="md-nav__list">
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#1-get_vector-get_axis-2-normalize" class="md-nav__link">
     <span class="md-ellipsis">
-      1️⃣ 사실관계:get_vector() =get_axis() × 2 + normalize()
+      1. 사실관계:get_vector() =get_axis() × 2 + normalize()
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2-get_vector-2d" class="md-nav__link">
     <span class="md-ellipsis">
-      2️⃣ 하지만 get_vector()는 2D 이동 전제 라서 주의점이 있습니다**
+      2. 하지만 get_vector()는 2D 이동 전제 라서 주의점이 있습니다
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2️⃣ 하지만 get_vector()는 2D 이동 전제 라서 주의점이 있습니다**">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-1d" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. “왜 굳이 1D 축이 필요할까?”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2d-get_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 반대로 “탑다운 2D”에서는 get_vector() 가 완전한 상위호환
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-get_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 정리: “언제 get_vector만 써도 되는가?”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-get_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. “get_vector 하나로 통합하고 싶을 때” 팁
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      예시: 플랫폼(좌우+점프) 게임
+      결론 요약
     </span>
   </a>
   
@@ -2338,81 +2305,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-1d" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 3️⃣ “왜 굳이 1D 축이 필요할까?”
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧠 3️⃣ “왜 굳이 1D 축이 필요할까?”">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2d" class="md-nav__link">
-    <span class="md-ellipsis">
-      예시 (2D 플랫폼)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-2d-get_vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ 반대로 “탑다운 2D”에서는 get_vector() 가 완전한 상위호환
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4️⃣ 반대로 “탑다운 2D”에서는 get_vector() 가 완전한 상위호환">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rpg" class="md-nav__link">
-    <span class="md-ellipsis">
-      예시 (RPG, 쯔꾸르, 젤다 스타일)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-get_vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ 5️⃣ 정리: “언제 get_vector만 써도 되는가?”
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-get_vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 6️⃣ “get_vector 하나로 통합하고 싶을 때” 팁
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ 결론 요약
-    </span>
-  </a>
   
 </li>
       
@@ -2450,11 +2342,9 @@
 
   <h1>Get axis vs get vector</h1>
 
-<p>Godot에서 <strong>Input.get_axis()</strong> 와 <strong>Input.get_vector()</strong> 는</p>
-<p>둘 다 “입력 방향값”을 구하지만, <strong>차원이 다르고 (1D vs 2D)</strong></p>
-<p><strong>리턴값의 형태와 정규화 여부</strong>가 완전히 다릅니다.</p>
-<hr />
-<h2 id="7"><strong>✅ 7️⃣ 요약 표</strong></h2>
+<p>Godot에서 <strong>Input.get_axis()</strong> 와 <strong>Input.get_vector()</strong> 는 둘 다 “입력 방향값”을 구하지만,</p>
+<p><strong>차원이 다르고 (1D vs 2D)</strong> 리턴값의 형태와 정규화 여부가 완전히 다릅니다.</p>
+<p><strong>요약 표</strong></p>
 <table>
 <thead>
 <tr>
@@ -2497,60 +2387,35 @@
 </tbody>
 </table>
 <hr />
-<blockquote>
-<p>💬 <strong>한 줄 요약</strong></p>
-</blockquote>
-<ul>
-<li>
-<blockquote>
-<p>get_axis() → 1D용 (좌우 등 한 축)</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>get_vector() → 2D용 (상하좌우, 조이스틱 포함)</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>get_vector()는 대각선 입력 시 자동으로 정규화돼 속도 유지가 쉬워요.</p>
-</blockquote>
-</li>
-</ul>
-<hr />
 <h3 id="get_vector-get_axis-get_vector">“get_vector()가 내부적으로 get_axis() 두 개를 쓰는 거라면, 그냥 get_vector() 하나만 쓰면 되는 거 아닌가?”</h3>
 <p>결론부터 말씀드리면:</p>
 <blockquote>
-<p>✅ <strong>기술적으로는 대부분의 경우 get_vector() 하나로 통일해도 잘 작동합니다.</strong></p>
-<p>하지만</p>
-<p>⚙️ <strong>“1D 움직임”과 “2D 움직임”의 목적이 다르기 때문에</strong>,</p>
-<p>실제 개발에서는 여전히 둘 다 쓰입니다.</p>
+<p><strong>기술적으로는 대부분의 경우 get_vector() 하나로 통일해도 잘 작동합니다.</strong></p>
+<p>하지만 <strong>“1D 움직임”과 “2D 움직임”의 목적이 다르기 때문에</strong>, 실제 개발에서는 여전히 둘 다 쓰입니다.</p>
 </blockquote>
-<p>이유를 단계별로 볼게요 👇</p>
+<p>이유를 단계별로 볼게요</p>
 <hr />
-<h2 id="1-get_vector-get_axis-2-normalize">1️⃣ 사실관계:get_vector() =get_axis() × 2 + normalize()</h2>
-<p>Godot 엔진 내부 구현을 단순화하면 이런 식이에요 👇</p>
-<div class="highlight"><pre><span></span><code>func get_vector(neg_x, pos_x, neg_y, pos_y):
-    var x = get_axis(neg_x, pos_x)
-    var y = get_axis(neg_y, pos_y)
-    return Vector2(x, y).normalized()
+<h4 id="1-get_vector-get_axis-2-normalize">1. 사실관계:get_vector() =get_axis() × 2 + normalize()</h4>
+<p>Godot 엔진 내부 구현을 단순화하면 이런 식이에요</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">get_vector</span><span class="p">(</span><span class="n">neg_x</span><span class="p">,</span><span class="w"> </span><span class="n">pos_x</span><span class="p">,</span><span class="w"> </span><span class="n">neg_y</span><span class="p">,</span><span class="w"> </span><span class="n">pos_y</span><span class="p">):</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_axis</span><span class="p">(</span><span class="n">neg_x</span><span class="p">,</span><span class="w"> </span><span class="n">pos_x</span><span class="p">)</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_axis</span><span class="p">(</span><span class="n">neg_y</span><span class="p">,</span><span class="w"> </span><span class="n">pos_y</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
 </code></pre></div>
-<p>즉,</p>
-<p>✅ get_vector()는 이미 get_axis() 두 번을 호출한 <strong>상위 함수</strong>가 맞습니다.</p>
+<p>즉, get_vector()는 이미 get_axis() 두 번을 호출한 <strong>상위 함수</strong>가 맞습니다.</p>
 <p>그래서 “결과만 필요하다면 get_vector로 통일 가능”해요.</p>
 <hr />
-<h2 id="2-get_vector-2d">2️⃣ 하지만 get_vector()는 2D 이동 전제 라서 주의점이 있습니다**</h2>
-<h3 id="_1"><strong>예시: 플랫폼(좌우+점프) 게임</strong></h3>
-<div class="highlight"><pre><span></span><code>var dir = Input.get_vector(&quot;move_left&quot;, &quot;move_right&quot;, &quot;jump&quot;, &quot;nothing&quot;)
+<h4 id="2-get_vector-2d">2. 하지만 get_vector()는 2D 이동 전제 라서 주의점이 있습니다</h4>
+<p><strong>예시: 플랫폼(좌우+점프) 게임</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span><span class="s2">&quot;move_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_right&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;jump&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;nothing&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>이렇게 쓸 수는 있지만…</p>
 <ul>
 <li>
-<p>점프(jump)는 위쪽 방향이 아니죠 😅</p>
+<p>점프(jump)는 위쪽 방향이 아니죠</p>
 </li>
 <li>
-<p>get_vector()는 자동 정규화해서,</p>
-<p>X/Y를 모두 고려한 벡터로 만들어버립니다.</p>
+<p>get_vector()는 자동 정규화해서, X/Y를 모두 고려한 벡터로 만들어버립니다.</p>
 </li>
 <li>
 <p>즉, <strong>“이동은 1D인데 점프까지 포함시키는 건 비논리적”</strong>이에요.</p>
@@ -2560,31 +2425,32 @@
 <p>1D 축(좌우)만 필요한 경우에는 get_axis()가 더 직관적이고 안전합니다.</p>
 </blockquote>
 <hr />
-<h2 id="3-1d"><strong>🧠 3️⃣ “왜 굳이 1D 축이 필요할까?”</strong></h2>
+<h4 id="3-1d">3. “왜 굳이 1D 축이 필요할까?”</h4>
 <p>플랫폼 게임에서는 “x축 이동”과 “y축 중력/점프”가 완전히 다른 논리로 작동합니다.</p>
-<h3 id="2d"><strong>예시 (2D 플랫폼)</strong></h3>
-<div class="highlight"><pre><span></span><code>var dir_x = Input.get_axis(&quot;move_left&quot;, &quot;move_right&quot;)
-velocity.x = dir_x * SPEED
+<p><strong>예시 (2D 플랫폼)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">dir_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_axis</span><span class="p">(</span><span class="s2">&quot;move_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_right&quot;</span><span class="p">)</span>
+<span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir_x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">SPEED</span>
 
-if Input.is_action_just_pressed(&quot;jump&quot;) and is_on_floor():
-    velocity.y = -JUMP_FORCE
+<span class="k">if</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">&quot;jump&quot;</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">is_on_floor</span><span class="p">():</span>
+<span class="w">    </span><span class="n">velocity</span><span class="o">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">JUMP_FORCE</span>
 </code></pre></div>
-<p>→ x축만 부드럽게 조정하고,</p>
-<p>→ y축은 물리·중력으로 따로 처리하죠.</p>
+<p>→ x축만 부드럽게 조정하고, y축은 물리·중력으로 따로 처리하죠.</p>
 <p>get_vector()로 하면 이런 분리 제어가 어렵습니다.</p>
 <hr />
-<h2 id="4-2d-get_vector">4️⃣ 반대로 “탑다운 2D”에서는 get_vector() 가 완전한 상위호환</h2>
-<h3 id="rpg"><strong>예시 (RPG, 쯔꾸르, 젤다 스타일)</strong></h3>
-<div class="highlight"><pre><span></span><code>var dir = Input.get_vector(&quot;move_left&quot;, &quot;move_right&quot;, &quot;move_up&quot;, &quot;move_down&quot;)
-velocity = dir * SPEED
-move_and_slide()
+<h4 id="4-2d-get_vector">4. 반대로 “탑다운 2D”에서는 get_vector() 가 완전한 상위호환</h4>
+<p><strong>예시 (RPG, 쯔꾸르, 젤다 스타일)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span><span class="s2">&quot;move_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_right&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_up&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_down&quot;</span><span class="p">)</span>
+<span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">SPEED</span>
+<span class="n">move_and_slide</span><span class="p">()</span>
 </code></pre></div>
-<p>✅ 상하좌우를 모두 한 번에 계산</p>
-<p>✅ 대각선 속도 자동 보정</p>
-<p>✅ 입력이 단일 코드로 끝남</p>
+<ul>
+<li>상하좌우를 모두 한 번에 계산</li>
+<li>대각선 속도 자동 보정 </li>
+<li>입력이 단일 코드로 끝남</li>
+</ul>
 <p>→ 이런 구조에서는 get_vector()가 get_axis()보다 훨씬 깔끔합니다.</p>
 <hr />
-<h2 id="5-get_vector"><strong>⚙️ 5️⃣ 정리: “언제 get_vector만 써도 되는가?”</strong></h2>
+<h4 id="5-get_vector">5. 정리: “언제 get_vector만 써도 되는가?”</h4>
 <table>
 <thead>
 <tr>
@@ -2627,11 +2493,10 @@ move_and_slide()
 </tbody>
 </table>
 <hr />
-<h2 id="6-get_vector"><strong>🧩 6️⃣ “get_vector 하나로 통합하고 싶을 때” 팁</strong></h2>
-<p>만약 프로젝트 전체를 get_vector로 통일하고 싶다면,</p>
-<p>“Y축 입력이 없는 경우”엔 그냥 무시하면 됩니다.</p>
-<div class="highlight"><pre><span></span><code>var move = Input.get_vector(&quot;move_left&quot;, &quot;move_right&quot;, &quot;&quot;, &quot;&quot;)
-velocity.x = move.x * SPEED
+<h4 id="6-get_vector">6. “get_vector 하나로 통합하고 싶을 때” 팁</h4>
+<p>만약 프로젝트 전체를 get_vector로 통일하고 싶다면, “Y축 입력이 없는 경우”엔 그냥 무시하면 됩니다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">move</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span><span class="s2">&quot;move_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;move_right&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">move</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">SPEED</span>
 </code></pre></div>
 <p>→ neg_y, pos_y 빈 문자열을 주면 무시됨.</p>
 <p>→ 사실상 get_axis("left", "right")와 동일하게 동작합니다.</p>
@@ -2640,7 +2505,7 @@ velocity.x = move.x * SPEED
 <p>“Y축 없는 get_vector” → “get_axis와 거의 동일”.</p>
 </blockquote>
 <hr />
-<h2 id="_2"><strong>✅ 결론 요약</strong></h2>
+<h4 id="_1">결론 요약</h4>
 <table>
 <thead>
 <tr>
@@ -2682,27 +2547,6 @@ velocity.x = move.x * SPEED
 </tr>
 </tbody>
 </table>
-<hr />
-<blockquote>
-<p>💬 <strong>한 줄 요약</strong></p>
-</blockquote>
-<ul>
-<li>
-<blockquote>
-<p>get_vector()는 get_axis()를 두 번 쓰는 상위 버전이 맞습니다.</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>하지만 <strong>1D 입력만 필요한 게임(플랫폼, 슬라이더)</strong> 에선 get_axis()가 더 단순하고 안전해요.</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>그 외 모든 2D 이동 로직이라면 get_vector() 하나로 통일해도 전혀 문제 없습니다.</p>
-</blockquote>
-</li>
-</ul>
 
 
 
