@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../Object/">
+        <link rel="prev" href="../../Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/">
       
       
-        <link rel="next" href="../Private_Public_Properties/">
+        <link rel="next" href="../Backend/FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Object Oriented Programming - Docs for hj3415</title>
+        <title>Pydantic을 이용한 공용스키마 구조 예시 - Docs for hj3415</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#fastapi-db-" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -73,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Object Oriented Programming
+              Pydantic을 이용한 공용스키마 구조 예시
             
           </span>
         </div>
@@ -185,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -215,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -284,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
+      <a href="../../Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
         
   
   
@@ -311,8 +316,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -331,11 +338,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -351,7 +358,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Full stack 개발
@@ -362,10 +369,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/pydantic%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EA%B3%B5%EC%9A%A9%EC%8A%A4%ED%82%A4%EB%A7%88_%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Pydantic을 이용한 공용스키마 구조 예시
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -376,6 +403,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi-db-" class="md-nav__link">
+    <span class="md-ellipsis">
+      FastAPI - DB 저장소 - 데이터수집기 간에 어떤식의 통신 구조가 가장 효과적일까?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FastAPI - DB 저장소 - 데이터수집기 간에 어떤식의 통신 구조가 가장 효과적일까?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      매핑 위치 예시
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      버전 전략(아주 중요)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      다국어/타언어 고려가 있다면
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      이 구조를 도시화해서 설명한다면?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="이 구조를 도시화해서 설명한다면?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      계층별 역할 한눈에
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      데이터 흐름도 (데이터가 이동하는 경로)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      이런 구조(DB가 외부서비스)에서 FastAPI의 구조예시
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -434,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../Backend/FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -501,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
+      <a href="../Backend/FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
         
   
   
@@ -588,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../Frontend/vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -671,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
         
   
   
@@ -694,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -717,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -740,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
         
   
   
@@ -763,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -786,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
         
   
   
@@ -809,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
         
   
   
@@ -832,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -855,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
+      <a href="../Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
         
   
   
@@ -936,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
+      <a href="../Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
         
   
   
@@ -959,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
+      <a href="../Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
         
   
   
@@ -982,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
+      <a href="../Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
         
   
   
@@ -1005,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
+      <a href="../Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
         
   
   
@@ -1048,10 +1177,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1068,11 +1195,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -1088,7 +1215,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             GDQUEST
@@ -1198,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
+      <a href="../../GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
         
   
   
@@ -1221,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
+      <a href="../../GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
         
   
   
@@ -1244,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
+      <a href="../../GDQUEST/2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
         
   
   
@@ -1267,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2D/M9_Top_Down_Movement/L4_Placing_Obstacles/" class="md-nav__link">
+      <a href="../../GDQUEST/2D/M9_Top_Down_Movement/L4_Placing_Obstacles/" class="md-nav__link">
         
   
   
@@ -1290,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2D/M9_Top_Down_Movement/L5_Adding_inertia_and_animations/" class="md-nav__link">
+      <a href="../../GDQUEST/2D/M9_Top_Down_Movement/L5_Adding_inertia_and_animations/" class="md-nav__link">
         
   
   
@@ -1326,10 +1453,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1385,11 +1510,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -1405,7 +1530,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Glossary
@@ -1419,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../9-slice_scaling/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/9-slice_scaling/" class="md-nav__link">
         
   
   
@@ -1442,7 +1567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AI_%28Game_AI%29/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/AI_%28Game_AI%29/" class="md-nav__link">
         
   
   
@@ -1465,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../API_Application_Programming_Interface/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/API_Application_Programming_Interface/" class="md-nav__link">
         
   
   
@@ -1488,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Boolean_Expressions/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Boolean_Expressions/" class="md-nav__link">
         
   
   
@@ -1511,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Class/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Class/" class="md-nav__link">
         
   
   
@@ -1534,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Collisions/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Collisions/" class="md-nav__link">
         
   
   
@@ -1557,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Composition/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Composition/" class="md-nav__link">
         
   
   
@@ -1580,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Constant/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Constant/" class="md-nav__link">
         
   
   
@@ -1603,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Duck_Typing/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Duck_Typing/" class="md-nav__link">
         
   
   
@@ -1626,7 +1751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Encapsulation/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Encapsulation/" class="md-nav__link">
         
   
   
@@ -1649,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Function_Signature/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Function_Signature/" class="md-nav__link">
         
   
   
@@ -1672,7 +1797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Game_Jam/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Game_Jam/" class="md-nav__link">
         
   
   
@@ -1695,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Inheritance/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Inheritance/" class="md-nav__link">
         
   
   
@@ -1718,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Interface/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Interface/" class="md-nav__link">
         
   
   
@@ -1741,7 +1866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Method_member_function/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Method_member_function/" class="md-nav__link">
         
   
   
@@ -1764,7 +1889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Node/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Node/" class="md-nav__link">
         
   
   
@@ -1787,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Object/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Object/" class="md-nav__link">
         
   
   
@@ -1807,17 +1932,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../GDQUEST/Glossary/Object_Oriented_Programming/" class="md-nav__link">
         
   
   
@@ -1828,7 +1946,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1841,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Private_Public_Properties/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Private_Public_Properties/" class="md-nav__link">
         
   
   
@@ -1864,7 +1981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Property_member_variable/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Property_member_variable/" class="md-nav__link">
         
   
   
@@ -1887,7 +2004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Refactoring/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Refactoring/" class="md-nav__link">
         
   
   
@@ -1910,7 +2027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Static_Function/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Static_Function/" class="md-nav__link">
         
   
   
@@ -1933,7 +2050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Ternary_Expression/" class="md-nav__link">
+      <a href="../../GDQUEST/Glossary/Ternary_Expression/" class="md-nav__link">
         
   
   
@@ -2020,7 +2137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Godot4_%EA%B0%9C%EB%B0%9C/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../Godot4_%EA%B0%9C%EB%B0%9C/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -2089,7 +2206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/get_axis_vs_get_vector/" class="md-nav__link">
+      <a href="../../Godot4_%EA%B0%9C%EB%B0%9C/2D/get_axis_vs_get_vector/" class="md-nav__link">
         
   
   
@@ -2112,7 +2229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
+      <a href="../../Godot4_%EA%B0%9C%EB%B0%9C/2D/move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
         
   
   
@@ -2161,6 +2278,98 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi-db-" class="md-nav__link">
+    <span class="md-ellipsis">
+      FastAPI - DB 저장소 - 데이터수집기 간에 어떤식의 통신 구조가 가장 효과적일까?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FastAPI - DB 저장소 - 데이터수집기 간에 어떤식의 통신 구조가 가장 효과적일까?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      매핑 위치 예시
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      버전 전략(아주 중요)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      다국어/타언어 고려가 있다면
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      이 구조를 도시화해서 설명한다면?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="이 구조를 도시화해서 설명한다면?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      계층별 역할 한눈에
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      데이터 흐름도 (데이터가 이동하는 경로)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      이런 구조(DB가 외부서비스)에서 FastAPI의 구조예시
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2175,7 +2384,7 @@
 
 
   
-    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/GDQUEST/Glossary/Object_Oriented_Programming.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/Full-stack_개발/pydantic을_이용한_공용스키마_구조_예시.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2184,43 +2393,333 @@
     
       
     
-    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/GDQUEST/Glossary/Object_Oriented_Programming.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/Full-stack_개발/pydantic을_이용한_공용스키마_구조_예시.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Object Oriented Programming</h1>
+  <h1>Pydantic을 이용한 공용스키마 구조 예시</h1>
 
-<p>객체 지향 프로그래밍(Object-oriented programming)은 프로그램을 객체라고 불리는 추상적인 작은 기계들로 나누어 구성하는 방식의 프로그래밍입니다.</p>
-<p>객체란 데이터(변수)와 동작(함수)을 하나로 묶은 집합입니다. 객체는 자신의 데이터를 그 객체에 정의된 함수들을 통해 스스로 처리할 수 있습니다.
-예를 들어, Godot에서 Sprite2D 노드는 position이라는 데이터를 가지고 있으며, translate 함수를 호출하면 스프라이트가 이동하면서 위치가 바뀌게 됩니다.</p>
-<p>객체 지향 프로그래밍에서 객체의 핵심 개념은, 프로그램 내에서 유용한 작업을 수행하기 위해 필요한 코드와 데이터를 모두 캡슐화(하나로 묶음)한다는 점입니다.
-예를 들어, 화면에 표시되는 스프라이트 하나는 위치를 바꾸거나 회전시킬 수 있으며, 이는 하나의 객체로 볼 수 있습니다.
-또한, 시간을 카운트다운하고 시간이 다 되면 신호(signal)를 발생시키는 타이머 노드도 또 다른 객체입니다.</p>
-<p>원래 객체는 “가상 기계(virtual machines)”라고 불렸으며, 텍스트 형식으로 메시지를 주고받으며 서로 소통하는 것을 목표로 했습니다.
-오늘날에도 이러한 텍스트 기반 인터페이스(즉, 함수 이름을 적어서 호출하는 방식)는 유지되고 있지만, 객체들은 초기 개념만큼 완전히 독립적이고
-밀폐된 존재는 아닙니다.</p>
-<p>객체 지향 프로그래밍과 함께 널리 알려진 또 하나의 개념은 <a href="../Inheritance/">Inheritance</a>입니다.
-상속은 기존 객체와 유사한 새로운 객체를 만드는 방법입니다.
-예를 들어, Godot에서는 Sprite2D의 모든 속성과 메서드를 상속받는 새로운 MySprite2D 클래스를 만들고, 여기에 새로운 기능을 추가할 수 있습니다.
-오늘날 “객체 지향 프로그래밍”이라고 말할 때는 보통 이 “상속” 개념을 의미하는 경우가 많습니다.
-그 외 객체 지향의 다른 기능들은 사실 다른 프로그래밍 패러다임에서도 찾아볼 수 있습니다.</p>
-<p>상속은 종종 한계가 있습니다.
-예를 들어, 플레이어 유닛과 적 유닛이 있다고 가정해 보겠습니다. 이 둘은 Unit 클래스를 상속받도록 만들 수 있습니다.
-하지만 만약 날 수 있는 플레이어 유닛이 필요하다면 어떻게 할까요?
-이 경우, 해당 유닛이 Player와 FlyingUnit을 동시에 상속받을 수는 없습니다.
-이럴 때 사용하는 개념이 <a href="../Composition/">Composition</a>입니다.
-이 문제는 너무 흔해서, 프로그래밍 세계에서는 “상속보다 컴포지션(composition over inheritance)”이라는 문장이 널리 퍼져 있는 격언처럼
-여겨질 정도입니다.</p>
-<p>하나의 객체는 여러 다른 객체들과 구성되어, 더 고급스럽고 강력한 엔티티로 확장될 수 있습니다.
-예를 들어, Godot에서는 달리고 점프할 수 있는 플레이어 캐릭터를 만들기 위해 다음과 같은 구성 요소들이 함께 사용될 수 있습니다:
-충돌 감지를 위한 CharacterBody2D 노드, 이미지를 표시하기 위한 Sprite2D 노드, 소리를 재생하기 위한 AudioStreamPlayer 노드 등입니다.
-이렇게 하나의 객체(CharacterBody2D 노드)가 씬의 루트에 있고, 그 아래에 여러 다른 객체들(Sprite2D, AudioStreamPlayer 등)이 포함되어 있습니다.</p>
-<p>어떤 면에서 보면, 객체 지향 프로그램은 여러 개의 작은 프로그램들이 협력하여 복잡한 문제를 나누어 정복하는 방식이라고 생각할 수 있습니다.</p>
-<p>이 방식이 프로그램의 복잡성을 분해하는 유일한 방법은 아니지만, 비디오 게임 분야와 몇몇 소프트웨어 개발 분야에서는 가장 널리 사용되는
-프로그래밍 스타일이 되었습니다.</p>
+<h2 id="fastapi-db-">FastAPI - DB 저장소 - 데이터수집기 간에 어떤식의 통신 구조가 가장 효과적일까?</h2>
+<p>세 프로젝트(FastAPI 앱 · DB저장 서비스 · 데이터수집기) 사이에서 <strong>데이터 명세를 한 곳</strong>에서 관리해야 통신 오류가 줄고, 변경도 통제됩니다.</p>
+<p>가장 깔끔한 해법은 <strong>프레임워크에 독립적인 “계약(contracts) 패키지”</strong>를 따로 만들어 그 안에 <strong>Pydantic 모델(스키마)</strong>을 선언하고,
+세 프로젝트가 <strong>같은 버전의 그 패키지</strong>를 의존하도록 하는 겁니다.</p>
+<p>아래처럼 정리해두면 관리가 편합니다.</p>
+<hr />
+<p><strong>추천 구조</strong></p>
+<div class="highlight"><pre><span></span><code>contracts/                 # 공용 스키마 전용(프레임워크 독립)
+  pyproject.toml
+  contracts/
+    __init__.py
+    __version__.py
+    users.py               # Pydantic DTO (Create/Read/Update, Event 등)
+    items.py
+    events.py              # (선택) 메시지/이벤트 스키마
+    common.py              # 공통 타입(IDs, enums)
+
+fastapi-app/
+  app/
+    api/                   # 여기선 contracts의 DTO를 그대로 사용
+    services/
+    mappers.py             # DB문서 &lt;-&gt; DTO 변환
+  pyproject.toml           # deps: contracts==x.y.z
+
+db-service/                # Mongo/Beanie 구현
+  data_mongo/
+    beanie_models.py       # Beanie Document (저장용)
+    mappers.py             # Document &lt;-&gt; DTO 변환 (contracts 의존)
+    repo_impl.py
+  pyproject.toml           # deps: contracts==x.y.z
+
+collector/                 # 크롤러/배치/수집기
+  collector/
+    pipelines/
+    emitters/              # API/큐에 보낼 때 contracts DTO 인스턴스 생성
+  pyproject.toml           # deps: contracts==x.y.z
+</code></pre></div>
+<p><strong>핵심 원칙</strong></p>
+<ul>
+<li>
+<p>contracts에는 <strong>Pydantic과 표준 라이브러리만</strong> 사용(FastAPI/Beanie import 금지).</p>
+</li>
+<li>
+<p>각 프로젝트는 contracts를 <strong>읽기만</strong> 하고, 자체 내부 모델(예: Beanie Document)과는 <strong>매핑</strong>으로 분리.</p>
+</li>
+</ul>
+<hr />
+<p><strong>예시 스키마 (contracts/users.py)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># contracts/users.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">EmailStr</span><span class="p">,</span> <span class="n">Field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserId</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserCreate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">email</span><span class="p">:</span> <span class="n">EmailStr</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserRead</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">email</span><span class="p">:</span> <span class="n">EmailStr</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserUpdate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<blockquote>
+<p>FastAPI에서는 response_model=UserRead로 바로 쓰고,</p>
+<p>DB서비스에서는 UserCreate → Beanie Document로 매핑해 insert, 조회 후 UserRead로 매핑해 반환합니다.</p>
+<p>수집기는 외부에서 긁은 raw dict를 UserCreate(**raw)로 검증 후 전송하면 됩니다.</p>
+</blockquote>
+<hr />
+<h3 id="_1">매핑 위치 예시</h3>
+<p><strong>DB 서비스 (Beanie)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># data_mongo/beanie_models.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">beanie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Document</span><span class="p">,</span> <span class="n">Indexed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmailStr</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserDoc</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">email</span><span class="p">:</span> <span class="n">Indexed</span><span class="p">(</span><span class="n">EmailStr</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Settings</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;users&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># data_mongo/mappers.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contracts.users</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserCreate</span><span class="p">,</span> <span class="n">UserRead</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.beanie_models</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserDoc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">to_doc</span><span class="p">(</span><span class="n">dto</span><span class="p">:</span> <span class="n">UserCreate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserDoc</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">UserDoc</span><span class="p">(</span><span class="o">**</span><span class="n">dto</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">to_read</span><span class="p">(</span><span class="n">doc</span><span class="p">:</span> <span class="n">UserDoc</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserRead</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">UserRead</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">id</span><span class="p">),</span> <span class="n">email</span><span class="o">=</span><span class="n">doc</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">doc</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>FastAPI 앱</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># app/api/routes/users.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIRouter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contracts.users</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserCreate</span><span class="p">,</span> <span class="n">UserRead</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.services.user_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">user_service</span>
+
+<span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;/users&quot;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;users&quot;</span><span class="p">])</span>
+
+<span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">UserRead</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_user</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">UserCreate</span><span class="p">):</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">user_service</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="_2">버전 전략(아주 중요)</h3>
+<ul>
+<li>
+<p>contracts는 <strong>SemVer(예: 1.4.2)</strong>로 관리하고, 각 서비스는 contracts==1.4.<em>처럼 </em><em>엄격히 핀(Pin)</em>* 하세요.</p>
+</li>
+<li>
+<p><strong>호환성 원칙</strong></p>
+<ul>
+<li>
+<p><strong>비파괴 변경(Non-breaking)</strong>: 필드 추가는 <strong>Optional</strong>로, 기본값 제공.</p>
+</li>
+<li>
+<p><strong>파괴 변경(Breaking)</strong>: 필드 이름/타입 변경·삭제는 <strong>Major 버전 업</strong>.</p>
+</li>
+<li>
+<p>필요한 경우 version: Literal["v1"] 같은 구분 필드를 이벤트 페이로드에 포함.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>마이그레이션 기간</strong> 동안은 alias를 활용해 구버전 필드도 잠시 허용 가능합니다.</p>
+</li>
+</ul>
+<hr />
+<h3 id="_3">다국어/타언어 고려가 있다면</h3>
+<ul>
+<li>
+<p>contracts의 Pydantic 모델에서 model_json_schema()로 <strong>JSON Schema</strong>를 뽑아 저장해두고,</p>
+<p>다른 언어(Typescript/Go 등) 클라이언트가 그 스키마로 <strong>타입 생성</strong>을 하게 하면 이상적입니다.</p>
+</li>
+<li>
+<p>또는 Avro/Protobuf를 검토할 수 있지만, <strong>Python 위주</strong>라면 Pydantic+JSON Schema로 충분한 경우가 많습니다.</p>
+</li>
+</ul>
+<hr />
+<p><strong>결론</strong></p>
+<ul>
+<li>
+<p><strong>Pydantic으로 “데이터 명세”를 통일</strong>하는 것이 가장 실용적입니다.</p>
+</li>
+<li>
+<p>그 명세는 <strong>별도 공용 패키지(contracts)</strong>로 분리해 <strong>세 프로젝트가 동일 버전</strong>을 의존하게 하세요.</p>
+</li>
+<li>
+<p>각 프로젝트는 <strong>자체 내부 모델(Beanie 등)</strong>과는 <strong>매핑 레이어</strong>로 연결합니다.</p>
+</li>
+<li>
+<p>이 구조가 변경 관리, 테스트, 교체(예: Mongo→다른 DB), 팀 협업 모두에서 <strong>장기적으로 제일 안정적</strong>입니다.</p>
+</li>
+</ul>
+<hr />
+<h2 id="_4">이 구조를 도시화해서 설명한다면?</h2>
+<p><strong>전체 개념도</strong></p>
+<div class="highlight"><pre><span></span><code>┌───────────────────────────────┐
+│         📦 contracts          │
+│  ───────────────────────────  │
+│    Pydantic 모델(데이터 명세)     │
+│     ├─ UserCreate             │
+│     ├─ UserRead               │
+│     └─ UserUpdate             │
+│  (FastAPI, DB, Collector 공통) │
+└──────────────┬────────────────┘
+               │   (pip install contracts==1.0.0)
+   ┌───────────┼───────────┬────────────┐
+   ▼           ▼           ▼
+┌──────────┐ ┌──────────┐ ┌──────────┐
+│ FastAPI  │ │  DB App  │ │ Collector│
+│  (API)   │ │ (Beanie) │ │ (Crawler)│
+├──────────┤ ├──────────┤ ├──────────┤
+│ api/     │ │ beanie_  │ │ emitters/│
+│ schemas/ │ │ models.py│ │ pipelines│
+│ routes/  │ │ mappers  │ │          │
+└────┬─────┘ └────┬─────┘ └────┬─────┘
+     │              │            │
+     │ Pydantic DTO │            │
+     │ import       │            │
+     ▼              ▼            ▼
+ 요청/응답 검증    DB 저장/조회   외부데이터 수집후 검증
+  (UserCreate,   (UserDoc↔DTO)    (DTO 검증 후 전송)
+   UserRead)
+</code></pre></div>
+<hr />
+<h3 id="_5">계층별 역할 한눈에</h3>
+<table>
+<thead>
+<tr>
+<th><strong>계층</strong></th>
+<th><strong>위치</strong></th>
+<th><strong>주요 역할</strong></th>
+<th><strong>예시</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>contracts</strong></td>
+<td>/contracts/</td>
+<td><strong>데이터 명세</strong> (Pydantic 모델 정의)</td>
+<td>UserCreate, UserRead</td>
+</tr>
+<tr>
+<td><strong>FastAPI App</strong></td>
+<td>/fastapi-app/</td>
+<td>API 라우팅, 요청/응답 검증</td>
+<td>/users 엔드포인트에서 DTO 사용</td>
+</tr>
+<tr>
+<td><strong>DB App</strong></td>
+<td>/db-service/</td>
+<td>Beanie Document, DB 저장/조회</td>
+<td>UserDoc ↔ DTO 매핑</td>
+</tr>
+<tr>
+<td><strong>Collector</strong></td>
+<td>/collector/</td>
+<td>데이터 수집/전송, DTO 검증 후 송신</td>
+<td>UserCreate(**raw) 검증 후 API POST</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_6">데이터 흐름도 (데이터가 이동하는 경로)</h3>
+<div class="highlight"><pre><span></span><code>[Collector] 
+   └── 수집한 raw dict
+         ↓ (Pydantic 검증)
+      UserCreate 모델 인스턴스
+         ↓ (HTTP 전송)
+
+           ↓↓↓ API 호출 ↓↓↓
+
+[FastAPI App]
+   └── /users POST 엔드포인트
+         ↓ (Pydantic으로 입력 검증)
+      UserCreate -&gt; 서비스 -&gt; UserRead 반환
+         ↓ (응답 직렬화)
+
+           ↓↓↓ 내부 호출 ↓↓↓
+
+[DB App]
+   └── UserCreate DTO 수신
+         ↓ (매퍼 변환)
+      UserDoc (Beanie Document)
+         ↓ (MongoDB 저장)
+      저장 결과 -&gt; UserRead DTO 반환
+</code></pre></div>
+<blockquote>
+<p>즉, <strong>세 프로젝트가 모두 같은 Pydantic 모델(UserCreate, UserRead 등)</strong> 을 공유하기 때문에</p>
+<p>구조나 필드가 달라서 생길 수 있는 통신 오류가 없어집니다.</p>
+</blockquote>
+<hr />
+<h2 id="db-fastapi">이런 구조(DB가 외부서비스)에서 FastAPI의 구조예시</h2>
+<blockquote>
+<p>FastAPI는 <strong>요청/응답 + 인증/권한 + 라우팅</strong>만 담당.</p>
+<p>데이터 저장/조회는 <strong>db-service</strong>가 담당하고, 둘은 HTTP/RPC로 통신.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>fastapi-app/
+  app/
+    main.py                 # lifespan, 미들웨어, 라우팅 묶기
+    core/
+      config.py             # settings(.env), 외부 서비스 URL 등
+      security.py           # JWT/OAuth2 등
+      errors.py             # 예외 ↔ HTTP 변환
+    api/
+      deps.py               # 공통 DI(현재 사용자, 권한 등)
+      routes/
+        users.py
+        items.py
+    clients/                # ← 외부 서비스(= db-service) 클라이언트
+      db_client.py          # httpx.AsyncClient 래퍼, 재시도/타임아웃
+    schemas/                # ← contracts를 그대로 import해서 사용
+      (대부분 비어도 됨: from contracts.users import UserCreate, UserRead)
+  tests/
+    api/
+    e2e/
+</code></pre></div>
+<p><strong>핵심 포인트</strong></p>
+<ul>
+<li>
+<p><strong>models/, db/, repositories/</strong> 폴더 없음(데이터 계층은 바깥으로 분리).</p>
+</li>
+<li>
+<p>clients/db_client.py에서 <strong>db-service API</strong>를 호출하고, 실패/재시도/타임아웃을 표준화.</p>
+</li>
+<li>
+<p><strong>contracts</strong> 패키지의 Pydantic DTO를 바로 response_model 등에 사용.</p>
+</li>
+</ul>
+<p><strong>간단 예시:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># app/api/routes/users.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">Depends</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contracts.users</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserCreate</span><span class="p">,</span> <span class="n">UserRead</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.clients.db_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">DBClient</span><span class="p">,</span> <span class="n">get_db</span>
+
+<span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;/users&quot;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;users&quot;</span><span class="p">])</span>
+
+<span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">UserRead</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_user</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">UserCreate</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">DBClient</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">db</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<p>이 구조의 장점</p>
+<ul>
+<li>
+<p>FastAPI 앱이 <strong>완전히 얇아짐</strong>: 변경 영향이 작고, 배포/스케일이 단순.</p>
+</li>
+<li>
+<p>DB 교체/마이그레이션을 <strong>db-service 안에서</strong> 처리 가능.</p>
+</li>
+<li>
+<p>팀 간 경계가 명확(플랫폼/인프라 vs API 팀).</p>
+</li>
+</ul>
 
 
 
@@ -2269,10 +2768,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
