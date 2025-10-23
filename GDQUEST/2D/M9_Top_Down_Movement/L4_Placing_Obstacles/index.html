@@ -2483,7 +2483,8 @@ Y Sort Enabled가 활성화된 상태에서 Godot은 A를 B 위에 그리게 됩
 <p><img alt="030_030_ysort_example_03_pivot_point.webp" src="../images/030_030_ysort_example_03_pivot_point.webp" /></p>
 <p><strong>참고:</strong> Y Sort Enabled는 부모 노드에 설정해야 하며, 이 속성은 해당 부모 노드의 모든 자식 노드에 적용됩니다.</p>
 <p>좋습니다! 이제 우리 프로젝트에서 Y Sort Enabled 속성을 사용해 보겠습니다. Game 노드를 선택한 다음,
-인스펙터에서 <strong>Ordering &gt; Y Sort Enabled</strong> 체크박스를 활성화해 주세요.</p>
+인스펙터에서 <strong>Ordering &gt; Y Sort Enabled</strong> 체크박스를 활성화해 주세요.
+(자식들의 z-index가 동일해야 y sort 기능이 작동함)</p>
 <p><img alt="030_040_y_sort_enabled.webp" src="../images/030_040_y_sort_enabled.webp" /></p>
 <p>이제 씬을 다시 테스트해 보세요. 캐릭터가 블록 위쪽으로 이동할 때, 이제는 블록 뒤에 그려져야 합니다. 멋지죠! 씬을 잠깐 플레이해 보세요.</p>
 <p>하지만 또 다른 문제가 있다는 것을 눈치채실 수도 있습니다. 만약 아직 못 보셨다면, 제가 보여드리겠습니다.
@@ -2521,7 +2522,6 @@ Y Sort Enabled가 활성화된 상태에서 Godot은 A를 B 위에 그리게 됩
 <p><img alt="030_055_pivot_point.webp" src="../images/030_055_pivot_point.webp" /></p>
 <p>문제는 StaticBody2D 노드를 이동하면 스프라이트와 충돌 모양도 함께 이동하게 된다는 점입니다. 그래서 이렇게 하는 것은 실제로 도움이 되지 않습니다.
 대신, 스프라이트와 충돌 모양 노드를 직접 이동시켜서 블록의 피벗 포인트를 효과적으로 변경해야 합니다.</p>
-<p><br></p>
 <p>Sprite2D와 CollisionShape2D 노드를 함께 선택해 주세요. 두 노드를 모두 선택한 상태에서 Transform &gt; Position &gt; Y 값을 74픽셀로 설정하시면 됩니다.</p>
 <p><img alt="030_060_pivot_point.webp" src="../images/030_060_pivot_point.webp" /></p>
 <p>이렇게 하면 스프라이트의 상단이 StaticBody2D 노드의 위치와 정렬되게 됩니다.</p>
