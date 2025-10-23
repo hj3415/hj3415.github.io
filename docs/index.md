@@ -12,3 +12,4 @@
 - Full Stack 개발
     - [Vue3 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
     - [FastAPI_커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
+- Blue Prince
