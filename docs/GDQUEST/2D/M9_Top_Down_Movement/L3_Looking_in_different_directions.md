@@ -7,7 +7,8 @@ M4에서는 우리 우주선 스프라이트가 위에서 내려다보는 시점
 
 ![020_075_runner_directions.webp](images/020_075_runner_directions.webp)
 
-그래서 이번 강의에서는 플레이어가 누르는 키에 따라 캐릭터가 다른 방향을 바라보도록 만들겠습니다. 이를 구현하는 여러 가지 기법을 설명해드릴 예정이며, 먼저 간단한 if와 elif 문부터 시작해서 GDScript의 match 키워드를 사용하는 방법까지 차례대로 안내해드리겠습니다.
+그래서 이번 강의에서는 플레이어가 누르는 키에 따라 캐릭터가 다른 방향을 바라보도록 만들겠습니다. 이를 구현하는 여러 가지 기법을 설명해드릴 예정이며,
+먼저 간단한 if와 elif 문부터 시작해서 GDScript의 match 키워드를 사용하는 방법까지 차례대로 안내해드리겠습니다.
 
 ![030_character_010_runner_directions.mp4](videos/030_character_010_runner_directions.mp4)
 
