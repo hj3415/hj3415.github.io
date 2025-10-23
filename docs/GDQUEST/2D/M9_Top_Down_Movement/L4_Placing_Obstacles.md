@@ -236,7 +236,7 @@ Sprite2D와 CollisionShape2D 노드를 함께 선택해 주세요. 두 노드를
 CollisionShape2D 노드는 매우 유용하지만, 미리 정의된 형태만 제공하기 때문에 모든 씬에 적합하지는 않습니다.
 에디터에서 직접 폴리곤을 그릴 수 있게 해주는 또 다른 노드가 있습니다. 바로 CollisionPolygon2D입니다! 이 기능을 잘 활용해보겠습니다.
 
-제가 두 개의 레이어로 나누어진 서킷을 준비해 두었습니다. 이미지 파일은 resassets 폴더에서 확인하실 수 있습니다:
+제가 두 개의 레이어로 나누어진 서킷을 준비해 두었습니다. 이미지 파일은 res/assets 폴더에서 확인하실 수 있습니다:
 
 - circuit_background.png: 바다, 지면, 벽의 옆면 등 서킷의 배경입니다. 이 이미지는 다음 섹션에서 사용하실 겁니다.
     
@@ -302,7 +302,7 @@ circuit_obstacle.png 텍스처를 드래그하여 Sprite2D 노드의 **Texture**
 ![030_110_circuit_shape.mp4](videos/030_110_circuit_shape.mp4)
 
 > [!example] 다음 질문에 답해보세요
-> 그렇다면 어떻게 하면 될까요? 최선을 다해 추측해 보세요.
+> 그럼 이제 어떻게 하실 건가요? 최선을 다해 추측해 보세요.
 > 
 > - 구멍이 있는 CollisionPolygon2D 사용하기
 > 
