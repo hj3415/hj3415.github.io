@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/">
+        <link rel="prev" href="../../%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/">
       
       
-        <link rel="next" href="../../4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/">
+        <link rel="next" href="../get_axis_vs_get_vector/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>L9 vue3에서 .value를 언제쓰고 언제 안쓰나 - Docs for hj3415</title>
+        <title>Vector2 move toward 이해 - Docs for hj3415</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-ref" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              L9 vue3에서 .value를 언제쓰고 언제 안쓰나
+              Vector2 move toward 이해
             
           </span>
         </div>
@@ -190,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -239,10 +239,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -261,11 +259,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -281,7 +279,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Full stack 개발
@@ -295,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../pydantic%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EA%B3%B5%EC%9A%A9%EC%8A%A4%ED%82%A4%EB%A7%88_%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/pydantic%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EA%B3%B5%EC%9A%A9%EC%8A%A4%ED%82%A4%EB%A7%88_%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
         
   
   
@@ -364,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Backend/FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -431,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Backend/FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
         
   
   
@@ -467,10 +465,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -486,11 +482,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -506,7 +502,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Frontend
@@ -520,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -540,10 +536,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -571,11 +565,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
         
           
           <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
@@ -591,7 +585,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             1주차
@@ -605,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
         
   
   
@@ -628,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -651,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -674,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
         
   
   
@@ -697,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -720,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
         
   
   
@@ -743,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
         
   
   
@@ -766,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -786,30 +780,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    L9 vue3에서 .value를 언제쓰고 언제 안쓰나
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
         
   
   
@@ -820,78 +794,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-ref" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 먼저 ref()가 뭐냐면
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-template-value" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 그런데 템플릿(template) 안에서는 .value를 안 써도 된다!
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-js-value" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 반대로, JS 영역에서는 .value를 써야 함
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 예시로 구분해보기
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-reactive" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. reactive()는 조금 다름
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 정리 요약표
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -962,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
         
   
   
@@ -985,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
         
   
   
@@ -1008,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
         
   
   
@@ -1031,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
+      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
         
   
   
@@ -1222,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
+      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
         
   
   
@@ -1245,7 +1147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
+      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
         
   
   
@@ -1268,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
+      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
         
   
   
@@ -1291,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L4_Placing_Obstacles/" class="md-nav__link">
+      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L4_Placing_Obstacles/" class="md-nav__link">
         
   
   
@@ -1314,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L5_Adding_inertia_and_animations/" class="md-nav__link">
+      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L5_Adding_inertia_and_animations/" class="md-nav__link">
         
   
   
@@ -1441,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/9-slice_scaling/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/9-slice_scaling/" class="md-nav__link">
         
   
   
@@ -1464,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/AI_%28Game_AI%29/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/AI_%28Game_AI%29/" class="md-nav__link">
         
   
   
@@ -1487,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/API_Application_Programming_Interface/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/API_Application_Programming_Interface/" class="md-nav__link">
         
   
   
@@ -1510,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Boolean_Expressions/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Boolean_Expressions/" class="md-nav__link">
         
   
   
@@ -1533,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Class/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Class/" class="md-nav__link">
         
   
   
@@ -1556,7 +1458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Collisions/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Collisions/" class="md-nav__link">
         
   
   
@@ -1579,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Composition/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Composition/" class="md-nav__link">
         
   
   
@@ -1602,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Constant/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Constant/" class="md-nav__link">
         
   
   
@@ -1625,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Duck_Typing/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Duck_Typing/" class="md-nav__link">
         
   
   
@@ -1648,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Encapsulation/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Encapsulation/" class="md-nav__link">
         
   
   
@@ -1671,7 +1573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Function_Signature/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Function_Signature/" class="md-nav__link">
         
   
   
@@ -1694,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Game_Jam/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Game_Jam/" class="md-nav__link">
         
   
   
@@ -1717,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Inheritance/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Inheritance/" class="md-nav__link">
         
   
   
@@ -1740,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Interface/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Interface/" class="md-nav__link">
         
   
   
@@ -1763,7 +1665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Method_member_function/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Method_member_function/" class="md-nav__link">
         
   
   
@@ -1786,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Node/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Node/" class="md-nav__link">
         
   
   
@@ -1809,7 +1711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Object/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Object/" class="md-nav__link">
         
   
   
@@ -1832,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Object_Oriented_Programming/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Object_Oriented_Programming/" class="md-nav__link">
         
   
   
@@ -1855,7 +1757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Private_Public_Properties/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Private_Public_Properties/" class="md-nav__link">
         
   
   
@@ -1878,7 +1780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Property_member_variable/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Property_member_variable/" class="md-nav__link">
         
   
   
@@ -1901,7 +1803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Refactoring/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Refactoring/" class="md-nav__link">
         
   
   
@@ -1924,7 +1826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Static_Function/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Static_Function/" class="md-nav__link">
         
   
   
@@ -1947,7 +1849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GDQUEST/Glossary/Ternary_Expression/" class="md-nav__link">
+      <a href="../../../GDQUEST/Glossary/Ternary_Expression/" class="md-nav__link">
         
   
   
@@ -1982,8 +1884,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2000,11 +1904,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -2020,7 +1924,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Godot4 개발
@@ -2034,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -2054,8 +1958,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2071,11 +1977,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -2091,7 +1997,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             2D
@@ -2102,10 +2008,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/Vector2_move_toward_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Vector2 move toward 이해
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2116,6 +2042,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      함수의 핵심의미
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      코드 다시 보기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move_toward" class="md-nav__link">
+    <span class="md-ellipsis">
+      만약 move_toward()가 없다면?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move_toward_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      move_toward()를 쓰면
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      실제 수치로 예를 들어볼게요
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desired_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      “desired_velocity는 항상 같잖아?” — 핵심 오해 풀기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      요약
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2128,7 +2135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/get_axis_vs_get_vector/" class="md-nav__link">
+      <a href="../get_axis_vs_get_vector/" class="md-nav__link">
         
   
   
@@ -2151,7 +2158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
+      <a href="../move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
         
   
   
@@ -2300,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/comissary/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/comissary/" class="md-nav__link">
         
   
   
@@ -2323,7 +2330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/darkroom/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/darkroom/" class="md-nav__link">
         
   
   
@@ -2346,7 +2353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/drawing_room/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/drawing_room/" class="md-nav__link">
         
   
   
@@ -2369,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/entrance/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/entrance/" class="md-nav__link">
         
   
   
@@ -2392,7 +2399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/guest_room/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/guest_room/" class="md-nav__link">
         
   
   
@@ -2415,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/nook/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/nook/" class="md-nav__link">
         
   
   
@@ -2438,7 +2445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/observatory/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/observatory/" class="md-nav__link">
         
   
   
@@ -2461,7 +2468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/pantry/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/pantry/" class="md-nav__link">
         
   
   
@@ -2484,7 +2491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
         
   
   
@@ -2507,7 +2514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/security/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/security/" class="md-nav__link">
         
   
   
@@ -2530,7 +2537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/west_wing/" class="md-nav__link">
+      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/west_wing/" class="md-nav__link">
         
   
   
@@ -2586,54 +2593,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-ref" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 먼저 ref()가 뭐냐면
+      함수의 핵심의미
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-template-value" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 그런데 템플릿(template) 안에서는 .value를 안 써도 된다!
+      코드 다시 보기
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-js-value" class="md-nav__link">
+  <a href="#move_toward" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 반대로, JS 영역에서는 .value를 써야 함
+      만약 move_toward()가 없다면?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#move_toward_1" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 예시로 구분해보기
+      move_toward()를 쓰면
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-reactive" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      5. reactive()는 조금 다름
+      실제 수치로 예를 들어볼게요
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#desired_velocity" class="md-nav__link">
     <span class="md-ellipsis">
-      6. 정리 요약표
+      “desired_velocity는 항상 같잖아?” — 핵심 오해 풀기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      요약
     </span>
   </a>
   
@@ -2655,7 +2671,7 @@
 
 
   
-    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/Full-stack_개발/Frontend/1주차/L9_vue3에서_.value를_언제쓰고_언제_안쓰나.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/Godot4_개발/2D/Vector2_move_toward_이해.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2664,156 +2680,181 @@
     
       
     
-    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/Full-stack_개발/Frontend/1주차/L9_vue3에서_.value를_언제쓰고_언제_안쓰나.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/Godot4_개발/2D/Vector2_move_toward_이해.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>L9 vue3에서 .value를 언제쓰고 언제 안쓰나</h1>
+  <h1>Vector2 move toward 이해</h1>
 
-<p>Vue 3를 막 배우기 시작하면 <strong>.value 언제 써야 하는지</strong> 헷갈리는 게 당연해요.</p>
-<p>이건 Vue의 <strong>반응형 시스템(ref, reactive)</strong> 이 작동하는 원리 때문이에요.</p>
+<h3 id="_1">함수의 핵심의미</h3>
+<div class="highlight"><pre><span></span><code><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">move_toward</span><span class="p">(</span><span class="n">desired_velocity</span><span class="p">,</span><span class="w"> </span><span class="n">acceleration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
+</code></pre></div>
+<p>현재 속도(velocity)를 목표 속도(desired_velocity) 쪽으로,
+한 프레임 동안 최대 (acceleration × delta) 만큼만 변화시킨 새로운 속도”를 반환한다.</p>
 <hr />
-<h3 id="1-ref">1. 먼저 ref()가 뭐냐면</h3>
-<p>ref()는 <strong>“하나의 값을 반응형으로 감싸는 함수”</strong>예요.</p>
-<p>→ 즉, <strong>“상자 안에 실제 값이 들어 있는 구조”</strong></p>
-<div class="highlight"><pre><span></span><code>import { ref } from &#39;vue&#39;
-
-const count = ref(0)
+<h3 id="_2">코드 다시 보기</h3>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">desired_velocity</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">max_speed</span>
+<span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">move_toward</span><span class="p">(</span><span class="n">desired_velocity</span><span class="p">,</span><span class="w"> </span><span class="n">acceleration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
 </code></pre></div>
-<p>이때 내부 구조는 이렇게 생겼어요</p>
-<div class="highlight"><pre><span></span><code>count = { value: 0 } // 실제로는 이런 객체
-</code></pre></div>
-<p>그래서 JS 코드에서 쓸 때는 반드시 .value를 통해 진짜 값을 꺼내야 해요.</p>
-<div class="highlight"><pre><span></span><code>console.log(count.value) // 0
-count.value++            // 값 변경
-</code></pre></div>
+<ul>
+<li>
+<p>direction = 입력 방향 (Vector2(1,0) 또는 (0,0) 등)</p>
+</li>
+<li>
+<p>max_speed = 최고 속도 (예: 200)</p>
+</li>
+<li>
+<p>desired_velocity = 목표 속도</p>
+<p>→ 입력이 있을 땐 (1,0) * 200 = (200,0)</p>
+<p>→ 입력이 없을 땐 (0,0)</p>
+</li>
+<li>
+<p>acceleration = 한 프레임에 속도를 얼마나 바꿀 수 있는가</p>
+<p>(즉, “가속도”)</p>
+</li>
+</ul>
+<blockquote>
+<p>desired_velocity(목표 속도)는 매 프레임 같을 수 있지만,</p>
+<p>실제 속도(velocity)가 <strong>그 목표에 “즉시 도달하지 않고 천천히 가까워지기 때문</strong>에</p>
+<p>결과적으로 “부드럽게 가속 또는 감속되는 것처럼” 보입니다.</p>
+</blockquote>
 <hr />
-<h3 id="2-template-value">2. 그런데 템플릿(template) 안에서는 .value를 안 써도 된다!</h3>
-<p>Vue가 <strong>자동으로 .value를 풀어서 보여주기 때문이에요.</strong></p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span><span class="p">&gt;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ref</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vue&#39;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ref</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- ✅ .value 안 써도 자동으로 풀림 --&gt;</span>
-  <span class="p">&lt;</span><span class="nt">button</span> <span class="p">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;</span><span class="nx">count</span><span class="o">++</span><span class="s">&quot;</span><span class="p">&gt;</span>+1<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="cm">&lt;!-- ✅ 가능 --&gt;</span>
-<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<h3 id="move_toward">만약 move_toward()가 없다면?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">desired_velocity</span>
 </code></pre></div>
-<p>→ Vue 템플릿 내부에서는 ref를 <strong>자동으로 언래핑(unwrap)</strong> 해줍니다.</p>
-<p>즉, {{ count }} → count.value,</p>
-<p>count++ → count.value++ 로 내부적으로 처리돼요.</p>
+<p>→ 키를 누르는 순간 velocity가 (0 → 200)으로 즉시 바뀜.</p>
+<p>→ 시각적으로 “뚝” 하고 움직이기 시작.</p>
+<p>→ 현실감 ZERO.</p>
 <hr />
-<h3 id="3-js-value">3. 반대로, JS 영역에서는 .value를 써야 함</h3>
-<p>템플릿이 아닌 <strong>setup() 내부나 일반 함수, watch, computed 등 JS 코드</strong>에서는</p>
-<p>Vue가 자동으로 언래핑을 해주지 않아요.</p>
-<p>즉</p>
-<div class="highlight"><pre><span></span><code>const count = ref(0)
-console.log(count)       // { value: 0 } 객체
-console.log(count.value) // 0  ✅
+<h3 id="move_toward_1">move_toward()를 쓰면</h3>
+<div class="highlight"><pre><span></span><code><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">move_toward</span><span class="p">(</span><span class="n">desired_velocity</span><span class="p">,</span><span class="w"> </span><span class="n">acceleration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
 </code></pre></div>
+<blockquote>
+<p>현재 속도(velocity)를 목표 속도(desired_velocity) 쪽으로 한 프레임에 <strong>최대 acceleration * delta 거리만큼</strong>만 움직인다.</p>
+</blockquote>
+<p>즉, 현재 속도와 목표 속도 사이의 “간격”을 한 번에 다 채우지 않고 조금씩만 좁혀가는 거예요.</p>
 <hr />
-<h3 id="4">4. 예시로 구분해보기</h3>
+<h3 id="_3">실제 수치로 예를 들어볼게요</h3>
+<p><strong>전제</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">max_speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span>
+<span class="n">acceleration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">800</span>
+<span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="p">(</span><span class="err">즉</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="n">FPS</span><span class="p">)</span>
+</code></pre></div>
+<p>따라서</p>
+<div class="highlight"><pre><span></span><code>acceleration * delta = 800 * 1/60 ≈ 13.33
+</code></pre></div>
+<p>즉, 한 프레임에 최대 13.33만큼만 속도가 바뀔 수 있습니다.</p>
+<p><strong>프레임별 변화</strong></p>
 <table>
 <thead>
 <tr>
-<th><strong>위치</strong></th>
-<th><strong>코드</strong></th>
-<th>.value <strong>필요?</strong></th>
-<th><strong>이유</strong></th>
+<th><strong>프레임</strong></th>
+<th><strong>velocity</strong></th>
+<th><strong>desired_velocity</strong></th>
+<th><strong>변화량</strong></th>
+<th><strong>설명</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>setup 내부</strong></td>
-<td>count.value++</td>
-<td>✅ 필요</td>
-<td>JS 코드 안이기 때문</td>
+<td>0</td>
+<td>0</td>
+<td>200</td>
+<td>+13.3</td>
+<td>속도 증가 시작</td>
 </tr>
 <tr>
-<td><strong>watch</strong></td>
-<td>watch(count, (val) =&gt; console.log(val))</td>
-<td>❌ 자동 처리됨</td>
-<td>watch가 내부에서 unwrap</td>
+<td>1</td>
+<td>13.3</td>
+<td>200</td>
+<td>+13.3</td>
+<td>조금 더 빨라짐</td>
 </tr>
 <tr>
-<td><strong>computed 내부</strong></td>
-<td>computed(() =&gt; count.value * 2)</td>
-<td>✅ 필요</td>
-<td>계산식은 JS 문맥</td>
+<td>2</td>
+<td>26.6</td>
+<td>200</td>
+<td>+13.3</td>
+<td>점점 더 빨라짐</td>
 </tr>
 <tr>
-<td><strong>template</strong></td>
-<td>{{ count }}</td>
-<td>❌ 자동 언래핑</td>
-<td>템플릿은 Vue가 해석</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
 </tr>
 <tr>
-<td><strong>template 이벤트</strong></td>
-<td>@click="count++"</td>
-<td>❌ 자동 언래핑</td>
-<td>템플릿 문맥이기 때문</td>
+<td>15</td>
+<td>200</td>
+<td>200</td>
+<td>0</td>
+<td>목표 속도 도달</td>
 </tr>
 </tbody>
 </table>
+<p>→ 키를 누르는 동안, 속도가 0 → 13 → 26 → 40 → ... → 200으로 점점 증가</p>
+<p>→ 즉, “가속”이 느껴짐.</p>
+<p>→ 매 프레임 변화량이 일정하니까 <strong>선형(부드럽고 일정한 가속)</strong> 으로 증가.</p>
 <hr />
-<h3 id="5-reactive">5. reactive()는 조금 다름</h3>
-<p>reactive()는 객체 전체를 반응형으로 만들어줍니다.</p>
-<div class="highlight"><pre><span></span><code>const user = reactive({ name: &#39;Kim&#39;, age: 20 })
+<h3 id="desired_velocity">“desired_velocity는 항상 같잖아?” — 핵심 오해 풀기</h3>
+<p>정확해요, desired_velocity 자체는 <strong>같을 수도 있습니다.</strong></p>
+<p>하지만 velocity가 아직 그 값에 <strong>도달하지 않았기 때문에</strong>, move_toward()는 매 프레임 이렇게 계산합니다</p>
+<div class="highlight"><pre><span></span><code><span class="n">velocity_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity_current</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">clamp</span><span class="p">(</span><span class="n">desired_velocity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">velocity_current</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="n">delta</span><span class="p">)</span>
 </code></pre></div>
-<p>→ 여기선 .value가 필요 없습니다.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- ✅ 바로 접근 --&gt;</span>
-<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>reactive는 내부 속성 자체가 반응형이기 때문이에요.</p>
+<p>즉,</p>
+<ul>
+<li>
+<p>목표가 변하지 않아도 현재값(velocity)이 계속 변하므로,</p>
+</li>
+<li>
+<p>두 값의 차이(desired_velocity - velocity)가 줄어듭니다.</p>
+</li>
+<li>
+<p>이 차이가 줄어드는 과정이 바로 “가속 곡선”이에요.</p>
+</li>
+</ul>
+<p>그래서 desired_velocity는 일정해도</p>
+<p>velocity가 천천히 가까워지면서 <strong>부드러운 변화가 생기는 것</strong>입니다.</p>
 <hr />
-<h3 id="6">6. 정리 요약표</h3>
+<h3 id="_4">요약</h3>
 <table>
 <thead>
 <tr>
-<th><strong>선언 방식</strong></th>
-<th><strong>예시</strong></th>
-<th><strong>접근 방식</strong></th>
-<th><strong>이유</strong></th>
+<th><strong>항목</strong></th>
+<th><strong>내용</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ref()</td>
-<td>const count = ref(0)</td>
-<td>✅ JS: count.value✅ template: count</td>
-<td>단일값을 감싼 객체</td>
+<td><strong>함수 역할</strong></td>
+<td>현재 속도를 목표 속도로 천천히 바꿔줌</td>
 </tr>
 <tr>
-<td>reactive()</td>
-<td>const user = reactive({ name:'Kim' })</td>
-<td>✅ JS: user.name✅ template: user.name</td>
-<td>객체를 직접 반응형 처리</td>
+<td><strong>목표가 고정이어도</strong></td>
+<td>현재 속도가 매 프레임 변하므로 계속 변화 발생</td>
 </tr>
 <tr>
-<td>computed()</td>
-<td>const doubled = computed(() =&gt; count.value * 2)</td>
-<td>✅ JS: doubled.value✅ template: doubled</td>
-<td>ref와 동일하게 동작</td>
+<td><strong>결과</strong></td>
+<td>값이 점진적으로 변하므로 시각적으로 부드럽게 보임</td>
+</tr>
+<tr>
+<td><strong>감속 원리</strong></td>
+<td>목표가 0일 때 천천히 0으로 이동</td>
+</tr>
+<tr>
+<td><strong>가속 원리</strong></td>
+<td>목표가 max_speed일 때 천천히 그쪽으로 이동</td>
+</tr>
+<tr>
+<td><strong>핵심 공식</strong></td>
+<td>velocity_next = velocity + clamp(desired_velocity - velocity, -delta, delta)</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<p><strong>핵심 문장 (외우기용)</strong></p>
-<blockquote>
-<p><strong>“JS 안에서는 .value 써야 하고,</strong></p>
-<p><strong>템플릿 안에서는 Vue가 알아서 .value를 대신 붙여준다.”</strong></p>
-</blockquote>
-<hr />
-<p><strong>기억 꿀팁</strong></p>
-<blockquote>
-<p>“setup() 안에서는 ref는 상자야.</p>
-<p>화면(template)에서는 그 상자를 자동으로 열어 보여준다.”</p>
-</blockquote>
 
 
 
@@ -2862,10 +2903,10 @@ console.log(count.value) // 0  ✅
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
