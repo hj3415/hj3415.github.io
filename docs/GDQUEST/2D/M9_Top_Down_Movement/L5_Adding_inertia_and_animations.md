@@ -546,7 +546,7 @@ func _physics_process(delta: float) -> void:
     
 - rotate_toward()를 사용하여 오브젝트를 부드럽게 회전시키는 방법
     
-- [Ternary_Expression.md](../../Glossary/Ternary_Expression.md)를 사용하여 한 줄에서 조건을 확인하는 방법
+- [Ternary_Expression](../../Glossary/Ternary_Expression.md)를 사용하여 한 줄에서 조건을 확인하는 방법
     
 - 제공된 에셋의 문서를 읽고, 이를 직접 코드에서 활용하는 방법
     
