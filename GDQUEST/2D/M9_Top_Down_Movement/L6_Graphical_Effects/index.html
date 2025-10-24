@@ -1,0 +1,3036 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../L5_Adding_inertia_and_animations/">
+      
+      
+        <link rel="next" href="../../../Glossary/9-slice_scaling/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>L6 Graphical Effects - Docs for hj3415</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#p1-adding-a-shadow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs for hj3415
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              L6 Graphical Effects
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hj3415/hj3415.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs for hj3415
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hj3415/hj3415.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to hj3415 docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Full stack 개발
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Full stack 개발
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/pydantic%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EA%B3%B5%EC%9A%A9%EC%8A%A4%ED%82%A4%EB%A7%88_%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pydantic을 이용한 공용스키마 구조 예시
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FastAPI 커리큘럼
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    FastAPI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            FastAPI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L1 필수개념 10가지
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vue3 4주 커리큘럼
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1주차
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            1주차
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L1 Django 개발자의 Vue3 공부방식
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L2 npm vite node 관계를 파이썬과 비교하여 정리
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L3 Vite와 Pycharm 설정
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L4 Vite 프로젝트 생성시 Yes로 설정하면 생성되는 구조
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L5 수동으로 Vue router Pinia ESLint Prettier 설치 및 설정
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L6 vite.config.js를 수정하는 대표적인 3가지 경우
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L7 자바스크립트 내장메서드 필수 암기 10선
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L8 v model의 실제 내부동작 정리
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L9 vue3에서 .value를 언제쓰고 언제 안쓰나
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    4주차
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            4주차
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L1 CORS 설정법
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L2 CORS vs CSRF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L3 vue에서 build 과정이 필요한 이유
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L99 Docker로 배포
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    GDQUEST
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            GDQUEST
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2D
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            2D
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    M9 Top Down Movement
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            M9 Top Down Movement
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L1 Top Down Movement Module Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L2_Character_Controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L2 Character Controller
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L3_Looking_in_different_directions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L3 Looking in different directions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L4_Placing_Obstacles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L4 Placing Obstacles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L5_Adding_inertia_and_animations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L5 Adding inertia and animations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    L6 Graphical Effects
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    L6 Graphical Effects
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#p1-adding-a-shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      P1 Adding a shadow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2-flattening-the-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2 Flattening the character
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p3-using-a-subviewport-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3 Using a SubViewport node
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p4-adding-the-outline-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      P4 Adding the outline shader
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p5-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      P5 Recap
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Glossary
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/9-slice_scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 slice scaling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/AI_%28Game_AI%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI (Game AI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/API_Application_Programming_Interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Application Programming Interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Boolean_Expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boolean Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Collisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collisions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Composition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Constant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constant
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Duck_Typing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Duck Typing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Encapsulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Encapsulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Function_Signature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Signature
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Game_Jam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Game Jam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inheritance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Method_member_function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Method member function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Node
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Object_Oriented_Programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object Oriented Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Private_Public_Properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Private Public Properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Property_member_variable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Property member variable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Refactoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Refactoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Shader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Static_Function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Static Function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Glossary/Ternary_Expression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ternary Expression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Godot4 개발
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Godot4 개발
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커리큘럼
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2D
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2D
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/Vector2_move_toward_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vector2 move toward 이해
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/get_axis_vs_get_vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get axis vs get vector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Move and slide 이해
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    기타
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            기타
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blue Prince
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Blue Prince
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/comissary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comissary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/darkroom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Darkroom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/drawing_room/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Drawing room
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/entrance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entrance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/guest_room/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guest room
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/nook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/observatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Observatory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/pantry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parlor(응접실)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/west_wing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    West wing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#p1-adding-a-shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      P1 Adding a shadow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2-flattening-the-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2 Flattening the character
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p3-using-a-subviewport-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3 Using a SubViewport node
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p4-adding-the-outline-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      P4 Adding the outline shader
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p5-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      P5 Recap
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/GDQUEST/2D/M9_Top_Down_Movement/L6_Graphical_Effects.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/GDQUEST/2D/M9_Top_Down_Movement/L6_Graphical_Effects.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>L6 Graphical Effects</h1>
+
+<p>이번 강의에서는 러너 캐릭터를 개선하기 위해 다음을 추가하겠습니다:</p>
+<ul>
+<li>
+<p>은은한 그림자</p>
+</li>
+<li>
+<p>외곽선 셰이더</p>
+</li>
+</ul>
+<p><img alt="060_000_intro.mp4" src="../videos/060_000_intro.mp4" /></p>
+<p>이 작업은 캐릭터의 스타일을 풍부하게 하고 더 즐겁게 만들어 줄 것입니다.
+그림자와 먼지는 캐릭터를 시각적으로 세계에 고정시켜 주어 게임이 좀 더 전문적으로 보이게 할 것입니다.
+외곽선은 캐릭터를 배경에서 돋보이게 하여 더 쉽게 눈에 띄도록 만들어 줍니다.</p>
+<p>가장 간단한 부분인 그림자부터 시작해 보겠습니다.</p>
+<hr />
+<h2 id="p1-adding-a-shadow">P1 Adding a shadow</h2>
+<p><strong>runner.tscn</strong> 씬에 Sprite2D 노드를 하나 추가하고 이름을 <strong>Shadow</strong>로 지정하십시오.</p>
+<p>에셋 폴더에서 그림자 텍스처(res/assets/runner/shadow.png)를 찾으실 수 있습니다.
+이 파일을 Shadow 노드의 <strong>Texture</strong> 속성으로 드래그하시거나 <strong>Quick Load</strong> 기능을 사용하셔도 됩니다.</p>
+<p>나중에 그리기 순서를 변경하기 위해 이 노드를 노드 트리의 맨 위로 이동하게 될 것입니다. 
+지금은 우선 스케일을 줄이고 캐릭터 발 부분 주변에 시각적으로 배치해 주십시오.</p>
+<p><img alt="060_010_shadow_node.webp" src="../images/060_010_shadow_node.webp" /></p>
+<p>기억해 두십시오. <strong>Select Mode</strong>가 활성화된 상태에서 <strong>Shift</strong> 키를 누르면 노드의 축을 고정할 수 있고,
+<strong>Alt</strong>(Mac에서는 ⌥) 키를 누르면 노드의 중심을 기준으로 크기를 조정할 수 있습니다.</p>
+<p>관찰력이 뛰어나신 덕분에 그림자가 흰색이라는 것을 알아차리셨을 것입니다! 아티스트들은 종종 단순한 도형을 흰색으로 만들어 두는데,
+이는 팀의 누구라도 Godot에서 색상을 쉽게 변경할 수 있도록 하기 위함입니다. 어떻게 할까요?
+바로 <strong>Modulate</strong> 속성을 사용하면 됩니다.</p>
+<p>그림자를 어둡게 해 보겠습니다. <strong>Visibility</strong> 카테고리를 열고,
+<strong>Modulate</strong> 속성을 검은색으로 설정한 뒤 투명하게 만드십시오. 모든 슬라이더 값을 0으로 하고,
+<strong>A(알파)</strong> 슬라이더만 40으로 설정하시면 됩니다.</p>
+<p><img alt="060_020_shadow_modulate.webp" src="../images/060_020_shadow_modulate.webp" /></p>
+<p>이제 <strong>Shadow</strong> 노드를 트리의 맨 위로 이동시켜 캐릭터 뒤에 오도록 하십시오. 완료되었습니다!</p>
+<p><img alt="060_025_shadow_behind_character.webp" src="../images/060_025_shadow_behind_character.webp" /></p>
+<blockquote>
+<p>이번 단원은 정말 짧았습니다! 그 이유가 단순해서일까요, 아니면 이제 Godot에 점점 더 익숙해지고 계셔서일까요?</p>
+<p>만약 사전 지식 없이 이 강좌를 시작하셨다면, 잠시 시간을 내어 이 사실을 깨닫고 넘어가셨으면 합니다. 강좌 초반에는 이런 지시사항들이 훨씬 더 자세하고 길었을 것입니다. 하지만 지금은 훨씬 더 간결해졌습니다. 그만큼 여러분이 많은 발전을 이루셨다는 뜻입니다!</p>
+<p>Nathan
+GDQuest 설립자이자 강사</p>
+</blockquote>
+<hr />
+<h2 id="p2-flattening-the-character">P2 Flattening the character</h2>
+<p>다음으로 캐릭터에 외곽선을 추가해 보겠습니다.</p>
+<p>이를 구현하는 일반적인 방법은 셰이더를 사용하는 것입니다. M5 Loot it all 에서 이미 보신 적이 있지요, 
+기억나시나요? 당시 상자가 여러 스프라이트로 이루어져 있었기 때문에, 모든 요소에 한 번에 셰이더를 적용하기 위해 <strong>CanvasGroup</strong>을 사용했었습니다.</p>
+<p><img alt="030_chest_hover_230_chest_hover_tween_exited 2.mp4" src="../videos/030_chest_hover_230_chest_hover_tween_exited%202.mp4" /></p>
+<p>이 방법만으로도 보통은 충분합니다… 그러나 아쉽게도 <strong>CanvasGroup</strong>은 현재 러너 캐릭터 비주얼에서는 작동하지 않습니다.
+그 이유를 설명하기 위해 잠시 뒤로 돌아가 보겠습니다.</p>
+<p>모든 렌더링 엔진에는 [[Draw Order]]라는 개념이 있습니다. 즉, 무엇을 먼저 그리고 무엇을 나중에 그릴지를 제어하는 시스템입니다.
+이전에 <strong>Z Index</strong>와 <strong>Y Sort Enabled</strong> 속성을 통해 이를 간단히 살펴본 적이 있습니다.
+예를 들어, 2D 노드에서 <strong>Y Sort Enabled</strong>를 켜면 y축에서 더 아래에 있는 자식 노드가 위쪽에 그려집니다.
+그러나 이 속성만이 그리기 순서를 바꾸는 유일한 요소는 아닙니다.</p>
+<p>엔진이 한 프레임을 렌더링하려 할 때, 내부적으로 여러 개의 시각적 레이어를 생성합니다.
+그리고 어떤 노드들이 함께 묶이는지를 계산하여 이를 한 번에 GPU(그래픽 처리 장치)로 보냅니다.
+GPU는 이를 화면에 표시되는 이미지로 렌더링하게 됩니다.</p>
+<p>CanvasGroup에 셰이더를 적용하면, 해당 그룹 전체에 셰이더가 적용되지만 이는 모든 노드가 같은 레이어에 있을 때만 가능합니다.
+다시 말해, 같은 <strong>Z Index</strong>를 가질 때만 적용된다는 뜻입니다. 그런데 러너 캐릭터의 경우 하나의 요소가 다른 <strong>Z Index</strong>를 가지고 있습니다.
+그것이 바로 <strong>HeadShape</strong> 노드입니다. 캐릭터의 얼굴은 얼굴 모양에 맞게 잘린 여러 스프라이트들로 이루어져 있기 때문입니다.</p>
+<p><img alt="050_020_runner_visual_explained 1.mp4" src="../videos/050_020_runner_visual_explained%201.mp4" /></p>
+<p>이러한 이유로 <strong>CanvasGroup</strong> 기법은 작동하지 않을 것입니다. 따라서 다른 해결책을 찾아야 합니다.
+하지만 그 전에, 만약 우리가 어쨌든 <strong>CanvasGroup</strong>을 사용하려 한다면 어떤 일이 일어나는지 잠시 살펴보고 싶습니다.
+잠시 편히 계시고, 저는 작업을 진행할 테니 여러분은 글과 이미지를 읽고 보시기만 하면 됩니다.</p>
+<p>그래서 <strong>RunnerVisualRed</strong> 노드의 부모로 <strong>CanvasGroup</strong> 노드를 추가하면, 다음과 같은 결과가 나옵니다:</p>
+<p><img alt="060_020_outline_without_face.webp" src="../images/060_020_outline_without_face.webp" /></p>
+<p>좋습니다. 거의 제대로 작동하는 것처럼 보이지만, 얼굴 주변의 외곽선이 빠져 있습니다! 이상하군요. 왜 <strong>CanvasGroup</strong>의 영향을 받지 않는 걸까요?</p>
+<p>runner_visual_red.tscn 씬을 열고 <strong>HeadShape</strong> 노드를 선택해 보면, 그 속성을 확인할 수 있습니다:</p>
+<p><img alt="060_025_face_properties.webp" src="../images/060_025_face_properties.webp" /></p>
+<div class="admonition example">
+<p class="admonition-title">다음 질문에 답해보세요</p>
+<p>위 이미지의 인스펙터를 보시고, 왜 캐릭터의 머리에 외곽선이 없는지 짐작하실 수 있겠습니까?</p>
+<ul>
+<li>
+<p>머리가 CanvasGroup 노드의 일부가 아니기 때문입니다.</p>
+</li>
+<li>
+<p>머리는 Z 인덱스 때문에 외곽선이 있는 스프라이트들 위에 렌더링됩니다.</p>
+</li>
+<li>
+<p>머리는 캐릭터의 일부가 아닙니다.</p>
+</li>
+</ul>
+<details class="example">
+<summary>정답</summary>
+<p>외곽선은 캐릭터의 전체 몸통에 적용되지만, 머리는 몸통 위에서 별도로 렌더링됩니다. 머리는 더 높은 Z 인덱스 속성을 가지고 있기 때문입니다. 그래서 셰이더의 영향을 받지 않는 것입니다.</p>
+</details>
+</div>
+<p><strong>HeadShape</strong> 스프라이트 노드의 <strong>Z Index</strong> 속성은 1로 설정되어 있는 반면, 다른 모든 스프라이트는 0으로 설정되어 있습니다.
+그렇기 때문에 <strong>CanvasGroup</strong>이 그것에는 영향을 주지 못하는 것입니다.</p>
+<p>그렇다면, 아티스트는 왜 그렇게 했을까요? 이제 머리의 <strong>Z Index</strong>를 다시 0으로 바꿔 보고 어떤 일이 일어나는지 확인해 보겠습니다:</p>
+<p><img alt="060_030_face_gone.webp" src="../images/060_030_face_gone.webp" /></p>
+<p>아이고! 얼굴이 사라져 버렸습니다! 결국 아티스트가 틀린 것이 아니었던 것 같습니다. <strong>Z Index</strong>를 1로 두는 것이 필요했던 것이지요.</p>
+<p>제 생각에는, 이것은 <strong>Clip Children</strong> 속성이 Clip + Draw로 설정되어 있기 때문인 것 같습니다.
+이 속성은 <strong>클리핑 마스크(clipping mask)</strong>를 만들어 캐릭터 형태 밖에 있는 얼굴 부분을 가려 줍니다.</p>
+<p>아마도 Godot은 <strong>CanvasGroup</strong> 안에서 자식 노드를 클리핑할 수 없고,
+별도의 시각적 레이어에 있어야 CanvasGroup을 먼저 그린 뒤 다른 스프라이트를 따로 클리핑할 수 있는 것 같습니다.</p>
+<p>이 가설을 실험적으로 검증해 보기 위해, 얼굴의 <strong>Z Index</strong>를 0으로 설정하고 <strong>Clip Children</strong> 속성을 기본값인 Disabled로 되돌려 보았습니다:</p>
+<p><img alt="060_040_clip_children_disabled.webp" src="../images/060_040_clip_children_disabled.webp" /></p>
+<p>이제 얼굴의 두 부분이 동시에 보이기는 하지만, 적어도 셰이더는 기대한 대로 작동하고 있습니다:</p>
+<p><img alt="060_045_outline_with_face.webp" src="../images/060_045_outline_with_face.webp" /></p>
+<p>이 가설은 그럴듯해 보입니다. 얼굴이 다른 캐릭터 부분보다 더 높은 <strong>Z Index</strong>를 가져야 별도로 렌더링되고 클리핑을 지원할 수 있는 것입니다.
+하지만 이는 곧 <strong>CanvasGroup</strong> 기법이 작동하지 않는다는 뜻이기도 합니다.</p>
+<details class="info">
+<summary>어떻게 알았냐고요?</summary>
+<p>사실 몰랐습니다! 위의 실험이 바로 제가 이 강의를 작성하기 전에 실제로 결론에 도달했던 방식과 거의 똑같습니다. 클리핑 기능에 대해 가설을 세우고, 그것을 직접 테스트해 본 것이지요.</p>
+<p>게임 개발자로서 경험이 쌓이면 지식이 더 나은 추측을 할 수 있도록 도와주지만, 꼭 익혀야 할 중요한 기술 중 하나는 바로 <strong>실험하려는 의지</strong>와 <strong>가설을 검증할 인내심</strong>입니다. 우리는 코드에서 종종 잘못된 가정을 하게 되며, 확실히 알 수 있는 유일한 방법은 직접 테스트해 보는 것입니다.</p>
+<p>또한, 이번 작은 실험을 기반으로 저는 클리핑 기능에 대해 최종적인 결론에 도달한 것이 아닙니다. 엔진 소스 코드를 읽거나, 더 많은 실험을 해 보거나, 신뢰할 만한 정보를 찾기 전까지는 확실히 알 수 없습니다. 하지만 좋은 출발점이 될 수는 있습니다.</p>
+<p>실제로 <strong>CanvasGroup</strong> 노드의 문서를 살펴보면, 이 기능이 클리핑과 호환되지 않는다고 명시되어 있습니다. 다만 그 이유가 무엇인지는 구체적으로 설명되어 있지 않습니다.</p>
+</details>
+<p>그렇다면 어떻게 해야 할까요? <strong>CanvasGroup</strong>보다 렌더링을 더 세밀하게 제어할 수 있는 노드들이 있습니다.
+바로 <strong>SubViewport</strong>입니다.</p>
+<hr />
+<h2 id="p3-using-a-subviewport-node">P3 Using a SubViewport node</h2>
+<p><strong>SubViewport</strong> 노드는 화면의 일부분을 텍스처로 렌더링하는 데 사용됩니다.
+주로 미니맵, 3D 게임에서의 UI 렌더링, 화면 분할, 혹은 <strong>CanvasGroup</strong>만으로는 충분하지 않을 때 노드 그룹에 셰이더를 적용하는 용도로 사용됩니다.</p>
+<details class="info">
+<summary>‘화면의 일부를 텍스처로 렌더링한다’는 것은 무슨 뜻일까요?</summary>
+<p>2D 게임이 렌더링되어 화면에 표시되는 방식은 대략 다음과 같습니다:</p>
+<ol>
+<li>
+<p>Godot은 버튼, 스프라이트, 기타 모든 시각적 요소들과 그들의 변환 정보(위치, 회전, 크기)를 수집합니다.</p>
+</li>
+<li>
+<p>화면에서 사용되는 텍스처 리소스, 스타일 박스, 폰트 등의 모든 시각적 에셋을 매핑합니다.</p>
+</li>
+<li>
+<p>각 요소의 <strong>Z Index</strong>와 같은 속성을 기준으로 모든 도형을 정렬합니다.</p>
+</li>
+<li>
+<p>모든 정보를 그래픽 카드(GPU)에 전송합니다.</p>
+</li>
+<li>
+<p>GPU는 받은 데이터와 명령을 사용하여 <a href="../../../Glossary/Shader/">Shader</a> 프로그램으로 새로운 이미지를 생성합니다. 셰이더는 색상이 어떻게 혼합되는지, 어떤 픽셀이 투명한지, 빛이 어떻게 적용되는지를 결정합니다.</p>
+</li>
+</ol>
+<p>이 과정은 매 프레임마다 일어나며, 최종적으로 화면에 표시될 수 있는 이미지가 출력됩니다.</p>
+<p>이제, 전체 게임 월드를 직접 화면에 렌더링하여 표시하는 대신, 월드의 일부만 렌더링하여 이를 텍스처에 담을 수도 있습니다. 이렇게 만들어진 텍스처는 다른 텍스처처럼 사용할 수 있으며, 예를 들어 Sprite2D 노드에 할당할 수도 있습니다.</p>
+<p>이것이 바로 <strong>SubViewport</strong> 노드의 역할입니다. SubViewport의 자식 노드들은 화면에 직접 렌더링되지 않고, 대신 렌더링된 이미지를 텍스처 리소스로 전달하여 다른 곳에서 활용할 수 있게 됩니다.</p>
+</details>
+<p>좋습니다! 이제 직접 시도해 보겠습니다. 외곽선을 그리기 위해 새로운 노드인 <strong>SubViewport</strong>를 사용하겠습니다.
+이 노드는 새로운 뷰포트를 생성하여 게임 월드의 일부를 독립적으로 렌더링할 수 있도록 해 줍니다. 이를 이용해 러너를 텍스처로 렌더링할 수 있습니다.</p>
+<p>그다음 이 텍스처를 <strong>Sprite2D</strong> 노드를 사용해 표시하고, 그 위에 외곽선 셰이더를 적용할 수 있습니다.</p>
+<p>먼저, <strong>Runner</strong> 노드의 자식으로 <strong>SubViewport</strong> 노드를 생성하고, <strong>RunnerVisualRed</strong> 노드를 그 아래로 재배치하십시오.
+그리고 SubViewport에 이름을 지정하십시오. 그러자 캐릭터가 씬에서 사라질 것입니다! 왜 그럴까요?!</p>
+<p>이는 <strong>SubViewport</strong> 노드가 캐릭터를 렌더링하고 있지만, 아직 그 출력 결과를 화면에 표시하고 있지 않기 때문입니다.</p>
+<p><img alt="060_050_subviewport_node.webp" src="../images/060_050_subviewport_node.webp" /></p>
+<p><strong>SubViewport</strong> 노드를 선택하고 인스펙터를 확인해 보시면, 해당 노드가 렌더링하는 내용을 미리 보실 수 있습니다.</p>
+<p><img alt="060_055_subviewport_preview.webp" src="../images/060_055_subviewport_preview.webp" /></p>
+<p>러너를 캡처하고 있는 것처럼 보이지만, 이미지의 왼쪽 위에 일부만 나타납니다!
+이는 러너 스킨이 게임 월드의 원점에 위치해 있기 때문인데, 이 원점은 <strong>SubViewport</strong>의 좌측 상단 모서리에 해당합니다.</p>
+<p>아래 이미지에서 보시듯, 제가 몇 개의 노드를 배치하여 문제를 시각적으로 보여 드렸습니다. 주황색 테두리는 <strong>SubViewport</strong>의 범위를 나타냅니다.</p>
+<p><img alt="060_058_subviewport_origin.webp" src="../images/060_058_subviewport_origin.webp" /></p>
+<p>따라서 두 가지 방법 중 하나를 선택하셔야 합니다:</p>
+<ul>
+<li>
+<p>러너를 <strong>SubViewport</strong>가 렌더링하는 영역의 중앙으로 이동시키기</p>
+</li>
+<li>
+<p>또는 <strong>Camera2D</strong>를 사용하여 뷰포트의 시야를 러너 중심으로 맞추기</p>
+</li>
+</ul>
+<p>여기서는 첫 번째 방법인 러너를 직접 이동시키는 방식을 사용하겠습니다.
+이렇게 하면 <strong>Camera2D</strong> 노드를 사용할 때와 달리 에디터에서 미리보기를 깔끔하게 확인할 수 있습니다.</p>
+<details class="caution">
+<summary><strong>Camera2D 노드는 SubViewport 노드에서 미리보기가 되지 않습니다</strong></summary>
+<p>만약 <strong>Camera2D</strong> 노드를 사용해 캐릭터를 중심으로 뷰를 맞추더라도, 에디터에서는 그 효과를 확인할 수 없습니다. <strong>SubViewport</strong> 노드는 에디터에서 카메라의 뷰를 렌더링하지 않기 때문입니다. 결과는 [[Runtime]] 중에만 확인할 수 있습니다. 이는 현재 Godot 에디터의 작동 방식에 따른 제한이며, 마치 SubViewport 안에서 노드를 인터랙티브 도구로 크기 조절하거나 이동시킬 수 없는 것과 같은 맥락입니다.</p>
+<p>하지만 이것은 큰 제약이 아닙니다. 언제든 씬을 실행해서 결과를 확인할 수 있고, 게임 창을 열어 둔 상태에서 다른 창에서 씬을 편집하면 됩니다. Godot은 에디터에서 한 변경 사항을 실행 중인 게임과 자동으로 동기화해 주기 때문에 충분히 실용적입니다.</p>
+<p>이 동작은 <strong>Godot 4.4</strong>까지 테스트되어 확인되었으며, 앞으로 변경될 가능성에 대해서는 Godot의 GitHub 저장소에서 이 이슈를 추적하실 수 있습니다.</p>
+</details>
+<p>우리는 뷰포트 텍스처를 생성하여 스프라이트에 할당함으로써 <strong>SubViewport</strong>가 만들어내는 텍스처를 미리 볼 수 있습니다.
+<strong>Runner</strong>의 자식으로 새로운 <strong>Sprite2D</strong> 노드를 생성한 뒤, 인스펙터에서 <strong>Texture</strong> 속성 옆의 빈 칸을 클릭하십시오.</p>
+<p>새로운 <strong>ViewportTexture</strong>를 생성하십시오. 그러면 팝업이 열리면서 새 텍스처 리소스에 연결할 뷰포트를 선택하라는 메시지가 표시됩니다.
+여기서 <strong>SubViewport</strong> 노드를 선택하시면 됩니다.</p>
+<p><img alt="060_060_subviewport_texture.mp4" src="../videos/060_060_subviewport_texture.mp4" /></p>
+<p><strong>Sprite2D</strong> 노드의 바운딩 박스가 확장되며, 이제 에디터에서 러너의 다리 일부가 보이실 것입니다.</p>
+<p><img alt="060_064_subviewport_texture.webp" src="../images/060_064_subviewport_texture.webp" /></p>
+<details class="caution">
+<summary>아무것도 보이지 않으시나요?</summary>
+<p>캐릭터의 일부가 전혀 보이지 않는다면, 아마도 다음과 같은 이유일 수 있습니다:
+- <strong>RunnerVisualRed</strong> 노드가 뷰포트 범위 밖에 위치해 있거나,
+- 에디터 카메라가 너무 확대되어 있는 경우입니다.</p>
+<p>러너가 뷰포트 밖에 있는지 확인하려면, <strong>RunnerVisualRed</strong> 노드를 선택하고 <strong>Transform → Position</strong> 속성을 확인하십시오. 값이 대략 Vector2(0, 0) 주변인지 확인하시고, 만약 값이 음수이거나 지나치게 큰 숫자라면 러너가 뷰포트 범위 밖에 있을 가능성이 큽니다.</p>
+<p>이 방법으로도 해결되지 않는다면, 에디터 뷰포트에서 화면을 축소(zoom out)해 보십시오. <strong>SubViewport</strong> 노드는 기본적으로 <strong>512 x 512 픽셀</strong> 크기를 가지므로, 캐릭터를 보기 위해 화면을 축소해야 할 수도 있습니다.</p>
+</details>
+<p>씬의 원점에서 캐릭터가 왼쪽 위로 한참 떨어져 있는 것을 눈치채셨나요?</p>
+<p>이는 뷰포트가 기본적으로 꽤 큰 이미지를 생성하기 때문입니다. 뷰포트의 크기를 캐릭터의 크기에 더 가깝게 조정할 수 있습니다.</p>
+<p><strong>SubViewport</strong> 노드를 선택하고 <strong>Size</strong> 속성을 확인해 보십시오. 이것은 뷰포트가 렌더링하는 텍스처의 해상도입니다.
+기본값은 512 x 512 픽셀로 설정되어 있습니다. 이 값을 캐릭터 크기에 맞게 조정할 수 있습니다.
+나중에 외곽선을 넣을 여유를 조금 주기 위해 약간의 여백을 더한다면, 러너 스킨은 가로 124픽셀, 세로 150픽셀 크기의 사각형 안에 들어맞습니다.
+따라서 <strong>Size</strong> 속성을 <strong>124 x 150</strong>으로 설정하십시오.</p>
+<p><img alt="060_075_subviewport_size.webp" src="../images/060_075_subviewport_size.webp" /></p>
+<p>이제 캐릭터를 이동시켜 보겠습니다! 주의하실 점은, 익숙한 에디터 도구로는 SubViewport 안의 노드와 상호작용할 수 없다는 것입니다.
+<strong>Select Mode</strong>를 사용해 선택, 이동, 혹은 크기 조정을 할 수 없으며, SubViewport 노드의 자식 노드와는 오직 <strong>인스펙터</strong>를 통해서만 상호작용할 수 있습니다.</p>
+<p><strong>RunnerVisualRed</strong> 노드를 선택하고, <strong>Transform → Position</strong> 속성을 x축 <strong>62픽셀</strong>, y축 <strong>120픽셀</strong>로 설정하십시오.
+이렇게 하면 캐릭터가 SubViewport 안에서 대략 중앙에 배치됩니다.</p>
+<p><img alt="060_080_runner_visual_red_position.webp" src="../images/060_080_runner_visual_red_position.webp" /></p>
+<details class="info">
+<summary>왜 캐릭터가 지금 픽셀화되어 보일까요?</summary>
+<p>에디터를 확대했을 때 특히 캐릭터가 조금 거칠게 보일 수 있습니다.</p>
+<p>캐릭터의 원본 에셋은 고해상도이므로, 캐릭터를 확대해도 선명하게 보입니다. 그러나 <strong>SubViewport</strong>는 러너를 특정 크기의 텍스처로 렌더링하는데, 이 크기가 원본 에셋보다 작기 때문에 에디터에서는 캐릭터가 픽셀화되어 보이는 것입니다.</p>
+<p>하지만 이것은 문제가 되지 않습니다. 실제 게임에서는 캐릭터를 확대해서 보지 않기 때문입니다. 중요한 것은 실행 시 캐릭터가 보기 좋게 표시되는지 여부입니다.</p>
+<p>만약 다른 게임에서 캐릭터를 확대해서 보여야 한다면, 더 높은 해상도의 텍스처로 캐릭터를 렌더링해야 할 것이며, 그 대가로 성능이 조금 더 소모될 수 있습니다.</p>
+</details>
+<p>마지막으로, 현재 뷰포트는 캐릭터 뒤에 회색 배경을 렌더링하고 있습니다. 일반적인 에디터 배경색과 같아서 잘 보이지 않을 뿐, 실제로 존재합니다.
+그림자가 사라진 것을 눈치채셨나요? 바로 그 때문입니다!</p>
+<p>뷰포트가 캐릭터를 <strong>투명한 배경</strong>으로 렌더링하도록 설정할 수 있습니다.
+<strong>SubViewport</strong> 노드를 선택하고, <strong>Viewport</strong> 카테고리에서 <strong>Transparent BG</strong> 속성을 찾아 체크박스를 켜십시오.
+그러면 뷰포트의 배경이 투명해지고, 그림자가 다시 보이실 것입니다.</p>
+<p>필요하다면 <strong>Sprite2D</strong> 노드를 y축 방향으로 위로 이동시켜 캐릭터의 발이 그림자와 맞도록 정렬하십시오.</p>
+<p><img alt="060_085_subviewport_transparent_bg.webp" src="../images/060_085_subviewport_transparent_bg.webp" /></p>
+<p>좋습니다! 이제 캐릭터가 하나의 이미지로 렌더링되므로, 외곽선을 추가할 수 있습니다.</p>
+<hr />
+<h2 id="p4-adding-the-outline-shader">P4 Adding the outline shader</h2>
+<p>외곽선 셰이더는 res/assets/character_contour.gdshader에 있습니다. 셰이더 머티리얼을 추가하는 방법을 기억하고 계신가요?</p>
+<div class="admonition note">
+<p class="admonition-title">직접 시도해 보세요</p>
+<p>캐릭터에 외곽선 셰이더를 추가해 보십시오. 요약하자면, 노드 중 하나에 새로운 셰이더 머티리얼을 할당하고 외곽선 셰이더를 설정해야 합니다.</p>
+<p>러너는 최종적으로 <strong>4픽셀 두께의 검은색 외곽선</strong>을 가지게 될 것입니다.</p>
+<p>직접 시도해 보시고, 필요하다면 아래 단계를 참고하시면 됩니다.</p>
+<details class="note">
+<summary>힌트</summary>
+<p><strong>SubViewport</strong> 노드는 셰이더 머티리얼을 지원하지 않습니다. 따라서 외곽선은 <strong>Sprite2D 노드</strong>에 적용해야 합니다.</p>
+</details>
+<details class="note">
+<summary>힌트</summary>
+<p>노드의 <strong>Material</strong> 속성을 변경해야 합니다.</p>
+</details>
+<details class="note">
+<summary>힌트</summary>
+<p>먼저 새로운 <strong>ShaderMaterial</strong> 리소스를 생성해야 합니다. 이 리소스가 셰이더를 설정할 수 있게 해줍니다.</p>
+</details>
+<details class="note">
+<summary>힌트</summary>
+<p>그런 다음, 셰이더를 <strong>ShaderMaterial</strong>의 <strong>Shader</strong> 속성에 할당하시면 됩니다.</p>
+</details>
+</div>
+<p>캐릭터에 셰이더를 할당하는 단계는 다음과 같습니다:</p>
+<ol>
+<li>
+<p><strong>Sprite2D 노드</strong>를 선택합니다.</p>
+</li>
+<li>
+<p>인스펙터에서 <strong>Material</strong> 카테고리를 펼치고, <strong>Material</strong> 속성에 <strong>ShaderMaterial</strong>을 지정합니다.</p>
+</li>
+<li>
+<p>리소스를 클릭해 펼친 뒤 <strong>Shader</strong> 속성을 찾습니다.</p>
+</li>
+<li>
+<p>그것을 클릭하고 <strong>Quick Load</strong>를 선택하여 character_contour.gdshader 파일을 불러옵니다.</p>
+</li>
+</ol>
+<p>그러면 캐릭터 주위에 외곽선이 나타나는 것을 보실 수 있습니다.  </p>
+<p>또한 <strong>Shader Params</strong>를 펼쳐 외곽선의 모양을 변경할 수도 있습니다. 원하시는 대로 조정하셔도 좋습니다. 저는 완전한 검은색에 <strong>4픽셀</strong> 두께의 외곽선을 적용했습니다.</p>
+<p><img alt="060_090_outline_shader.webp" src="../images/060_090_outline_shader.webp" /></p>
+<p>좋습니다, 이제 완료되었습니다! 비주얼 이펙트를 만드는 방법을 배우기 전에 간단히 복습해 보겠습니다.</p>
+<hr />
+<h2 id="p5-recap">P5 Recap</h2>
+<p>이번 강의에서는 러너에 <strong>그림자</strong>와 <strong>외곽선</strong>을 추가했습니다. 이를 통해 캐릭터가 배경에서 더욱 돋보이게 되었습니다.</p>
+<p>여러분은 이번에 다음을 배우셨습니다:</p>
+<ul>
+<li>
+<p>예상대로 작동하지 않는 에셋을 <strong>가설을 세우고 테스트하는 방식</strong>으로 문제 해결하는 방법</p>
+</li>
+<li>
+<p><strong>Index</strong>와 <strong>Clip Children</strong> 속성이 그리기에 미치는 영향, 그리고 <strong>CanvasGroup</strong> 노드의 역할</p>
+</li>
+<li>
+<p>게임 월드의 일부를 텍스처로 렌더링하기 위해 <strong>SubViewport 노드</strong>를 사용하는 방법</p>
+</li>
+<li>
+<p><strong>SubViewport</strong>에서 생성된 텍스처를 <strong>Sprite2D 노드</strong>와 <strong>ViewportTexture 리소스</strong>를 사용해 표시하는 방법</p>
+</li>
+</ul>
+<p>다음 강의에서는 파티클을 활용해 비주얼 이펙트를 만드는 법을 배우게 됩니다. 
+학습을 위해 <strong>불꽃 효과</strong>를 만들고, 이어서 캐릭터가 달릴 때 따라오는 <strong>먼지 파티클</strong>을 디자인할 것입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
