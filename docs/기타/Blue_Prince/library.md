@@ -1,10 +1,4 @@
-좋아요 😊
-두 이미지 모두 Blue Prince 게임 속 도서관(Library) 지역의 문서예요.
-각 문구를 자연스럽게 한국어로 번역해드릴게요.
-
-⸻
-
-📄 1. Mt. Holly Library — BOOK REQUEST FORM
+Mt. Holly Library — BOOK REQUEST FORM
 
 (마운트 홀리 도서관 — 도서 신청서)
 
@@ -23,11 +17,13 @@ PLEASE SELECT ONE:
 
 Your Name:
 
-The above signee is responsible for all materials checked out using this form and understands new requests cannot be made on days in which a previously requested book or periodical has been pulled.
+The above signee is responsible for all materials checked out using this form 
+and understands new requests cannot be made on days in which a previously requested book 
+or periodical has been pulled.
 
 ⸻
 
-🩵 한국어 번역:
+한국어 번역:
 
 마운트 홀리 도서관 — 도서 신청서
 (도서관 내 열람 전용)
@@ -50,7 +46,7 @@ The above signee is responsible for all materials checked out using this form an
 
 ⸻
 
-📘 2. ADDITIONAL READING 안내판
+ADDITIONAL READING 안내판
 
 ADDITIONAL READING
 THE HOUSE DIRECTORY IS A GREAT RESOURCE FOR INFORMATION.
@@ -59,7 +55,7 @@ IF YOU WISH TO READ MORE ABOUT A SPECIFIC ROOM IN YOUR HOUSE, PRESS R1 TO PULL U
 
 ⸻
 
-🩵 한국어 번역:
+한국어 번역:
 
 추가 읽기 안내
 
@@ -68,14 +64,6 @@ IF YOU WISH TO READ MORE ABOUT A SPECIFIC ROOM IN YOUR HOUSE, PRESS R1 TO PULL U
 
 집 안의 특정 방에 대해 더 읽어보고 싶다면,
 R1 버튼을 눌러 디렉터리를 열어보세요.
-
-⸻
-
-이 두 문서는 “도서관(Library)” 구역의 탐색 가이드 및 힌트 역할을 해요.
-	•	첫 번째 양식은 **‘책 제목을 통한 단서 선택 퍼즐’**의 일부로, 특정 책을 선택하면 관련 스토리나 방이 열릴 수 있고
-	•	두 번째 표지판은 하우스 디렉터리(House Directory) 시스템(게임 내 도움말 메뉴)을 설명하는 안내문이에요.
-
-원하신다면 “각 책 제목이 게임 내에서 의미하는 바(숨은 단서 또는 코드)” 도 함께 분석해드릴까요?
 
 ![IMG_1814.JPG](images/IMG_1814.JPG)
 ![IMG_1815.JPG](images/IMG_1815.JPG)
