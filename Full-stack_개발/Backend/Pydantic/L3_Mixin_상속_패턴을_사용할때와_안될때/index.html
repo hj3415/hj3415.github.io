@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../guest_room/">
+        <link rel="prev" href="../L2_ConfigDict%EC%9D%98_%EC%A3%BC%EC%9A%94_%EC%98%B5%EC%85%98%EC%9D%98_%EA%B8%B0%EB%B3%B8%EA%B0%92/">
       
       
-        <link rel="next" href="../library/">
+        <link rel="next" href="../../../Frontend/L0_vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Laboratory - Docs for hj3415</title>
+        <title>L3 Mixin 상속 패턴을 사용할때와 안될때 - Docs for hj3415</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -73,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Laboratory
+              L3 Mixin 상속 패턴을 사용할때와 안될때
             
           </span>
         </div>
@@ -185,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -215,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -234,8 +239,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -252,11 +259,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -272,7 +279,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Full stack 개발
@@ -283,8 +290,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -298,11 +307,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -318,7 +327,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Backend
@@ -378,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L0_FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../FastAPI/L0_FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -401,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
+      <a href="../../FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
         
   
   
@@ -429,8 +438,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -448,11 +459,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
@@ -468,7 +479,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_2">
             <span class="md-nav__icon md-icon"></span>
             Pydantic
@@ -482,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -505,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L1_pydantic%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EA%B3%B5%EC%9A%A9%EC%8A%A4%ED%82%A4%EB%A7%88_%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
+      <a href="../L1_pydantic%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EA%B3%B5%EC%9A%A9%EC%8A%A4%ED%82%A4%EB%A7%88_%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
         
   
   
@@ -528,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L2_ConfigDict%EC%9D%98_%EC%A3%BC%EC%9A%94_%EC%98%B5%EC%85%98%EC%9D%98_%EA%B8%B0%EB%B3%B8%EA%B0%92/" class="md-nav__link">
+      <a href="../L2_ConfigDict%EC%9D%98_%EC%A3%BC%EC%9A%94_%EC%98%B5%EC%85%98%EC%9D%98_%EA%B8%B0%EB%B3%B8%EA%B0%92/" class="md-nav__link">
         
   
   
@@ -548,10 +559,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L3_Mixin_%EC%83%81%EC%86%8D_%ED%8C%A8%ED%84%B4%EC%9D%84_%EC%82%AC%EC%9A%A9%ED%95%A0%EB%95%8C%EC%99%80_%EC%95%88%EB%90%A0%EB%95%8C/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    L3 Mixin 상속 패턴을 사용할때와 안될때
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -562,6 +593,93 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      하나씩 이유를 단계적으로 풀어볼게요
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="하나씩 이유를 단계적으로 풀어볼게요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Mixin의 기본 개념 다시 정리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-contractmodel-pydantic" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. ContractModel은 단순 속성 모음이 아니라, Pydantic 동작 정의체
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Mixin으로만 두었을 때의 문제
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mro" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 다중상속 시 순서 문제도 있음 (MRO)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 언제 Mixin을 써도 되는가?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 정리 요약
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -638,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/L0_vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../../Frontend/L0_vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -721,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
         
   
   
@@ -744,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -767,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -790,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
         
   
   
@@ -813,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -836,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
         
   
   
@@ -859,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
         
   
   
@@ -882,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -905,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
         
   
   
@@ -986,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
+      <a href="../../../Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
         
   
   
@@ -1009,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
+      <a href="../../../Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
         
   
   
@@ -1032,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
+      <a href="../../../Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
         
   
   
@@ -1055,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
+      <a href="../../../Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
         
   
   
@@ -1248,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
         
   
   
@@ -1271,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
         
   
   
@@ -1294,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
         
   
   
@@ -1317,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L4_Placing_Obstacles/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L4_Placing_Obstacles/" class="md-nav__link">
         
   
   
@@ -1340,7 +1458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L5_Adding_inertia_and_animations/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L5_Adding_inertia_and_animations/" class="md-nav__link">
         
   
   
@@ -1363,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L6_Graphical_Effects/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L6_Graphical_Effects/" class="md-nav__link">
         
   
   
@@ -1492,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/9-slice_scaling/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/9-slice_scaling/" class="md-nav__link">
         
   
   
@@ -1515,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/AI_%28Game_AI%29/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/AI_%28Game_AI%29/" class="md-nav__link">
         
   
   
@@ -1538,7 +1656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/API_Application_Programming_Interface/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/API_Application_Programming_Interface/" class="md-nav__link">
         
   
   
@@ -1561,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Boolean_Expressions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Boolean_Expressions/" class="md-nav__link">
         
   
   
@@ -1584,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Class/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Class/" class="md-nav__link">
         
   
   
@@ -1607,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Collisions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Collisions/" class="md-nav__link">
         
   
   
@@ -1630,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Composition/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Composition/" class="md-nav__link">
         
   
   
@@ -1653,7 +1771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Constant/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Constant/" class="md-nav__link">
         
   
   
@@ -1676,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Duck_Typing/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Duck_Typing/" class="md-nav__link">
         
   
   
@@ -1699,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Encapsulation/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Encapsulation/" class="md-nav__link">
         
   
   
@@ -1722,7 +1840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Function_Signature/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Function_Signature/" class="md-nav__link">
         
   
   
@@ -1745,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Game_Jam/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Game_Jam/" class="md-nav__link">
         
   
   
@@ -1768,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Inheritance/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Inheritance/" class="md-nav__link">
         
   
   
@@ -1791,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Interface/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Interface/" class="md-nav__link">
         
   
   
@@ -1814,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Method_member_function/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Method_member_function/" class="md-nav__link">
         
   
   
@@ -1837,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Node/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Node/" class="md-nav__link">
         
   
   
@@ -1860,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Object/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Object/" class="md-nav__link">
         
   
   
@@ -1883,7 +2001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Object_Oriented_Programming/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Object_Oriented_Programming/" class="md-nav__link">
         
   
   
@@ -1906,7 +2024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Private_Public_Properties/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Private_Public_Properties/" class="md-nav__link">
         
   
   
@@ -1929,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Property_member_variable/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Property_member_variable/" class="md-nav__link">
         
   
   
@@ -1952,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Refactoring/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Refactoring/" class="md-nav__link">
         
   
   
@@ -1975,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Shader/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Shader/" class="md-nav__link">
         
   
   
@@ -1998,7 +2116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Static_Function/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Static_Function/" class="md-nav__link">
         
   
   
@@ -2021,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Ternary_Expression/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Ternary_Expression/" class="md-nav__link">
         
   
   
@@ -2108,7 +2226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Godot4_%EA%B0%9C%EB%B0%9C/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -2179,7 +2297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/Vector2_move_toward_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/Vector2_move_toward_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
         
   
   
@@ -2202,7 +2320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/get_axis_vs_get_vector/" class="md-nav__link">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/get_axis_vs_get_vector/" class="md-nav__link">
         
   
   
@@ -2225,7 +2343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
         
   
   
@@ -2260,10 +2378,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -2278,11 +2394,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -2298,7 +2414,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             기타
@@ -2309,10 +2425,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -2356,11 +2470,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
@@ -2376,7 +2490,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             Blue Prince
@@ -2390,7 +2504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bunk_room/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/bunk_room/" class="md-nav__link">
         
   
   
@@ -2413,7 +2527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../comissary/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/comissary/" class="md-nav__link">
         
   
   
@@ -2436,7 +2550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../darkroom/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/darkroom/" class="md-nav__link">
         
   
   
@@ -2459,7 +2573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drawing_room/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/drawing_room/" class="md-nav__link">
         
   
   
@@ -2482,7 +2596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../entrance/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/entrance/" class="md-nav__link">
         
   
   
@@ -2505,7 +2619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../garage/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/garage/" class="md-nav__link">
         
   
   
@@ -2528,7 +2642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guest_room/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/guest_room/" class="md-nav__link">
         
   
   
@@ -2548,17 +2662,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/laboratory/" class="md-nav__link">
         
   
   
@@ -2569,7 +2676,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2582,7 +2688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../library/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/library/" class="md-nav__link">
         
   
   
@@ -2605,7 +2711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mail_room/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/mail_room/" class="md-nav__link">
         
   
   
@@ -2628,7 +2734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nook/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/nook/" class="md-nav__link">
         
   
   
@@ -2651,7 +2757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../observatory/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/observatory/" class="md-nav__link">
         
   
   
@@ -2674,7 +2780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pantry/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/pantry/" class="md-nav__link">
         
   
   
@@ -2697,7 +2803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
         
   
   
@@ -2720,7 +2826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/security/" class="md-nav__link">
         
   
   
@@ -2743,7 +2849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../west_wing/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/west_wing/" class="md-nav__link">
         
   
   
@@ -2766,7 +2872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../workshop/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/workshop/" class="md-nav__link">
         
   
   
@@ -2815,6 +2921,83 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      하나씩 이유를 단계적으로 풀어볼게요
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="하나씩 이유를 단계적으로 풀어볼게요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Mixin의 기본 개념 다시 정리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-contractmodel-pydantic" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. ContractModel은 단순 속성 모음이 아니라, Pydantic 동작 정의체
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Mixin으로만 두었을 때의 문제
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mro" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 다중상속 시 순서 문제도 있음 (MRO)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 언제 Mixin을 써도 되는가?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 정리 요약
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2829,7 +3012,7 @@
 
 
   
-    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/기타/Blue_Prince/laboratory.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/Full-stack_개발/Backend/Pydantic/L3_Mixin_상속_패턴을_사용할때와_안될때.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2838,64 +3021,159 @@
     
       
     
-    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/기타/Blue_Prince/laboratory.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/Full-stack_개발/Backend/Pydantic/L3_Mixin_상속_패턴을_사용할때와_안될때.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Laboratory</h1>
+  <h1>L3 Mixin 상속 패턴을 사용할때와 안될때</h1>
 
-<p>전자메일 접근 공지문</p>
-<p><img alt="IMG_1803.JPG" src="../images/IMG_1803.JPG" /></p>
-<p>원문:</p>
-<p>EFFECTIVE IMMEDIATELY,
-ELECTRONIC MAIL CAN ONLY BE ACCESSED VIA THE SECURITY TERMINAL.</p>
-<p>번역:</p>
-<p>즉시 시행:
-전자메일은 이제 <strong>보안 터미널(Security Terminal)</strong>을 통해서만 접근할 수 있습니다.</p>
-<p>⸻</p>
-<p>실험 데이터 시트 (HEATING AND COOLING CURVES)</p>
-<p><img alt="IMG_1800.JPG" src="../images/IMG_1800.JPG" /></p>
-<p>가열 및 냉각 곡선</p>
-<p>H₂O의 녹는점 (염도 0.1ppt - 0.5ppt)</p>
-<p>실온(Room Temp) — 완전 해동 시점</p>
-<p>시험 번호: 205 (대기압 93kPa)</p>
-<p>위치: 마운트 홀리 냉동실</p>
-<p>실험 담당자: 랜돌프 M.</p>
-<p>⸻</p>
-<p>Kimberly Thompson의 메모</p>
-<p><img alt="IMG_1799.JPG" src="../images/IMG_1799.JPG" /></p>
-<p>원문:</p>
-<p>I typically work over at SYNKA labs
-but got sent over here for a month to assist Moore with the new turbine tests.
-I think I need some help.</p>
-<p>For the past three days, I have been unable to find the laboratory on the estate. 
-(Today was the first success on that front!)
-Can anyone tell me if this is typical and if so how do you get any work done?
-Before I arrived, I was briefed on the way the doors work, 
-but I must admit, I did not expect to be excluded from my new workstation for the first week!</p>
-<p>Any tips from my fellow technicians would be appreciated,</p>
-<p>— Kimberly Thompson</p>
-<p>번역:</p>
-<p>저는 보통 SYNKA 연구소에서 일하지만,
-이번에는 Moore의 새로운 터빈 실험을 돕기 위해 한 달간 이곳에 파견되었습니다.
-그런데 도움이 좀 필요하네요.</p>
-<p>지난 3일 동안 이 저택 안에서 <strong>연구실(Laboratory)</strong>을 찾지 못했습니다. (오늘에서야 처음으로 찾았어요!)
-혹시 이게 정상인가요? 그렇다면 여러분은 어떻게 일을 하고 계신 건가요?</p>
-<p>도착하기 전, 문이 작동하는 방식에 대해 설명을 듣긴 했지만, 새 근무지에 첫 주부터 접근조차 못 하게 될 줄은 몰랐네요!</p>
-<p>동료 기술자분들의 조언을 부탁드립니다.</p>
-<p>— Kimberly Thompson</p>
-<p>⸻</p>
-<p>보일러룸 전력 경고문</p>
-<p><img alt="IMG_1804.JPG" src="../images/IMG_1804.JPG" /></p>
-<p>원문:</p>
-<p>THIS MACHINE REQUIRES ADDITIONAL POWER PIPED IN FROM THE BOILER ROOM.</p>
-<p>번역:</p>
-<p>이 장치는 <strong>보일러룸(Boiler Room)</strong>에서 공급되는 추가 전력이 필요합니다.</p>
+<p>이건 <strong>“ContractModel을 단순 Mixin으로 두지 않고, 실제 상위(BaseModel)로 둬야 하는 이유”</strong> 에 대한 이야기인데요 —</p>
+<p>핵심은 <strong>Pydantic의 설정(model_config)과 검증 로직은 “BaseModel 계통 상속 체인” 안에서만 유효하기 때문</strong>이에요.</p>
+<h2 id="_1">하나씩 이유를 단계적으로 풀어볼게요</h2>
+<h3 id="1-mixin">1. Mixin의 기본 개념 다시 정리</h3>
+<blockquote>
+<p><strong>Mixin</strong>은 “공통 기능을 섞는(mix) 보조 클래스”로, 단독으로 쓰이지 않고 다른 클래스와 함께 다중상속으로 섞여 쓰이는 구조입니다.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">TimestampMixin</span><span class="p">:</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">updated_at</span><span class="p">:</span> <span class="n">datetime</span>
+</code></pre></div>
+<p>Mixin의 특징:</p>
+<ul>
+<li>
+<p>보통 <strong>상태(속성)이나 로직 일부만</strong> 제공</p>
+</li>
+<li>
+<p><strong>BaseModel이 아님</strong> (즉, Pydantic과 직접 연결되지 않음)</p>
+</li>
+<li>
+<p>model_config, field_validator, model_validator 등 Pydantic 전용 기능은 작동하지 않음</p>
+</li>
+</ul>
 <hr />
-<p><img alt="IMG_1798.jpeg" src="../images/IMG_1798.jpeg" /></p>
+<h3 id="2-contractmodel-pydantic">2. ContractModel은 단순 속성 모음이 아니라, Pydantic 동작 정의체</h3>
+<p>ContractModel의 목적은 단순 필드 추가가 아니라</p>
+<ul>
+<li>
+<p>model_config 설정</p>
+</li>
+<li>
+<p>검증기(validator)</p>
+</li>
+<li>
+<p>직렬화 규칙</p>
+</li>
+<li>
+<p>내부 변환 정책 (from_attributes, extra, alias)</p>
+</li>
+</ul>
+<p>을 포함해서 <strong>Pydantic의 “행동 규칙” 전체를 상속</strong>하는 겁니다.</p>
+<p>그래서 반드시 BaseModel을 상속해야 Pydantic이 인식할 수 있습니다</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">ConfigDict</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ContractModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>  <span class="c1"># 반드시 BaseModel 계통</span>
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">extra</span><span class="o">=</span><span class="s2">&quot;forbid&quot;</span><span class="p">,</span> <span class="n">from_attributes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p>이걸 mixin으로 두면 아래 문제가 생깁니다</p>
+<hr />
+<h3 id="3-mixin">3. Mixin으로만 두었을 때의 문제</h3>
+<p><strong>(1) model_config 가 무시됨</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ContractMixin</span><span class="p">:</span>
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">extra</span><span class="o">=</span><span class="s2">&quot;forbid&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">ContractMixin</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">model_config</span><span class="p">)</span>
+<span class="c1"># {&#39;extra&#39;: &#39;ignore&#39;} 😨 — 기본 설정 그대로, Mixin의 설정은 무시됨</span>
+</code></pre></div>
+<p>model_config는 <strong>BaseModel 계통 상속 체인에서만 병합됨</strong>.</p>
+<p>Mixin은 단순 Python 클래스라, Pydantic이 인식하지 않아요.</p>
+<hr />
+<p><strong>(2) @field_validator, @model_validator 작동 안 함</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ValidateMixin</span><span class="p">:</span>
+    <span class="nd">@field_validator</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;이름은 필수입니다.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">ValidateMixin</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</code></pre></div>
+<p>User 인스턴스 생성 시 이 검증기는 실행되지 않습니다.</p>
+<p>왜냐하면 <strong>Pydantic은 BaseModel 계통 클래스의 네임스페이스만 검사하기 때문</strong>이에요.</p>
+<hr />
+<p><strong>(3) IDE 자동완성, 타입체커에서 ConfigDict 인식 불가</strong></p>
+<p>Mixin은 타입 힌트를 상속하지 않기 때문에 ConfigDict 기반 설정이나 필드 주석이 IDE에서 연결되지 않습니다.</p>
+<hr />
+<h3 id="4-mro">4. 다중상속 시 순서 문제도 있음 (MRO)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ContractMixin</span><span class="p">:</span>
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">extra</span><span class="o">=</span><span class="s2">&quot;forbid&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ContractModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">ContractMixin</span><span class="p">):</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>이렇게 해도 MRO 순서(BaseModel → Mixin)가 꼬이면 Pydantic이 Mixin의 설정을 무시하거나, 서브클래스 병합 중 충돌이 발생할 수 있습니다.</p>
+<p>따라서 <strong>Mixin은 Pydantic “보조 역할”로는 쓸 수 있지만, 기본 설정용 베이스로는 적합하지 않습니다.</strong></p>
+<hr />
+<h3 id="5-mixin">5. 언제 Mixin을 써도 되는가?</h3>
+<p>Mixin은 <strong>필드나 메서드만 추가</strong>할 때는 괜찮습니다.</p>
+<p>예를 들어 아래처럼 “공통 타임스탬프 필드” 같은 경우</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TimestampMixin</span><span class="p">:</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">)</span>
+    <span class="n">updated_at</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">ContractModel</span><span class="p">,</span> <span class="n">TimestampMixin</span><span class="p">):</span>  <span class="c1"># 가능</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</code></pre></div>
+<p>여기서 TimestampMixin은 단순히 필드만 추가하고 검증·설정은 모두 ContractModel이 담당하죠.</p>
+<p>이건 안전합니다</p>
+<hr />
+<h3 id="6">6. 정리 요약</h3>
+<table>
+<thead>
+<tr>
+<th><strong>비교 항목</strong></th>
+<th><strong>ContractModel (BaseModel 상속)</strong></th>
+<th><strong>Mixin</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pydantic 설정(model_config) 반영</td>
+<td>✅ 됨</td>
+<td>❌ 무시됨</td>
+</tr>
+<tr>
+<td>@validator 작동</td>
+<td>✅ 작동</td>
+<td>❌ 작동안함</td>
+</tr>
+<tr>
+<td>Pydantic 병합(merge) 지원</td>
+<td>✅ 병합</td>
+<td>❌ 병합 안됨</td>
+</tr>
+<tr>
+<td>다중상속 안정성</td>
+<td>✅ 안전</td>
+<td>⚠️ 순서 민감</td>
+</tr>
+<tr>
+<td>주 용도</td>
+<td>“행동 규칙(검증/직렬화)” 정의</td>
+<td>“필드/메서드” 추가</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2944,10 +3222,10 @@ but I must admit, I did not expect to be excluded from my new workstation for th
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
