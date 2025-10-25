@@ -1,3 +1,4 @@
+![IMG_1788.jpeg](images/IMG_1788.jpeg)
 
 직원 공지 (STAFF NOTICE)
 
@@ -11,4 +12,3 @@
 
 또한, 다른 직원들도 이 기간에는 도면을 작성하지 않도록 유의해 주시기 바랍니다.
 
-![IMG_1788.jpeg](images/IMG_1788.jpeg)

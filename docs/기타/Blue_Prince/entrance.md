@@ -1,5 +1,7 @@
 ### 편지 1
 
+![IMG_1774.jpeg](images/IMG_1774.jpeg)
+
 **Simon,**
 
 Mount Holly에 온 것을 환영하네.
@@ -17,6 +19,8 @@ Mount Holly에 온 것을 환영하네.
 ---
 
 ### 편지 2
+
+![IMG_1775.jpeg](images/IMG_1775.jpeg)
 
 이제 몇 가지 기본 규칙을 말해야겠네.
 
@@ -38,6 +42,8 @@ Mount Holly에 온 것을 환영하네.
 
 ### 편지 3
 
+![IMG_1776.jpeg](images/IMG_1776.jpeg)
+
 마지막으로 한 가지 조언을 덧붙이겠네.
 
 오늘 자네가 찾은 방이 내일도 같은 방일 거라고 생각하지 말게.
@@ -52,9 +58,9 @@ Mount Holly에 온 것을 환영하네.
 
 **Herbert G. Sinclair**
 
-![IMG_1774.jpeg](images/IMG_1774.jpeg)
 
-![IMG_1775.jpeg](images/IMG_1775.jpeg)
 
-![IMG_1776.jpeg](images/IMG_1776.jpeg)
+
+
+
 

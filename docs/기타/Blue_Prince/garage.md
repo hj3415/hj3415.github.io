@@ -1,3 +1,5 @@
+![IMG_1806.JPG](images/IMG_1806.JPG)
+
 원문
 
 Christoph, this is the third time this month you and the car have been gone when your services were required.
@@ -16,4 +18,3 @@ I don’t care how long you have been driving for his lordship, your absences mu
 
 — 배비지 부인
 
-![IMG_1806.JPG](images/IMG_1806.JPG)

@@ -1,6 +1,8 @@
 
 전자메일 접근 공지문
 
+![IMG_1803.JPG](images/IMG_1803.JPG)
+
 원문:
 
 EFFECTIVE IMMEDIATELY,
@@ -15,24 +17,11 @@ ELECTRONIC MAIL CAN ONLY BE ACCESSED VIA THE SECURITY TERMINAL.
 
 실험 데이터 시트 (HEATING AND COOLING CURVES)
 
-원문:
-
-HEATING AND COOLING CURVES
-
-H2O melting point at 0.1ppt - 0.5ppt
-
-Room Temp — Complete Thaw
-
-\[Test 205\] at Atmospheric Pressure 93kpa
-in Mt. Holly Freezer
-
-Lab Technician: Randolph M.
-
-번역:
+![IMG_1800.JPG](images/IMG_1800.JPG)
 
 가열 및 냉각 곡선
 
-수소(H₂O)의 녹는점 (염도 0.1ppt - 0.5ppt)
+H₂O의 녹는점 (염도 0.1ppt - 0.5ppt)
 
 실온(Room Temp) — 완전 해동 시점
 
@@ -45,6 +34,8 @@ Lab Technician: Randolph M.
 ⸻
 
 Kimberly Thompson의 메모
+
+![IMG_1799.JPG](images/IMG_1799.JPG)
 
 원문:
 
@@ -81,6 +72,8 @@ Any tips from my fellow technicians would be appreciated,
 
 보일러룸 전력 경고문
 
+![IMG_1804.JPG](images/IMG_1804.JPG)
+
 원문:
 
 THIS MACHINE REQUIRES ADDITIONAL POWER PIPED IN FROM THE BOILER ROOM.
@@ -89,9 +82,6 @@ THIS MACHINE REQUIRES ADDITIONAL POWER PIPED IN FROM THE BOILER ROOM.
 
 이 장치는 **보일러룸(Boiler Room)**에서 공급되는 추가 전력이 필요합니다.
 
+---
 
-![IMG_1799.JPG](images/IMG_1799.JPG)
-![IMG_1800.JPG](images/IMG_1800.JPG)
-![IMG_1803.JPG](images/IMG_1803.JPG)
-![IMG_1804.JPG](images/IMG_1804.JPG)
 ![IMG_1798.jpeg](images/IMG_1798.jpeg)

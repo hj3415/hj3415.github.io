@@ -1,4 +1,6 @@
 
+![IMG_1778.jpeg](images/IMG_1778.jpeg)
+
 A Journey — NOTEWORTHY
 
 (여정 — 기록할 가치가 있는 것)
@@ -12,5 +14,4 @@ A Journey — NOTEWORTHY
 
 그것을 곁에 두고 여행하는 걸 후회하지 않게 될 것입니다.
 
-![IMG_1778.jpeg](images/IMG_1778.jpeg)
 

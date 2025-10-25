@@ -1,5 +1,7 @@
 직원 해고 안내문
 
+![IMG_1821.JPG](images/IMG_1821.JPG)
+
 PLEASE RETURN ALL CORRESPONDENCE AND PACKAGES ADDRESSED TO DENNY REVANE TO SENDER 
 AS HE NO LONGER IS EMPLOYED WITH OUR STAFF.
 
@@ -13,25 +15,18 @@ AS HE NO LONGER IS EMPLOYED WITH OUR STAFF.
 
 전기실 퓨즈박스 설명서
 
-UTILITY ROOM FUSEBOX — Indicator settings
-
-Press any button above to activate blue.
-
-Press a blue indicator next to a red indicator to activate purple.
-
-Five purple indicators are needed to activate the sixth.
-
-(Post-it note)
-More detailed instructions will be sent by electronic mail to the address client has provided.
+![IMG_1820.JPG](images/IMG_1820.JPG)
 
 번역:
 
 전기실 퓨즈박스 — 표시등 설정
+
 	•	위쪽의 아무 버튼이나 누르면 파란 불빛이 켜집니다.
 	•	파란 불이 켜진 옆의 빨간 불을 누르면 보라색 불이 켜집니다.
 	•	보라색 표시등 5개가 켜져야 여섯 번째 불이 작동합니다.
 
 붙임 메모:
+
 “더 자세한 사용 설명서는
 고객이 제공한 이메일 주소로 전송됩니다.”
 
@@ -39,18 +34,7 @@ More detailed instructions will be sent by electronic mail to the address client
 
 편지 1
 
-Hey buddy,
-How’s it going up there in that big house? 
-I think most people would be pretty scared being alone for this length of time, 
-but I have a feeling you’re doing just fine.
-
-I imagine you happy as a clam, p
-erfectly content on the estate with the exploration and opportunities for adventure that present themselves each day.
-
-As I’m writing this, you’re currently in the garage packing the tent. 
-I wanted to try to post this letter before we depart tomorrow so that it has a chance to arrive
-during your first few days on the estate, but with all the preparations, 
-I’m not sure that I’m going to find the time.
+![IMG_1817.JPG](images/IMG_1817.JPG)
 
 번역:
 
@@ -67,20 +51,31 @@ I’m not sure that I’m going to find the time.
 
 편지 2
 
-The house really is amazing.
-I know it’s been almost seven years since we were last up there,
-and I’m really curious to hear just how much you remember from those summer trips.
+![IMG_1818.JPG](images/IMG_1818.JPG)
 
-You’ve always been smarter than me at this kind of thing,
-so I’m not sure how much guidance or inspiration I can offer before your trip that will actually be useful to you.
+번역:
 
-Despite my best intentions,
-I’m sure that on Friday I’ll end up leaving you with a few of my overused cliché expressions when we say farewell.
+하고 싶은 말이 정말 많지만,
+금요일 밤엔 또 잊어버릴 것 같아서 이렇게 적어둔다.
 
-Later alligator,
-Dad
+지금 네가 나한테 베갯잇 가져오라고 소리치고 있겠지!
+잠깐만 기다려 — 금방 간다…
 
-P.S. Get some sleep each night and don’t spend all your time each day playing Dirigiblocks!
+넌 지금 정말 들떠 있겠지만,
+아마도 장례식 바로 다음 날이라 조금은 죄책감이 들지도 모르겠구나.
+하지만 믿어다오,
+허버트 삼촌이 이걸 준비하느라 얼마나 긴 시간을 보냈는지 난 알고 있어.
+
+그리고 우리 대화 속에서
+그가 이 마지막 프로젝트에서 얼마나 행복해했는지도 알고 있다.
+그러니 우리 둘을 위해 부탁 하나만 하자 — 기뻐해라.
+
+⸻
+
+편지 3
+
+![IMG_1819.JPG](images/IMG_1819.JPG)
+
 
 번역:
 
@@ -100,43 +95,3 @@ P.S. Get some sleep each night and don’t spend all your time each day playing 
 
 P.S. 밤엔 푹 자고, 하루 종일 ‘디리지블록(Dirigiblocks)’만 하지 말렴!
 
-⸻
-
-편지 3
-
-There’s so much I want to say,
-and I’m sure I’ll forget to tell you Friday night.
-Sometimes it’s easier for me to just jot this stuff down.
-
-You’re yelling at me right now to come bring you a pillowcase! Hold on a second — I’ll be right back…
-
-I can tell you’re really excited, 
-but I think you might feel a little guilty about being so happy the day after the funeral. 
-Believe me, I know how long Uncle Herbert worked on setting this up for you.
-
-And I know from our conversations just how much happiness this final project brought him.
-So do both of us a favor. Be excited.
-
-번역:
-
-하고 싶은 말이 정말 많지만,
-금요일 밤엔 또 잊어버릴 것 같아서 이렇게 적어둔다.
-
-지금 네가 나한테 베갯잇 가져오라고 소리치고 있겠지!
-잠깐만 기다려 — 금방 간다…
-
-넌 지금 정말 들떠 있겠지만,
-아마도 장례식 바로 다음 날이라 조금은 죄책감이 들지도 모르겠구나.
-하지만 믿어다오,
-허버트 삼촌이 이걸 준비하느라 얼마나 긴 시간을 보냈는지 난 알고 있어.
-
-그리고 우리 대화 속에서
-그가 이 마지막 프로젝트에서 얼마나 행복해했는지도 알고 있다.
-그러니 우리 둘을 위해 부탁 하나만 하자 — 기뻐해라.
-
-
-![IMG_1817.JPG](images/IMG_1817.JPG)
-![IMG_1818.JPG](images/IMG_1818.JPG)
-![IMG_1819.JPG](images/IMG_1819.JPG)
-![IMG_1820.JPG](images/IMG_1820.JPG)
-![IMG_1821.JPG](images/IMG_1821.JPG)

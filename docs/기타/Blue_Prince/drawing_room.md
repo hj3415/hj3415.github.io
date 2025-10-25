@@ -1,5 +1,7 @@
 ### **도면 그리기 (DRAWING FLOORPLANS)**
 
+![IMG_1787.jpeg](images/IMG_1787.jpeg)
+
 **매번 문을 클릭할 때마다,**
 
 당신은 **3개의 도면(Floorplan)** 을 뽑게 됩니다.
@@ -13,6 +15,4 @@
 처음 뽑은 3가지 선택지가 마음에 들지 않을 경우
 
 다시 뽑기(**Redraw**)를 할 수 있도록 해줍니다.
-
-![IMG_1787.jpeg](images/IMG_1787.jpeg)
 

@@ -1,3 +1,4 @@
+![IMG_1789.jpeg](images/IMG_1789.jpeg)
 
 Sinclair,
 
@@ -17,4 +18,3 @@ Sinclair,
 
 — K.L.
 
-![IMG_1789.jpeg](images/IMG_1789.jpeg)

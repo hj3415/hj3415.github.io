@@ -1,3 +1,4 @@
+![IMG_1794.JPG](images/IMG_1794.JPG)
 
 키카드 시스템 설정
 보안 수준: 낮음 (LOW)
@@ -8,6 +9,8 @@
 
 ---
 
+![IMG_1796.JPG](images/IMG_1796.JPG)
+
 파란색 메모
 
 번역:
@@ -16,7 +19,9 @@
 
 또한, 추가적인 보안 조치로서, 일반 문들도 북쪽(저택의 상단 지역)으로 이동할수록 잠겨 있을 가능성이 높아질 것입니다.
 
-⸻
+---
+
+![IMG_1797.JPG](images/IMG_1797.JPG)
 
 빨간색 메모
 
@@ -29,11 +34,5 @@
 
 ![IMG_1793.JPG](images/IMG_1793.JPG)
 
-![IMG_1794.JPG](images/IMG_1794.JPG)
 
 ![IMG_1795.JPG](images/IMG_1795.JPG)
-
-![IMG_1796.JPG](images/IMG_1796.JPG)
-
-![IMG_1797.JPG](images/IMG_1797.JPG)
-
