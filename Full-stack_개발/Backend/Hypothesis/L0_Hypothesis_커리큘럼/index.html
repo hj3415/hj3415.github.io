@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../../%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/">
+        <link rel="prev" href="../../FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/">
       
       
-        <link rel="next" href="../get_axis_vs_get_vector/">
+        <link rel="next" href="../../Pydantic/L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Vector2 move toward 이해 - Docs for hj3415</title>
+        <title>L0 Hypothesis 커리큘럼 - Docs for hj3415</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#hypothesis" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../../../.." title="Docs for hj3415" class="md-header__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vector2 move toward 이해
+              L0 Hypothesis 커리큘럼
             
           </span>
         </div>
@@ -190,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
+    <a href="../../../.." title="Docs for hj3415" class="md-nav__button md-logo" aria-label="Docs for hj3415" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -239,8 +239,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -259,11 +261,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -279,7 +281,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Full stack 개발
@@ -290,8 +292,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -309,11 +313,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -329,7 +333,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Backend
@@ -389,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L0_FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../FastAPI/L0_FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -412,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
+      <a href="../../FastAPI/L1_%ED%95%84%EC%88%98%EA%B0%9C%EB%85%90_10%EA%B0%80%EC%A7%80/" class="md-nav__link">
         
   
   
@@ -440,8 +444,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -453,11 +459,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
@@ -473,7 +479,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_2">
             <span class="md-nav__icon md-icon"></span>
             Hypothesis
@@ -484,10 +490,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Hypothesis/L0_Hypothesis_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    L0 Hypothesis 커리큘럼
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -498,6 +524,111 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypothesis 학습 커리큘럼 (단계별)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hypothesis 학습 커리큘럼 (단계별)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      1단계. Hypothesis의 기본 철학 이해
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      2단계. 기본 문법과 전략(strategies) 익히기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      3단계. Property(성질) 설계 훈련
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-shrinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      4단계. 실패 케이스 탐색 &amp; shrinking 이해
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5단계. 전략 조합 (고급 전략 디자인)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      6단계. pytest와 통합 사용법
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7단계. 고급 주제 (실무 활용)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8단계. 학습 마무리 및 실전 프로젝트
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -570,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../Pydantic/L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -593,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L1_pydantic%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EA%B3%B5%EC%9A%A9%EC%8A%A4%ED%82%A4%EB%A7%88_%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
+      <a href="../../Pydantic/L1_pydantic%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EA%B3%B5%EC%9A%A9%EC%8A%A4%ED%82%A4%EB%A7%88_%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
         
   
   
@@ -616,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L2_ConfigDict%EC%9D%98_%EC%A3%BC%EC%9A%94_%EC%98%B5%EC%85%98%EC%9D%98_%EA%B8%B0%EB%B3%B8%EA%B0%92/" class="md-nav__link">
+      <a href="../../Pydantic/L2_ConfigDict%EC%9D%98_%EC%A3%BC%EC%9A%94_%EC%98%B5%EC%85%98%EC%9D%98_%EA%B8%B0%EB%B3%B8%EA%B0%92/" class="md-nav__link">
         
   
   
@@ -639,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L3_Mixin_%EC%83%81%EC%86%8D_%ED%8C%A8%ED%84%B4%EC%9D%84_%EC%82%AC%EC%9A%A9%ED%95%A0%EB%95%8C%EC%99%80_%EC%95%88%EB%90%A0%EB%95%8C/" class="md-nav__link">
+      <a href="../../Pydantic/L3_Mixin_%EC%83%81%EC%86%8D_%ED%8C%A8%ED%84%B4%EC%9D%84_%EC%82%AC%EC%9A%A9%ED%95%A0%EB%95%8C%EC%99%80_%EC%95%88%EB%90%A0%EB%95%8C/" class="md-nav__link">
         
   
   
@@ -662,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L4_model_dump%EC%9D%98_%EC%A3%BC%EC%9A%94%EC%98%B5%EC%85%98_%EA%B8%B0%EB%B3%B8%EA%B0%92/" class="md-nav__link">
+      <a href="../../Pydantic/L4_model_dump%EC%9D%98_%EC%A3%BC%EC%9A%94%EC%98%B5%EC%85%98_%EA%B8%B0%EB%B3%B8%EA%B0%92/" class="md-nav__link">
         
   
   
@@ -739,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pytest/L0_pytest_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../Pytest/L0_pytest_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -762,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pytest/L1_monkeypatch_%EC%99%80_mock_patch%EB%A5%BC_%EA%B0%81%EA%B0%81_%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+      <a href="../../Pytest/L1_monkeypatch_%EC%99%80_mock_patch%EB%A5%BC_%EA%B0%81%EA%B0%81_%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
         
   
   
@@ -849,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/L0_vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../../Frontend/L0_vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -932,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L1_Django_%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98_Vue3_%EA%B3%B5%EB%B6%80%EB%B0%A9%EC%8B%9D/" class="md-nav__link">
         
   
   
@@ -955,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L2_npm_vite_node_%EA%B4%80%EA%B3%84%EB%A5%BC_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC_%EB%B9%84%EA%B5%90%ED%95%98%EC%97%AC_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -978,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L3_Vite%EC%99%80_Pycharm_%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -1001,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L4_Vite_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%83%9D%EC%84%B1%EC%8B%9C_Yes%EB%A1%9C_%EC%84%A4%EC%A0%95%ED%95%98%EB%A9%B4_%EC%83%9D%EC%84%B1%EB%90%98%EB%8A%94_%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
         
   
   
@@ -1024,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L5_%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C_Vue_router_Pinia_ESLint_Prettier_%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
   
@@ -1047,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L6_vite.config.js%EB%A5%BC_%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94_%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8_3%EA%B0%80%EC%A7%80_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
         
   
   
@@ -1070,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L7_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%82%B4%EC%9E%A5%EB%A9%94%EC%84%9C%EB%93%9C_%ED%95%84%EC%88%98_%EC%95%94%EA%B8%B0_10%EC%84%A0/" class="md-nav__link">
         
   
   
@@ -1093,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L8_v-model%EC%9D%98_%EC%8B%A4%EC%A0%9C_%EB%82%B4%EB%B6%80%EB%8F%99%EC%9E%91_%EC%A0%95%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -1116,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
+      <a href="../../../Frontend/1%EC%A3%BC%EC%B0%A8/L9_vue3%EC%97%90%EC%84%9C_.value%EB%A5%BC_%EC%96%B8%EC%A0%9C%EC%93%B0%EA%B3%A0_%EC%96%B8%EC%A0%9C_%EC%95%88%EC%93%B0%EB%82%98/" class="md-nav__link">
         
   
   
@@ -1197,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
+      <a href="../../../Frontend/4%EC%A3%BC%EC%B0%A8/L1_CORS_%EC%84%A4%EC%A0%95%EB%B2%95/" class="md-nav__link">
         
   
   
@@ -1220,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
+      <a href="../../../Frontend/4%EC%A3%BC%EC%B0%A8/L2_CORS_vs_CSRF/" class="md-nav__link">
         
   
   
@@ -1243,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
+      <a href="../../../Frontend/4%EC%A3%BC%EC%B0%A8/L3_vue%EC%97%90%EC%84%9C_build_%EA%B3%BC%EC%A0%95%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
         
   
   
@@ -1266,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
+      <a href="../../../Frontend/4%EC%A3%BC%EC%B0%A8/L99_Docker%EB%A1%9C_%EB%B0%B0%ED%8F%AC/" class="md-nav__link">
         
   
   
@@ -1351,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/System_Architecture/L0_%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/" class="md-nav__link">
+      <a href="../../../System_Architecture/L0_%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/" class="md-nav__link">
         
   
   
@@ -1374,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Full-stack_%EA%B0%9C%EB%B0%9C/System_Architecture/L1_DIP_%EC%9C%A0%EC%A7%80%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
+      <a href="../../../System_Architecture/L1_DIP_%EC%9C%A0%EC%A7%80%EA%B5%AC%EC%A1%B0_%EC%98%88%EC%8B%9C/" class="md-nav__link">
         
   
   
@@ -1559,7 +1690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview/" class="md-nav__link">
         
   
   
@@ -1582,7 +1713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L2_Character_Controller/" class="md-nav__link">
         
   
   
@@ -1605,7 +1736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L3_Looking_in_different_directions/" class="md-nav__link">
         
   
   
@@ -1628,7 +1759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L4_Placing_Obstacles/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L4_Placing_Obstacles/" class="md-nav__link">
         
   
   
@@ -1651,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L5_Adding_inertia_and_animations/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L5_Adding_inertia_and_animations/" class="md-nav__link">
         
   
   
@@ -1674,7 +1805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/2D/M9_Top_Down_Movement/L6_Graphical_Effects/" class="md-nav__link">
+      <a href="../../../../GDQUEST/2D/M9_Top_Down_Movement/L6_Graphical_Effects/" class="md-nav__link">
         
   
   
@@ -1803,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/9-slice_scaling/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/9-slice_scaling/" class="md-nav__link">
         
   
   
@@ -1826,7 +1957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/AI_%28Game_AI%29/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/AI_%28Game_AI%29/" class="md-nav__link">
         
   
   
@@ -1849,7 +1980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/API_Application_Programming_Interface/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/API_Application_Programming_Interface/" class="md-nav__link">
         
   
   
@@ -1872,7 +2003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Boolean_Expressions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Boolean_Expressions/" class="md-nav__link">
         
   
   
@@ -1895,7 +2026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Class/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Class/" class="md-nav__link">
         
   
   
@@ -1918,7 +2049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Collisions/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Collisions/" class="md-nav__link">
         
   
   
@@ -1941,7 +2072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Composition/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Composition/" class="md-nav__link">
         
   
   
@@ -1964,7 +2095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Constant/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Constant/" class="md-nav__link">
         
   
   
@@ -1987,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Duck_Typing/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Duck_Typing/" class="md-nav__link">
         
   
   
@@ -2010,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Encapsulation/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Encapsulation/" class="md-nav__link">
         
   
   
@@ -2033,7 +2164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Function_Signature/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Function_Signature/" class="md-nav__link">
         
   
   
@@ -2056,7 +2187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Game_Jam/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Game_Jam/" class="md-nav__link">
         
   
   
@@ -2079,7 +2210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Inheritance/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Inheritance/" class="md-nav__link">
         
   
   
@@ -2102,7 +2233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Interface/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Interface/" class="md-nav__link">
         
   
   
@@ -2125,7 +2256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Method_member_function/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Method_member_function/" class="md-nav__link">
         
   
   
@@ -2148,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Node/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Node/" class="md-nav__link">
         
   
   
@@ -2171,7 +2302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Object/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Object/" class="md-nav__link">
         
   
   
@@ -2194,7 +2325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Object_Oriented_Programming/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Object_Oriented_Programming/" class="md-nav__link">
         
   
   
@@ -2217,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Private_Public_Properties/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Private_Public_Properties/" class="md-nav__link">
         
   
   
@@ -2240,7 +2371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Property_member_variable/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Property_member_variable/" class="md-nav__link">
         
   
   
@@ -2263,7 +2394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Refactoring/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Refactoring/" class="md-nav__link">
         
   
   
@@ -2286,7 +2417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Shader/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Shader/" class="md-nav__link">
         
   
   
@@ -2309,7 +2440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Static_Function/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Static_Function/" class="md-nav__link">
         
   
   
@@ -2332,7 +2463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GDQUEST/Glossary/Ternary_Expression/" class="md-nav__link">
+      <a href="../../../../GDQUEST/Glossary/Ternary_Expression/" class="md-nav__link">
         
   
   
@@ -2367,10 +2498,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -2387,11 +2516,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -2407,7 +2536,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Godot4 개발
@@ -2421,7 +2550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/" class="md-nav__link">
         
   
   
@@ -2441,10 +2570,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -2460,11 +2587,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -2480,7 +2607,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             2D
@@ -2491,30 +2618,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Vector2 move toward 이해
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/Vector2_move_toward_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
         
   
   
@@ -2525,87 +2632,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      함수의 핵심의미
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      코드 다시 보기
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#move_toward" class="md-nav__link">
-    <span class="md-ellipsis">
-      만약 move_toward()가 없다면?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#move_toward_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      move_toward()를 쓰면
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      실제 수치로 예를 들어볼게요
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#desired_velocity" class="md-nav__link">
-    <span class="md-ellipsis">
-      “desired_velocity는 항상 같잖아?” — 핵심 오해 풀기
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      요약
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2618,7 +2644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get_axis_vs_get_vector/" class="md-nav__link">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/get_axis_vs_get_vector/" class="md-nav__link">
         
   
   
@@ -2641,7 +2667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
+      <a href="../../../../Godot4_%EA%B0%9C%EB%B0%9C/2D/move_and_slide_%EC%9D%B4%ED%95%B4/" class="md-nav__link">
         
   
   
@@ -2802,7 +2828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/bunk_room/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/bunk_room/" class="md-nav__link">
         
   
   
@@ -2825,7 +2851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/comissary/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/comissary/" class="md-nav__link">
         
   
   
@@ -2848,7 +2874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/darkroom/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/darkroom/" class="md-nav__link">
         
   
   
@@ -2871,7 +2897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/drawing_room/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/drawing_room/" class="md-nav__link">
         
   
   
@@ -2894,7 +2920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/entrance/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/entrance/" class="md-nav__link">
         
   
   
@@ -2917,7 +2943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/garage/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/garage/" class="md-nav__link">
         
   
   
@@ -2940,7 +2966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/guest_room/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/guest_room/" class="md-nav__link">
         
   
   
@@ -2963,7 +2989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/laboratory/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/laboratory/" class="md-nav__link">
         
   
   
@@ -2986,7 +3012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/library/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/library/" class="md-nav__link">
         
   
   
@@ -3009,7 +3035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/mail_room/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/mail_room/" class="md-nav__link">
         
   
   
@@ -3032,7 +3058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/nook/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/nook/" class="md-nav__link">
         
   
   
@@ -3055,7 +3081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/observatory/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/observatory/" class="md-nav__link">
         
   
   
@@ -3078,7 +3104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/pantry/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/pantry/" class="md-nav__link">
         
   
   
@@ -3101,7 +3127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/parlor%28%EC%9D%91%EC%A0%91%EC%8B%A4%29/" class="md-nav__link">
         
   
   
@@ -3124,7 +3150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/security/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/security/" class="md-nav__link">
         
   
   
@@ -3147,7 +3173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/west_wing/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/west_wing/" class="md-nav__link">
         
   
   
@@ -3170,7 +3196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%EA%B8%B0%ED%83%80/Blue_Prince/workshop/" class="md-nav__link">
+      <a href="../../../../%EA%B8%B0%ED%83%80/Blue_Prince/workshop/" class="md-nav__link">
         
   
   
@@ -3226,65 +3252,89 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#hypothesis" class="md-nav__link">
     <span class="md-ellipsis">
-      함수의 핵심의미
+      Hypothesis 학습 커리큘럼 (단계별)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hypothesis 학습 커리큘럼 (단계별)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      1단계. Hypothesis의 기본 철학 이해
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      코드 다시 보기
+      2단계. 기본 문법과 전략(strategies) 익히기
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#move_toward" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-property" class="md-nav__link">
     <span class="md-ellipsis">
-      만약 move_toward()가 없다면?
+      3단계. Property(성질) 설계 훈련
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#move_toward_1" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#4-shrinking" class="md-nav__link">
     <span class="md-ellipsis">
-      move_toward()를 쓰면
+      4단계. 실패 케이스 탐색 &amp; shrinking 이해
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      실제 수치로 예를 들어볼게요
+      5단계. 전략 조합 (고급 전략 디자인)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#desired_velocity" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#6-pytest" class="md-nav__link">
     <span class="md-ellipsis">
-      “desired_velocity는 항상 같잖아?” — 핵심 오해 풀기
+      6단계. pytest와 통합 사용법
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
-      요약
+      7단계. 고급 주제 (실무 활용)
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8단계. 학습 마무리 및 실전 프로젝트
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3304,7 +3354,7 @@
 
 
   
-    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/Godot4_개발/2D/Vector2_move_toward_이해.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hj3415/hj3415.github.io/edit/main/docs/Full-stack_개발/Backend/Hypothesis/L0_Hypothesis_커리큘럼.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3313,178 +3363,378 @@
     
       
     
-    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/Godot4_개발/2D/Vector2_move_toward_이해.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/hj3415/hj3415.github.io/raw/main/docs/Full-stack_개발/Backend/Hypothesis/L0_Hypothesis_커리큘럼.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Vector2 move toward 이해</h1>
+  <h1>L0 Hypothesis 커리큘럼</h1>
 
-<h3 id="_1">함수의 핵심의미</h3>
-<div class="highlight"><pre><span></span><code><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">move_toward</span><span class="p">(</span><span class="n">desired_velocity</span><span class="p">,</span><span class="w"> </span><span class="n">acceleration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
-</code></pre></div>
-<p>현재 속도(velocity)를 목표 속도(desired_velocity) 쪽으로,
-한 프레임 동안 최대 (acceleration × delta) 만큼만 변화시킨 새로운 속도”를 반환한다.</p>
+<p>Hypothesis는 단순한 랜덤 테스트 도구가 아니라, 
+<strong>함수의 “성질(property)”을 자동 검증하는 테스트 엔진</strong>이기 때문에
+개념적으로는 조금 다르게 접근해야 합니다.</p>
+<p>아래는 “pytest → hypothesis 심화”로 이어지는 <strong>완성형 커리큘럼</strong>이에요.</p>
 <hr />
-<h3 id="_2">코드 다시 보기</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">desired_velocity</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">max_speed</span>
-<span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">move_toward</span><span class="p">(</span><span class="n">desired_velocity</span><span class="p">,</span><span class="w"> </span><span class="n">acceleration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
-</code></pre></div>
-<ul>
-<li>
-<p>direction = 입력 방향 (Vector2(1,0) 또는 (0,0) 등)</p>
-</li>
-<li>
-<p>max_speed = 최고 속도 (예: 200)</p>
-</li>
-<li>
-<p>desired_velocity = 목표 속도</p>
-<p>→ 입력이 있을 땐 (1,0) * 200 = (200,0)</p>
-<p>→ 입력이 없을 땐 (0,0)</p>
-</li>
-<li>
-<p>acceleration = 한 프레임에 속도를 얼마나 바꿀 수 있는가</p>
-<p>(즉, “가속도”)</p>
-</li>
-</ul>
-<blockquote>
-<p>desired_velocity(목표 속도)는 매 프레임 같을 수 있지만,</p>
-<p>실제 속도(velocity)가 <strong>그 목표에 “즉시 도달하지 않고 천천히 가까워지기 때문</strong>에</p>
-<p>결과적으로 “부드럽게 가속 또는 감속되는 것처럼” 보입니다.</p>
-</blockquote>
-<hr />
-<h3 id="move_toward">만약 move_toward()가 없다면?</h3>
-<div class="highlight"><pre><span></span><code><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">desired_velocity</span>
-</code></pre></div>
-<p>→ 키를 누르는 순간 velocity가 (0 → 200)으로 즉시 바뀜.</p>
-<p>→ 시각적으로 “뚝” 하고 움직이기 시작.</p>
-<p>→ 현실감 ZERO.</p>
-<hr />
-<h3 id="move_toward_1">move_toward()를 쓰면</h3>
-<div class="highlight"><pre><span></span><code><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">move_toward</span><span class="p">(</span><span class="n">desired_velocity</span><span class="p">,</span><span class="w"> </span><span class="n">acceleration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
-</code></pre></div>
-<blockquote>
-<p>현재 속도(velocity)를 목표 속도(desired_velocity) 쪽으로 한 프레임에 <strong>최대 acceleration * delta 거리만큼</strong>만 움직인다.</p>
-</blockquote>
-<p>즉, 현재 속도와 목표 속도 사이의 “간격”을 한 번에 다 채우지 않고 조금씩만 좁혀가는 거예요.</p>
-<hr />
-<h3 id="_3">실제 수치로 예를 들어볼게요</h3>
-<p><strong>전제</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">max_speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span>
-<span class="n">acceleration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">800</span>
-<span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="p">(</span><span class="err">즉</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="n">FPS</span><span class="p">)</span>
-</code></pre></div>
-<p>따라서</p>
-<div class="highlight"><pre><span></span><code>acceleration * delta = 800 * 1/60 ≈ 13.33
-</code></pre></div>
-<p>즉, 한 프레임에 최대 13.33만큼만 속도가 바뀔 수 있습니다.</p>
-<p><strong>프레임별 변화</strong></p>
+<h2 id="hypothesis">Hypothesis 학습 커리큘럼 (단계별)</h2>
+<h3 id="1-hypothesis">1단계. Hypothesis의 기본 철학 이해</h3>
+<p><strong>목표: “Property-Based Testing” 개념을 직관적으로 이해</strong></p>
 <table>
 <thead>
 <tr>
-<th><strong>프레임</strong></th>
-<th><strong>velocity</strong></th>
-<th><strong>desired_velocity</strong></th>
-<th><strong>변화량</strong></th>
+<th><strong>주제</strong></th>
 <th><strong>설명</strong></th>
+<th><strong>실습 예제</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>0</td>
-<td>0</td>
-<td>200</td>
-<td>+13.3</td>
-<td>속도 증가 시작</td>
+<td>Property-Based Testing이란?</td>
+<td>입력값을 수동으로 주는 대신, 프로그램이 자동으로 수백 개의 입력을 시도하여 <strong>항상 참이어야 하는 성질(property)</strong> 을 검증하는 테스트 방식</td>
+<td>a + b == b + a, sorted(sorted(xs)) == sorted(xs)</td>
 </tr>
 <tr>
-<td>1</td>
-<td>13.3</td>
-<td>200</td>
-<td>+13.3</td>
-<td>조금 더 빨라짐</td>
+<td>Hypothesis의 동작 원리</td>
+<td>입력 생성 → 테스트 실행 → 실패 탐지 → 최소 입력 축소(shrinking)</td>
+<td>리스트 정렬 함수 테스트</td>
 </tr>
 <tr>
-<td>2</td>
-<td>26.6</td>
-<td>200</td>
-<td>+13.3</td>
-<td>점점 더 빨라짐</td>
-</tr>
-<tr>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-<tr>
-<td>15</td>
-<td>200</td>
-<td>200</td>
-<td>0</td>
-<td>목표 속도 도달</td>
+<td>Hypothesis vs pytest</td>
+<td>pytest는 “케이스 기반”, hypothesis는 “성질 기반”</td>
+<td>비교표 실습</td>
 </tr>
 </tbody>
 </table>
-<p>→ 키를 누르는 동안, 속도가 0 → 13 → 26 → 40 → ... → 200으로 점점 증가</p>
-<p>→ 즉, “가속”이 느껴짐.</p>
-<p>→ 매 프레임 변화량이 일정하니까 <strong>선형(부드럽고 일정한 가속)</strong> 으로 증가.</p>
+<p><strong>핵심 이해 포인트</strong></p>
+<blockquote>
+<p>“예시를 검사하는 게 아니라, <strong>함수의 성질을 증명</strong>한다.”</p>
+</blockquote>
 <hr />
-<h3 id="desired_velocity">“desired_velocity는 항상 같잖아?” — 핵심 오해 풀기</h3>
-<p>정확해요, desired_velocity 자체는 <strong>같을 수도 있습니다.</strong></p>
-<p>하지만 velocity가 아직 그 값에 <strong>도달하지 않았기 때문에</strong>, move_toward()는 매 프레임 이렇게 계산합니다</p>
-<div class="highlight"><pre><span></span><code><span class="n">velocity_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocity_current</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">clamp</span><span class="p">(</span><span class="n">desired_velocity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">velocity_current</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="n">delta</span><span class="p">)</span>
-</code></pre></div>
-<p>즉,</p>
-<ul>
-<li>
-<p>목표가 변하지 않아도 현재값(velocity)이 계속 변하므로,</p>
-</li>
-<li>
-<p>두 값의 차이(desired_velocity - velocity)가 줄어듭니다.</p>
-</li>
-<li>
-<p>이 차이가 줄어드는 과정이 바로 “가속 곡선”이에요.</p>
-</li>
-</ul>
-<p>그래서 desired_velocity는 일정해도</p>
-<p>velocity가 천천히 가까워지면서 <strong>부드러운 변화가 생기는 것</strong>입니다.</p>
-<hr />
-<h3 id="_4">요약</h3>
+<h3 id="2-strategies">2단계. 기본 문법과 전략(strategies) 익히기</h3>
+<p><strong>목표: Hypothesis의 입력 생성기(Strategy) 개념 이해</strong></p>
 <table>
 <thead>
 <tr>
-<th><strong>항목</strong></th>
-<th><strong>내용</strong></th>
+<th><strong>주제</strong></th>
+<th><strong>설명</strong></th>
+<th><strong>실습 예제</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>함수 역할</strong></td>
-<td>현재 속도를 목표 속도로 천천히 바꿔줌</td>
+<td>@given()</td>
+<td>테스트 함수에 자동으로 입력 주입</td>
+<td>@given(st.integers())</td>
 </tr>
 <tr>
-<td><strong>목표가 고정이어도</strong></td>
-<td>현재 속도가 매 프레임 변하므로 계속 변화 발생</td>
+<td>strategies (st 모듈)</td>
+<td>데이터 생성 규칙 정의</td>
+<td>st.text(), st.integers(), st.lists()</td>
 </tr>
 <tr>
-<td><strong>결과</strong></td>
-<td>값이 점진적으로 변하므로 시각적으로 부드럽게 보임</td>
+<td>복합 전략</td>
+<td>중첩 구조 만들기</td>
+<td>st.tuples(st.integers(), st.text())</td>
 </tr>
 <tr>
-<td><strong>감속 원리</strong></td>
-<td>목표가 0일 때 천천히 0으로 이동</td>
+<td>데이터 제약조건</td>
+<td>min_size, max_value, allow_nan 등</td>
+<td>st.lists(st.integers(), min_size=1)</td>
 </tr>
 <tr>
-<td><strong>가속 원리</strong></td>
-<td>목표가 max_speed일 때 천천히 그쪽으로 이동</td>
+<td>예제 출력 확인</td>
+<td>.example()</td>
+<td>st.text().example()</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 이해 포인트</strong></p>
+<blockquote>
+<p>Hypothesis는 “랜덤값 생성기”가 아니라,
+“데이터 구조를 설명하는 DSL(Domain-Specific Language)” 이다.</p>
+</blockquote>
+<hr />
+<h3 id="3-property">3단계. Property(성질) 설계 훈련</h3>
+<p><strong>목표: “어떤 것이 항상 참이어야 하는가”를 추상화하는 능력 기르기</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>주제</strong></th>
+<th><strong>설명</strong></th>
+<th><strong>실습 예제</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교환법칙 / 결합법칙</td>
+<td>수학적 성질로 접근</td>
+<td>assert add(a,b) == add(b,a)</td>
 </tr>
 <tr>
-<td><strong>핵심 공식</strong></td>
-<td>velocity_next = velocity + clamp(desired_velocity - velocity, -delta, delta)</td>
+<td>역전의 역전은 원래로</td>
+<td>문자열, 리스트</td>
+<td>s[::-1][::-1] == s</td>
+</tr>
+<tr>
+<td>정렬의 멱등성</td>
+<td>정렬 두 번 == 한 번</td>
+<td>sorted(sorted(xs)) == sorted(xs)</td>
+</tr>
+<tr>
+<td>구조적 property</td>
+<td>JSON 직렬화</td>
+<td>json.loads(json.dumps(x)) == x</td>
+</tr>
+<tr>
+<td>round-trip property</td>
+<td>변환 후 복원은 원본과 같아야 함</td>
+<td>encode/decode, dump/load</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 이해 포인트</strong></p>
+<blockquote>
+<p>테스트 대상 함수의 <strong>불변 조건(invariant)</strong> 을 찾아내는 연습을 해야 함.</p>
+</blockquote>
+<hr />
+<h3 id="4-shrinking">4단계. 실패 케이스 탐색 &amp; shrinking 이해</h3>
+<p><strong>목표: Hypothesis가 버그를 “자동으로 좁혀가는” 원리 익히기</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>주제</strong></th>
+<th><strong>설명</strong></th>
+<th><strong>실습 예제</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실패 예제 재현</td>
+<td>실패 시 자동 저장된 example 재사용</td>
+<td>pytest --hypothesis-show-statistics</td>
+</tr>
+<tr>
+<td>Shrinking 과정</td>
+<td>가장 단순한 예제 자동 탐색</td>
+<td>리스트나 문자열의 최소화 확인</td>
+</tr>
+<tr>
+<td>임계값 찾기</td>
+<td>특정 범위에서 깨지는 케이스 탐색</td>
+<td>나눗셈 함수에서 b=0 찾기</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 이해 포인트</strong></p>
+<blockquote>
+<p>Hypothesis는 “랜덤”이 아니라 “탐색적”이다.
+실패를 발견하면 그걸 가장 단순한 입력으로 압축한다.</p>
+</blockquote>
+<hr />
+<h3 id="5">5단계. 전략 조합 (고급 전략 디자인)</h3>
+<p><strong>목표: JSON, Dict, Model 같은 복합 구조 자동 생성 익히기</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>주제</strong></th>
+<th><strong>설명</strong></th>
+<th><strong>실습 예제</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>st.fixed_dictionaries()</td>
+<td>JSON 구조 자동 생성</td>
+<td>{“id”: int, “name”: str}</td>
+</tr>
+<tr>
+<td>st.builds()</td>
+<td>dataclass / Pydantic 모델 자동 생성</td>
+<td>st.builds(User, id=st.integers(), name=st.text())</td>
+</tr>
+<tr>
+<td>st.from_type()</td>
+<td>타입 힌트 기반 데이터 생성</td>
+<td>@given(st.from_type(UserModel))</td>
+</tr>
+<tr>
+<td>st.sampled_from()</td>
+<td>샘플 기반 랜덤 선택</td>
+<td>st.sampled_from(["A", "B", "C"])</td>
+</tr>
+<tr>
+<td>st.recursive()</td>
+<td>중첩 구조 (트리, JSON 등)</td>
+<td>st.recursive(st.none(), lambda children: st.lists(children))</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 이해 포인트</strong></p>
+<blockquote>
+<p>Hypothesis는 타입 정보나 스키마로부터 <strong>데이터 생성기를 자동 합성</strong>할 수 있다.</p>
+</blockquote>
+<hr />
+<h3 id="6-pytest">6단계. pytest와 통합 사용법</h3>
+<p><strong>목표: pytest와 함께 효율적인 워크플로우 확립</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>주제</strong></th>
+<th><strong>설명</strong></th>
+<th><strong>실습 예제</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pytest와 함께 실행</td>
+<td>그냥 pytest 실행 시 자동 인식</td>
+<td>pytest tests/</td>
+</tr>
+<tr>
+<td>Hypothesis 설정</td>
+<td>.hypothesis 디렉토리, 캐시, 시드(seed) 관리</td>
+<td>--hypothesis-seed=1234</td>
+</tr>
+<tr>
+<td>예외 검증</td>
+<td>@given(...) + pytest.raises()</td>
+<td>잘못된 입력 감지</td>
+</tr>
+<tr>
+<td>Fixtures와 함께 사용</td>
+<td>pytest fixture + hypothesis 전략 조합</td>
+<td>@given(data=st.data())</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 이해 포인트</strong></p>
+<blockquote>
+<p>pytest는 실행 플랫폼, hypothesis는 입력 엔진이다.
+두 개를 결합하면 “자동화된 테스트 생성기”가 된다.</p>
+</blockquote>
+<hr />
+<h3 id="7">7단계. 고급 주제 (실무 활용)</h3>
+<p><strong>목표: 실제 서비스 코드에서 property testing 적용</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>주제</strong></th>
+<th><strong>설명</strong></th>
+<th><strong>실습 예제</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API 검증</td>
+<td>JSON request/response 구조 property 테스트</td>
+<td>FastAPI 엔드포인트 테스트</td>
+</tr>
+<tr>
+<td>DB 모델 round-trip</td>
+<td>ORM save/load 일관성 검증</td>
+<td>SQLAlchemy / Beanie round-trip</td>
+</tr>
+<tr>
+<td>파서 검증</td>
+<td>parse → serialize → parse property</td>
+<td>CSV/JSON 변환기</td>
+</tr>
+<tr>
+<td>수학/통계 검증</td>
+<td>수치 안정성, overflow 방지</td>
+<td>NaN, inf 처리 검증</td>
+</tr>
+<tr>
+<td>Hypothesis 플러그인</td>
+<td>hypothesis-jsonschema, hypothesis-graphql</td>
+<td>JSON 스키마 기반 자동 생성</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 이해 포인트</strong></p>
+<blockquote>
+<p>Hypothesis는 단순 테스트를 넘어 <strong>시스템적 검증 도구</strong>로 확장할 수 있다.</p>
+</blockquote>
+<hr />
+<h3 id="8">8단계. 학습 마무리 및 실전 프로젝트</h3>
+<p><strong>목표: 직접 Hypothesis 기반 테스트 스위트를 만들어보기</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>주제</strong></th>
+<th><strong>실습</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎯 작은 프로젝트 하나 테스트</td>
+<td>예: 수식 계산기, 문자열 변환기, 정렬 알고리즘</td>
+</tr>
+<tr>
+<td>🎯 API 요청 검증 자동화</td>
+<td>FastAPI 엔드포인트의 입력/출력 property 테스트</td>
+</tr>
+<tr>
+<td>🎯 JSON 변환 property test</td>
+<td>json.loads(json.dumps(data)) == data</td>
+</tr>
+<tr>
+<td>🎯 랜덤 구조체 생성기 만들기</td>
+<td>example 기반 랜덤 데이터 생성기 (.example() 사용)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>학습 순서 요약 (핵심 흐름)</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>단계</strong></th>
+<th><strong>주제</strong></th>
+<th><strong>키워드</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣</td>
+<td>철학 이해</td>
+<td>Property-Based Testing</td>
+</tr>
+<tr>
+<td>2️⃣</td>
+<td>기본 문법</td>
+<td>@given, strategies</td>
+</tr>
+<tr>
+<td>3️⃣</td>
+<td>성질 설계</td>
+<td>Invariant / Round-trip</td>
+</tr>
+<tr>
+<td>4️⃣</td>
+<td>Shrinking 이해</td>
+<td>최소 실패 예제</td>
+</tr>
+<tr>
+<td>5️⃣</td>
+<td>복합 구조 생성</td>
+<td>fixed_dictionaries, builds</td>
+</tr>
+<tr>
+<td>6️⃣</td>
+<td>pytest 통합</td>
+<td>fixture, config</td>
+</tr>
+<tr>
+<td>7️⃣</td>
+<td>실무 적용</td>
+<td>API, JSON, DB roundtrip</td>
+</tr>
+<tr>
+<td>8️⃣</td>
+<td>프로젝트 실습</td>
+<td>자동 검증 스위트 완성</td>
 </tr>
 </tbody>
 </table>
@@ -3536,10 +3786,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "header.autohide", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
