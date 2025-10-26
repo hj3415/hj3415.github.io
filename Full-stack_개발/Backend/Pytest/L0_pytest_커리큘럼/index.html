@@ -12,7 +12,7 @@
         <link rel="prev" href="../../Pydantic/L4_model_dump%EC%9D%98_%EC%A3%BC%EC%9A%94%EC%98%B5%EC%85%98_%EA%B8%B0%EB%B3%B8%EA%B0%92/">
       
       
-        <link rel="next" href="../../../Frontend/L0_vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/">
+        <link rel="next" href="../L1_monkeypatch_%EC%99%80_mock_patch%EB%A5%BC_%EA%B0%81%EA%B0%81_%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94_%EA%B2%BD%EC%9A%B0/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -626,6 +626,8 @@
       
         
       
+        
+      
     
     
     
@@ -823,6 +825,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L1_monkeypatch_%EC%99%80_mock_patch%EB%A5%BC_%EA%B0%81%EA%B0%81_%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94_%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L1 monkeypatch 와 mock patch를 각각 써야하는 경우
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3340,7 +3365,7 @@
 </ul>
 <p><strong>예시 pytest.ini</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">[pytest]</span>
-<span class="na">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-q</span>
+<span class="na">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-q --cov=app --cov-report=term-missing</span>
 <span class="na">testpaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tests</span>
 <span class="na">python_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">test_*.py *_test.py</span>
 <span class="na">filterwarnings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ignore::DeprecationWarning</span>
