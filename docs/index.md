@@ -15,6 +15,8 @@
         - [Pydantic 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
         - [Pytest 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pytest/L0_pytest_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
         - [Hypothesis 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Hypothesis/L0_Hypothesis_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
+        - [API직공 httpx 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Crawling/L0_API%EC%A7%81%EA%B3%B5_httpx_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
+        - [Playwright 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Crawling/L1_Playwright_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
     - Frontend
         - [Vue3 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/L0_vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
     - System Architecture
