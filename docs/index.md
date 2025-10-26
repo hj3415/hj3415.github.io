@@ -9,9 +9,11 @@
         - [M9 Top Down Movement](GDQUEST/2D/M9_Top_Down_Movement/L1_Top_Down_Movement_Module_Overview.md)
 - Godot4 개발
     - [Godot4 커리큘럼](Godot4_%EA%B0%9C%EB%B0%9C/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
-- Full Stack 개발
+- Full Stack 개발 
     - [Vue3 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Frontend/L0_vue3_4%EC%A3%BC_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
     - [FastAPI 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L0_FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
-    - [pydantic 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
+    - [Pydantic 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
+    - [Pytest 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pytest/L0_pytest_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
+    - [시스템아키텍쳐 기본개념](Full-stack_%EA%B0%9C%EB%B0%9C/System_Architecture/L0_%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90.md)
 - 기타
     - Blue Prince
