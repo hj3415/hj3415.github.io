@@ -14,6 +14,7 @@
     - [FastAPI 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/FastAPI/L0_FastAPI_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
     - [Pydantic 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pydantic/L0_pydantic_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
     - [Pytest 커리큘럼](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Pytest/L0_pytest_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
+    - [Hypothesis 커리큘럼.md](Full-stack_%EA%B0%9C%EB%B0%9C/Backend/Hypothesis/L0_Hypothesis_%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.md)
     - [시스템아키텍쳐 기본개념](Full-stack_%EA%B0%9C%EB%B0%9C/System_Architecture/L0_%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90.md)
 - 기타
     - Blue Prince
