@@ -161,7 +161,7 @@ API 응답(JSON 또는 HTML fragment)을 가공하는 기술 익히기
 
 - JSON 파싱 (.json())
     
-- HTML fragment 처리 (parsel.Selector, BeautifulSoup)
+- HTML fragment 처리 (parsel.Selector, ,selectolax, BeautifulSoup)
     
 - pandas로 데이터프레임 변환
     
