@@ -24,10 +24,11 @@ unittest에서 pytest로 넘어오실 때 바로 현업에 쓰기 쉬운 **8단�
 
 ```ini
 [pytest]
-addopts = -q
+addopts = -q --cov=app --cov-report=term-missing
 testpaths = tests
 python_files = test_*.py *_test.py
 filterwarnings = ignore::DeprecationWarning
+
 ```
 
 ---
