@@ -12,7 +12,9 @@ HTML 문서를 정확하게 파싱하고, 필요한 데이터를 CSS/XPath로 �
 
 ---
 
-### 전체 커리큘럼: BeautifulSoup + lxml
+### 전체 커리큘럼 
+
+**BeautifulSoup + lxml**
 
 |단계|주제|핵심 목표|
 |---|---|---|
@@ -29,19 +31,22 @@ HTML 문서를 정확하게 파싱하고, 필요한 데이터를 CSS/XPath로 �
 
 #### 1. HTML 파싱 기초
 
+
 **공부 목표:**
 
 BeautifulSoup이나 lxml이 하는 일이 *“HTML 문자열을 트리 구조로 바꾸는 것”*임을 이해하기.
 
+
 **학습 내용**
 
-- HTML 문서 구조 (\<html\>, \<head\>, \<body\>, \<div\>, \<a\>, \<table\>)
+- HTML 문서 구조 (<html\>, <head\>, <body\>, <div\>, <a\>, <table\>)
 
 - 트리 구조(DOM)의 개념
 
 - 태그, 속성(attribute), 텍스트 노드의 구분
 
 - HTML 파서의 역할 (텍스트 → 객체 트리)
+
 
 **실습 예제**
 
@@ -54,6 +59,7 @@ soup = BeautifulSoup(html, "html.parser")
 
 print(soup.h1.text)     # Title
 ```
+
 ---
 
 #### 2. BeautifulSoup 기본 문법
