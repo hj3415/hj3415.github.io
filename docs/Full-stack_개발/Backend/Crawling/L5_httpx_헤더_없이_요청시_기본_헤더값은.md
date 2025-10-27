@@ -32,9 +32,8 @@ User-Agent: python-httpx/0.27.0
 Connection: keep-alive
 ```
 
-|   |   |   |
-|---|---|---|
 |헤더|설명|기본값|
+|---|---|---|
 |Host|요청 대상 서버 이름|URL에서 자동 추출|
 |Accept|서버에 “어떤 형식의 응답을 원함”|*/* (모두 허용)|
 |Accept-Encoding|압축 방식 지원|gzip, deflate, br|
@@ -49,9 +48,8 @@ Connection: keep-alive
 
 ### 2. 하지만 다음 헤더들은 “자동 추가되지 않음”
 
-|   |   |   |
-|---|---|---|
 |헤더|자동 설정 여부|의미|
+|---|---|---|
 |Authorization|❌|인증 토큰 (JWT, API 키 등)|
 |Content-Type|❌ (단, json=일 때만 자동)|전송 데이터 형식|
 |Accept|✅ (기본값: */*)|응답 형식 요청|
@@ -90,9 +88,8 @@ User-Agent: python-httpx/0.27.0
 
 ### 3. 헤더를 생략하면 생기는 실제 문제들
 
-|   |   |   |
-|---|---|---|
 |상황|생략된 헤더|결과|
+|---|---|---|
 |REST API 호출 시|Authorization|401 Unauthorized (인증 실패)|
 |JSON 전송 시|Content-Type|서버가 Body를 못 읽어서 400 Bad Request|
 |특정 API 요청 시|Accept|서버가 XML 등 예상치 못한 형식 반환|
@@ -106,9 +103,8 @@ User-Agent: python-httpx/0.27.0
 
 ### 4. 결론 요약
 
-|   |   |
-|---|---|
 |항목|내용|
+|---|---|
 |기본 헤더|Host, Accept, Accept-Encoding, User-Agent, Connection|
 |자동 추가되는 경우|json= 또는 data= 사용 시 Content-Type 자동|
 |직접 지정해야 하는 경우|인증(Authorization), 언어(Accept-Language), 쿠키(Cookie) 등|
