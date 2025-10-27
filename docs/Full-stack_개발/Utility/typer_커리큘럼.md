@@ -1,10 +1,5 @@
-좋아요 👏
-
-지금 “Typer로 CLI를 만들겠다”는 건,
-
+“Typer로 CLI를 만들겠다”는 건,
 **단순한 스크립트 수준을 넘어서 개발자용 도구(collector, batch, 관리 툴)** 로 진입한다는 뜻이에요.
-
-  
 
 그래서 아래 커리큘럼은 “**기초 → 실전 → 아키텍처화 → 배포**” 순으로 구성했어요.
 
@@ -12,19 +7,13 @@ FastAPI를 이미 다루고 계시니, Typer는 금방 익히실 겁니다.
 
 ---
 
-# **🧭 Typer CLI 완전 커리큘럼 (개발자용 실무 중심)**
+### Typer CLI 완전 커리큘럼 (개발자용 실무 중심)
 
 ---
 
-## **1️⃣** 
-
-## **CLI 기본 개념과 표준 도구 이해**
-
-  
+#### 1. CLI 기본 개념과 표준 도구 이해
 
 > 목표: “CLI란 무엇이며 argparse, click, typer의 차이를 직관적으로 이해하기”
-
-  
 
 **학습 주제**
 
@@ -39,9 +28,6 @@ FastAPI를 이미 다루고 계시니, Typer는 금방 익히실 겁니다.
     → Typer = “타입힌트 기반 Click”
     
 - Typer의 설계 철학 (FastAPI 철학과 동일함: 선언적 + 자동 문서화)
-    
-
-  
 
 **실습**
 
@@ -52,15 +38,9 @@ python cli.py calc 10 5 --op add
 
 ---
 
-## **2️⃣** 
-
-## **Typer 기초 문법**
-
-  
+#### 2. Typer 기초 문법
 
 > 목표: typer의 명령, 옵션, 인자, 도움말 구조 익히기
-
-  
 
 **학습 주제**
 
@@ -79,9 +59,6 @@ python cli.py calc 10 5 --op add
 - typer.echo() vs print() 차이 (I/O 일관성)
     
 - 명령 함수에서 타입힌트를 통한 자동 변환 (int, float, bool, datetime)
-    
-
-  
 
 **실습**
 
@@ -93,15 +70,9 @@ def hello(name: str = typer.Argument(..., help="이름을 입력하세요")):
 
 ---
 
-## **3️⃣** 
-
-## **서브 커맨드 구조**
-
-  
+#### 3. 서브 커맨드 구조
 
 > 목표: git처럼 main subcommand 형태 CLI를 구성하기
-
-  
 
 **학습 주제**
 
@@ -110,7 +81,6 @@ def hello(name: str = typer.Argument(..., help="이름을 입력하세요")):
 - app.add_typer()로 하위 CLI 그룹 연결
     
 - 프로젝트 구조화:
-    
 
 ```
 mycli/
@@ -122,12 +92,7 @@ mycli/
     report.py
 ```
 
--   
-    
 - CLI를 “플러그인 구조”로 관리하기
-    
-
-  
 
 **실습**
 
@@ -138,15 +103,9 @@ python -m mycli clean old --days 10
 
 ---
 
-## **4️⃣** 
-
-## **고급 옵션 처리**
-
-  
+#### 4. 고급 옵션 처리
 
 > 목표: CLI 옵션을 유연하게 다루기
-
-  
 
 **학습 주제**
 
@@ -163,9 +122,6 @@ python -m mycli clean old --days 10
 - Config 파일(.env, .yaml) 읽어오는 패턴
     
 - 상호 의존 옵션 (예: –dry-run vs –confirm)
-    
-
-  
 
 **실습**
 
@@ -175,15 +131,9 @@ python app.py run --mode dev --env staging
 
 ---
 
-## **5️⃣** 
-
-## **입출력 / 예외 처리 / 로깅 통합**
-
-  
+#### 5. 입출력 / 예외 처리 / 로깅 통합
 
 > 목표: Typer CLI에 loguru, rich 등 실무 로깅·출력 통합
-
-  
 
 **학습 주제**
 
@@ -196,9 +146,6 @@ python app.py run --mode dev --env staging
 - rich.print() or rich.console.Console로 컬러 출력
     
 - 프로세스 종료 시 코드 반환값 (sys.exit)
-    
-
-  
 
 **실습**
 
@@ -212,15 +159,9 @@ except ValueError:
 
 ---
 
-## **6️⃣** 
-
-## **외부 모듈 / 서비스 연동**
-
-  
+#### 6. 외부 모듈 / 서비스 연동
 
 > 목표: CLI 명령이 실제 서비스 로직(DB, API 등)과 연동되도록 구성
-
-  
 
 **학습 주제**
 
@@ -233,9 +174,6 @@ except ValueError:
 - 외부 API 호출 (httpx, tenacity)
     
 - CLI와 FastAPI 코드 재사용 (공용 services/ 디렉토리)
-    
-
-  
 
 **실습**
 
@@ -246,15 +184,9 @@ python cli.py send-report --email admin@example.com
 
 ---
 
-## **7️⃣** 
-
-## **테스트와 유지보수**
-
-  
+#### 7. 테스트와 유지보수
 
 > 목표: pytest로 CLI를 자동 테스트하고 유지보수성 확보하기
-
-  
 
 **학습 주제**
 
@@ -267,13 +199,10 @@ python cli.py send-report --email admin@example.com
 - CLI 출력 캡처(capsys)
     
 - pre-commit 훅으로 CLI lint/test 자동화
-    
-
-  
 
 **실습**
 
-```
+```python
 from typer.testing import CliRunner
 from app import app
 
@@ -287,15 +216,9 @@ def test_hello():
 
 ---
 
-## **8️⃣** 
-
-## **배포 및 실행 패키징**
-
-  
+#### 8. 배포 및 실행 패키징
 
 > 목표: CLI를 설치 가능한 명령어로 배포하기
-
-  
 
 **학습 주제**
 
@@ -306,9 +229,6 @@ def test_hello():
 - PyPI 배포 시 typer CLI 자동 등록
     
 - --install-completion / --show-completion 으로 셸 자동완성 지원
-    
-
-  
 
 **실습**
 
@@ -324,15 +244,9 @@ $ collector clean --days 7
 
 ---
 
-## **9️⃣** 
-
-## **고급 확장**
-
-  
+#### 9. 고급 확장
 
 > 목표: 유지보수 가능한 CLI 프레임워크로 발전
-
-  
 
 **학습 주제**
 
@@ -343,17 +257,12 @@ $ collector clean --days 7
 - Typer + Loguru + Watchdog + Schedule 조합으로 자동화 CLI
     
 - 플러그인 아키텍처 (importlib.metadata.entry_points 활용)
-    
 
 ---
 
-## **🎯 10️⃣ 최종 프로젝트 실습**
-
-  
+#### 10. 최종 프로젝트 실습
 
 > “Collector CLI” 완성 프로젝트
-
-  
 
 **프로젝트 구조 예시**
 
@@ -385,7 +294,7 @@ collector status
 
 ---
 
-# **✅ 최종 로드맵 정리**
+**최종 로드맵 정리**
 
 |**단계**|**학습 주제**|**키워드**|
 |---|---|---|
@@ -400,23 +309,3 @@ collector status
 |9|확장|rich, schedule, watchdog 연동|
 |10|실전 프로젝트|Collector CLI 완성|
 
----
-
-💡 **한 줄 요약**
-
-  
-
-> Typer CLI는 “FastAPI의 CLI 버전”입니다.
-
-1. > 기본 구조 익히고 → 2) 옵션/서브커맨드 → 3) 로깅·테스트 → 4) 배포로 가면
-    
-    > 실전급 자동화 CLI를 빠르고 깔끔하게 만들 수 있습니다.
-    
-
----
-
-원하신다면 🔧
-
-위 커리큘럼의 **3단계 이후 실전 파트(Collector CLI)** 예제 구조를
-
-직접 코드 템플릿으로 구성해드릴까요? (폴더/파일 전체 포함)

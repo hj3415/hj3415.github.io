@@ -1,16 +1,12 @@
-좋아요 😊 — **tenacity**는 파이썬에서 **“자동 재시도(retry)” 로직을 간단하게 구현할 수 있게 해주는 라이브러리**입니다.
+**tenacity**는 파이썬에서 **“자동 재시도(retry)” 로직을 간단하게 구현할 수 있게 해주는 라이브러리**입니다.
 
 예를 들어 네트워크 요청, DB 연결, 외부 API 호출처럼 가끔 실패할 수 있는 작업에 유용하죠.
 
 ---
 
-## **🧩 1. 기본 개념**
-
-  
+#### 1. 기본 개념
 
 tenacity는 “한 번 실패했다고 바로 중단하지 말고, 정해진 규칙에 따라 다시 시도하자”는 철학을 코드로 구현한 겁니다.
-
-  
 
 예를 들어 이런 식이죠:
 
@@ -23,7 +19,7 @@ tenacity는 “한 번 실패했다고 바로 중단하지 말고, 정해진 규
 
 ---
 
-## **⚙️ 2. 설치**
+#### 2. 설치
 
 ```
 pip install tenacity
@@ -31,9 +27,9 @@ pip install tenacity
 
 ---
 
-## **💡 3. 간단한 예시**
+#### 3. 간단한 예시
 
-```
+```python
 from tenacity import retry, stop_after_attempt, wait_fixed
 import random
 
@@ -48,7 +44,7 @@ def unstable_task():
 unstable_task()
 ```
 
-### **실행 결과 예시**
+**실행 결과 예시**
 
 ```
 Trying... x=0.31  ❌ 실패 → 2초 대기
@@ -67,7 +63,7 @@ Trying... x=0.79  ✅ 성공!
 
 ---
 
-## **🧠 4. 주요 옵션 정리**
+#### 4. 주요 옵션 정리
 
 |**카테고리**|**옵션**|**설명**|
 |---|---|---|
@@ -82,9 +78,9 @@ Trying... x=0.79  ✅ 성공!
 
 ---
 
-## **🧩 5. 예외 필터링 예시**
+#### 5. 예외 필터링 예시
 
-```
+```python
 from tenacity import retry, retry_if_exception_type, stop_after_attempt
 
 @retry(
@@ -98,15 +94,13 @@ def fetch_data():
 fetch_data()
 ```
 
-→ ConnectionError이면 재시도하지만,
-
-다른 에러는 바로 멈춥니다.
+→ ConnectionError이면 재시도하지만, 다른 에러는 바로 멈춥니다.
 
 ---
 
-## **📈 6. 실제 예시: httpx 연동**
+#### 6. 실제 예시: httpx 연동
 
-```
+```python
 import httpx
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
@@ -122,13 +116,13 @@ async def fetch_with_retry(url: str):
         return r.json()
 ```
 
-➡️ **네트워크 불안정한 환경에서 매우 유용**
+- **네트워크 불안정한 환경에서 매우 유용**
 
 (예: 외부 API 크롤러, 금융 시세 수집기 등)
 
 ---
 
-## **🧾 7. 핵심 요약**
+#### 7. 핵심 요약
 
 |**항목**|**설명**|
 |---|---|
@@ -137,8 +131,3 @@ async def fetch_with_retry(url: str):
 |주요 요소|stop_*, wait_*, retry_* 조합|
 |사용 형태|@retry(...) 데코레이터|
 |활용 예|외부 API 호출, 네트워크 요청, DB 연결 등|
-
----
-
-원하신다면
-
