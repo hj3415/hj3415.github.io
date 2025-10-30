@@ -4,45 +4,52 @@
 조립은 한 곳에서만 한다.
 
 ```
-contracts/                         # 공용 스키마(프레임워크 독립)
-  pyproject.toml
-  contracts/
-    __init__.py
-    __version__.py
-    users.py
-    items.py
-    events.py
-    common.py
-
-fastapi-app/
-  app/
-    api/                           # DTO 입·출력만
-    services/                      # 비즈니스 로직
-      users_service.py
-    ports/                         # ← 추상(Interface/Protocol) 정의
-      users_repo.py                # UserRepo(Protocol | ABC)
-    mappers.py                     # DTO ↔ 도메인 Entity 변환(있다면)
-    di.py                          # ← 조립 지점(의존성 주입: 어떤 구현체 쓸지 결정)
-  pyproject.toml                   # deps: contracts==x.y.z, db-service==x.y.z (runtime wiring용)
-
-db-service/                        # 인프라 계층(구현 어댑터들)
-  data_mongo/
-    beanie_models.py               # Beanie Document
-    mappers.py                     # Document ↔ DTO 변환(contracts 의존)
-    repo_impl.py                   # ← Adapter: UsersRepoMongo(UserRepo 구현)
-  # (필요 시) data_sql/ ...        # 다른 DB도 같은 인터페이스로 구현
-  pyproject.toml                   # deps: contracts==x.y.z, beanie, motor ...
-
-collector/                         # 크롤러/배치/수집기
-  collector/
-    pipelines/
-      users_pipeline.py
-    emitters/
-      kafka_emitter.py
-    ports/                         # ← 선택: Collector 자체 Port(얇은 Protocol)
-      users_repo.py                # UserRepo(Protocol) 재정의하거나 fastapi 포트 재사용
-    factory.py                     # ← 조립 지점: env로 구현체 선택
-  pyproject.toml                   # deps: contracts==x.y.z, db-service==x.y.z
+libs/
+  logging/                         # 공용로깅모듈(loguru)
+    pyproject.toml
+    logging_app/
+      __init__.py
+      
+apps/
+  contracts/                         # 공용 스키마(프레임워크 독립)
+    pyproject.toml
+    contracts/
+      __init__.py
+      __version__.py
+      users.py
+      items.py
+      events.py
+      common.py
+  
+  fastapi-app/
+    app/
+      api/                           # DTO 입·출력만
+      services/                      # 비즈니스 로직
+        users_service.py
+      ports/                         # ← 추상(Interface/Protocol) 정의
+        users_repo.py                # UserRepo(Protocol | ABC)
+      mappers.py                     # DTO ↔ 도메인 Entity 변환(있다면)
+      di.py                          # ← 조립 지점(의존성 주입: 어떤 구현체 쓸지 결정)
+    pyproject.toml                   # deps: contracts==x.y.z, db-service==x.y.z (runtime wiring용)
+  
+  db-service/                        # 인프라 계층(구현 어댑터들)
+    data_mongo/
+      beanie_models.py               # Beanie Document
+      mappers.py                     # Document ↔ DTO 변환(contracts 의존)
+      repo_impl.py                   # ← Adapter: UsersRepoMongo(UserRepo 구현)
+    # (필요 시) data_sql/ ...        # 다른 DB도 같은 인터페이스로 구현
+    pyproject.toml                   # deps: contracts==x.y.z, beanie, motor ...
+  
+  collector/                         # 크롤러/배치/수집기
+    collector/
+      pipelines/
+        users_pipeline.py
+      emitters/
+        kafka_emitter.py
+      ports/                         # ← 선택: Collector 자체 Port(얇은 Protocol)
+        users_repo.py                # UserRepo(Protocol) 재정의하거나 fastapi 포트 재사용
+      factory.py                     # ← 조립 지점: env로 구현체 선택
+    pyproject.toml                   # deps: contracts==x.y.z, db-service==x.y.z
 ```
 
 핵심 규칙:

@@ -1,5 +1,5 @@
 
-![IMG_1779.jpeg](images/IMG_1779.jpeg)
+![IMG_1779.jpeg](images/the_fixed_stars/IMG_1779.jpeg)
 
 ### THE FIXED STARS
 
@@ -9,7 +9,7 @@
 
 출판: **펜 아리에스 (Fenn Aries), 버드 & 선즈 출판사 (Bird & Sons Publishing), 1809년**
 
-![IMG_1780.jpeg](images/IMG_1780.jpeg)
+![IMG_1780.jpeg](images/the_fixed_stars/IMG_1780.jpeg)
 
 **서문 (Preface)**
 
@@ -21,7 +21,7 @@
 
 ---
 
-![IMG_1781.jpeg](images/IMG_1781.jpeg)
+![IMG_1781.jpeg](images/the_fixed_stars/IMG_1781.jpeg)
 
 North Star (북극성)
 
@@ -29,7 +29,7 @@ North Star (북극성)
 
 ---
 
-![IMG_1782.jpeg](images/IMG_1782.jpeg)
+![IMG_1782.jpeg](images/the_fixed_stars/IMG_1782.jpeg)
 
 The Twins (쌍둥이자리)
 
@@ -41,7 +41,7 @@ The Slice (조각선)
 
 ---
 
-![IMG_1783.jpeg](images/IMG_1783.jpeg)
+![IMG_1783.jpeg](images/the_fixed_stars/IMG_1783.jpeg)
 
 Diamondus Minor (작은 다이아몬드자리)
 
@@ -53,7 +53,7 @@ The Southern Cross (남십자성)
 
 ---
 
-![IMG_1784.jpeg](images/IMG_1784.jpeg)
+![IMG_1784.jpeg](images/the_fixed_stars/IMG_1784.jpeg)
 
 Farmer’s Apple (농부의 사과자리)
 
@@ -65,7 +65,7 @@ Clavis, the Key (열쇠자리)
 
 ---
 
-![IMG_1785.jpeg](images/IMG_1785.jpeg)
+![IMG_1785.jpeg](images/the_fixed_stars/IMG_1785.jpeg)
 
 Diamondus Major (큰 다이아몬드자리)
 
@@ -77,7 +77,7 @@ Draxus, the Dead (죽은 자 드락서스 자리)
 
 ---
 
-![IMG_1786.jpeg](images/IMG_1786.jpeg)
+![IMG_1786.jpeg](images/the_fixed_stars/IMG_1786.jpeg)
 
 The Sail (돛단배자리)
 

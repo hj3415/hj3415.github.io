@@ -1,4 +1,4 @@
-![IMG_1794.JPG](images/IMG_1794.JPG)
+![IMG_1794.JPG](images/security/IMG_1794.JPG)
 
 키카드 시스템 설정
 보안 수준: 낮음 (LOW)
@@ -9,7 +9,7 @@
 
 ---
 
-![IMG_1796.JPG](images/IMG_1796.JPG)
+![IMG_1796.JPG](images/security/IMG_1796.JPG)
 
 파란색 메모
 
@@ -21,7 +21,7 @@
 
 ---
 
-![IMG_1797.JPG](images/IMG_1797.JPG)
+![IMG_1797.JPG](images/security/IMG_1797.JPG)
 
 빨간색 메모
 
@@ -32,7 +32,7 @@
 
 이제 출입을 위해 레버를 조작할 필요가 없습니다.
 
-![IMG_1793.JPG](images/IMG_1793.JPG)
+![IMG_1793.JPG](images/security/IMG_1793.JPG)
 
 
-![IMG_1795.JPG](images/IMG_1795.JPG)
+![IMG_1795.JPG](images/security/IMG_1795.JPG)

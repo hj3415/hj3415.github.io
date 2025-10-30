@@ -15,3 +15,9 @@ A Journey — NOTEWORTHY
 그것을 곁에 두고 여행하는 걸 후회하지 않게 될 것입니다.
 
 
+![IMG_1855.JPG](images/IMG_1855.JPG)
+
+“전실(前室, Antechamber)은 현재 봉인되어 있는 것으로 보인다.
+나중에 열 수 있어야 한다.”
+
+![IMG_1856.JPG](images/IMG_1856.JPG)

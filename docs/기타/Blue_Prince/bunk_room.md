@@ -1,6 +1,6 @@
 일기1
 
-![IMG_1807.JPG](images/IMG_1807.JPG)
+![IMG_1807.JPG](images/diary/IMG_1807.JPG)
 
 TODAY is a good day because Simon is at camp and he is not as much fun as my friends.
 I will not have to share my toys and I will not have to share my room and I will not have to share my snacks.
@@ -20,7 +20,7 @@ but today will be a good day because he is at camp.
 
 일기2
 
-![IMG_1808.JPG](images/IMG_1808.JPG)
+![IMG_1808.JPG](images/diary/IMG_1808.JPG)
 
 HERBIE IS MEAN AND REALLY STUPID AND TODAY IS A GOOD DAY BECAUSE I THREW AWAY HIS AIRPLANE.
 
@@ -34,7 +34,7 @@ HERBIE IS MEAN AND REALLY STUPID AND TODAY IS A GOOD DAY BECAUSE I THREW AWAY HI
 
 일기3
 
-![IMG_1809.JPG](images/IMG_1809.JPG)
+![IMG_1809.JPG](images/diary/IMG_1809.JPG)
 
 I ALSO HAD MORE FUN AT CAMP THAN HE HAS HAD IN HIS ENTIRE LIFE.
 
@@ -46,7 +46,7 @@ I ALSO HAD MORE FUN AT CAMP THAN HE HAS HAD IN HIS ENTIRE LIFE.
 
 일기4
 
-![IMG_1810.JPG](images/IMG_1810.JPG)
+![IMG_1810.JPG](images/diary/IMG_1810.JPG)
 
 TODAY is a good day because I got my brother in trouble for reading my private journal without my permission 
 and writing mean things in it too.
@@ -66,7 +66,7 @@ and I will make sure he gets no presents for his birthday.
 
 일기5
 
-![IMG_1811.JPG](images/IMG_1811.JPG)
+![IMG_1811.JPG](images/diary/IMG_1811.JPG)
 
 I DONT NEED ANY PRESINTS BECAUSE I HAVE MY BROTHER’S BOOK BECAUSE HE WONT STOP WRITING ABOUT ME
 AND TODAY IS A GOOD DAY BECAUSE I KNOW HE CRIES WHEN HE CAN’T FIND HIS BOOK EVEN THOE HE IS OLDER.
@@ -85,7 +85,7 @@ HE IS A CRYBABY.
 
 일기6
 
-![IMG_1812.JPG](images/IMG_1812.JPG)
+![IMG_1812.JPG](images/diary/IMG_1812.JPG)
 
 Today is a good day because today, my brother returns from college
 and I get to finally return to him the book I took from him a long, long time ago.
