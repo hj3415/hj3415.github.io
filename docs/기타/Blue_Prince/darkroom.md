@@ -1,7 +1,7 @@
 
 인화 노트 (print notes)
 
-![IMG_1792.JPG](images/IMG_1792.JPG)
+![IMG_1792.JPG](images/darkroom/IMG_1792.JPG)
 
 H.S.가 그녀의 귀부인(Ladyship)의 또 다른 인화본을 요청했습니다.
 아마 서관(West Wing)에 있는 그녀의 방 중 하나에 두기 위한 것이겠지요.
@@ -9,3 +9,9 @@ H.S.가 그녀의 귀부인(Ladyship)의 또 다른 인화본을 요청했습니
 
 그는 지난번 인화본이 너무 어두웠다고 했으니,
 이번에는 그 점을 유의하시기 바랍니다.
+
+
+![IMG_1879.JPG](images/darkroom/IMG_1879.JPG)
+
+
+![IMG_1880.JPG](images/darkroom/IMG_1880.JPG)
