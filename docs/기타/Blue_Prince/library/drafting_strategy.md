@@ -1,4 +1,4 @@
-![IMG_1829.JPG](../images/IMG_1829.JPG)
+![IMG_1829.JPG](../images/drafting_strategy/IMG_1829.JPG)
 
 **정기간행물 (PERIODICAL)**
 
@@ -29,7 +29,7 @@
 
 ---
 
-![IMG_1830.JPG](../images/IMG_1830.JPG)
+![IMG_1830.JPG](../images/drafting_strategy/IMG_1830.JPG)
 
 **The Potential Within**
 
@@ -59,7 +59,7 @@ _우리 모두는 빈 도면에서 시작한다._
 
 ---
 
-![IMG_1831.JPG](../images/IMG_1831.JPG)
+![IMG_1831.JPG](../images/drafting_strategy/IMG_1831.JPG)
 
 **GEMS, GEMS, GEMS**
 
@@ -108,7 +108,7 @@ _우리 모두는 빈 도면에서 시작한다._
 
 ---
 
-![IMG_1832.JPG](../images/IMG_1832.JPG)
+![IMG_1832.JPG](../images/drafting_strategy/IMG_1832.JPG)
 
 **PLANNING YOUR HOUSE**
 
@@ -139,7 +139,7 @@ _우리 모두는 빈 도면에서 시작한다._
 
 ---
 
-![IMG_1833.JPG](../images/IMG_1833.JPG)
+![IMG_1833.JPG](../images/drafting_strategy/IMG_1833.JPG)
 
 **TOP DRAFTING COMBOS**
 
@@ -185,7 +185,7 @@ _우리 모두는 빈 도면에서 시작한다._
 
 ---
 
-![IMG_1834.JPG](../images/IMG_1834.JPG)
+![IMG_1834.JPG](../images/drafting_strategy/IMG_1834.JPG)
 
 **MAKING A CONNECTION**
 
@@ -232,7 +232,7 @@ _우리 모두는 빈 도면에서 시작한다._
 
 ---
 
-![IMG_1835.JPG](../images/IMG_1835.JPG)
+![IMG_1835.JPG](../images/drafting_strategy/IMG_1835.JPG)
 
 **TIPS & TRICKS**
 
@@ -260,7 +260,7 @@ _우리 모두는 빈 도면에서 시작한다._
 
 ---
 
-![IMG_1836.JPG](../images/IMG_1836.JPG)
+![IMG_1836.JPG](../images/drafting_strategy/IMG_1836.JPG)
 
 **WORD FROM THE EDITOR**
 
