@@ -1,6 +1,7 @@
 ![IMG_1837.JPG](images/scrapbook/IMG_1837.JPG)
 
 **NO TRACE IS DISCOVERED OF SYNKA HEIRESS BUT SEARCH CONTINUES**
+
 (신카 상속녀 실종, 행방 여전히 오리무중)
 
 동화작가이자 일러스트레이터인 **메리 매튜 존스(Mary Matthew Jones)** — 필명 ‘마리온 마리골드’로 알려진 인물 — 가 실종되었다.
