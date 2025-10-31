@@ -36,3 +36,4 @@ The note is read, the letter is not.
 	•	“The note is read, the letter is not” → “악보(음표)는 읽히지만, 글자(letter)는 아니다” → 즉 음악 안에 숨겨진 글자나 순서를 찾으라는 암시예요
 	•	실제로 Workshop 지역 퍼즐 중엔 악보의 음 위치, 숫자, 혹은 첫 글자로 단어를 조합하는 퍼즐이 존재합니다.
 
+![IMG_1913.JPG](images/IMG_1913.JPG)

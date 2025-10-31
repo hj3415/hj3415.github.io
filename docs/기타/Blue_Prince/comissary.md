@@ -1,6 +1,8 @@
 직원 공지 (STAFF NOTICE)
 
-![IMG_1791.JPG](images/IMG_1791.JPG)
+![IMG_1791.JPG](images/comissary/IMG_1791.JPG)
+
+![IMG_1906.JPG](images/comissary/IMG_1906.JPG)
 
 12월 첫째 주부터, 외부 거주 직원(Live-out) 및 계절직(Seasonal Staff) 의 급여는 전자 방식으로 관리됩니다.
 출근 시 아침 점호에서 출석이 기록되지 않으므로, 반드시 전자 컴퓨터 단말기(Electronic Computer terminals) 에서 출근(Clock in) 및 퇴근(Clock out) 을 잊지 말고 기록해야 합니다.
@@ -11,5 +13,5 @@
 
 터미널 비밀번호 (TERMINAL PASSWORD): (검열됨 / 가려짐)
 
-![IMG_1790.JPG](images/IMG_1790.JPG)
+![IMG_1790.JPG](images/comissary/IMG_1790.JPG)
 
