@@ -1,4 +1,4 @@
-![IMG_1936.JPG](images/IMG_1936.JPG)
+![IMG_1936.JPG](images/study/IMG_1936.JPG)
 
 “44 letters in the message” 뜻: 메시지 안에 글자 44개가 있다는 의미.
 
