@@ -1,4 +1,4 @@
-![IMG_1857.JPG](images/IMG_1857.JPG)
+![IMG_1857.JPG](images/maids_chamber/IMG_1857.JPG)
 
 직원 공지
 
@@ -10,3 +10,6 @@
 숙식 제공을 받는 모든 직원들은 한 달간의 유급 휴가를 부여받으며, 11월 6일 금요일까지 저택을 비워주셔야 합니다.
 
 - 배비지 부인
+
+
+![IMG_2033.JPG](images/maids_chamber/IMG_2033.JPG)
